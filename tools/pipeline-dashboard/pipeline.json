@@ -1,0 +1,102 @@
+{
+  "stages": [
+    {
+      "id": "phase-0-brainstorm",
+      "title": "Brainstorm",
+      "order": 0,
+      "description": "Front-door brainstorm that produces the gitignored brief (with the greppable uiFeature: marker) the pipeline consumes.",
+      "expectedAgents": [],
+      "links": [
+        { "label": "Brainstorm brief", "href": "" }
+      ]
+    },
+    {
+      "id": "phase-1-validate",
+      "title": "Validate",
+      "order": 1,
+      "description": "Validate the brainstorm brief (exists, parses, carries the uiFeature: marker) and project-bootstrap coherence; derive uiFeature. The engine never conducts the brainstorm.",
+      "expectedAgents": ["project-bootstrap"],
+      "links": []
+    },
+    {
+      "id": "phase-2-epic-authoring",
+      "title": "Epic Authoring",
+      "order": 2,
+      "description": "The epic-authoring skill consumes the brief and produces the epic spec as a gitignored tmp/docs draft.",
+      "expectedAgents": ["epic-authoring"],
+      "links": []
+    },
+    {
+      "id": "phase-3-figma-design",
+      "title": "Figma Design",
+      "order": 3,
+      "description": "Conditional (UI features only): the figma-design skill builds the design frames for the feature.",
+      "expectedAgents": ["figma-design"],
+      "links": []
+    },
+    {
+      "id": "phase-4-figma-review",
+      "title": "Figma Review",
+      "order": 4,
+      "description": "Conditional (UI features only): review the Figma design; the Figma-Design-Verdict gates fan-out.",
+      "expectedAgents": ["reviewing-figma-designs", "review-bot"],
+      "links": []
+    },
+    {
+      "id": "phase-5-issue-fan-out",
+      "title": "Issue Fan-out",
+      "order": 5,
+      "description": "The issue-authoring skill creates the child issues first, then the epic, on GitHub.",
+      "expectedAgents": ["issue-authoring"],
+      "links": []
+    },
+    {
+      "id": "phase-6-plan-review",
+      "title": "Plan Review",
+      "order": 6,
+      "description": "Plan-review loop (children first, epic last): the issue-plan-review skill gates each issue spec before implementation starts.",
+      "expectedAgents": ["issue-plan-review", "review-bot"],
+      "links": []
+    },
+    {
+      "id": "phase-7-implement",
+      "title": "Implement",
+      "order": 7,
+      "description": "Per-child implementer agents implement each issue in its own worktree, parallel and dependency-ordered.",
+      "expectedAgents": ["implementer"],
+      "links": []
+    },
+    {
+      "id": "phase-8-pr-creation",
+      "title": "PR Creation",
+      "order": 8,
+      "description": "The creating-prs skill opens each pull request with the five-section, diagram-first body.",
+      "expectedAgents": ["creating-prs"],
+      "links": []
+    },
+    {
+      "id": "phase-9-pr-review",
+      "title": "PR Review",
+      "order": 9,
+      "description": "PR-review loop: the reviewing skill drives a fresh-context anti-slop review (plus a design-reviewer pass on UI PRs).",
+      "expectedAgents": ["reviewing", "review-bot", "design-reviewer"],
+      "links": []
+    },
+    {
+      "id": "phase-10-merge",
+      "title": "Merge",
+      "order": 10,
+      "description": "The pr-workflow skill queues each approved PR through Mergify (@Mergifyio queue) and squash-merges; the epic closes last.",
+      "expectedAgents": [],
+      "links": []
+    },
+    {
+      "id": "phase-11-deploy",
+      "title": "Deploy Verify",
+      "order": 11,
+      "description": "Verify the post-merge deploy CI job on the main push; reads gh state, dispatches no worker.",
+      "expectedAgents": [],
+      "links": []
+    }
+  ]
+}
