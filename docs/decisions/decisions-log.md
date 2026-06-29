@@ -162,3 +162,12 @@ The product is a **capable conversational AI AGENT**, not a document reader. Cor
   Foundations (Colors/Scale variables + Type styles) are file-level, shared by both pages.
   v2 design plan + screen list: `docs/plans/v2-design-plan.md` (from the v2 design workflow).
   v2 screens: 01 Agent chat (web search) · 02 Doc upload + cited reply · 03 Two-axis progression · 04 Structure-swap · 05 Learning path · 06 Endpoint.
+
+## Design-system inheritance (2026-06-29) — system-level rules, instances inherit
+- **Decision (LOCKED):** make system-level design rules the single source and have each language instance **inherit**, overriding only its script-layer deltas. Replaces the hand-built-per-instance approach (which produced the Chinese Figma frames as hard-coded orphans — zero shared variables/components).
+- **Mechanism:** a CORE published Figma library + per-language consumer files; a 3-tier variable model (Primitives → Semantic → `Locale`[ar|zh] modes); **value deltas** (font/numerals/leading) ride `Locale` modes, **structural deltas** (RTL/LTR direction, ḥarakāt-vs-pinyin-ruby annotation, glyph-keyboard-vs-pinyin-IME input) are components/variants/slots — never modes.
+- **Machine SoT:** `tokens.json` (W3C DTCG) at repo root mirrors `DESIGN.md` §0; the Figma CORE library is the third mirror; reconcile all three same-PR (AGENTS.md Update-Triggers row added).
+- **Add-language cost after migration:** +1 `Locale` mode (~5–8 deltas) + 0–3 leaf components + 1 consumer file + a direction decision; everything else inherited free.
+- **Full architecture + migration + risks:** `docs/decisions/design-system-inheritance.md` (from the `design-system-inheritance-research` workflow, 6 research angles + synthesis).
+- **Status:** ADR + `tokens.json` landed this PR; Figma CORE library variables (Primitives/Semantic/Locale[ar,zh]) building next; the component library + per-instance refactor are follow-ups.
+- **Drift noted (separate cleanup):** `INSTANCE.md` / `motion-spec.md` / `user-stories.md` reference v3 + `brainstorm-v2` Figma pages that don't exist in the live file (only `brainstorm-v1` is present) — to reconcile.
