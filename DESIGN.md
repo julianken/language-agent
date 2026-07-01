@@ -14,6 +14,8 @@ The organizing idea is **progress-as-typography**: the reading surface *is* the 
 
 The authoritative source of truth for every value. Reference these by name in the prose below; never repeat a raw literal outside this section.
 
+> **Machine mirror:** [`tokens.json`](tokens.json) (repo root, W3C DTCG) is the machine-readable mirror of this section, structured in three tiers — **primitive** (the raw values below), **semantic** (role aliases — what frames/components bind to), and **locale** (per-language deltas → the Figma CORE library's `Locale` modes `ar`/`zh`). `DESIGN.md` §0 stays the *human* source of truth; `tokens.json` and the Figma CORE library are generated mirrors — reconcile all three in the same PR. Rationale + the one-system/N-instances inheritance architecture: [`docs/decisions/design-system-inheritance.md`](docs/decisions/design-system-inheritance.md).
+
 ### Color
 
 | Token | Value | Role |

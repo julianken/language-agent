@@ -31,7 +31,7 @@ Docs drift silently; updating them in the same PR is cheaper than catching it la
 
 | If your change touches…                          | Update…                                                                 |
 | ------------------------------------------------ | ----------------------------------------------------------------------- |
-| design tokens, motion, layout, or any UI surface | `DESIGN.md` (it wins on design conflicts) — reconcile it in the same PR  |
+| design tokens, motion, layout, or any UI surface | `DESIGN.md` §0 (the human SoT; wins on design conflicts) **and** `tokens.json` (the machine mirror) — reconcile BOTH in the same PR; if the Figma CORE library exists, update its `Locale`/Semantic/Primitive variables too (see `docs/decisions/design-system-inheritance.md`) |
 | the product identity, GitHub slug, Figma file/node map, or merge/review infra | `INSTANCE.md` (the instance source of truth) — reconcile it in the same PR |
 | the Figma file's page or screen node-ids change   | the Design/Figma node map in `INSTANCE.md` — reconcile it in the same PR  |
 | a process, convention, or agent rule             | this file (`AGENTS.md`); then re-check the `CLAUDE.md` shim still passes |
