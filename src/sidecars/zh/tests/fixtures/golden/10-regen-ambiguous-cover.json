@@ -1,0 +1,19 @@
+{
+  "name": "regen-ambiguous-cover",
+  "description": "AC: >1 valid cover regenerates rather than silently picking one — 你好 covers as [你好] and [你|好].",
+  "data": "default",
+  "request": {
+    "targetText": "你好",
+    "intents": [
+      {
+        "id": "hello",
+        "description": "h"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "regenerate",
+    "legId": "seed-closed-world",
+    "reason": "ambiguous-cover"
+  }
+}

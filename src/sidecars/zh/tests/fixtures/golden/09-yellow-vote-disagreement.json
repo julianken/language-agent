@@ -1,0 +1,33 @@
+{
+  "name": "yellow-vote-disagreement",
+  "description": "Leg (e): post-normalization boundary disagreement (jieba merges 好喝; no normalization mapping exists) → YELLOW on the affected tokens, NOT red — no sandhi span is touched.",
+  "data": "default",
+  "request": {
+    "targetText": "好喝",
+    "intents": [
+      {
+        "id": "good",
+        "description": "g"
+      },
+      {
+        "id": "drink",
+        "description": "d"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "好",
+        "kind": "word",
+        "band": "YELLOW"
+      },
+      {
+        "surface": "喝",
+        "kind": "word",
+        "band": "YELLOW"
+      }
+    ]
+  }
+}

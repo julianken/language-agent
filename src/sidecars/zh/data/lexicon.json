@@ -1,0 +1,239 @@
+{
+  "generatedBy": "src/sidecars/zh/scripts/build_lexicon.py — DO NOT EDIT; edit src/packages/lang-zh/assets/ and rebuild",
+  "provenance": "stub — replaced wholesale by #20",
+  "words": {
+    "二": {
+      "readingId": "二:er4",
+      "citationPinyin": [
+        "er4"
+      ],
+      "surfacePinyin": [
+        "er4"
+      ],
+      "pos": "numeral",
+      "senseId": "two-digit",
+      "gloss": "two; 2 (digit/ordinal)",
+      "intentBearing": false
+    },
+    "你": {
+      "readingId": "你:ni3",
+      "citationPinyin": [
+        "ni3"
+      ],
+      "surfacePinyin": [
+        "ni3"
+      ],
+      "pos": "pronoun",
+      "senseId": "you",
+      "gloss": "you (informal)",
+      "intentBearing": false
+    },
+    "你好": {
+      "readingId": "你好:ni3hao3",
+      "citationPinyin": [
+        "ni3",
+        "hao3"
+      ],
+      "surfacePinyin": [
+        "ni2",
+        "hao3"
+      ],
+      "pos": "interjection",
+      "senseId": "hello",
+      "gloss": "hello",
+      "intentBearing": true
+    },
+    "個": {
+      "readingId": "個:ge4",
+      "citationPinyin": [
+        "ge4"
+      ],
+      "surfacePinyin": [
+        "ge4"
+      ],
+      "pos": "classifier",
+      "senseId": "clf-general",
+      "gloss": "general classifier",
+      "intentBearing": false
+    },
+    "兩": {
+      "readingId": "兩:liang3",
+      "citationPinyin": [
+        "liang3"
+      ],
+      "surfacePinyin": [
+        "liang3"
+      ],
+      "pos": "numeral",
+      "senseId": "two-quantity",
+      "gloss": "two (before measure words)",
+      "intentBearing": false
+    },
+    "喝": {
+      "readingId": "喝:he1",
+      "citationPinyin": [
+        "he1"
+      ],
+      "surfacePinyin": [
+        "he1"
+      ],
+      "pos": "verb",
+      "senseId": "drink",
+      "gloss": "to drink",
+      "intentBearing": true
+    },
+    "好": {
+      "readingId": "好:hao3",
+      "citationPinyin": [
+        "hao3"
+      ],
+      "surfacePinyin": [
+        "hao3"
+      ],
+      "pos": "adjective",
+      "senseId": "good",
+      "gloss": "good",
+      "intentBearing": true
+    },
+    "展覽館": {
+      "readingId": "展覽館:zhan3lan3guan3",
+      "citationPinyin": [
+        "zhan3",
+        "lan3",
+        "guan3"
+      ],
+      "surfacePinyin": [
+        "zhan2",
+        "lan2",
+        "guan3"
+      ],
+      "pos": "noun",
+      "senseId": "exhibition-hall",
+      "gloss": "exhibition hall",
+      "intentBearing": true
+    },
+    "想": {
+      "readingId": "想:xiang3",
+      "citationPinyin": [
+        "xiang3"
+      ],
+      "surfacePinyin": [
+        "xiang3"
+      ],
+      "pos": "verb",
+      "senseId": "want-think",
+      "gloss": "to want; to think",
+      "intentBearing": true
+    },
+    "我": {
+      "readingId": "我:wo3",
+      "citationPinyin": [
+        "wo3"
+      ],
+      "surfacePinyin": [
+        "wo3"
+      ],
+      "pos": "pronoun",
+      "senseId": "i",
+      "gloss": "I; me",
+      "intentBearing": false
+    },
+    "星期": {
+      "readingId": "星期:xing1qi1",
+      "citationPinyin": [
+        "xing1",
+        "qi1"
+      ],
+      "surfacePinyin": [
+        "xing1",
+        "qi1"
+      ],
+      "pos": "noun",
+      "senseId": "week",
+      "gloss": "week",
+      "intentBearing": true
+    },
+    "茶": {
+      "readingId": "茶:cha2",
+      "citationPinyin": [
+        "cha2"
+      ],
+      "surfacePinyin": [
+        "cha2"
+      ],
+      "pos": "noun",
+      "senseId": "tea",
+      "gloss": "tea",
+      "intentBearing": true
+    }
+  },
+  "singles": [
+    "的",
+    "了",
+    "不",
+    "一",
+    "嗎",
+    "呢"
+  ],
+  "contextEntries": [
+    {
+      "char": "一",
+      "prev": "<START>",
+      "next": "個",
+      "base": "yi1",
+      "surface": "yi2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "一",
+      "prev": "星期",
+      "next": "<END>",
+      "base": "yi1",
+      "surface": "yi1",
+      "rule": "ordinal-date"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "好",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "了",
+      "prev": "喝",
+      "next": "茶",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "嗎",
+      "prev": "茶",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "茶",
+      "base": "de5",
+      "surface": "de5"
+    }
+  ],
+  "segmenterNormalization": {
+    "不好": [
+      "不",
+      "好"
+    ],
+    "喝茶": [
+      "喝",
+      "茶"
+    ],
+    "星期一": [
+      "星期",
+      "一"
+    ]
+  },
+  "variantMap": {}
+}

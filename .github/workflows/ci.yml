@@ -95,6 +95,69 @@ jobs:
           git fetch --depth=1 origin main
           BASE_REF=FETCH_HEAD bash scripts/check-openapi-breaking.sh
 
+  # --- zh verification sidecar v0 (issue #19) — deterministic legs only. ---
+  # Independent of the pnpm workspace build: the sidecar sits outside the
+  # workspace globs (Python, own pinned deps). Gates, in order: model + baked-
+  # lexicon freshness, unit + golden-fixture tests (incl. the fail-closed
+  # negative paths), image build, the torch-free regression assertion,
+  # Schemathesis conformance against the UNCHANGED shared spec (the
+  # cross-consumer proof no ar-specific shape entered the document — AC moved
+  # from #7), and the offline-at-runtime check (--network=none).
+  sidecar-zh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv (pinned codegen + schemathesis via uvx)
+        # Exact tag on purpose: setup-uv publishes no bare `v8` major alias.
+        uses: astral-sh/setup-uv@v8.2.0
+
+      - name: Spec freshness — zh Pydantic models (regenerate + git diff --exit-code)
+        run: |
+          bash scripts/generate-sidecar-models.sh
+          git diff --exit-code -- src/sidecars/zh/generated
+
+      - name: Lexicon freshness — baked sliver lexicon regenerated from @la/lang-zh/assets
+        # When #20 replaces the curation stub wholesale, this gate forces the
+        # baked lexicon to rebuild against the real asset.
+        run: |
+          python3 src/sidecars/zh/scripts/build_lexicon.py
+          git diff --exit-code -- src/sidecars/zh/data/lexicon.json
+
+      - name: Unit + golden HTTP fixture tests (fail-closed negative paths included)
+        working-directory: src/sidecars/zh
+        run: |
+          uv venv .venv -p 3.12
+          uv pip install --python .venv/bin/python -r requirements.txt -r requirements-dev.txt
+          .venv/bin/python -m pytest -q
+
+      - name: Build the sidecar image
+        run: docker build -t language-agent/sidecar-zh:ci src/sidecars/zh
+
+      - name: Torch-free regression gate (image half)
+        run: bash src/sidecars/zh/scripts/assert-deterministic-only.sh language-agent/sidecar-zh:ci
+
+      - name: Boot the image and wait for honest readiness
+        run: |
+          docker run -d --name sidecar-zh -p 8137:8000 language-agent/sidecar-zh:ci
+          for i in $(seq 1 120); do
+            if curl -fsS http://127.0.0.1:8137/readyz >/dev/null 2>&1; then exit 0; fi
+            sleep 1
+          done
+          echo "sidecar never became ready"; docker logs sidecar-zh; exit 1
+
+      - name: Schemathesis conformance — built image vs the UNCHANGED shared spec
+        run: >
+          uvx schemathesis@4.22.3 run src/packages/contract/sidecar/openapi.yaml
+          --url http://127.0.0.1:8137 --checks all --max-examples 200
+
+      - name: Offline at runtime — full endpoint surface with network disabled
+        run: |
+          docker rm -f sidecar-zh
+          docker run -d --name sidecar-zh-offline --network=none language-agent/sidecar-zh:ci
+          docker exec sidecar-zh-offline python scripts/offline_smoke.py
+
   # The TCK drop-in matrix (ADR §4.3; issue #17): the same workflow
   # definition and the same conformance suite per language leg —
   # `matrix.lang = [fake, ar, zh]`, all three slots from the walking

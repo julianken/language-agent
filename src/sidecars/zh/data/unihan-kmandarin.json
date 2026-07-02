@@ -1,0 +1,138 @@
+{
+  "source": "Unihan database (Unihan_Readings.txt, kMandarin field), Unicode Character Database",
+  "sourceUrl": "https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip",
+  "license": "© Unicode, Inc. — Unicode Terms of Use, https://www.unicode.org/terms_of_use.html (see NOTICE.md)",
+  "modification": "subset extract: kMandarin for the closed-world character set only; regenerate with scripts/extract_membership.py",
+  "sourceHeader": [
+    "Unihan_Readings.txt",
+    "Date: 2025-07-24 00:00:00 GMT [KL]",
+    "Unicode Version 17.0.0",
+    "",
+    "Unicode Character Database",
+    "© 2025 Unicode®, Inc.",
+    "Unicode and the Unicode Logo are registered trademarks of Unicode, Inc. in the U.S. and other countries.",
+    "For terms of use and license, see https://www.unicode.org/terms_of_use.html"
+  ],
+  "characters": {
+    "一": {
+      "codepoint": "U+4E00",
+      "kMandarin": [
+        "yī"
+      ]
+    },
+    "不": {
+      "codepoint": "U+4E0D",
+      "kMandarin": [
+        "bù"
+      ]
+    },
+    "了": {
+      "codepoint": "U+4E86",
+      "kMandarin": [
+        "le"
+      ]
+    },
+    "二": {
+      "codepoint": "U+4E8C",
+      "kMandarin": [
+        "èr"
+      ]
+    },
+    "你": {
+      "codepoint": "U+4F60",
+      "kMandarin": [
+        "nǐ"
+      ]
+    },
+    "個": {
+      "codepoint": "U+500B",
+      "kMandarin": [
+        "gè"
+      ]
+    },
+    "兩": {
+      "codepoint": "U+5169",
+      "kMandarin": [
+        "liǎng"
+      ]
+    },
+    "呢": {
+      "codepoint": "U+5462",
+      "kMandarin": [
+        "ne"
+      ]
+    },
+    "喝": {
+      "codepoint": "U+559D",
+      "kMandarin": [
+        "hē"
+      ]
+    },
+    "嗎": {
+      "codepoint": "U+55CE",
+      "kMandarin": [
+        "ma"
+      ]
+    },
+    "好": {
+      "codepoint": "U+597D",
+      "kMandarin": [
+        "hǎo"
+      ]
+    },
+    "展": {
+      "codepoint": "U+5C55",
+      "kMandarin": [
+        "zhǎn"
+      ]
+    },
+    "想": {
+      "codepoint": "U+60F3",
+      "kMandarin": [
+        "xiǎng"
+      ]
+    },
+    "我": {
+      "codepoint": "U+6211",
+      "kMandarin": [
+        "wǒ"
+      ]
+    },
+    "星": {
+      "codepoint": "U+661F",
+      "kMandarin": [
+        "xīng"
+      ]
+    },
+    "期": {
+      "codepoint": "U+671F",
+      "kMandarin": [
+        "qī"
+      ]
+    },
+    "的": {
+      "codepoint": "U+7684",
+      "kMandarin": [
+        "de"
+      ]
+    },
+    "茶": {
+      "codepoint": "U+8336",
+      "kMandarin": [
+        "chá"
+      ]
+    },
+    "覽": {
+      "codepoint": "U+89BD",
+      "kMandarin": [
+        "lǎn"
+      ]
+    },
+    "館": {
+      "codepoint": "U+9928",
+      "kMandarin": [
+        "guǎn"
+      ]
+    }
+  }
+}

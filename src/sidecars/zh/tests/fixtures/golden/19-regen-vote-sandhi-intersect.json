@@ -1,0 +1,19 @@
+{
+  "name": "regen-vote-sandhi-intersect",
+  "description": "Leg (e) exception: 好好 is a cross-word 2-syllable third-tone run (deterministic 3-3→2-3 shift, a sandhi span) AND jieba merges 好好 with no normalization mapping — the boundary disagreement intersects the sandhi span → regenerate, not YELLOW.",
+  "data": "default",
+  "request": {
+    "targetText": "好好",
+    "intents": [
+      {
+        "id": "good",
+        "description": "g"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "regenerate",
+    "legId": "segmenter-vote",
+    "reason": "vote-sandhi-intersect"
+  }
+}

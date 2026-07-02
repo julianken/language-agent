@@ -1,0 +1,19 @@
+{
+  "name": "regen-intent-mismatch",
+  "description": "Leg (g), both directions: declared intent 'coffee' maps to no gated token sense AND senses drink/tea are uncovered → candidate-level regenerate (never display, never band-only).",
+  "data": "default",
+  "request": {
+    "targetText": "我喝茶",
+    "intents": [
+      {
+        "id": "coffee",
+        "description": "the drink offered is coffee"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "regenerate",
+    "legId": "intent-cross-check",
+    "reason": "intent-mismatch"
+  }
+}

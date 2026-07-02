@@ -1,0 +1,14 @@
+{
+  "name": "regen-numeral-er",
+  "description": "Leg (f): 二 before a measure word (二個) is a wrong-but-real numeral character → regenerate (兩 required).",
+  "data": "default",
+  "request": {
+    "targetText": "二個",
+    "intents": []
+  },
+  "expect": {
+    "mode": "regenerate",
+    "legId": "numeral-rule",
+    "reason": "er-before-classifier"
+  }
+}
