@@ -1,9 +1,9 @@
 {
   "name": "@la/lang-fake",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Placeholder package root only. Real content (the permanent MAX-topology drop-in fixture pack — ADR §4.3) is exclusively owned by issue #16 (contract-v0).",
+  "description": "The permanent MAX-topology drop-in fixture pack (ADR §4.3): re-segmenting text-in/tokens-out gate, 2 unit kinds + 1 gating edge + 1 declared credit-leak edge + 3 fade dimensions with per-unit fades within a token, a discontinuous span group, and deterministic YELLOW/RED cases. Deterministic and dependency-free (no sidecar).",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -12,9 +12,17 @@
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "assets"
+  ],
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@la/contract": "workspace:*",
+    "zod": "catalog:"
   }
 }

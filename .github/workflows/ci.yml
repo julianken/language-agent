@@ -2,7 +2,7 @@ name: ci
 
 # The real build/test CI for application code, alongside (never replacing)
 # the pre-existing scaffolding.yml gate. Runs the pnpm workspace's
-# install → typecheck → build → boundary gates → test pipeline, plus the
+# install → build → typecheck → boundary gates → test pipeline, plus the
 # ADR §2.4 boundary-enforcement gates (dependency-cruiser, the no-`lang===`
 # lint/grep gate) so they fire on every PR from the first commit.
 #
@@ -14,6 +14,12 @@ name: ci
 # .dependency-cruiser.cjs's `no-unresolvable-la-imports` rule fails loudly
 # on any unresolved @la/* import, so a future reordering can't silently
 # disarm the gate again.
+#
+# `build` also runs BEFORE `typecheck` (since #16 gave packages real
+# cross-package imports): typecheck resolves `@la/*` through the same
+# exports maps to ./dist/*.d.ts, so on a clean checkout it needs the
+# topological build first. Build itself typechecks each package's src
+# (minus tests); the typecheck step adds the test files on top.
 on: [push, pull_request]
 
 concurrency:
@@ -42,11 +48,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Typecheck
-        run: pnpm run typecheck
-
       - name: Build
         run: pnpm run build
+
+      - name: Typecheck
+        run: pnpm run typecheck
 
       - name: Boundary gate — dependency-cruiser (ADR §2.4 rules a–d; requires the build above)
         run: pnpm run boundary:deps

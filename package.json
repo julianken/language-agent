@@ -16,6 +16,7 @@
     "boundary:lang-conditional": "eslint --config eslint.config.mjs src/packages/engine src/apps/server/src src/apps/web/src/shell && bash scripts/check-no-lang-conditional.sh"
   },
   "devDependencies": {
+    "@types/node": "^24.13.2",
     "dependency-cruiser": "^18.0.0",
     "eslint": "^10.6.0",
     "typescript": "^6.0.3",

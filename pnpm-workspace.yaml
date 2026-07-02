@@ -7,3 +7,11 @@
 packages:
   - "src/packages/*"
   - "src/apps/*"
+
+# pnpm catalog — single-source version pins for deps whose IDENTITY is
+# load-bearing across packages (ADR §5.1: "pnpm catalogs pin zod/react/vitest
+# so the two lang packages can never drift onto different zod majors — schema
+# identity is load-bearing"). Packages reference these as `"zod": "catalog:"`.
+# react/vitest join the catalog when a package first depends on them directly.
+catalog:
+  zod: ^4.4.3

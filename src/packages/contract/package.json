@@ -1,9 +1,9 @@
 {
   "name": "@la/contract",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Placeholder package root only. Real content (the nine port types, manifest schema, sidecar OpenAPI, zod schemas) is exclusively owned by issue #16 (contract-v0) — see docs/decisions/language-module-architecture.md §5.2.",
+  "description": "The drop-in language-pack contract, v0: the nine port types (text-in/tokens-out verify, token spine with spanGroup, annotation + LearningEvent envelopes, per-(dim × unit) ScaffoldDirective, mastery-graph declarations incl. creditLeakEdges), the pack-manifest zod schema, and deriveCapabilities. ZERO workspace dependencies (ADR §2.4 rule c); zod is the one external runtime dep. The sidecar OpenAPI document is owned by #7's spec-first PR.",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -16,5 +16,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
     "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "catalog:"
   }
 }
