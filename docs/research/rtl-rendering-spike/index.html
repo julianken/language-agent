@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spike scratch — RTL/Arabic token rendering (issue #5)</title>
+<!--
+  SPIKE SCRATCH — issue #5 (walking-skeleton: RTL/Arabic token rendering spike).
+  NOT product code. Self-contained (no package.json, no build step, no framework).
+  Committed per issue AC #4 so the findings doc (../rtl-rendering-spike.md) is
+  reproducible. Open directly in a browser, or drive with Playwright via
+  window.runChecks() / window.__fontsLoaded (see the findings doc "Methodology").
+
+  Renders fully-vocalized Arabic tokens as individually-clickable spans in two
+  markup recipes (bdi/dir=auto vs. explicit Unicode bidi isolates), in both
+  DESIGN.md §0 candidate fonts, at arabic-reading-lg scale (27px / line-height
+  1.95), then exposes automated checks for:
+    (i)   ligature integrity (textContent round-trip; visual via screenshot)
+    (ii)  ḥarakāt clipping at line boundaries (Range bounding-box vs. clip box)
+    (iii) RTL hit-testing (elementFromPoint at each token's visual center)
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  :root {
+    --canvas: #fbf9f4;
+    --ink: #1a1612;
+    --body: #574f45;
+    --muted: #8a8275;
+    --hairline: #e4ddcd;
+    --primary: #0f766e;
+    --surface-soft: #f3efe6;
+    --surface-card: #ffffff;
+    --status-new-bg: #f6ecd2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding: 24px;
+  }
+  header {
+    max-width: 1000px;
+    margin: 0 auto 24px;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 16px;
+  }
+  header h1 { font-size: 20px; margin: 0 0 8px; color: var(--primary); }
+  header p { font-size: 13px; color: var(--muted); margin: 4px 0; line-height: 1.5; }
+  main { max-width: 1000px; margin: 0 auto; }
+  section.block {
+    background: var(--surface-card);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+  }
+  section.block h2 {
+    font-size: 14px;
+    margin: 0 0 4px;
+    color: var(--ink);
+  }
+  section.block .variant-desc {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 12px;
+    font-family: ui-monospace, "JetBrains Mono", monospace;
+  }
+  h3.subhead {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--muted);
+    margin: 16px 0 8px;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    direction: rtl;
+  }
+  .sentence {
+    direction: rtl;
+    margin: 0;
+  }
+  .token {
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    outline-offset: 2px;
+  }
+  .token:hover { background: var(--status-new-bg); }
+  .token.token-active { background: #dcebe8; outline: 2px solid var(--primary); }
+  .token:focus-visible { outline: 2px solid var(--primary); }
+
+  /* arabic-reading-lg (DESIGN.md §0): 27px / line-height 1.95 */
+  .arabic-reading-lg { font-size: 27px; line-height: 1.95; }
+  .font-amiri { font-family: "Amiri", serif; }
+  .font-scheherazade { font-family: "Scheherazade New", serif; }
+
+  .clip-probe {
+    border: 1px dashed #b5654a;
+    overflow: hidden;
+    background: var(--surface-soft);
+    padding: 0 8px;
+  }
+  .clip-probe-single {
+    /* exactly one line box at arabic-reading-lg */
+    height: calc(27px * 1.95);
+    white-space: nowrap;
+  }
+  .clip-probe-wrap {
+    /* forced 2-line wrap at arabic-reading-lg — tests inter-line collision
+       AND edge clipping of the 2-line block */
+    width: 230px;
+    height: calc(27px * 1.95 * 2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    direction: rtl;
+    align-content: flex-start;
+  }
+  .clip-probe .token { white-space: nowrap; }
+
+  #click-log {
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    padding: 10px 16px;
+    background: var(--surface-soft);
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--muted);
+    min-height: 18px;
+  }
+  footer {
+    max-width: 1000px;
+    margin: 24px auto;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  code { font-family: ui-monospace, "JetBrains Mono", monospace; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Spike scratch — RTL/Arabic token rendering (issue #5)</h1>
+  <p>NOT product code. Throwaway page for the walking-skeleton RTL/Arabic
+     token-rendering spike. Renders fully-vocalized MSA tokens as
+     individually-clickable spans, in two markup recipes × two candidate
+     fonts, at <code>arabic-reading-lg</code> (27px / 1.95) per
+     <code>DESIGN.md</code> §0. See
+     <code>../rtl-rendering-spike.md</code> for the findings this page
+     produced.</p>
+  <p>Click any token below to see its id logged. Automated checks run via
+     <code>window.runChecks()</code> after <code>window.__fontsLoaded</code>
+     is true.</p>
+</header>
+
+<div id="click-log">No token clicked yet.</div>
+
+<main id="app"></main>
+
+<footer>
+  Fonts: Amiri, Scheherazade New — Google Fonts webfonts, loaded live (no
+  vendored font files in this scratch page).
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var RLI = "⁧"; // RIGHT-TO-LEFT ISOLATE
+  var FSI = "⁨"; // FIRST STRONG ISOLATE
+  var PDI = "⁩"; // POP DIRECTIONAL ISOLATE
+  var ISOLATE_RE = /[⁦-⁩]/g;
+  // harakat: fathatan(064B)..sukun(0652) + dagger alif / superscript alef (0670)
+  var HARAKAT_RE = /[ً-ْٰ]/g;
+
+  // Fully-vocalized MSA tokens (per issue #5 body + arabic-validation.md
+  // examples). "salam" added beyond the issue's literal list specifically to
+  // stress-test the mandatory lam-alif (لا) ligature, since none of
+  // the issue's given tokens contain one — see findings doc "Methodology".
+  var TOKENS = [
+    { key: "maktaba", text: "مَكْتَبَة", gloss: "library / bookstore" },
+    { key: "kitab", text: "كِتاب", gloss: "book" },
+    { key: "qahwa", text: "قَهْوة", gloss: "coffee" },
+    { key: "salam", text: "سَلَام", gloss: "peace — lām-alif lig. stress test" }
+  ];
+
+  var SENTENCE = [
+    { key: "s-hadhihi", text: "هٰذِهِ", gloss: "this (fem.)" },
+    { key: "s-maktabatun", text: "مَكْتَبَةٌ", gloss: "library (nom. indef.)" },
+    { key: "s-kabiratun", text: "كَبِيرَةٌ", gloss: "big (fem. nom. indef.)" }
+  ];
+
+  var FONTS = [
+    { key: "amiri", cls: "font-amiri", label: "Amiri" },
+    { key: "scheherazade", cls: "font-scheherazade", label: "Scheherazade New" }
+  ];
+
+  var VARIANTS = [
+    { key: "bdi", label: "recipe A — <bdi dir=\"auto\"> per token (arabic-validation.md §7)" },
+    { key: "rli", label: "recipe B1 — explicit isolate: U+2067 RLI … U+2069 PDI" },
+    { key: "fsi", label: "recipe B2 — explicit isolate: U+2068 FSI … U+2069 PDI" }
+  ];
+
+  function stripIsolates(s) {
+    return s.replace(ISOLATE_RE, "");
+  }
+
+  function makeTokenEl(variant, id, canonicalText) {
+    var el, renderedText;
+    if (variant === "bdi") {
+      el = document.createElement("bdi");
+      el.setAttribute("dir", "auto");
+      renderedText = canonicalText;
+    } else {
+      el = document.createElement("span");
+      var mark = variant === "rli" ? RLI : FSI;
+      renderedText = mark + canonicalText + PDI;
+    }
+    el.className = "token";
+    el.tabIndex = 0;
+    el.dataset.id = id;
+    el.dataset.expected = canonicalText;
+    el.textContent = renderedText;
+    el.addEventListener("click", onTokenClick);
+    return el;
+  }
+
+  function onTokenClick(e) {
+    var el = e.currentTarget;
+    document.querySelectorAll(".token.token-active").forEach(function (t) {
+      t.classList.remove("token-active");
+    });
+    el.classList.add("token-active");
+    document.getElementById("click-log").textContent =
+      "clicked: " + el.dataset.id + '  →  "' + el.dataset.expected + '"';
+  }
+
+  function buildBlock(font, variant) {
+    var section = document.createElement("section");
+    section.className = "block arabic-reading-lg " + font.cls;
+    section.dataset.font = font.key;
+    section.dataset.variant = variant.key;
+
+    var h2 = document.createElement("h2");
+    h2.textContent = font.label + " — " + variant.key;
+    section.appendChild(h2);
+
+    var desc = document.createElement("p");
+    desc.className = "variant-desc";
+    desc.textContent = variant.label;
+    section.appendChild(desc);
+
+    var h3a = document.createElement("h3");
+    h3a.className = "subhead";
+    h3a.textContent = "Standalone tokens (click each)";
+    section.appendChild(h3a);
+
+    var row = document.createElement("div");
+    row.className = "row";
+    TOKENS.forEach(function (t) {
+      row.appendChild(makeTokenEl(variant.key, font.key + "-" + variant.key + "-" + t.key, t.text));
+    });
+    section.appendChild(row);
+
+    var h3b = document.createElement("h3");
+    h3b.className = "subhead";
+    h3b.textContent = "Sentence — هٰذِهِ مَكْتَبَةٌ كَبِيرَةٌ (“this is a big library”)";
+    section.appendChild(h3b);
+
+    var p = document.createElement("p");
+    p.className = "sentence";
+    p.setAttribute("dir", "rtl");
+    SENTENCE.forEach(function (t, i) {
+      if (i > 0) p.appendChild(document.createTextNode(" "));
+      p.appendChild(makeTokenEl(variant.key, font.key + "-" + variant.key + "-" + t.key, t.text));
+    });
+    section.appendChild(p);
+
+    var h3c = document.createElement("h3");
+    h3c.className = "subhead";
+    h3c.textContent = "Ḭarakát clip probes";
+    section.appendChild(h3c);
+
+    // Probe 1: single line, height locked to exactly one arabic-reading-lg
+    // line box — tests top/bottom edge clipping within the specified
+    // line-height.
+    var probeSingle = document.createElement("div");
+    probeSingle.className = "clip-probe clip-probe-single";
+    probeSingle.dataset.id = font.key + "-" + variant.key + "-clip-single";
+    SENTENCE.forEach(function (t, i) {
+      if (i > 0) probeSingle.appendChild(document.createTextNode(" "));
+      probeSingle.appendChild(
+        makeTokenEl(variant.key, font.key + "-" + variant.key + "-clip-single-" + t.key, t.text)
+      );
+    });
+    section.appendChild(probeSingle);
+
+    // Probe 2: forced 2-line wrap of the 4 standalone tokens — tests
+    // inter-line ḥarakāt collision plus edge clipping of the 2-line block.
+    var probeWrap = document.createElement("div");
+    probeWrap.className = "clip-probe clip-probe-wrap";
+    probeWrap.dataset.id = font.key + "-" + variant.key + "-clip-wrap";
+    TOKENS.forEach(function (t) {
+      probeWrap.appendChild(
+        makeTokenEl(variant.key, font.key + "-" + variant.key + "-clip-wrap-" + t.key, t.text)
+      );
+    });
+    section.appendChild(probeWrap);
+
+    return section;
+  }
+
+  function buildAll() {
+    var app = document.getElementById("app");
+    FONTS.forEach(function (font) {
+      VARIANTS.forEach(function (variant) {
+        app.appendChild(buildBlock(font, variant));
+      });
+    });
+  }
+
+  function harakatRanges(el) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    var ranges = [];
+    var node;
+    while ((node = walker.nextNode())) {
+      var s = node.textContent;
+      HARAKAT_RE.lastIndex = 0;
+      var m;
+      while ((m = HARAKAT_RE.exec(s))) {
+        var r = document.createRange();
+        r.setStart(node, m.index);
+        r.setEnd(node, m.index + 1);
+        var rect = r.getBoundingClientRect();
+        if (rect.width || rect.height) {
+          ranges.push({ char: m[0], codePoint: m[0].codePointAt(0).toString(16), rect: rect });
+        }
+      }
+    }
+    return ranges;
+  }
+
+  function runChecks() {
+    var results = { hitTest: [], roundTrip: [], clipping: [] };
+
+    document.querySelectorAll(".token").forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      var cx = rect.left + rect.width / 2;
+      var cy = rect.top + rect.height / 2;
+      var hitEl = document.elementFromPoint(cx, cy);
+      var hitToken = hitEl ? hitEl.closest(".token") : null;
+      results.hitTest.push({
+        id: el.dataset.id,
+        pass: hitToken === el,
+        hitTokenId: hitToken ? hitToken.dataset.id : null,
+        rect: { x: rect.x, y: rect.y, w: rect.width, h: rect.height }
+      });
+
+      var actualText = stripIsolates(el.textContent);
+      results.roundTrip.push({
+        id: el.dataset.id,
+        expected: el.dataset.expected,
+        actual: actualText,
+        pass: actualText === el.dataset.expected
+      });
+    });
+
+    document.querySelectorAll(".clip-probe").forEach(function (probe) {
+      var box = probe.getBoundingClientRect();
+      var marks = [];
+      probe.querySelectorAll(".token").forEach(function (el) {
+        marks = marks.concat(harakatRanges(el));
+      });
+      var clippedTop = marks.filter(function (m) { return m.rect.top < box.top - 0.5; });
+      var clippedBottom = marks.filter(function (m) { return m.rect.bottom > box.bottom + 0.5; });
+
+      // inter-line collision: any two marks whose vertical ranges overlap
+      // but whose tokens sit in different visual rows (row bucketed by
+      // rounded top of the mark's own token ancestor)
+      var collisions = 0;
+      for (var i = 0; i < marks.length; i++) {
+        for (var j = i + 1; j < marks.length; j++) {
+          var a = marks[i].rect, b = marks[j].rect;
+          var verticallySeparate = Math.abs(a.top - b.top) > 4; // different lines
+          var overlap = a.top < b.bottom && b.top < a.bottom;
+          if (verticallySeparate && overlap) collisions++;
+        }
+      }
+
+      results.clipping.push({
+        id: probe.dataset.id,
+        box: { top: box.top, bottom: box.bottom, height: box.height },
+        markCount: marks.length,
+        clippedTopCount: clippedTop.length,
+        clippedBottomCount: clippedBottom.length,
+        interLineCollisions: collisions,
+        marks: marks.map(function (m) {
+          return { char: m.char, codePoint: m.codePoint, top: m.rect.top, bottom: m.rect.bottom };
+        })
+      });
+    });
+
+    return results;
+  }
+  window.runChecks = runChecks;
+
+  function ensureFontsLoaded() {
+    var probes = [
+      document.fonts.load("400 27px Amiri", "مَكْتَبَة"),
+      document.fonts.load('400 27px "Scheherazade New"', "مَكْتَبَة")
+    ];
+    return Promise.all(probes)
+      .then(function () { return document.fonts.ready; })
+      .catch(function () { return document.fonts.ready; });
+  }
+
+  buildAll();
+  window.__fontsLoaded = false;
+  ensureFontsLoaded().then(function () {
+    window.__fontsLoaded = true;
+    document.body.setAttribute("data-fonts-ready", "true");
+  });
+})();
+</script>
+</body>
+</html>
