@@ -2,8 +2,10 @@
 # ADR §2.4 mechanism 4: no `lang === ` / `language === ` conditionals in
 # language-blind core code. Literal-text grep backstop for the AST rule in
 # eslint.config.mjs — catches the pattern regardless of parser/selector edge
-# cases. Scoped to exactly the three paths the ADR names: packages/engine,
-# apps/server/src (composition-root file excepted), apps/web/src/shell.
+# cases. Scoped to exactly the three paths the ADR names, anchored under
+# src/ per the 2026-07-02 operator layout directive (issue #6 amendment):
+# src/packages/engine, src/apps/server/src (composition-root file excepted),
+# src/apps/web/src/shell.
 #
 # Run from anywhere inside the repo. Exit 0 = gate clear, exit 1 = a
 # `lang === ` / `language === ` conditional was found outside the sanctioned
@@ -14,16 +16,16 @@ root="$(git rev-parse --show-toplevel)"
 cd "$root"
 
 scoped_paths=(
-  "packages/engine"
-  "apps/server/src"
-  "apps/web/src/shell"
+  "src/packages/engine"
+  "src/apps/server/src"
+  "src/apps/web/src/shell"
 )
 
 # The ONE sanctioned exception, mirroring eslint.config.mjs's
 # COMPOSITION_ROOT_FILE: the composeApp literal-import registry (owned by
 # issue #16) is expected to name languages.
 exceptions=(
-  "apps/server/src/composeApp.ts"
+  "src/apps/server/src/composeApp.ts"
 )
 
 # Matches `lang === `, `lang !== `, `language === `, `language !== `,
@@ -46,7 +48,14 @@ is_comment_line() {
 
 fail=0
 for scoped_path in "${scoped_paths[@]}"; do
-  [ -d "$scoped_path" ] || continue
+  # Gate self-defense (same inert-gate class as PR #25 review finding 1): a
+  # scoped path that doesn't exist means the gate's anchors have drifted
+  # from the tree (e.g. a rename that didn't re-anchor this script) — fail
+  # loudly rather than silently scanning nothing.
+  if [ ! -d "$scoped_path" ]; then
+    echo "FAILED: scoped path '$scoped_path' does not exist — the gate's path anchors have drifted from the tree; re-anchor scoped_paths in $0."
+    exit 1
+  fi
   while IFS= read -r -d '' file; do
     is_exception=0
     for ex in "${exceptions[@]}"; do

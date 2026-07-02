@@ -6,10 +6,12 @@
 # and #19 have somewhere to fill in real `build`/`image` entries.
 #
 # Profiles:
-#   server      — the Node/TS SSE server (apps/server), needed by every leg.
-#   sidecar-ar  — the Arabic verification sidecar (real image lands with #7).
-#   sidecar-zh  — the Chinese verification sidecar (real image lands later).
-#   mock        — the Prism "null sidecar" serving packages/contract's
+#   server      — the Node/TS SSE server (src/apps/server), needed by every leg.
+#   sidecar-ar  — the Arabic verification sidecar (build context
+#                 src/sidecars/ar; real image lands with #7).
+#   sidecar-zh  — the Chinese verification sidecar (build context
+#                 src/sidecars/zh; real image lands later).
+#   mock        — the Prism "null sidecar" serving src/packages/contract's
 #                 openapi.yaml once it exists (#7), letting #9 (hot path) and
 #                 frontend work proceed with zero Python.
 name: language-agent
@@ -17,7 +19,7 @@ name: language-agent
 services:
   server:
     profiles: ["server", "ar", "zh", "mock"]
-    # Placeholder: apps/server has no Dockerfile yet. Real build context
+    # Placeholder: src/apps/server has no Dockerfile yet. Real build context
     # lands with issue #9 (hot path) / the walking-skeleton deploy child.
     image: "language-agent/server:placeholder"
     environment:
@@ -27,19 +29,21 @@ services:
 
   sidecar-ar:
     profiles: ["sidecar-ar", "ar"]
-    # Placeholder: real image + Dockerfile land with issue #7's opening PR.
+    # Placeholder: real image + Dockerfile (build context src/sidecars/ar)
+    # land with issue #7's opening PR.
     image: "language-agent/sidecar-ar:placeholder"
 
   sidecar-zh:
     profiles: ["sidecar-zh", "zh"]
-    # Placeholder: real image lands with the zh walking-skeleton sidecar
-    # child (deterministic-legs-only per the dual-instance amendment).
+    # Placeholder: real image (build context src/sidecars/zh) lands with the
+    # zh walking-skeleton sidecar child (deterministic-legs-only per the
+    # dual-instance amendment).
     image: "language-agent/sidecar-zh:placeholder"
 
   mock:
     profiles: ["mock"]
     # Placeholder: the real Prism mock (stoplight/prism) serving
-    # packages/contract/sidecar/openapi.yaml lands with issue #7's
+    # src/packages/contract/sidecar/openapi.yaml lands with issue #7's
     # spec-first opening PR — that file does not exist yet.
     image: "stoplight/prism:4"
     command: "mock -h 0.0.0.0 /placeholder-openapi.yaml"

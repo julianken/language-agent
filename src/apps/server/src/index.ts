@@ -2,7 +2,7 @@
 //
 // This app is the composition root: the ONLY package permitted to import a
 // `@la/lang-*` package (ADR §2.4 rule a) via the literal-specifier registry
-// in `composeApp`. `apps/server/src/composeApp.ts` (once it exists — owned
+// in `composeApp`. `src/apps/server/src/composeApp.ts` (once it exists — owned
 // by issue #16) is the sole exception to the no-`lang===` gate
 // (eslint.config.mjs, scripts/check-no-lang-conditional.sh) and to the
 // dependency-cruiser lang-import rule.

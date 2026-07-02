@@ -9,14 +9,18 @@
 // devDependency install) resolves a CommonJS config regardless of any
 // package.json "type" field, sidestepping ESM/CJS ambiguity entirely.
 
+// All product code is anchored under src/ (operator layout directive
+// 2026-07-02; see issue #6's amendment). Every path regex below is
+// src/-anchored — a re-anchor that misses one regex silently disarms that
+// rule, the same inert-gate class as PR #25 review finding 1.
 const PACKAGE_ROOTS = [
-  "packages/contract",
-  "packages/engine",
-  "packages/lang-fake",
-  "packages/lang-ar",
-  "packages/lang-conformance",
-  "apps/server",
-  "apps/web",
+  "src/packages/contract",
+  "src/packages/engine",
+  "src/packages/lang-fake",
+  "src/packages/lang-ar",
+  "src/packages/lang-conformance",
+  "src/apps/server",
+  "src/apps/web",
 ];
 
 // Rule (b): no deep imports across package roots — only a package's entry
@@ -34,7 +38,7 @@ const deepImportRules = PACKAGE_ROOTS.map((root) => ({
     `"exports" map) is a public import surface. A relative import that ` +
     `reaches into ${root}/src or ${root}/dist from OUTSIDE that package ` +
     "bypasses the exports map.",
-  from: { path: "^(packages|apps)/", pathNot: `^${root}/` },
+  from: { path: "^src/(packages|apps)/", pathNot: `^${root}/` },
   to: {
     path: `^${root}/(src|dist)/`,
     dependencyTypes: ["local"],
@@ -48,12 +52,12 @@ module.exports = {
       name: "core-never-imports-lang-packs",
       severity: "error",
       comment:
-        "ADR §2.4 rule (a): packages/engine and packages/contract must " +
-        "never import a language pack. Only the composition root " +
-        "(apps/server, via composeApp's literal-import registry) may " +
+        "ADR §2.4 rule (a): src/packages/engine and src/packages/contract " +
+        "must never import a language pack. Only the composition root " +
+        "(src/apps/server, via composeApp's literal-import registry) may " +
         "select one.",
-      from: { path: "^packages/(engine|contract)/" },
-      to: { path: "^packages/lang-[^/]+/" },
+      from: { path: "^src/packages/(engine|contract)/" },
+      to: { path: "^src/packages/lang-[^/]+/" },
     },
     ...deepImportRules,
     {
@@ -63,8 +67,8 @@ module.exports = {
         "ADR §2.4 rule (c): @la/contract has zero runtime dependencies on " +
         "the rest of the workspace (engine, lang-*, and the apps all " +
         "depend ON it, never the reverse).",
-      from: { path: "^packages/contract/" },
-      to: { path: "^(packages|apps)/(?!contract/)[^/]+/" },
+      from: { path: "^src/packages/contract/" },
+      to: { path: "^src/(packages|apps)/(?!contract/)[^/]+/" },
     },
     {
       name: "no-circular",

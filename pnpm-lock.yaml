@@ -24,19 +24,19 @@ importers:
         specifier: ^4.1.9
         version: 4.1.9(vite@8.1.2)
 
-  apps/server: {}
+  src/apps/server: {}
 
-  apps/web: {}
+  src/apps/web: {}
 
-  packages/contract: {}
+  src/packages/contract: {}
 
-  packages/engine: {}
+  src/packages/engine: {}
 
-  packages/lang-ar: {}
+  src/packages/lang-ar: {}
 
-  packages/lang-conformance: {}
+  src/packages/lang-conformance: {}
 
-  packages/lang-fake: {}
+  src/packages/lang-fake: {}
 
 packages:
 

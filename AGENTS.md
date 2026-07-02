@@ -127,7 +127,9 @@ When unsure whether something is sensitive, treat it as sensitive and keep it ou
 ## Working in the tree
 Run `git status` / `ls` for current state — don't trust a snapshot here. Build/test commands, the package manager, and architecture notes get added to THIS file (AGENTS.md) once they actually exist. Until they do, don't claim they exist — the binding rule is **Agent guardrails** → anti-invention (above); the current lifecycle phase is `INSTANCE.md` → "Status".
 
-**Package manager:** pnpm, pinned via the root `package.json` `packageManager` field (`corepack enable` picks it up automatically; `corepack use pnpm@<version>` to bump). Node `>=24` (see `package.json` `engines`). This is a pnpm workspace (`pnpm-workspace.yaml`: `packages/*`, `apps/*` — `sidecars/` is deliberately outside the workspace, confirmed by `pnpm -r list` not listing it).
+**Layout:** all product code lives under `src/` (`src/packages/*`, `src/apps/*`, `src/sidecars/*` — operator layout directive 2026-07-02, issue #6 amendment); `infra/` is reserved for the Terraform tree (#11) and does not exist yet.
+
+**Package manager:** pnpm, pinned via the root `package.json` `packageManager` field (`corepack enable` picks it up automatically; `corepack use pnpm@<version>` to bump). Node `>=24` (see `package.json` `engines`). This is a pnpm workspace (`pnpm-workspace.yaml`: `src/packages/*`, `src/apps/*` — `src/sidecars/` is deliberately outside the workspace, confirmed by `pnpm -r list` not listing it).
 
 **Commands (run from the repo root):**
 - `pnpm install` — install the workspace.
@@ -135,6 +137,6 @@ Run `git status` / `ls` for current state — don't trust a snapshot here. Build
 - `pnpm run test` — the workspace's Vitest suites (fans out via `pnpm -r --if-present run test`; most packages are still placeholders and pass via `--passWithNoTests`).
 - `pnpm run build` — `tsc` build across every package (fans out via `pnpm -r --if-present run build`; each package builds via its `tsconfig.build.json`, which excludes test files from the emitted `dist/`).
 - `pnpm run boundary:deps` — the dependency-cruiser boundary gate (ADR §2.4 rules a–d: `docs/decisions/language-module-architecture.md`); config at `.dependency-cruiser.cjs`. **Run `pnpm run build` first**: the packages' `exports` maps resolve `@la/*` to `dist/`, so the import graph is only resolvable after a build — the config's `no-unresolvable-la-imports` rule fails loudly on any unresolved `@la/*` import rather than letting the gate silently no-op.
-- `pnpm run boundary:lang-conditional` — the no-`lang===`/`language===` gate (ADR §2.4 mechanism 4): an ESLint AST rule (`eslint.config.mjs`) plus a literal-text grep backstop (`scripts/check-no-lang-conditional.sh`), scoped to `packages/engine`, `apps/server/src` (composition-root file excepted), `apps/web/src/shell`.
+- `pnpm run boundary:lang-conditional` — the no-`lang===`/`language===` gate (ADR §2.4 mechanism 4): an ESLint AST rule (`eslint.config.mjs`) plus a literal-text grep backstop (`scripts/check-no-lang-conditional.sh`), scoped to `src/packages/engine`, `src/apps/server/src` (composition-root file excepted), `src/apps/web/src/shell`.
 
 CI (`.github/workflows/ci.yml`, alongside the pre-existing `scaffolding.yml`) runs install → typecheck → build → boundary:deps → boundary:lang-conditional → test on every push and PR (build precedes `boundary:deps` on purpose — see above).
