@@ -78,6 +78,16 @@ def create_app(
     )
     app.state.sidecar = state
 
+    @app.exception_handler(Exception)
+    async def unhandled_error(_request: Request, _exc: Exception):
+        # An unexpected failure must still ride the contract's Error envelope
+        # (PR #30 review) — never Starlette's plain-text "Internal Server
+        # Error". Generic message on purpose: internals never leak the wire.
+        return JSONResponse(
+            status_code=500,
+            content={"code": "internal-error", "message": "unexpected internal error"},
+        )
+
     @app.exception_handler(StarletteHTTPException)
     async def http_error(_request: Request, exc: StarletteHTTPException):
         # Every error rides the contract's Error envelope — FastAPI's default

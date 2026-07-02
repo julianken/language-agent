@@ -109,3 +109,24 @@ def test_error_envelope_422_for_semantic_invalidity(client):
         assert response.status_code == 422
         err = Error.model_validate(response.json())
         assert err.code == "invalid-request"
+
+
+def test_error_envelope_500_for_unexpected_exception(voter):
+    # PR #30 review suggestion: an unexpected in-gate failure must return the
+    # contract's Error envelope with a 500, never Starlette's plain-text
+    # default. Force the failure by making the gate itself raise.
+    app = create_app(voter=voter, auto_warmup=False)
+    with TestClient(app, raise_server_exceptions=False) as client:
+        state = app.state.sidecar
+        state.warmup()
+
+        def boom(_request):
+            raise RuntimeError("forced test failure")
+
+        state.gate.verify = boom
+        response = client.post("/v1/verify", json={"targetText": "茶", "intents": []})
+        assert response.status_code == 500
+        err = Error.model_validate(response.json())
+        assert err.code == "internal-error"
+        # Internals never leak onto the wire.
+        assert "forced test failure" not in err.message
