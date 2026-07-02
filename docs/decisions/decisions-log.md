@@ -171,3 +171,8 @@ The product is a **capable conversational AI AGENT**, not a document reader. Cor
 - **Full architecture + migration + risks:** `docs/decisions/design-system-inheritance.md` (from the `design-system-inheritance-research` workflow, 6 research angles + synthesis).
 - **Status:** ADR + `tokens.json` landed this PR; Figma CORE library variables (Primitives/Semantic/Locale[ar,zh]) building next; the component library + per-instance refactor are follow-ups.
 - **Drift noted (separate cleanup):** `INSTANCE.md` / `motion-spec.md` / `user-stories.md` reference v3 + `brainstorm-v2` Figma pages that don't exist in the live file (only `brainstorm-v1` is present) — to reconcile.
+
+## Hosting & IaC — walking-skeleton compute cut (2026-07-02)
+- **Decision (LOCKED, per issue #4 spike):** hybrid split matching operator production precedent — React frontend → Cloudflare Pages (`language-agent.pages.dev`); Node/TS SSE server + Python verification sidecar → GCP Cloud Run (one service, sidecar as second container); Terraform single tree spanning `google`+`cloudflare` providers, GCS remote state, WIF/GitHub-OIDC (the bird-watch / topic-synthesis / violin-scales patterns).
+- **Measured (the spike's numbers):** naive sidecar image **5.47 GB** (PyTorch + CUDA pulled transitively — confirmed); deterministic gate needs none of it; **pruned image 553 MB**, analyzer cold load ~1.1 s, **RSS ≈ 399 MB** ⇒ 1 GiB sidecar memory. Cloudflare Containers seriously considered, named as understudy with an explicit revisit trigger.
+- Full ADR: `docs/decisions/hosting-walking-skeleton.md`. Reconciled same PR: `INSTANCE.md` (deploy target), `architecture.md` §6 (annotation).
