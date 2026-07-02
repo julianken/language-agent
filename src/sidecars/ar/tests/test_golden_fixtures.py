@@ -218,6 +218,23 @@ def test_red_pure_latin_text(client, ar_payload_validator) -> None:
     assert token["annotations"]["payload"]["morphology"]["pos"] == "unknown"
 
 
+def test_red_diacritics_only_token_keeps_leg1_reason(client, ar_payload_validator) -> None:
+    # Evidence-string honesty (PR #29 round-2 review): a diacritics-only
+    # token (empty skeleton) is RED via leg 1's accurate "diacritics-only"
+    # reason — the camel-morph leg states there is nothing to analyze and
+    # must NOT mislabel the token "out-of-world".
+    body = _verify(client, "\u064e\u064f")  # bare fatha + damma, no letters
+    _assert_token_invariants(body, ar_payload_validator)
+    (token,) = body["tokens"]
+    assert token["band"] == "RED"
+    legs = {e["legId"]: e for e in token["evidence"]}
+    assert legs["dediac-roundtrip"]["pass"] is False
+    assert "diacritics-only" in legs["dediac-roundtrip"]["detail"]
+    assert legs["camel-morph"]["pass"] is False
+    assert "out-of-world" not in legs["camel-morph"]["detail"]
+    assert "no skeleton to analyze" in legs["camel-morph"]["detail"]
+
+
 def test_passthrough_echo_never_constitutes_membership() -> None:
     # Belt 2, tested independently of belt 1: even for an Arabic-script
     # skeleton, an analyzer answer consisting only of passthrough-class

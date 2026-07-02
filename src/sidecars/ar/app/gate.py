@@ -184,12 +184,23 @@ def _verify_word(
     evidence = [_evidence(LEG_DEDIAC, leg1.ok, leg1.detail)]
     skeleton = leg1.skeleton or skeleton_hint
 
+    # Empty skeleton (a diacritics-only token): leg 1 already failed with
+    # the accurate reason — leg 2 just states there is nothing to analyze
+    # rather than mislabeling the token "out-of-world" (PR #29 round-2
+    # review suggestion: evidence-string honesty; band is RED either way).
+    if not skeleton:
+        evidence.append(
+            _evidence(LEG_MORPH, False, "no skeleton to analyze (the dediac-roundtrip evidence carries the reason)")
+        )
+        return Band.RED, evidence, None, False
+
     # Belt 1 — the out-of-world rule (fail closed): the hot path sends pure
     # verified-Arabic targetText, so a word-kind token with no
-    # Arabic-script codepoints in its skeleton (a space/NBSP-separated
-    # Latin word, presentation-form junk, …) is out-of-world by
-    # construction. Band RED before the analyzer is even consulted — its
-    # foreign-passthrough echo must never get the chance to "match".
+    # Arabic-script codepoints in its (non-empty) skeleton (a
+    # space/NBSP-separated Latin word, presentation-form junk, …) is
+    # out-of-world by construction. Band RED before the analyzer is even
+    # consulted — its foreign-passthrough echo must never get the chance
+    # to "match".
     if not any(c in AR_LETTERS_CHARSET for c in skeleton):
         evidence.append(
             _evidence(
