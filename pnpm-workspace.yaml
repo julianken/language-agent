@@ -12,6 +12,10 @@ packages:
 # load-bearing across packages (ADR §5.1: "pnpm catalogs pin zod/react/vitest
 # so the two lang packages can never drift onto different zod majors — schema
 # identity is load-bearing"). Packages reference these as `"zod": "catalog:"`.
-# react/vitest join the catalog when a package first depends on them directly.
+# react joins the catalog when a package first depends on it directly.
+# vitest joined with @la/lang-conformance (#17): the TCK's dist imports
+# `vitest` at test runtime, so the runner instance and the imported API must
+# resolve to the same package — exactly the identity-is-load-bearing case.
 catalog:
   zod: ^4.4.3
+  vitest: ^4.1.9

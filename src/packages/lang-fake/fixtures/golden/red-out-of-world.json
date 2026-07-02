@@ -1,0 +1,31 @@
+{
+  "name": "refusal: an out-of-closed-world token is banded RED (the only path to RED)",
+  "targetText": "zip qux",
+  "intents": [{ "id": "count", "description": "count to one" }],
+  "expected": {
+    "tokens": [
+      { "surface": "zip", "band": "GREEN" },
+      { "surface": "qux", "band": "RED" }
+    ],
+    "annotations": [
+      {
+        "lexemeId": "zip",
+        "gloss": "one",
+        "glyphs": [
+          { "glyph": "z", "hint": "Z" },
+          { "glyph": "i", "hint": "I" },
+          { "glyph": "p", "hint": "P" }
+        ]
+      },
+      {
+        "lexemeId": "unknown:qux",
+        "gloss": "",
+        "glyphs": [
+          { "glyph": "q", "hint": "Q" },
+          { "glyph": "u", "hint": "U" },
+          { "glyph": "x", "hint": "X" }
+        ]
+      }
+    ]
+  }
+}

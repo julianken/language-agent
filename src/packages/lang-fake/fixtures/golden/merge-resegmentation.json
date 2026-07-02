@@ -1,0 +1,33 @@
+{
+  "name": "re-segmentation by merge: two whitespace chunks verify as ONE token (naive split is wrong)",
+  "targetText": "wug bo zip",
+  "intents": [{ "id": "describe", "description": "name a rainbow" }],
+  "expected": {
+    "tokens": [
+      { "surface": "wug bo", "band": "GREEN" },
+      { "surface": "zip", "band": "GREEN" }
+    ],
+    "annotations": [
+      {
+        "lexemeId": "wugbo",
+        "gloss": "rainbow",
+        "glyphs": [
+          { "glyph": "w", "hint": "W" },
+          { "glyph": "u", "hint": "U" },
+          { "glyph": "g", "hint": "G" },
+          { "glyph": "b", "hint": "B" },
+          { "glyph": "o", "hint": "O" }
+        ]
+      },
+      {
+        "lexemeId": "zip",
+        "gloss": "one",
+        "glyphs": [
+          { "glyph": "z", "hint": "Z" },
+          { "glyph": "i", "hint": "I" },
+          { "glyph": "p", "hint": "P" }
+        ]
+      }
+    ]
+  }
+}

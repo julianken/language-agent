@@ -1,0 +1,51 @@
+{
+  "name": "discontinuous span group: mip … tok share one spanGroup and one compound learnable unit; both halves are allowlist members (never anglicized)",
+  "targetText": "mip zip tok",
+  "intents": [{ "id": "retrieve", "description": "pick the one up" }],
+  "expected": {
+    "tokens": [
+      {
+        "surface": "mip",
+        "band": "GREEN",
+        "spanGroup": "sg:miptok:0",
+        "neverAnglicize": true
+      },
+      { "surface": "zip", "band": "GREEN" },
+      {
+        "surface": "tok",
+        "band": "GREEN",
+        "spanGroup": "sg:miptok:0",
+        "neverAnglicize": true
+      }
+    ],
+    "annotations": [
+      {
+        "lexemeId": "miptok",
+        "gloss": "retrieve",
+        "glyphs": [
+          { "glyph": "m", "hint": "M" },
+          { "glyph": "i", "hint": "I" },
+          { "glyph": "p", "hint": "P" }
+        ]
+      },
+      {
+        "lexemeId": "zip",
+        "gloss": "one",
+        "glyphs": [
+          { "glyph": "z", "hint": "Z" },
+          { "glyph": "i", "hint": "I" },
+          { "glyph": "p", "hint": "P" }
+        ]
+      },
+      {
+        "lexemeId": "miptok",
+        "gloss": "retrieve",
+        "glyphs": [
+          { "glyph": "t", "hint": "T" },
+          { "glyph": "o", "hint": "O" },
+          { "glyph": "k", "hint": "K" }
+        ]
+      }
+    ]
+  }
+}
