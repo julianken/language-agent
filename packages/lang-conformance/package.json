@@ -1,0 +1,20 @@
+{
+  "name": "@la/lang-conformance",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Placeholder package root only. Real content (the describeLanguagePack TCK, fast-check laws, golden-fixture harness, probeSidecar) is exclusively owned by issue #17 (lang-conformance-tck). Depends only on @la/contract per ADR §4.1.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run --passWithNoTests"
+  }
+}

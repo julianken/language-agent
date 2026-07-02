@@ -6,6 +6,10 @@ node_modules/
 out/
 build/
 
+# TypeScript package build output (tsc -p <pkg>/tsconfig.build.json)
+dist/
+*.tsbuildinfo
+
 # Misc
 .DS_Store
 *.log

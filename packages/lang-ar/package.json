@@ -1,0 +1,20 @@
+{
+  "name": "@la/lang-ar",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Placeholder package root only. Real content (the Arabic LanguagePack, /react and /assets subpath exports) is owned by issue #7 (Arabic sidecar) and successors (#8, #10, #11).",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run --passWithNoTests"
+  }
+}

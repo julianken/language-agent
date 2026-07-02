@@ -1,0 +1,7 @@
+# pnpm workspace globs. `sidecars/` is deliberately NOT listed — it stays
+# outside the pnpm workspace entirely (Python, its own per-language tooling;
+# see docs/decisions/language-module-architecture.md §5.1). Confirmed by
+# `pnpm -r list` not listing sidecars/ar or sidecars/zh.
+packages:
+  - "packages/*"
+  - "apps/*"

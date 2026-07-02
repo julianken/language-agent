@@ -1,0 +1,20 @@
+{
+  "name": "@la/engine",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Placeholder package root only. Engine is language-blind and depends ONLY on @la/contract at runtime — never a lang-* package (ADR §2.4 rule a). Real content (turn loop, scheduler cascade, tuple store) lands with issue #9 and successors.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run --passWithNoTests"
+  }
+}

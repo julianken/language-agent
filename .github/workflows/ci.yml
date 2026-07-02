@@ -1,0 +1,49 @@
+name: ci
+
+# The real build/test CI for application code, alongside (never replacing)
+# the pre-existing scaffolding.yml gate. Runs the pnpm workspace's
+# install → typecheck → boundary gates → test → build pipeline, plus the
+# ADR §2.4 boundary-enforcement gates (dependency-cruiser, the no-`lang===`
+# lint/grep gate) so they fire on every PR from the first commit.
+on: [push, pull_request]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Boundary gate — dependency-cruiser (ADR §2.4 rules a–d)
+        run: pnpm run boundary:deps
+
+      - name: Boundary gate — no lang===/language=== conditionals (ADR §2.4 mechanism 4)
+        run: pnpm run boundary:lang-conditional
+
+      - name: Test
+        run: pnpm run test
+
+      - name: Build
+        run: pnpm run build

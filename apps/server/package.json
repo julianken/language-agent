@@ -1,0 +1,20 @@
+{
+  "name": "@la/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Placeholder package root only. This is the ONLY package permitted to depend on a @la/lang-* package (ADR §2.4 rule a) — it is the composition root. Real content (composeApp, the literal-import registry, boot validation) is owned by issue #16; the hot-path turn loop by #9.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run --passWithNoTests"
+  }
+}
