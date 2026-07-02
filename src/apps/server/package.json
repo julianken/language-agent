@@ -3,19 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "The composition root (ADR §2). The ONLY package permitted to depend on @la/lang-* packages (ADR §2.4 rule a): composeApp — pure DI, no container — with the literal-import registry, the contractVersion equality assert, the manifest parse, deriveCapabilities, and asset existence + spine-schema boot validation. The hot-path turn loop is owned by #9.",
+  "description": "The composition root (ADR §2). The ONLY package permitted to depend on @la/lang-* packages (ADR §2.4 rule a): composeApp — pure DI, no container — with the literal-import registry, the contractVersion equality assert, the manifest parse, deriveCapabilities, and asset existence + spine-schema boot validation. Also (issue #10) the fixture-mode HTTP surface: the SSE endpoint streaming fixture tutor-message tokens[] with the hosting ADR's anti-buffering headers, and the shared learning-event route. The real hot-path turn loop that replaces the fixture token source is owned by #9.",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./http": {
+      "types": "./dist/http/index.d.ts",
+      "default": "./dist/http/index.js"
     }
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "fixtures"
+  ],
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "serve:fixtures": "node dist/http/main.js"
   },
   "dependencies": {
     "@la/contract": "workspace:*",

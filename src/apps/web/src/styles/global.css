@@ -1,0 +1,14 @@
+/* Minimal global reset — everything else binds to the --la-* custom
+ * properties emitted by src/tokens/applyTokens.ts (the tokens.json bridge).
+ * No global direction is set here (dual-instance rule). */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--la-color-canvas);
+  color: var(--la-color-body);
+  font-family: var(--la-font-ui);
+}

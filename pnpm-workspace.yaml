@@ -12,6 +12,16 @@ packages:
 # load-bearing across packages (ADR §5.1: "pnpm catalogs pin zod/react/vitest
 # so the two lang packages can never drift onto different zod majors — schema
 # identity is load-bearing"). Packages reference these as `"zod": "catalog:"`.
-# react/vitest join the catalog when a package first depends on them directly.
+# react joined the catalog with issue #10 (the renderer shell and every
+# lang-*/react entrant must share ONE React instance — a version split
+# breaks hooks across the registry boundary). vitest joins when a package
+# first depends on it directly.
 catalog:
   zod: ^4.4.3
+  react: 19.2.7
+  react-dom: 19.2.7
+  "@types/react": 19.2.17
+  "@types/react-dom": 19.2.3
+
+minimumReleaseAgeExclude:
+  - vite@8.1.3

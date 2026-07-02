@@ -1,0 +1,228 @@
+{
+  "type": "tutor-message",
+  "schemaVersion": "1.0",
+  "messageId": "m_ar_0001",
+  "role": "assistant",
+  "lang": "ar",
+  "blend": {
+    "ratio": 0.67,
+    "ceiling": 0.7,
+    "advancedBy": "mastery",
+    "guard": "clause-coherent",
+    "unknownTokenShare": 0.0
+  },
+  "tokens": [
+    {
+      "id": "t0",
+      "text": "سَلَام",
+      "lang": "ar",
+      "kind": "word",
+      "status": "learning",
+      "band": "GREEN",
+      "annotations": {
+        "diac": "سَلَام",
+        "skeleton": "سلام",
+        "vowelState": "full",
+        "morphology": {
+          "lemma": "سَلَام",
+          "root": "س ل م",
+          "pattern": "فَعَال",
+          "pos": "NOUN",
+          "gloss": "peace"
+        }
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "vowelFadeLexical",
+            "unit": {
+              "kind": "lemma",
+              "id": "سَلَام#peace"
+            },
+            "level": "partial"
+          },
+          {
+            "dim": "vowelFadeCaseEnding",
+            "unit": {
+              "kind": "lemma",
+              "id": "سَلَام#peace"
+            },
+            "level": "faded"
+          }
+        ],
+        "blend": {
+          "anglicize": false
+        },
+        "dueness": {
+          "dueNow": true
+        }
+      }
+    },
+    {
+      "id": "t1",
+      "text": "!",
+      "lang": "ar",
+      "kind": "punct",
+      "band": "GREEN"
+    },
+    {
+      "id": "t2",
+      "text": "هٰذِهِ",
+      "lang": "ar",
+      "kind": "word",
+      "status": "known",
+      "band": "GREEN",
+      "annotations": {
+        "diac": "هٰذِهِ",
+        "skeleton": "هذه",
+        "vowelState": "full",
+        "morphology": {
+          "lemma": "هٰذِهِ",
+          "root": "ه ذ",
+          "pattern": "اسم إشارة",
+          "pos": "PRON",
+          "gloss": "this"
+        }
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "vowelFadeLexical",
+            "unit": {
+              "kind": "lemma",
+              "id": "هٰذِهِ#this"
+            },
+            "level": "faded"
+          },
+          {
+            "dim": "vowelFadeCaseEnding",
+            "unit": {
+              "kind": "lemma",
+              "id": "هٰذِهِ#this"
+            },
+            "level": "faded"
+          }
+        ],
+        "blend": {
+          "anglicize": false
+        },
+        "dueness": {
+          "dueNow": true
+        }
+      }
+    },
+    {
+      "id": "t3",
+      "text": "مَكْتَبَةٌ",
+      "lang": "ar",
+      "kind": "word",
+      "status": "new",
+      "band": "GREEN",
+      "annotations": {
+        "diac": "مَكْتَبَةٌ",
+        "skeleton": "مكتبة",
+        "vowelState": "full",
+        "morphology": {
+          "lemma": "مَكْتَبَة",
+          "root": "ك ت ب",
+          "pattern": "مَفْعَلَة",
+          "pos": "NOUN",
+          "gloss": "library"
+        }
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "vowelFadeLexical",
+            "unit": {
+              "kind": "lemma",
+              "id": "مَكْتَبَة#library"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "vowelFadeCaseEnding",
+            "unit": {
+              "kind": "lemma",
+              "id": "مَكْتَبَة#library"
+            },
+            "level": "full"
+          }
+        ],
+        "blend": {
+          "anglicize": false
+        },
+        "dueness": {
+          "dueNow": true
+        }
+      }
+    },
+    {
+      "id": "t4",
+      "text": "كَبِيرَةٌ",
+      "lang": "ar",
+      "kind": "word",
+      "status": "learning",
+      "band": "YELLOW",
+      "annotations": {
+        "diac": "كَبِيرَةٌ",
+        "skeleton": "كبيرة",
+        "vowelState": "full",
+        "morphology": {
+          "lemma": "كَبِير",
+          "root": "ك ب ر",
+          "pattern": "فَعِيل",
+          "pos": "ADJ",
+          "gloss": "big"
+        }
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "vowelFadeLexical",
+            "unit": {
+              "kind": "lemma",
+              "id": "كَبِير#big"
+            },
+            "level": "faded"
+          },
+          {
+            "dim": "vowelFadeCaseEnding",
+            "unit": {
+              "kind": "lemma",
+              "id": "كَبِير#big"
+            },
+            "level": "full"
+          }
+        ],
+        "blend": {
+          "anglicize": false
+        },
+        "dueness": {
+          "dueNow": true
+        }
+      }
+    },
+    {
+      "id": "t5",
+      "text": "—",
+      "lang": "en",
+      "kind": "punct",
+      "status": "scaffold"
+    },
+    {
+      "id": "t6",
+      "text": "that means:",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "t7",
+      "text": "this is a big library!",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    }
+  ]
+}

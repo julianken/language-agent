@@ -1,11 +1,22 @@
-// @la/web shell — language-blind by construction.
-//
-// `src/apps/web/src/shell` is one of the three paths the no-`lang===` gate
-// covers (ADR §2.4 mechanism 4, alongside src/packages/engine and
-// src/apps/server/src). It renders `<TokenRenderer token={t}/>` generically and
-// must never branch on `lang === ` / `language === `.
-//
-// Real content lands with issue #10 and successors. This file exists only
-// so the directory (and the boundary gate's scope) exist from the first
-// commit.
-export const SHELL_PLACEHOLDER = true as const;
+/**
+ * @la/web shell — language-blind by construction (ADR §2.4 mechanism 4:
+ * this path is lint/grep-gated against language conditionals, and issue
+ * #10's gates additionally hold it free of any script-direction
+ * vocabulary). It renders tokens generically through the `(lang, kind)`
+ * registry; packs register their entrants from the app's composition
+ * layer, never from here.
+ */
+
+export { RendererRegistry } from "./registry.js";
+export type { RendererRegistryEntry } from "./registry.js";
+export { TokenStream } from "./TokenStream.js";
+export type { TokenStreamProps } from "./TokenStream.js";
+export { useTokenStream } from "./useTokenStream.js";
+export type { TokenStreamState } from "./useTokenStream.js";
+export { makeLearningEventSink } from "./learning-events.js";
+export type {
+  LearningEventSink,
+  TokenRendererProps,
+  WireMessageMeta,
+  WireToken,
+} from "./stream-types.js";

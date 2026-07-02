@@ -3,11 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "The Arabic language pack. v0 (issue #7 spec-first opening PR): the canonical annotation zod schema — seam 3's `schema` half ONLY (encode/decode are #9's pack wiring) — plus the GENERATED ar-annotations.schema.json artifact (`pnpm run generate:annotation-schema`, freshness-gated in CI). The full LanguagePack, /react and /assets subpath exports are owned by issue #7's later PRs and successors (#8, #10, #11).",
+  "description": "The Arabic language pack. v0: the canonical annotation zod schema (seam 3's `schema` half — encode/decode are #9's pack wiring) + the GENERATED ar-annotations.schema.json artifact, plus (issue #10) the `/react` renderer entrant — seam 6 manifest, RTL pack container, <bdi dir=\"auto\"> word token with the per-(dimension × unit) ḥarakāt fade, root/pattern breakdown panel, and the pack's portable-story leg. The full LanguagePack export is owned by #9/#11.",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
     }
   },
   "main": "./dist/index.js",
@@ -19,6 +23,12 @@
     "generate:annotation-schema": "node scripts/generate-annotation-schema.mjs"
   },
   "dependencies": {
+    "@fontsource/amiri": "5.2.8",
+    "@la/contract": "workspace:*",
+    "react": "catalog:",
     "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:"
   }
 }

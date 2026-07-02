@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Placeholder package root only. Real content (shell + component registry, importing only lang-*/react) is owned by issues #10/#11 and successors.",
+  "description": "The web app (issue #10): the language-NEUTRAL token-stream shell (src/shell — no global dir, no direction/ruby assumptions; registry keyed (lang, kind)) + the site composition layer (src/app, src/packs — the ONLY place pack /react entrants are imported and registered) + the tokens.json → CSS custom-property bridge. The library export (\".\") is the shell only; the site is built by Vite (build:site).",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -15,6 +15,26 @@
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "test": "vitest run --passWithNoTests"
+    "build:site": "vite build",
+    "dev": "vite",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "e2e": "pnpm -w run build && pnpm run build:site && playwright test"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.2.8",
+    "@la/contract": "workspace:*",
+    "@la/lang-ar": "workspace:*",
+    "@la/lang-fake": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react": "6.0.3",
+    "vite": "8.1.3"
   }
 }

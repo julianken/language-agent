@@ -1,10 +1,9 @@
-// @la/web — placeholder package root.
-//
-// Real content (the app shell + client-side component registry, importing
-// only `@la/lang-*/react` subpaths — never a lang-* package's internals) is
-// owned by issue #10 (SSE + React RTL token renderer) and successors.
-//
-// This file exists only so the package installs, typechecks, and has a
-// working `exports` map (ADR §2.4 mechanism 3) before any package has
-// content worth protecting.
-export const WEB_PLACEHOLDER = true as const;
+/**
+ * @la/web — the package surface is the language-neutral shell ONLY. The
+ * site composition layer (src/app, src/packs, src/tokens, src/main.tsx) is
+ * Vite-built (`build:site`) and deliberately NOT exported: importing pack
+ * registrations through the package would smuggle language components into
+ * consumers of the neutral shell.
+ */
+
+export * from "./shell/index.js";
