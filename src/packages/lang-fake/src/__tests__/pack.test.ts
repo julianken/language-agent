@@ -27,7 +27,11 @@ describe("lang-fake pack manifest", () => {
       creditLeakEdges: [
         { evidenceDimension: "meaning", leakingDimension: "glyphHint" },
       ],
-      coverageFloorIds: ["nonempty-stream", "green-majority"],
+      coverageFloorIds: [
+        "nonempty-stream",
+        "green-majority",
+        "glyph-decoding-load",
+      ],
       sidecarImage: "none:lang-fake-sidecarless",
       requiredDataAssets: ["lexicon", "segmentation-table"],
     });
@@ -35,18 +39,44 @@ describe("lang-fake pack manifest", () => {
 });
 
 describe("lang-fake curriculum", () => {
-  it("declares two floors, both pure over the FULL candidate token stream", async () => {
+  it("declares ≥1 CoverageFloor (issue #16 amendment: seam-5 TCK category non-vacuous), all pure over the FULL candidate token stream", async () => {
     const { makeFakeGate } = await import("../gate.js");
     const gate = makeFakeGate(makeTestContext());
     const stream = (
       await gate.verify({ targetText: "zip blen qux", intents: [] }, TURN)
     ).map((t) => t.spine);
     const snapshot = { userId: "u1" };
+    expect(fakeCurriculumPolicy.floors.length).toBeGreaterThanOrEqual(1);
     const [nonempty, greenMajority] = fakeCurriculumPolicy.floors;
     expect(nonempty?.satisfied(stream, snapshot)).toBe(true);
     // 1 GREEN of 3 → not a majority.
     expect(greenMajority?.satisfied(stream, snapshot)).toBe(false);
     expect(greenMajority?.satisfied([], snapshot)).toBe(true);
+  });
+
+  it("glyph-decoding-load: the unit-kind-tied floor (zh character-decoding-load mirror) budgets mean glyph units per token over the full stream", async () => {
+    const { makeFakeGate } = await import("../gate.js");
+    const gate = makeFakeGate(makeTestContext());
+    const snapshot = { userId: "u1" };
+    const decodingLoad = fakeCurriculumPolicy.floors.find(
+      (f) => f.id === "glyph-decoding-load",
+    );
+    expect(decodingLoad).toBeDefined();
+    // Light stream: zip(3) + zap(3) glyph units → mean 3 ≤ 4 → satisfied.
+    const light = (
+      await gate.verify({ targetText: "zip zap", intents: [] }, TURN)
+    ).map((t) => t.spine);
+    expect(decodingLoad?.satisfied(light, snapshot)).toBe(true);
+    // Heavy stream: the merged "wug bo" token carries 5 glyph units
+    // (spaces are not glyphs, matching glyphsOf) → mean 5 > 4 → violated.
+    const heavy = (
+      await gate.verify({ targetText: "wug bo", intents: [] }, TURN)
+    ).map((t) => t.spine);
+    expect(heavy).toHaveLength(1);
+    expect(decodingLoad?.satisfied(heavy, snapshot)).toBe(false);
+    // Empty stream is vacuously within budget; repeat call → deterministic.
+    expect(decodingLoad?.satisfied([], snapshot)).toBe(true);
+    expect(decodingLoad?.satisfied(heavy, snapshot)).toBe(false);
   });
 
   it("supplies deterministic seed candidates", () => {
