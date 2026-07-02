@@ -1,0 +1,5 @@
+{
+  "merges": [{ "parts": ["wug", "bo"], "lexemeId": "wugbo" }],
+  "splits": [{ "chunk": "frobnub", "into": ["frob", "nub"] }],
+  "spanPairs": [{ "first": "mip", "second": "tok", "lexemeId": "miptok" }]
+}

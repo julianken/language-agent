@@ -1,11 +1,21 @@
-// @la/lang-fake — placeholder package root.
-//
-// Real content (the permanent MAX-topology drop-in fixture LanguagePack —
-// 2 unit kinds, 1 gating edge, 3 fade dimensions, a re-segmenting gate, a
-// discontinuous span group, deterministic YELLOW/RED cases — ADR §4.3) is
-// exclusively owned by issue #16 (contract-v0).
-//
-// This file exists only so the package installs, typechecks, and has a
-// working `exports` map (ADR §2.4 mechanism 3) before any package has
-// content worth protecting.
-export const LANG_FAKE_PLACEHOLDER = true as const;
+/**
+ * @la/lang-fake — the permanent MAX-topology drop-in fixture pack
+ * (ADR §4.3). The composition root's registry entry does
+ * `import('@la/lang-fake')` and reads `pack`.
+ */
+
+export { pack } from "./pack.js";
+export { FAKE_ASSETS_ROOT } from "./assets-root.js";
+export { FakeAnnSchema, fakeAnnotationCodec, glyphsOf } from "./annotations.js";
+export type { FakeAnn } from "./annotations.js";
+export {
+  FakeEventPayloadSchema,
+  GlyphStateSchema,
+  WordStateSchema,
+  fakeMasteryDeclarations,
+  fakeMasteryModel,
+  migrateWordState,
+} from "./mastery.js";
+export type { GlyphState, WordState } from "./mastery.js";
+export { LexiconSchema, SegmentationTableSchema } from "./assets-schema.js";
+export type { LexiconRow, SegmentationTable } from "./assets-schema.js";

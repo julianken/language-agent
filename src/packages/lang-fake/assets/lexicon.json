@@ -1,0 +1,12 @@
+[
+  { "lexemeId": "zip", "surface": "zip", "gloss": "one" },
+  { "lexemeId": "zap", "surface": "zap", "gloss": "two" },
+  { "lexemeId": "zorg", "surface": "zorg", "gloss": "three" },
+  { "lexemeId": "blen", "surface": "blen", "gloss": "maybe", "yellow": true },
+  { "lexemeId": "wugbo", "surface": "wug bo", "gloss": "rainbow" },
+  { "lexemeId": "frob", "surface": "frob", "gloss": "green" },
+  { "lexemeId": "nub", "surface": "nub", "gloss": "house" },
+  { "lexemeId": "mip", "surface": "mip", "gloss": "pick" },
+  { "lexemeId": "tok", "surface": "tok", "gloss": "up" },
+  { "lexemeId": "miptok", "surface": "mip … tok", "gloss": "retrieve" }
+]

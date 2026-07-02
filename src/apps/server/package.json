@@ -1,9 +1,9 @@
 {
   "name": "@la/server",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Placeholder package root only. This is the ONLY package permitted to depend on a @la/lang-* package (ADR §2.4 rule a) — it is the composition root. Real content (composeApp, the literal-import registry, boot validation) is owned by issue #16; the hot-path turn loop by #9.",
+  "description": "The composition root (ADR §2). The ONLY package permitted to depend on @la/lang-* packages (ADR §2.4 rule a): composeApp — pure DI, no container — with the literal-import registry, the contractVersion equality assert, the manifest parse, deriveCapabilities, and asset existence + spine-schema boot validation. The hot-path turn loop is owned by #9.",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -15,6 +15,11 @@
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@la/contract": "workspace:*",
+    "@la/lang-fake": "workspace:*",
+    "zod": "catalog:"
   }
 }

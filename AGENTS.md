@@ -133,10 +133,10 @@ Run `git status` / `ls` for current state — don't trust a snapshot here. Build
 
 **Commands (run from the repo root):**
 - `pnpm install` — install the workspace.
-- `pnpm run typecheck` — `tsc --noEmit` across every package (fans out via `pnpm -r --if-present run typecheck`).
-- `pnpm run test` — the workspace's Vitest suites (fans out via `pnpm -r --if-present run test`; most packages are still placeholders and pass via `--passWithNoTests`).
+- `pnpm run typecheck` — `tsc --noEmit` across every package (fans out via `pnpm -r --if-present run typecheck`). **Run `pnpm run build` first on a clean checkout**: cross-package `@la/*` imports resolve through the `exports` maps to `dist/*.d.ts` (same reason as `boundary:deps` below).
+- `pnpm run test` — the workspace's Vitest suites (fans out via `pnpm -r --if-present run test`; packages without real suites yet pass via `--passWithNoTests`). Also needs a prior `pnpm run build` (tests import `@la/*` at runtime through the same `exports` maps).
 - `pnpm run build` — `tsc` build across every package (fans out via `pnpm -r --if-present run build`; each package builds via its `tsconfig.build.json`, which excludes test files from the emitted `dist/`).
 - `pnpm run boundary:deps` — the dependency-cruiser boundary gate (ADR §2.4 rules a–d: `docs/decisions/language-module-architecture.md`); config at `.dependency-cruiser.cjs`. **Run `pnpm run build` first**: the packages' `exports` maps resolve `@la/*` to `dist/`, so the import graph is only resolvable after a build — the config's `no-unresolvable-la-imports` rule fails loudly on any unresolved `@la/*` import rather than letting the gate silently no-op.
 - `pnpm run boundary:lang-conditional` — the no-`lang===`/`language===` gate (ADR §2.4 mechanism 4): an ESLint AST rule (`eslint.config.mjs`) plus a literal-text grep backstop (`scripts/check-no-lang-conditional.sh`), scoped to `src/packages/engine`, `src/apps/server/src` (composition-root file excepted), `src/apps/web/src/shell`.
 
-CI (`.github/workflows/ci.yml`, alongside the pre-existing `scaffolding.yml`) runs install → typecheck → build → boundary:deps → boundary:lang-conditional → test on every push and PR (build precedes `boundary:deps` on purpose — see above).
+CI (`.github/workflows/ci.yml`, alongside the pre-existing `scaffolding.yml`) runs install → build → typecheck → boundary:deps → boundary:lang-conditional → test on every push and PR (build precedes `boundary:deps` AND `typecheck` on purpose — see above).
