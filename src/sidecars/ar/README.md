@@ -14,7 +14,7 @@ disabled). Two deterministic gate legs only (the refutation jury and the
 | Leg id | What it checks |
 | --- | --- |
 | `dediac-roundtrip` | Rule-based, no data: the emitted form decomposes into skeleton + ḥarakāt and reassembles exactly; orphan/stacked marks and half-Latin/half-Arabic splices fail (`app/dediac_leg.py`). |
-| `camel-morph` | calima-msa-r13 analyzer membership: analyze the bare skeleton, require the emitted vocalization among the returned analyses; `NO_ANALYSIS` → RED, never a silent pass (`app/morph_leg.py`). |
+| `camel-morph` | calima-msa-r13 analyzer membership: analyze the bare skeleton, require the emitted vocalization among the returned **lexical** analyses; `NO_ANALYSIS` → RED, never a silent pass (`app/morph_leg.py`). |
 
 Banding (deterministic mapping of `docs/research/arabic-validation.md` §6;
 the fuller rationale is the docstring in `app/gate.py`): both legs pass
@@ -22,6 +22,17 @@ exactly → GREEN; core-word match with an unlicensed word-final
 (case-ending) vocalization → YELLOW; any deterministic failure → RED.
 Turn-level intents drive analysis *selection* + evidence detail; per-token
 intended-lemma binding is #9's hot path.
+
+**Out-of-world rule (fail closed; found by PR #29's review):** the hot
+path's contract sends pure verified-Arabic `targetText`, so a word-kind
+token whose skeleton carries no Arabic-script codepoints (e.g. a
+space/NBSP-separated Latin word) bands **RED**, two belts deep: (1) the
+script check runs before the analyzer is consulted; (2) the analyzer's
+passthrough-class analyses (`pos` foreign/punc/digit — synthetic echoes
+whose `diac` equals the input verbatim, emitted even under backoff NONE)
+never constitute membership in the exact/core-match filters. Pure digit
+runs and punctuation stay non-lexical `num`/`punct` tokens (GREEN, leg 2
+honestly absent) — pinned by explicit tests.
 
 ## Layout
 

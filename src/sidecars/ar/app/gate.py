@@ -20,8 +20,19 @@ Banding (deterministic mapping of docs/research/arabic-validation.md §6):
            beginners don't need them yet") is not among the analyzer's
            forms. Surfaced; the engine pins scaffolds / suppresses the fade.
   RED    — any deterministic check fails: leg-1 corruption, NO_ANALYSIS
-           (empty analysis set — never a silent pass), or a vocalization
-           the analyzer does not license at all (the wrong-vowel case).
+           (empty analysis set — never a silent pass), a vocalization the
+           analyzer does not license at all (the wrong-vowel case), or an
+           OUT-OF-WORLD token (below).
+
+Out-of-world rule (fail closed; PR #29 review finding): the hot path's
+contract sends pure verified-Arabic targetText — a word-kind token whose
+skeleton carries no Arabic-script codepoints (e.g. a space/NBSP-separated
+Latin word) is out-of-world by construction and bands RED. Two belts
+enforce it: (1) the script check itself, before the analyzer is consulted;
+(2) the analyzer's passthrough-class analyses (pos foreign/punc/digit,
+whose `diac` merely echoes the input verbatim) never constitute
+membership in the exact/core-match filters, so the trivial echo cannot
+turn a match even if a script check were bypassed.
 
 Turn intents: the request carries the TURN's communicative intents, not a
 per-token intended lemma. The gate therefore uses intent–gloss alignment to
@@ -57,6 +68,14 @@ from generated.models import (
 _DIAC_CHARS = "".join(AR_DIAC_CHARSET)
 _WORD_SPLIT_RE = re.compile(r"[^a-zA-Zء-ي]+")
 
+# The analyzer's PASSTHROUGH classes: for non-lexicon input shapes (Latin
+# words, digit runs, punctuation) camel-tools' Analyzer emits a single
+# synthetic analysis whose `diac` echoes the input verbatim, with pos
+# foreign/punc/digit — even under backoff NONE. Such an echo must NEVER
+# constitute gate membership: a space-separated Latin token banded GREEN
+# through exactly this hole (PR #29 review, belt 2 of the fix).
+_PASSTHROUGH_POS = frozenset({"foreign", "punc", "digit"})
+
 
 def _nfc(s: str) -> str:
     return unicodedata.normalize("NFC", s)
@@ -69,7 +88,9 @@ def _classify(token: str) -> str:
     if all(c.isdigit() for c in token):
         return "num"
     if any(c.isalpha() for c in token):
-        return "word"  # foreign-script token — the gate must judge it, not skip it
+        # Foreign-script token — the gate must judge it, not skip it: the
+        # word path's out-of-world rule (belt 1 in _verify_word) bands it RED.
+        return "word"
     return "punct"
 
 
@@ -163,20 +184,46 @@ def _verify_word(
     evidence = [_evidence(LEG_DEDIAC, leg1.ok, leg1.detail)]
     skeleton = leg1.skeleton or skeleton_hint
 
-    try:
-        analyses = analyzer.analyze(skeleton) if skeleton else ()
-    except Exception as exc:  # fail CLOSED: an analyzer error is a RED band, never a 500
-        evidence.append(_evidence(LEG_MORPH, False, f"analyzer error: {type(exc).__name__}"))
-        return Band.RED, evidence, None, False
-    if not analyses:
+    # Belt 1 — the out-of-world rule (fail closed): the hot path sends pure
+    # verified-Arabic targetText, so a word-kind token with no
+    # Arabic-script codepoints in its skeleton (a space/NBSP-separated
+    # Latin word, presentation-form junk, …) is out-of-world by
+    # construction. Band RED before the analyzer is even consulted — its
+    # foreign-passthrough echo must never get the chance to "match".
+    if not any(c in AR_LETTERS_CHARSET for c in skeleton):
         evidence.append(
-            _evidence(LEG_MORPH, False, f"NO_ANALYSIS: analyzer returned no analyses for skeleton '{skeleton}'")
+            _evidence(
+                LEG_MORPH,
+                False,
+                "out-of-world token: skeleton carries no Arabic-script letters "
+                "(the hot path sends verified-Arabic targetText only)",
+            )
         )
         return Band.RED, evidence, None, False
 
-    exact = [a for a in analyses if _nfc(str(a.get("diac") or "")) == candidate]
-    core = [a for a in analyses if _core(_nfc(str(a.get("diac") or ""))) == _core(candidate)]
-    aligned = [a for a in analyses if _gloss_words(a) & intent_words]
+    try:
+        analyses = analyzer.analyze(skeleton)
+    except Exception as exc:  # fail CLOSED: an analyzer error is a RED band, never a 500
+        evidence.append(_evidence(LEG_MORPH, False, f"analyzer error: {type(exc).__name__}"))
+        return Band.RED, evidence, None, False
+
+    # Belt 2 — membership comes from LEXICAL analyses only: passthrough
+    # classes (pos foreign/punc/digit) echo the input as `diac` verbatim
+    # and would trivially satisfy the filters below.
+    lexical = [a for a in analyses if str(a.get("pos") or "") not in _PASSTHROUGH_POS]
+    if not lexical:
+        detail = (
+            f"NO_ANALYSIS: analyzer returned only passthrough-class analyses for skeleton '{skeleton}' "
+            "(an input echo never constitutes membership)"
+            if analyses
+            else f"NO_ANALYSIS: analyzer returned no analyses for skeleton '{skeleton}'"
+        )
+        evidence.append(_evidence(LEG_MORPH, False, detail))
+        return Band.RED, evidence, None, False
+
+    exact = [a for a in lexical if _nfc(str(a.get("diac") or "")) == candidate]
+    core = [a for a in lexical if _core(_nfc(str(a.get("diac") or ""))) == _core(candidate)]
+    aligned = [a for a in lexical if _gloss_words(a) & intent_words]
 
     def _choose(pool: list[dict]) -> dict:
         for a in pool:

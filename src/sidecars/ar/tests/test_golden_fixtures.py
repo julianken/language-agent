@@ -176,6 +176,101 @@ def test_red_no_analysis_is_never_a_silent_pass(client, ar_payload_validator) ->
     assert token["annotations"]["payload"]["morphology"]["pos"] == "unknown"
 
 
+# --- Out-of-world tokens (RED, fail closed — PR #29 review regression) -------
+
+
+def test_red_space_separated_latin_token(client, ar_payload_validator) -> None:
+    # Regression (PR #29 review): a separated pure-Latin token used to band
+    # GREEN via the analyzer's pos="foreign" passthrough, whose diac echoes
+    # the input verbatim and trivially satisfied the exact-match filter.
+    # Belt 1: no Arabic-script codepoints in the skeleton → out-of-world → RED.
+    body = _verify(client, "كَتَبَ book")
+    _assert_token_invariants(body, ar_payload_validator)
+    arabic, latin = body["tokens"]
+    assert arabic["band"] == "GREEN"
+    assert latin["spine"]["surface"] == "book"
+    assert latin["spine"]["kind"] == "word"
+    assert latin["band"] == "RED"
+    legs = {e["legId"]: e for e in latin["evidence"]}
+    assert legs["camel-morph"]["pass"] is False
+    assert "out-of-world" in legs["camel-morph"]["detail"]
+
+
+def test_red_nbsp_separated_latin_token(client, ar_payload_validator) -> None:
+    # NBSP (U+00A0) separation splits like a space in the gate's segmenter —
+    # pinned so a future tokenizer change that stops splitting NBSP still
+    # has to keep the Latin content RED (the glued form would then fail
+    # leg 1's mixed-script rule instead).
+    body = _verify(client, "كَتَبَ\u00a0book")
+    _assert_token_invariants(body, ar_payload_validator)
+    assert [t["spine"]["surface"] for t in body["tokens"]] == ["كَتَبَ", "book"]
+    assert [t["band"] for t in body["tokens"]] == ["GREEN", "RED"]
+
+
+def test_red_pure_latin_text(client, ar_payload_validator) -> None:
+    body = _verify(client, "book")
+    _assert_token_invariants(body, ar_payload_validator)
+    (token,) = body["tokens"]
+    assert token["spine"]["kind"] == "word"
+    assert token["band"] == "RED"
+    legs = {e["legId"]: e for e in token["evidence"]}
+    assert "out-of-world" in legs["camel-morph"]["detail"]
+    assert token["annotations"]["payload"]["morphology"]["pos"] == "unknown"
+
+
+def test_passthrough_echo_never_constitutes_membership() -> None:
+    # Belt 2, tested independently of belt 1: even for an Arabic-script
+    # skeleton, an analyzer answer consisting only of passthrough-class
+    # echoes (pos foreign/punc/digit, diac == input) is NO membership —
+    # RED, never a trivially-exact GREEN.
+    from app.gate import _verify_word
+    from generated.models import Band
+
+    class _PassthroughOnlyAnalyzer:
+        def analyze(self, skeleton: str) -> tuple[dict, ...]:
+            return ({"diac": skeleton, "lex": skeleton, "pos": "foreign", "gloss": ""},)
+
+    band, evidence, chosen, exact = _verify_word("كتب", "كتب", frozenset(), _PassthroughOnlyAnalyzer())
+    assert band is Band.RED
+    assert exact is False
+    assert chosen is None
+    morph = next(e for e in evidence if e.legId == "camel-morph")
+    assert morph.pass_ is False
+    assert "passthrough" in morph.detail
+
+
+# --- Non-lexical tokens: handling pinned as a decision, not an accident ------
+
+
+def test_digits_only_tokens_are_num_green(client, ar_payload_validator) -> None:
+    # Decision (pinned): pure digit runs — ASCII or Arabic-Indic — are
+    # non-lexical `num` tokens: nothing vocalizable to verify, leg 2 is
+    # honestly absent from the evidence, GREEN with pos=digit sentinels
+    # (research §7 keeps numerals a legitimate part of the rendered stream).
+    body = _verify(client, "123 ٤٥")
+    _assert_token_invariants(body, ar_payload_validator)
+    assert len(body["tokens"]) == 2
+    for token in body["tokens"]:
+        assert token["spine"]["kind"] == "num"
+        assert token["band"] == "GREEN"
+        assert [e["legId"] for e in token["evidence"]] == ["dediac-roundtrip"]
+        assert token["annotations"]["payload"]["vowelState"] == "none"
+        assert token["annotations"]["payload"]["morphology"]["pos"] == "digit"
+
+
+def test_punctuation_tokens_are_punct_green(client, ar_payload_validator) -> None:
+    # Decision (pinned): punctuation — ASCII or Arabic (U+061F) — is a
+    # non-lexical `punct` token: GREEN, leg 2 honestly absent, pos=punc.
+    body = _verify(client, ". ؟")
+    _assert_token_invariants(body, ar_payload_validator)
+    assert len(body["tokens"]) == 2
+    for token in body["tokens"]:
+        assert token["spine"]["kind"] == "punct"
+        assert token["band"] == "GREEN"
+        assert [e["legId"] for e in token["evidence"]] == ["dediac-roundtrip"]
+        assert token["annotations"]["payload"]["morphology"]["pos"] == "punc"
+
+
 # --- Corrupted input (RED via leg 1) -----------------------------------------
 
 
