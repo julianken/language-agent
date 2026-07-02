@@ -208,6 +208,8 @@ LLM tiering (06): **Sonnet** for the blended reply + blend-advance judgment (con
 
 One cloud (GCP) for compute/state/secrets; Cloudflare for object storage + CDN; Neon/Upstash as managed SaaS (13).
 
+> **Confirmed with measurements by [`docs/decisions/hosting-walking-skeleton.md`](../decisions/hosting-walking-skeleton.md) (2026-07-02, issue #4):** Cloud Run stands for compute — one service, with the Python verification sidecar as a **second container** in the service; the React frontend ships to **Cloudflare Pages** (`INSTANCE.md`'s `language-agent.pages.dev`); the Terraform tree spans the `google` + `cloudflare` providers. The sidecar's measured shape (pruned 553 MB image, ~400 MB RSS ⇒ 1 GiB memory; PyTorch must be pruned) is recorded there.
+
 | Concern | Choice | Why |
 |---|---|---|
 | **Hosting** | **Cloud Run** (SSE backend, `min-instances=0` to start → 1 with users + CPU boost) | 60-min timeout headroom for the agentic loop; real concurrency (one warm instance fans out many slow LLM/TTS calls); native HTTP/2; no buffering of sub-32MB chunked responses; clean Secret Manager env-var injection. Lambda is streaming-hostile (30 s edge idle timeout). |
