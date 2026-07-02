@@ -1,0 +1,32 @@
+{
+  "name": "re-segmentation by split: one whitespace chunk verifies as TWO tokens (naive split is wrong)",
+  "targetText": "frobnub",
+  "intents": [{ "id": "describe", "description": "a green house" }],
+  "expected": {
+    "tokens": [
+      { "surface": "frob", "band": "GREEN" },
+      { "surface": "nub", "band": "GREEN" }
+    ],
+    "annotations": [
+      {
+        "lexemeId": "frob",
+        "gloss": "green",
+        "glyphs": [
+          { "glyph": "f", "hint": "F" },
+          { "glyph": "r", "hint": "R" },
+          { "glyph": "o", "hint": "O" },
+          { "glyph": "b", "hint": "B" }
+        ]
+      },
+      {
+        "lexemeId": "nub",
+        "gloss": "house",
+        "glyphs": [
+          { "glyph": "n", "hint": "N" },
+          { "glyph": "u", "hint": "U" },
+          { "glyph": "b", "hint": "B" }
+        ]
+      }
+    ]
+  }
+}
