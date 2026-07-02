@@ -1,0 +1,29 @@
+{
+  "name": "pass-within-word-third-tone-run",
+  "description": "AC: a within-word curated 3+-third-tone run displays GREEN — 展覽館 zhǎn lǎn guǎn renders its curated grouping zhán lán guǎn.",
+  "data": "default",
+  "request": {
+    "targetText": "展覽館",
+    "intents": [
+      {
+        "id": "exhibition-hall",
+        "description": "e"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "展覽館",
+        "kind": "word",
+        "band": "GREEN",
+        "surfacePinyin": [
+          "zhán",
+          "lán",
+          "guǎn"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "provenance": "stub — replaced wholesale by #20",
+  "note": "Boundary-normalization map for the jieba voter (design §6.7: voter boundaries are normalized/mapped to the pinned AS/CKIP standard BEFORE agreement is scored, so a vote counts as disagreement only when the cut genuinely differs — not when the voter merely follows a different segmentation convention). Keys are segments jieba's dictionary cut emits; values are the AS-standard unit sequence they normalize to. Verified against jieba 0.42.1's actual cuts of the fixture sentences (jieba merges 喝茶 / 星期一 / 不好; the sliver treats them as V+O / noun+ordinal / neg+adj per the pinned standard). Deliberately ABSENT: 好喝 and 好好 — jieba merges both, no mapping exists, so the vote genuinely disagrees; the golden fixtures use exactly that to prove the YELLOW path (好喝) and the sandhi-span-intersection regenerate path (好好). #20 owns the real normalization table and replaces this file wholesale.",
+  "mappings": {
+    "喝茶": ["喝", "茶"],
+    "星期一": ["星期", "一"],
+    "不好": ["不", "好"]
+  }
+}

@@ -1,0 +1,46 @@
+name: drift-live-llm
+
+# Scheduled NON-BLOCKING drift detector (b) of ADR §4.3's scheduled-jobs
+# list (issue #17 lands the skeleton): run the live-LLM end-to-end turn
+# against each real language leg and compare with the recorded replay
+# fixtures — the alarm that keeps the fixture/replay LLM client honest.
+#
+# DISABLED UNTIL ITS TARGET EXISTS: a live-LLM-capable environment — an
+# LLM provider secret provisioned in this repo AND #9's shared E2E turn
+# script to drive. Neither exists yet, so the job is gated on the repo
+# variable LIVE_LLM_E2E ("true" to enable): set it when that environment
+# lands, and replace the placeholder step with the live turn in the same
+# change (GAPS.md carries the deferral row). Deliberately OFF the
+# PR-blocking path — no live model call (LLM or g2pW) ever gates a PR
+# (ADR §4.3).
+
+on:
+  schedule:
+    - cron: "47 5 * * 1" # weekly (Mon 05:47 UTC); drift detector, not a PR gate
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drift-live-llm-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  live-llm-e2e:
+    # Disabled-until-target-exists: flip the repo variable LIVE_LLM_E2E to
+    # "true" once a live-LLM-capable environment (provider secret + #9's
+    # E2E turn script) exists. Until then every scheduled run skips.
+    if: ${{ vars.LIVE_LLM_E2E == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Live-LLM E2E turn per real leg
+        # Placeholder ON PURPOSE: the shared E2E turn script is #9's
+        # exclusive deliverable. Enabling LIVE_LLM_E2E before wiring the
+        # real turn fails loudly here rather than pretending coverage.
+        run: |
+          echo "::error::LIVE_LLM_E2E is enabled but the live-LLM E2E turn is not wired — replace this placeholder with the live run of #9's shared E2E turn script (per real leg) in the change that enables the variable."
+          exit 1

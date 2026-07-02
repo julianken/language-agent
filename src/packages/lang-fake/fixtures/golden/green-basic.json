@@ -1,0 +1,42 @@
+{
+  "name": "three in-lexicon words verify GREEN with per-glyph hint annotations",
+  "targetText": "zip zap zorg",
+  "intents": [{ "id": "count", "description": "count from one to three" }],
+  "expected": {
+    "tokens": [
+      { "surface": "zip", "band": "GREEN" },
+      { "surface": "zap", "band": "GREEN" },
+      { "surface": "zorg", "band": "GREEN" }
+    ],
+    "annotations": [
+      {
+        "lexemeId": "zip",
+        "gloss": "one",
+        "glyphs": [
+          { "glyph": "z", "hint": "Z" },
+          { "glyph": "i", "hint": "I" },
+          { "glyph": "p", "hint": "P" }
+        ]
+      },
+      {
+        "lexemeId": "zap",
+        "gloss": "two",
+        "glyphs": [
+          { "glyph": "z", "hint": "Z" },
+          { "glyph": "a", "hint": "A" },
+          { "glyph": "p", "hint": "P" }
+        ]
+      },
+      {
+        "lexemeId": "zorg",
+        "gloss": "three",
+        "glyphs": [
+          { "glyph": "z", "hint": "Z" },
+          { "glyph": "o", "hint": "O" },
+          { "glyph": "r", "hint": "R" },
+          { "glyph": "g", "hint": "G" }
+        ]
+      }
+    ]
+  }
+}

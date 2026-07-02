@@ -1,0 +1,44 @@
+{
+  "name": "red-corruption",
+  "description": "AC golden case: corruption — U+FFFD is neither Han, digit nor punctuation → RED token; the surrounding verifiable tokens keep their own verdicts.",
+  "data": "default",
+  "request": {
+    "targetText": "你喝�茶",
+    "intents": [
+      {
+        "id": "drink",
+        "description": "d"
+      },
+      {
+        "id": "tea",
+        "description": "t"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "你",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "喝",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "�",
+        "kind": "unverified",
+        "band": "RED",
+        "redReason": "corrupt"
+      },
+      {
+        "surface": "茶",
+        "kind": "word",
+        "band": "GREEN"
+      }
+    ]
+  }
+}

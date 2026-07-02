@@ -1,0 +1,261 @@
+{
+  "source": "CC-CEDICT (community-maintained free Chinese-English dictionary), published by MDBG",
+  "sourceUrl": "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+  "license": "CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/ (see NOTICE.md)",
+  "modification": "subset extract: only entries whose Traditional field is a closed-world unit (sliver word, C3 single, or closed-world character); regenerate with scripts/extract_membership.py",
+  "sourceMeta": {
+    "version": "1",
+    "subversion": "0",
+    "format": "ts",
+    "charset": "UTF-8",
+    "entries": "124763",
+    "publisher": "MDBG",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "date": "2026-07-02T08:05:29Z",
+    "time": "1782979529"
+  },
+  "entries": [
+    {
+      "traditional": "一",
+      "pinyin": [
+        "yi1"
+      ],
+      "line": "一 一 [yi1] /one/single/a (article)/as soon as/entire; whole; all; throughout/\"one\" radical in Chinese characters (Kangxi radical 1)/also pr. [yao1] for greater clarity when spelling out numbers digit by digit/"
+    },
+    {
+      "traditional": "不",
+      "pinyin": [
+        "bu4"
+      ],
+      "line": "不 不 [bu4] /no; not so/(bound form) not; un-/"
+    },
+    {
+      "traditional": "了",
+      "pinyin": [
+        "le5"
+      ],
+      "line": "了 了 [le5] /(completed action marker)/(modal particle indicating change of state, situation now)/(modal particle intensifying preceding clause)/"
+    },
+    {
+      "traditional": "了",
+      "pinyin": [
+        "liao3"
+      ],
+      "line": "了 了 [liao3] /to finish/(used with 得[de2] or 不[bu4] after a verb to express (im)possibility, as in 忘不了[wang4 bu5 liao3] \"cannot forget\")/(literary) (usually followed by a negative such as 無|无[wu2] or 不[bu4]) completely (not); entirely (not); (not) in the least/to understand clearly (variant of 瞭|了[liao3])/"
+    },
+    {
+      "traditional": "二",
+      "pinyin": [
+        "er4"
+      ],
+      "line": "二 二 [er4] /two/2/(Beijing dialect) stupid/"
+    },
+    {
+      "traditional": "你",
+      "pinyin": [
+        "ni3"
+      ],
+      "line": "你 你 [ni3] /you (informal, as opposed to courteous 您[nin2])/"
+    },
+    {
+      "traditional": "你好",
+      "pinyin": [
+        "ni3",
+        "hao3"
+      ],
+      "line": "你好 你好 [ni3 hao3] /hello; hi/"
+    },
+    {
+      "traditional": "個",
+      "pinyin": [
+        "ge3"
+      ],
+      "line": "個 个 [ge3] /used in 自個兒|自个儿[zi4 ge3 r5]/"
+    },
+    {
+      "traditional": "個",
+      "pinyin": [
+        "ge4"
+      ],
+      "line": "個 个 [ge4] /(classifier used before a noun that has no specific classifier)/(bound form) individual/"
+    },
+    {
+      "traditional": "兩",
+      "pinyin": [
+        "liang3"
+      ],
+      "line": "兩 两 [liang3] /two/both/some/a few/tael, unit of weight equal to 50 grams (modern) or 1⁄16 of a catty 斤[jin1] (old)/"
+    },
+    {
+      "traditional": "呢",
+      "pinyin": [
+        "ne5"
+      ],
+      "line": "呢 呢 [ne5] /(sentence-final particle) used in questions to link back to prior discourse or context (\"what about...?\", \"and...?\")/(sentence-final particle) indicating that a state or situation still holds/(discourse particle) used to mark a slight pause or emphasis in speech/"
+    },
+    {
+      "traditional": "呢",
+      "pinyin": [
+        "ni2"
+      ],
+      "line": "呢 呢 [ni2] /dense wool fabric (used for coats and jackets)/"
+    },
+    {
+      "traditional": "喝",
+      "pinyin": [
+        "he1"
+      ],
+      "line": "喝 喝 [he1] /to drink/variant of 嗬[he1]/"
+    },
+    {
+      "traditional": "喝",
+      "pinyin": [
+        "he4"
+      ],
+      "line": "喝 喝 [he4] /to shout/"
+    },
+    {
+      "traditional": "嗎",
+      "pinyin": [
+        "ma2"
+      ],
+      "line": "嗎 吗 [ma2] /(coll.) what?/"
+    },
+    {
+      "traditional": "嗎",
+      "pinyin": [
+        "ma3"
+      ],
+      "line": "嗎 吗 [ma3] /used in 嗎啡|吗啡[ma3 fei1]/"
+    },
+    {
+      "traditional": "嗎",
+      "pinyin": [
+        "ma5"
+      ],
+      "line": "嗎 吗 [ma5] /(question particle for \"yes-no\" questions)/"
+    },
+    {
+      "traditional": "好",
+      "pinyin": [
+        "hao3"
+      ],
+      "line": "好 好 [hao3] /good/appropriate; proper/all right!/(before a verb) easy to/(before a verb) good to/(before an adjective for exclamatory effect) so/(verb complement indicating completion)/(of two people) close; on intimate terms/(after a personal pronoun) hello/"
+    },
+    {
+      "traditional": "好",
+      "pinyin": [
+        "hao4"
+      ],
+      "line": "好 好 [hao4] /to be fond of; to have a tendency to; to be prone to/"
+    },
+    {
+      "traditional": "展",
+      "pinyin": [
+        "Zhan3"
+      ],
+      "line": "展 展 [Zhan3] /surname Zhan/"
+    },
+    {
+      "traditional": "展",
+      "pinyin": [
+        "zhan3"
+      ],
+      "line": "展 展 [zhan3] /to spread out/to open up/to exhibit/to put into effect/to postpone/to prolong/exhibition/"
+    },
+    {
+      "traditional": "展覽館",
+      "pinyin": [
+        "zhan3",
+        "lan3",
+        "guan3"
+      ],
+      "line": "展覽館 展览馆 [zhan3 lan3 guan3] /exhibition hall/"
+    },
+    {
+      "traditional": "想",
+      "pinyin": [
+        "xiang3"
+      ],
+      "line": "想 想 [xiang3] /to think (about)/to think of; to devise/to think (that); to believe (that)/to desire; to want (to)/to miss (feel wistful about the absence of)/"
+    },
+    {
+      "traditional": "我",
+      "pinyin": [
+        "wo3"
+      ],
+      "line": "我 我 [wo3] /I; me; my/"
+    },
+    {
+      "traditional": "星",
+      "pinyin": [
+        "xing1"
+      ],
+      "line": "星 星 [xing1] /star/heavenly body/satellite/small amount/"
+    },
+    {
+      "traditional": "星期",
+      "pinyin": [
+        "xing1",
+        "qi1"
+      ],
+      "line": "星期 星期 [xing1 qi1] /week/CL:個|个[ge4]/day of the week/Sunday/"
+    },
+    {
+      "traditional": "期",
+      "pinyin": [
+        "qi1"
+      ],
+      "line": "期 期 [qi1] /a period of time/phase/stage/classifier for issues of a periodical, courses of study/time/term/period/to hope/Taiwan pr. [qi2]/"
+    },
+    {
+      "traditional": "的",
+      "pinyin": [
+        "de5"
+      ],
+      "line": "的 的 [de5] /of; ~'s (possessive particle)/(used after an attribute when it modifies a noun)/(used at the end of a declarative sentence for emphasis)/(used after a noun, verb or adjective to form a nominal expression, as in 皮革的[pi2 ge2 de5] \"one made of leather\" or 跑堂兒的|跑堂儿的[pao3 tang2 r5 de5] \"a waiter (literally, one who runs back and forth in a restaurant)\" or 新的[xin1 de5] \"new one\")/also pr. [di4] or [di5] in poetry and songs/"
+    },
+    {
+      "traditional": "的",
+      "pinyin": [
+        "di1"
+      ],
+      "line": "的 的 [di1] /a taxi; a cab (abbr. for 的士[di1 shi4])/"
+    },
+    {
+      "traditional": "的",
+      "pinyin": [
+        "di2"
+      ],
+      "line": "的 的 [di2] /really and truly/"
+    },
+    {
+      "traditional": "的",
+      "pinyin": [
+        "di4"
+      ],
+      "line": "的 的 [di4] /(bound form) bull's-eye; target/"
+    },
+    {
+      "traditional": "茶",
+      "pinyin": [
+        "cha2"
+      ],
+      "line": "茶 茶 [cha2] /tea/tea plant/CL:杯[bei1],壺|壶[hu2]/"
+    },
+    {
+      "traditional": "覽",
+      "pinyin": [
+        "lan3"
+      ],
+      "line": "覽 览 [lan3] /to look at/to view/to read/"
+    },
+    {
+      "traditional": "館",
+      "pinyin": [
+        "guan3"
+      ],
+      "line": "館 馆 [guan3] /building/shop/term for certain service establishments/embassy or consulate/schoolroom (old)/CL:家[jia1]/"
+    }
+  ]
+}
