@@ -77,7 +77,8 @@ jobs:
             src/packages/lang-ar/ar-annotations.schema.json
 
       - name: Set up uv (runs the pinned datamodel-code-generator via uvx)
-        uses: astral-sh/setup-uv@v8
+        # Exact tag on purpose: setup-uv publishes no bare `v8` major alias.
+        uses: astral-sh/setup-uv@v8.2.0
 
       - name: Spec freshness — Pydantic v2 models (regenerate + git diff --exit-code)
         # The real command is scripts/generate-sidecar-models.sh — uvx with
