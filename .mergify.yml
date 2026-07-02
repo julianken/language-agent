@@ -38,3 +38,8 @@ queue_rules:
       # - "check-success = build"
       # - "check-success = test"
       # - "check-success = e2e"
+      # TCK drop-in matrix (issue #17): the fake leg is the ONLY leg that
+      # may ever become a required queue condition here — `ar`/`zh` run
+      # continue-on-error in ci.yml and stay OUT of these conditions until
+      # #9 (ar) / #21 (zh) flip them (the non-blocking-legs AC):
+      # - "check-success = conformance (fake)"

@@ -71,6 +71,18 @@ module.exports = {
       to: { path: "^src/(packages|apps)/(?!contract/)[^/]+/" },
     },
     {
+      name: "tck-depends-only-on-contract",
+      severity: "error",
+      comment:
+        "ADR §4.1 (issue #17): @la/lang-conformance depends ONLY on " +
+        "@la/contract — never engine (fixtures shaped like real languages " +
+        "would tempt engine imports) and never a lang-* pack (the " +
+        "dependency arrow would then point core→language, exactly " +
+        "backwards; packs instantiate the TCK, not the reverse).",
+      from: { path: "^src/packages/lang-conformance/" },
+      to: { path: "^src/(packages|apps)/(?!contract/|lang-conformance/)[^/]+/" },
+    },
+    {
       name: "no-circular",
       severity: "error",
       comment: "ADR §2.4 rule (d): no import cycles anywhere in the workspace.",

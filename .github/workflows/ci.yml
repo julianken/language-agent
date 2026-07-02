@@ -157,3 +157,57 @@ jobs:
           docker rm -f sidecar-zh
           docker run -d --name sidecar-zh-offline --network=none language-agent/sidecar-zh:ci
           docker exec sidecar-zh-offline python scripts/offline_smoke.py
+
+  # The TCK drop-in matrix (ADR §4.3; issue #17): the same workflow
+  # definition and the same conformance suite per language leg —
+  # `matrix.lang = [fake, ar, zh]`, all three slots from the walking
+  # skeleton (dual-instance amendment, Decision 3). Runs on every PR,
+  # never a one-time certification.
+  #
+  # NON-BLOCKING-LEGS MECHANISM (#17's AC, pinned not implied):
+  #   - `conformance (fake)` is the ONLY leg eligible to be a REQUIRED
+  #     status check — it is fully deterministic, dependency-free, and
+  #     green from this PR onward (#17's own done-criterion).
+  #   - `ar` and `zh` run with `continue-on-error: true` and are NOT
+  #     required checks: they are EXPECTED red until their packs land
+  #     (ar completes with #7/#9; zh with #19/#21 — the zh leg then runs
+  #     the real deterministic-legs v0 image directly, exactly like ar,
+  #     with NO `SIDECAR_MODEL_MODE=fixture` env var: that flag stays
+  #     dormant for zh v0 and activates only with #22/N4's neural legs).
+  #     #9 (ar) and #21 (zh) own the flip to required — drop the leg's
+  #     continue-on-error exemption and add it to the required checks /
+  #     Mergify queue conditions in those PRs.
+  #   An incomplete leg therefore can never red the merge queue.
+  #
+  # Each leg later grows the compose-boot + E2E turn script (#9) and the
+  # Schemathesis + probeSidecar golden HTTP probes against `docker run` of
+  # the leg's built image (#7 owns the OpenAPI doc those run against);
+  # today a leg runs the TCK instantiation via scripts/conformance-leg.sh.
+  conformance:
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.lang != 'fake' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        lang: [fake, ar, zh]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build (exports maps resolve @la/* to dist/ — see the build job)
+        run: pnpm run build
+
+      - name: TCK leg — @la/lang-${{ matrix.lang }}
+        run: bash scripts/conformance-leg.sh "${{ matrix.lang }}"
