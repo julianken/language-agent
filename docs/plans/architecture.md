@@ -206,7 +206,7 @@ LLM tiering (06): **Sonnet** for the blended reply + blend-advance judgment (con
 
 ## 6. v1 infra / Terraform stack
 
-One cloud (GCP) for compute/state/secrets; Cloudflare for object storage + CDN; Neon/Upstash as managed SaaS (13).
+One cloud (GCP) for compute/state/secrets; Cloudflare for the static frontend (Pages, at `lexercon.com`), DNS, object storage + CDN; Neon/Upstash as managed SaaS (13).
 
 > **Confirmed with measurements by [`docs/decisions/hosting-walking-skeleton.md`](../decisions/hosting-walking-skeleton.md) (2026-07-02, issue #4):** Cloud Run stands for compute — one service, with the Python verification sidecar as a **second container** in the service; the React frontend ships to **Cloudflare Pages** (`INSTANCE.md`'s `language-agent.pages.dev`); the Terraform tree spans the `google` + `cloudflare` providers. The sidecar's measured shape (pruned 553 MB image, ~400 MB RSS ⇒ 1 GiB memory; PyTorch must be pruned) is recorded there.
 
@@ -218,7 +218,7 @@ One cloud (GCP) for compute/state/secrets; Cloudflare for object storage + CDN; 
 | **Audio blobs** | **Cloudflare R2 + CDN** | **Zero egress** — every replayed cached word costs nothing to serve (~$1.50 vs ~$47/mo on S3 for 500 GB egress). Audio cache hit-rate *rises* as the blend deepens (recurring high-frequency vocab), so R2 amortizes TTS spend exactly when target volume grows. |
 | **Secrets** | **GCP Secret Manager**, injected as Cloud Run env vars | Never in TF code or state; `sensitive = true`; LLM/TTS keys never in `tfvars`. |
 | **Observability** | **Langfuse Cloud (free tier)**, OpenTelemetry-wired | Traces the agentic loop, token cost/turn, TTFT, and the coherence guard's marginal cost. Portable via OTel; self-host only if volume demands (it drags in Postgres+ClickHouse+Redis+S3). |
-| **IaC** | **Terraform** (or **OpenTofu** if you want native state encryption, reasonable given LLM/TTS key resources in state). GCS remote state + versioning, **GitHub OIDC / Workload Identity Federation** (no long-lived keys), **folder-per-env**. | Folder-per-env beats workspaces for blast-radius control. Modules: `network`, `cloudrun-app`, `secrets`, `data-neon`, `cache-upstash`, `storage-r2`, `observability`. |
+| **IaC** | **Terraform** (or **OpenTofu** if you want native state encryption, reasonable given LLM/TTS key resources in state). GCS remote state + versioning, **GitHub OIDC / Workload Identity Federation** (no long-lived keys), **folder-per-env**. | Folder-per-env beats workspaces for blast-radius control. Modules: `network`, `cloudrun-app`, `frontend-pages`, `dns-domain` (lexercon.com records + rate-limit ruleset), `secrets`, `data-neon`, `cache-upstash`, `storage-r2`, `observability`. |
 
 **CI/CD via agentic-seed:** PR triggers `fmt -check` / `validate` / `plan` (the plan comment *is* the reviewed diff that slots into agentic-seed's reviewed-PR gate); merge to `main` triggers `apply` to prod via OIDC; the app image build + `gcloud run deploy` run in the same pipeline.
 
@@ -246,7 +246,7 @@ One cloud (GCP) for compute/state/secrets; Cloudflare for object storage + CDN; 
 **The thinnest end-to-end vertical slice first**, then layer richness onto a working spine. Ship Spanish throughout; Japanese is the v2 stress test that forces the hard cases.
 
 ### Phase 0 — Walking skeleton (one coherent blended turn, end to end)
-The goal is the full pipe lit up, even if shallow. Cloud Run server + Neon + minimal Terraform/OIDC. One Sonnet structured-output call producing `tokens[]` with per-token `lang`, streamed over SSE. React `<TokenStream>` rendering English-with-Spanish-content-words, styled by lang tag. **A fixed blend ratio** (no advancement yet) with the **deterministic ratio-count + regenerate validator** — because coherence is foundational, not a later polish. No clicks, no correction, no audio. *Done = a learner reads one coherent blended reply that hits a target ratio.*
+The goal is the full pipe lit up, even if shallow. One Cloud Run service (Node/TS SSE server + Python verification sidecar as a second container) + Cloudflare Pages frontend at `lexercon.com` (API at `api.lexercon.com`, proxied) + Neon + minimal Terraform (one tree, `google` + `cloudflare` providers, GCS remote state, WIF/GitHub-OIDC) — per [`docs/decisions/hosting-walking-skeleton.md`](../decisions/hosting-walking-skeleton.md). One Sonnet structured-output call producing `tokens[]` with per-token `lang`, streamed over SSE. React `<TokenStream>` rendering English-with-Spanish-content-words, styled by lang tag. **A fixed blend ratio** (no advancement yet) with the **deterministic ratio-count + regenerate validator** — because coherence is foundational, not a later polish. No clicks, no correction, no audio. *Done = a learner reads one coherent blended reply that hits a target ratio.*
 
 ### Phase 1 — Make it interactive (clickable + audio)
 The three-tier lookup pipeline (NLP lemma → dictionary senses → LLM contextual sense) behind `/enrich`; Radix Popover word-card with meaning + breakdown + translation. Azure per-word TTS, pre-warmed in the background, cached in R2/CDN, played from the card. Agent emits `sense_id` self-annotations so clicks are cache hits. *Done = click any L2 word → instant gloss + breakdown + audio.*

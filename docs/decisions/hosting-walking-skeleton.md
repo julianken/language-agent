@@ -32,7 +32,24 @@ Implications: (a) the **pruned** image is the product shape — issue #7 must in
 
 ## SSE path
 
-For v0 the Pages frontend calls the Cloud Run URL directly — the fewest proxies between the model stream and the reader. The server ships the `architecture.md` §6 SSE tripwire headers (`X-Accel-Buffering: no`, `Cache-Control: no-cache, no-transform`) from the first commit, and **#11 verifies token-by-token arrival end-to-end through the real chain** before the walking skeleton is called done. If the API later fronts through Cloudflare DNS (the bird-watch `proxied = true` pattern, useful for rate-limiting — see the epic's noted auth/abuse gap), that verification must be repeated behind the proxy. *(Correction to issue #4's citation: the SSE-buffering constraint is `architecture.md` §6's SSE tripwire; §7 risk #5 is the gloss-hallucination risk.)*
+~~For v0 the Pages frontend calls the Cloud Run URL directly — the fewest proxies between the model stream and the reader.~~ *(Superseded by the lexercon.com amendment below — the API fronts through the Cloudflare proxy from day one.)* The server ships the `architecture.md` §6 SSE tripwire headers (`X-Accel-Buffering: no`, `Cache-Control: no-cache, no-transform`) from the first commit, and **#11 verifies token-by-token arrival end-to-end through the real chain** — which, post-amendment, is **behind the Cloudflare proxy at `api.lexercon.com`** — before the walking skeleton is called done. *(Correction to issue #4's citation: the SSE-buffering constraint is `architecture.md` §6's SSE tripwire; §7 risk #5 is the gloss-hallucination risk.)*
+
+## Amendment — lexercon.com (2026-07-02)
+
+The operator registered **`lexercon.com`** with the zone on Cloudflare (nameservers verified: `indie`/`lewis.ns.cloudflare.com`; apex unbound at amendment time). This amends the topology *without changing any platform decision* — it binds names to the pieces and upgrades the access story:
+
+| Record | Points at | Terraform resource (bird-watch precedent) |
+|---|---|---|
+| `lexercon.com` (+ `www`) | the Pages frontend project (custom domain; `language-agent.pages.dev` remains the Pages-internal default) | `cloudflare_pages_domain` |
+| `api.lexercon.com` | **proxied** CNAME → the Cloud Run service (`ghs.googlehosted.com` domain-mapping pattern) | `cloudflare_record` (`proxied = true`) + `cloudflare_ruleset` rate-limit |
+
+Consequences of the amendment:
+- **The v0 SSE path is now behind the Cloudflare proxy** (Pages at `lexercon.com` → `api.lexercon.com` → Cloud Run). The contingency this ADR pre-wrote ("if the API later fronts through Cloudflare DNS… repeat the verification behind the proxy") is simply day-one: #11's end-to-end token-by-token verification runs behind the proxy.
+- **The access gate gets teeth**: a Cloudflare rate-limit/WAF ruleset on `api.lexercon.com` is the edge layer (bird-watch's `cloudflare_ruleset.read_api_rate_limit` precedent), **plus** a server-side shared-secret check — edge rules alone don't protect the direct `run.app` URL, so the server verifies regardless of path. Both land as #11 ACs.
+- The Terraform tree gains only the two DNS-layer resources + the ruleset — no new providers, no new architecture.
+- The domain is **not** a product rename: the canonical noun (`INSTANCE.md` → Product concept) is unchanged.
+
+*(Measurement disambiguation, per the PR #12 review suggestion: the table's "1.16 s pruned" was the in-place-uninstall functional probe inside the naive image; "1.08 s" is the rebuilt single-layer pruned image — the product-shape artifact whose 553 MB / 399 MB RSS figures issues inherit. All figures round to the ~1.1 s recorded for #7's confirmation.)*
 
 ## Why not Cloudflare Containers (considered seriously)
 
@@ -43,5 +60,5 @@ Containers matured substantially through 2025–26 (verified via Cloudflare docs
 - `INSTANCE.md` → Status: deploy-target text updated (same PR) to state the split explicitly.
 - `docs/plans/architecture.md` §6: annotated (same PR) to record that this ADR confirms Cloud Run for compute and lands the frontend on Pages — resolving the plan review's drift finding without rewriting §6.
 - Issue **#7** (sidecar) inherits: `python:3.12-slim`, the **prune list**, `camel_data -i morphology-db-msa-r13`, `CAMELTOOLS_DATA` baked, GPL-2 notice; its real image must confirm against **553 MB / ~1.1 s load / ~400 MB RSS** (>2× deviation ⇒ amend this ADR), with **1 GiB memory** allocated to the sidecar container.
-- Issue **#10** inherits the SSE header set; **#11** inherits the deploy topology + end-to-end SSE verification duty and should add the access-gate AC (the epic's flagged auth/abuse gap) before a public URL exists.
+- Issue **#10** inherits the SSE header set; **#11** inherits the deploy topology + end-to-end SSE verification duty and carries the access-gate AC (the auth/abuse gap flagged during planning — attribution note: flagged in the planning session, not in the epic body; the AC now lives in #11 per the lexercon.com amendment) before a public URL exists.
 - The throwaway spike Dockerfiles are **not** committed (issue #4 AC5); this ADR records their content inline above in prose form sufficient to reproduce.
