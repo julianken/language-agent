@@ -73,6 +73,23 @@ module.exports = {
       from: {},
       to: { circular: true },
     },
+    {
+      name: "no-unresolvable-la-imports",
+      severity: "error",
+      comment:
+        "Gate self-defense: an @la/* import dependency-cruiser cannot " +
+        "resolve is an ERROR, never a silent skip. The packages' `exports` " +
+        "maps resolve @la/* only to ./dist/*, so before a build every " +
+        "cross-package import is `couldNotResolve` — and an unresolved " +
+        "module matches NO path-based forbidden rule, silently disarming " +
+        "rules (a)-(c) (PR #25 review finding 1: with dist/ absent, a " +
+        "deliberate engine→lang-fake violation produced 'no dependency " +
+        "violations found'). This rule makes that state loudly red " +
+        "regardless of CI step ordering; ci.yml additionally builds before " +
+        "the gate so the graph is actually resolvable.",
+      from: {},
+      to: { couldNotResolve: true, path: "^@la/" },
+    },
   ],
   options: {
     // import type leaks count too, per ADR §2.4 mechanism 2.

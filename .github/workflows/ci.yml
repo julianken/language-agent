@@ -2,9 +2,18 @@ name: ci
 
 # The real build/test CI for application code, alongside (never replacing)
 # the pre-existing scaffolding.yml gate. Runs the pnpm workspace's
-# install → typecheck → boundary gates → test → build pipeline, plus the
+# install → typecheck → build → boundary gates → test pipeline, plus the
 # ADR §2.4 boundary-enforcement gates (dependency-cruiser, the no-`lang===`
 # lint/grep gate) so they fire on every PR from the first commit.
+#
+# ORDER IS LOAD-BEARING: `build` must run BEFORE the dependency-cruiser
+# gate. The packages' `exports` maps resolve `@la/*` only to ./dist/*, so
+# without a prior build every cross-package import is unresolvable and the
+# path-based forbidden rules match nothing (PR #25 review finding 1 — the
+# gate was silently inert in the original ordering). Belt two:
+# .dependency-cruiser.cjs's `no-unresolvable-la-imports` rule fails loudly
+# on any unresolved @la/* import, so a future reordering can't silently
+# disarm the gate again.
 on: [push, pull_request]
 
 concurrency:
@@ -36,7 +45,10 @@ jobs:
       - name: Typecheck
         run: pnpm run typecheck
 
-      - name: Boundary gate — dependency-cruiser (ADR §2.4 rules a–d)
+      - name: Build
+        run: pnpm run build
+
+      - name: Boundary gate — dependency-cruiser (ADR §2.4 rules a–d; requires the build above)
         run: pnpm run boundary:deps
 
       - name: Boundary gate — no lang===/language=== conditionals (ADR §2.4 mechanism 4)
@@ -44,6 +56,3 @@ jobs:
 
       - name: Test
         run: pnpm run test
-
-      - name: Build
-        run: pnpm run build
