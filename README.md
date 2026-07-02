@@ -1,17 +1,17 @@
 # language-agent
 
-**An AI agent that teaches you to read Modern Standard Arabic (MSA) — from zero — through a conversation that blends English and Arabic.**
+**An AI agent that teaches you to read a target language — Arabic (MSA) and Traditional Chinese instances, built simultaneously on one drop-in engine — from zero, through a conversation that blends English and the target language.**
 
-You talk to a capable conversational agent (it can search the web and read documents) about whatever you like. Its replies come back in a progressive **English↔Arabic blend** that starts almost entirely in English and, word by word, becomes Arabic as you learn — so you are always reading slightly above your level but never lost. Every Arabic word is clickable, tinted by how well you know it, and sheds its short-vowel marks (ḥarakāt) as you master it. You watch the training wheels come off, in the text itself.
+You talk to a capable conversational agent (it can search the web and read documents) about whatever you like. Its replies come back in a progressive **English↔target blend** that starts almost entirely in English and, word by word, becomes the target language as you learn — so you are always reading slightly above your level but never lost. Every target-language word is clickable, tinted by how well you know it, and sheds its scaffolding as you master it (Arabic: the short-vowel marks / ḥarakāt; Chinese: the pinyin ruby, tone last). You watch the training wheels come off, in the text itself.
 
 > **Status: in design — pre-code.** There is no application build, run, or test yet. The design system, screens, and the vocabulary engine are fully specified (see `DESIGN.md`, the Figma file in `INSTANCE.md`, and `docs/plans/`); implementation hasn't started. The repo's own scaffolding checks (CI + `scripts/` guards) are live from the first commit.
 
 ## The idea
 
 - **Two decoupled axes.** A reply's difficulty moves along *vocabulary* (which words are Arabic) and *grammar* (sentence structure) independently, so the blend can advance one without overwhelming the other.
-- **A verified-blend engine.** The learner must **never** see incorrect Arabic. Replies are generated as verified MSA and then *anglicized down* by substitution — never generated in English and machine-translated up. LLM judges and a verification stack guard correctness end-to-end (neither the maintainer nor the operator reads Arabic, so verification is load-bearing, not a nicety).
+- **A verified-blend engine.** The learner must **never** see an incorrect target-language byte. Replies are generated as verified target text (vocalized MSA; Traditional Chinese with verified readings) and then *anglicized down* by substitution — never generated in English and machine-translated up. Deterministic gates and diverse LLM juries guard correctness end-to-end (neither the maintainer nor the operator reads either language, so verification is load-bearing, not a nicety).
 - **The vocabulary system** decides which words a learner sees, when. The blend ratio is the emergent sum of per-word state, capped by a coverage policy, aimed by a frequency curriculum, sequenced by the conversation topic, and advanced over spaced encounters (FSRS). The full locked design is in [`docs/plans/vocabulary-system.md`](docs/plans/vocabulary-system.md).
-- **Progress-as-typography.** The reading surface *is* the progress display — word-status tints and the vowel-fade are the core semantic system, rendered in running text rather than chrome.
+- **Progress-as-typography.** The reading surface *is* the progress display — word-status tints and the scaffold-fade (vowel-fade in Arabic, pinyin-fade in Chinese) are the core semantic system, rendered in running text rather than chrome.
 
 ## How this repo is built
 
