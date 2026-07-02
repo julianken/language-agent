@@ -6,4 +6,11 @@
 # + `git diff --exit-code`s it, so generator-version drift must be an
 # explicit edit here, never ambient. Run via scripts/generate-sidecar-models.sh
 # (uvx), the same command CI runs.
+#
+# The sibling requirements.lock pins the generator's FULL transitive
+# closure (regenerate with:
+#   uv pip compile src/sidecars/ar/codegen/requirements.txt --universal \
+#     --python-version 3.12 -o src/sidecars/ar/codegen/requirements.lock
+# ). generate-sidecar-models.sh feeds it to uvx via --with-requirements, so
+# both codegen halves are symmetrically reproducible (PR #27 review).
 datamodel-code-generator==0.66.3

@@ -1,0 +1,31 @@
+# The Arabic verification sidecar (issue #7 stage 2). Runtime deps are
+# deliberately minimal: camel-tools supplies BOTH deterministic gate legs
+# (dediac round-trip utilities + the calima-msa-r13 analyzer); FastAPI +
+# uvicorn are the HTTP layer. The full transitive lock lives in
+# requirements.lock / requirements-dev.lock (uv pip compile --universal) —
+# regenerate with the commands in the lock headers; the Dockerfile installs
+# from the lock with --no-deps after filtering the hosting ADR's prune list
+# (docs/decisions/hosting-walking-skeleton.md), so torch/nvidia-*/etc. never
+# enter the image.
+[project]
+name = "la-sidecar-ar"
+version = "0.1.0"
+description = "Arabic verification sidecar — dediac round-trip + calima-msa-r13 analyzer-membership gate legs behind the shared sidecar contract"
+requires-python = ">=3.12"
+dependencies = [
+  # Real, pinned per issue #7 (anti-slopsquatting: CAMeL Lab's camel-tools,
+  # MIT-licensed code; the morphology DB data package is GPL-2 — see
+  # licenses/NOTICE.md).
+  "camel-tools==1.6.*",
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "httpx>=0.27",       # fastapi.testclient transport
+  "jsonschema>=4.21",  # annotation payloads vs ar-annotations.schema.json
+  "pyyaml>=6",         # contract-version lockstep test reads openapi.yaml
+  "schemathesis>=4.1", # property-fuzz conformance vs the shared spec
+]

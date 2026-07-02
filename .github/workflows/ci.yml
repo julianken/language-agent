@@ -94,3 +94,48 @@ jobs:
         run: |
           git fetch --depth=1 origin main
           BASE_REF=FETCH_HEAD bash scripts/check-openapi-breaking.sh
+
+  # The Arabic verification sidecar (issue #7 stage 2). Build-time network
+  # only (wheels + the morphology DB); every RUNTIME step below executes
+  # under `--network none` — that is the offline-at-runtime AC, asserted on
+  # every PR, not once. The shared contract artifacts are mounted read-only
+  # (they live outside the docker build context on purpose: the
+  # implementation types against the contract, it never carries it).
+  sidecar-ar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build the pruned runtime image (hosting-ADR shape)
+        run: docker build --target runtime -t language-agent/sidecar-ar:ci src/sidecars/ar
+
+      - name: Build the test image (runtime + locked dev deps + suite)
+        run: docker build --target test -t language-agent/sidecar-ar:ci-test src/sidecars/ar
+
+      - name: ADR consistency probe — size / cold load / RSS (informational; >2x deviation is an ADR-amendment finding)
+        run: |
+          docker image inspect language-agent/sidecar-ar:ci --format 'runtime image size: {{.Size}} bytes (ADR: 553 MB)'
+          docker run --rm --network none language-agent/sidecar-ar:ci python -m app.probe
+
+      - name: Prune regression — the ADR prune list must stay out of the runtime image
+        run: |
+          docker run --rm --network none language-agent/sidecar-ar:ci python - <<'PY'
+          import importlib.util, sys
+          pruned = ["torch", "triton", "transformers", "sympy", "sklearn", "pandas"]
+          present = [m for m in pruned if importlib.util.find_spec(m) is not None]
+          sys.exit(f"prune regression: {present}" if present else 0)
+          PY
+
+      - name: Golden fixtures + conformance suite — OFFLINE (--network none)
+        run: |
+          docker run --rm --network none \
+            -v "$PWD/src/packages/contract/sidecar/openapi.yaml:/contract/openapi.yaml:ro" \
+            -v "$PWD/src/packages/lang-ar/ar-annotations.schema.json:/contract/ar-annotations.schema.json:ro" \
+            language-agent/sidecar-ar:ci-test python -m pytest -q tests
+
+      - name: Schemathesis vs the unchanged shared spec — OFFLINE (--network none)
+        run: |
+          docker run --rm --network none \
+            -v "$PWD/src/packages/contract/sidecar/openapi.yaml:/contract/openapi.yaml:ro" \
+            language-agent/sidecar-ar:ci-test bash tests/run-schemathesis.sh
