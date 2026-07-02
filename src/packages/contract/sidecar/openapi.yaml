@@ -1,0 +1,450 @@
+# The shared verification-sidecar contract — HAND-AUTHORED, spec-first.
+#
+# docs/decisions/language-module-architecture.md §3.2: this document is the
+# single source of truth for the polyglot boundary. It is NEVER generated
+# from an implementation's emitted /openapi.json — both sides generate FROM
+# it instead:
+#
+#   - Python: `datamodel-code-generator` → Pydantic v2 models
+#     (scripts/generate-sidecar-models.sh → src/sidecars/*/generated/).
+#   - TS: `openapi-typescript` + `openapi-fetch` → the typed client
+#     (src/packages/contract/src/sidecar-client/).
+#
+# CI regenerates both and fails on drift (`git diff --exit-code`), and
+# scripts/check-openapi-breaking.sh (oasdiff) fails any breaking change
+# that does not bump the MAJOR component of `info.version` below.
+#
+# zh-true discipline (ADR §3.2, dual-instance amendment): every language's
+# sidecar implements THIS document. Nothing in it may be named for, or
+# shaped by, any single language — language-specific payloads ride only the
+# generic `annotations` envelope (§3.4). Examples below use the `fake`
+# language (the max-topology CI fixture) on purpose.
+openapi: 3.1.0
+
+info:
+  title: language-agent verification sidecar
+  # Mirrors @la/contract's CONTRACT_VERSION and is reported by
+  # /v1/capabilities. Additive-only within a major (ADR §3.5); the MAJOR
+  # component is parsed by scripts/check-openapi-breaking.sh — keep the
+  # plain MAJOR.MINOR.PATCH form on this line.
+  version: 0.1.0
+  description: >-
+    The polyglot boundary between the TS engine and a language's Python
+    verification sidecar (ADR §3). Scope discipline (§3.1): seams 1 + 3 and
+    the verified-surface-form input to seam 7 only — mastery, curriculum,
+    steering, and rendering stay TS-side. Endpoint anatomy follows the
+    KServe Open Inference Protocol shape (§3.3): cheap liveness, honest
+    readiness, a static capabilities declaration, and the text-in/tokens-out
+    verification gate.
+
+paths:
+  /healthz:
+    get:
+      operationId: getHealth
+      summary: Liveness — process is up. Cheap; NEVER touches models.
+      description: >-
+        Liveness probe target (ADR §3.3). Implementations must answer from
+        the HTTP layer alone — no model, database, or heavy-asset access —
+        so a wedged model load can never look like a dead process.
+      responses:
+        "200":
+          description: Process is live.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+
+  /readyz:
+    get:
+      operationId: getReadiness
+      summary: Honest readiness — 200 only when ALL declared heavy assets are loaded.
+      description: >-
+        The load-bearing endpoint (ADR §3.3): Cloud Run multi-container
+        dependent startup requires a startup probe here, with
+        `failureThreshold × periodSeconds` sized to the sidecar's worst-case
+        warmup. Returns 200 with `ready: true` only once every declared
+        heavy asset (morphology databases, neural models, …) is loaded and
+        the gate could serve /v1/verify immediately; 503 with `ready: false`
+        and per-check detail while anything is still warming. Never report
+        ready optimistically.
+      responses:
+        "200":
+          description: All declared heavy assets are loaded; the gate is servable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReadinessReport"
+              example:
+                ready: true
+                checks:
+                  - id: example-heavy-asset
+                    ready: true
+        "503":
+          description: Still warming up (or a heavy asset failed to load).
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReadinessReport"
+              example:
+                ready: false
+                checks:
+                  - id: example-heavy-asset
+                    ready: false
+                    detail: still loading
+
+  /v1/capabilities:
+    get:
+      operationId: getCapabilities
+      summary: Static capability declaration (declaration, not negotiation).
+      description: >-
+        The engine validates `contractVersion` and that `language` matches
+        the instance config at boot, and cross-checks the response against
+        `deriveCapabilities(pack)` — deploy-time skew fails readiness (ADR
+        §3.3). The engine NEVER branches on `language`; leg ids flow through
+        as opaque evidence labels.
+      responses:
+        "200":
+          description: The sidecar's static declaration.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Capabilities"
+
+  /v1/verify:
+    post:
+      operationId: verify
+      summary: "The gate — TEXT-IN, TOKENS-OUT."
+      description: >-
+        Mirrors `@la/contract`'s seam-1 `VerificationGate.verify` port
+        exactly (ADR §1.3 port 1, §3.3): the candidate target text plus the
+        turn's intents go in; the banded token stream comes out. Token
+        boundaries are an OUTPUT of verification, not an input —
+        segmentation, boundary voting, and discontinuous-span minting happen
+        INSIDE the gate. Leg composition is entirely implementation-owned;
+        the engine sees only opaque `legId` evidence. An unanalyzable token
+        must band RED — never a silent pass.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/VerifyRequest"
+      responses:
+        "200":
+          description: The banded token stream for the candidate text.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VerifyResponse"
+        "400":
+          description: Malformed request (unparseable body, wrong types).
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "422":
+          description: Well-formed but semantically invalid request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    HealthResponse:
+      type: object
+      description: Liveness answer. Carries no model state by design.
+      required: [status]
+      additionalProperties: false
+      properties:
+        status:
+          type: string
+          description: Fixed liveness marker.
+          const: ok
+
+    ReadinessReport:
+      type: object
+      description: >-
+        Honest readiness: `ready` is the conjunction of every declared
+        check. Served with HTTP 200 when `ready: true`, 503 otherwise.
+      required: [ready, checks]
+      additionalProperties: false
+      properties:
+        ready:
+          type: boolean
+        checks:
+          type: array
+          description: >-
+            One entry per declared heavy asset / warmup stage. Check ids are
+            OPAQUE implementation-owned strings (same discipline as
+            `legId`) — the engine may log them, never branch on them.
+          items:
+            $ref: "#/components/schemas/ReadinessCheck"
+
+    ReadinessCheck:
+      type: object
+      required: [id, ready]
+      additionalProperties: false
+      properties:
+        id:
+          type: string
+          description: Opaque check id.
+        ready:
+          type: boolean
+        detail:
+          type: string
+          description: Optional human-readable progress/failure detail.
+
+    Capabilities:
+      type: object
+      description: >-
+        Static declaration (ADR §3.3) the engine cross-checks against
+        `deriveCapabilities(pack)` at boot. Declaration-half only — there is
+        no negotiation.
+      required:
+        [language, contractVersion, verificationLegs, annotationSchemaId, features]
+      additionalProperties: false
+      properties:
+        language:
+          type: string
+          description: >-
+            The instance's language id. Opaque on this boundary: the engine
+            equality-checks it against the instance config and never
+            branches on it. (The closed set of in-tree ids is owned by
+            `@la/contract`'s `LanguageId`, not by this document — widening
+            it is a contract-package edit, never a shared-spec edit.)
+        contractVersion:
+          type: string
+          description: >-
+            Must equal the engine's CONTRACT_VERSION (exact equality;
+            in-tree packs deploy lockstep — ADR §1.2, §3.5).
+        verificationLegs:
+          type: array
+          description: >-
+            Opaque leg ids this sidecar composes inside /v1/verify. The
+            engine logs and cross-checks them; it never branches on them.
+          items:
+            type: string
+        annotationSchemaId:
+          type: string
+          description: >-
+            The versioned id of the module-owned annotation-payload schema
+            (e.g. `fake-annotations/v1`) every emitted `annotations`
+            envelope declares.
+        features:
+          type: array
+          description: >-
+            Opaque feature ids (may be empty). Additive declaration surface;
+            the engine never branches on entries.
+          items:
+            type: string
+      example:
+        language: fake
+        contractVersion: 0.1.0
+        verificationLegs: [example-leg-a, example-leg-b]
+        annotationSchemaId: fake-annotations/v1
+        features: []
+
+    VerifyRequest:
+      type: object
+      description: "TEXT-IN half of the gate: candidate text + turn intents."
+      required: [targetText, intents]
+      additionalProperties: false
+      properties:
+        targetText:
+          type: string
+          description: >-
+            The candidate target-language text, as generated — NOT
+            pre-tokenized. Token boundaries are gate output.
+        intents:
+          type: array
+          description: The turn's communicative intents the gate cross-checks against.
+          items:
+            $ref: "#/components/schemas/TurnIntent"
+
+    TurnIntent:
+      type: object
+      description: One communicative intent of the turn (contract seam-1 `TurnIntent`).
+      required: [id, description]
+      additionalProperties: false
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+
+    VerifyResponse:
+      type: object
+      description: >-
+        TOKENS-OUT half of the gate. An envelope object (not a bare array)
+        so post-1.0 evolution can add top-level fields additively (ADR
+        §3.5: additive-only within a major).
+      required: [tokens]
+      additionalProperties: false
+      properties:
+        tokens:
+          type: array
+          description: The banded token stream, in display order.
+          items:
+            $ref: "#/components/schemas/VerifiedToken"
+      example:
+        tokens:
+          - spine:
+              id: t1
+              lang: fake
+              surface: zip
+              kind: word
+              status: new
+              band: GREEN
+              spanGroup: sg-1
+            band: GREEN
+            evidence:
+              - legId: example-leg-a
+                pass: true
+            annotations:
+              lang: fake
+              schemaId: fake-annotations/v1
+              payload: {}
+          - spine:
+              id: t2
+              lang: fake
+              surface: zap
+              kind: word
+              status: new
+              band: YELLOW
+              spanGroup: sg-1
+            band: YELLOW
+            evidence:
+              - legId: example-leg-a
+                pass: true
+              - legId: example-leg-b
+                pass: false
+                detail: example degraded-confidence detail
+            annotations:
+              lang: fake
+              schemaId: fake-annotations/v1
+              payload: {}
+
+    Band:
+      type: string
+      description: >-
+        Verification band (contract-owned, closed). GREEN = verified;
+        YELLOW = degraded confidence (surfaced with scaffolds pinned);
+        RED = refused — never displayed on a GENERATED stream (ADR §1.5's
+        scoped RED law; repair happens engine-side).
+      enum: [GREEN, YELLOW, RED]
+
+    TokenSpine:
+      type: object
+      description: >-
+        The shared token spine (ADR §1.3 seam 3) — contract-owned and
+        CLOSED: `additionalProperties: false` is load-bearing. A
+        per-language field can NEVER be added here; everything
+        language-specific rides the `annotations` envelope on
+        `VerifiedToken`.
+      required: [id, lang, surface, kind, status, band]
+      additionalProperties: false
+      properties:
+        id:
+          type: string
+          description: Opaque per-token id, unique within one verified stream.
+        lang:
+          type: string
+          description: The token's language id (same opacity rule as `Capabilities.language`).
+        surface:
+          type: string
+          description: The verified surface text of this token.
+        kind:
+          type: string
+          description: >-
+            Pack-declared token-kind vocabulary — opaque to the engine; the
+            renderer registry keys on it.
+        status:
+          type: string
+          description: >-
+            Learner-status slot — pack-interpreted, engine-opaque (same
+            discipline as `kind`).
+        band:
+          $ref: "#/components/schemas/Band"
+          description: >-
+            The gate mints the spine already banded; always equals the
+            enclosing `VerifiedToken.band`.
+        spanGroup:
+          type: string
+          description: >-
+            Present only when this token is part of a DISCONTINUOUS
+            learnable unit: tokens sharing a `spanGroup` map onto one unit
+            even with other tokens between them (minted at segmentation
+            time, inside the gate).
+
+    LegEvidence:
+      type: object
+      description: >-
+        Evidence from one verification leg. `legId` is an OPAQUE string the
+        engine logs but never branches on (capability declaration, not
+        negotiation).
+      required: [legId, pass]
+      additionalProperties: false
+      properties:
+        legId:
+          type: string
+        pass:
+          type: boolean
+        detail:
+          type: string
+
+    AnnotationEnvelope:
+      type: object
+      description: >-
+        The extension-payload envelope (ADR §3.4) — the ONLY place
+        language-specific data rides this boundary. `payload` is validated
+        against the MODULE-OWNED JSON Schema named by `schemaId` (generated
+        from the module's canonical zod schema and freshness-gated in CI) —
+        in the module's conformance suite and at the engine's module
+        boundary, NOT in this shared spec. Deliberately NOT a closed
+        `oneOf` + discriminator over languages (adding language N must
+        never edit this document) and NOT a schema-less blob (`schemaId`
+        must always resolve to a concrete versioned module-owned schema).
+      required: [lang, schemaId, payload]
+      additionalProperties: false
+      properties:
+        lang:
+          type: string
+        schemaId:
+          type: string
+          description: Versioned module-owned schema id, e.g. `fake-annotations/v1`.
+        payload:
+          type: object
+          description: The module-owned payload; opaque to the engine.
+
+    VerifiedToken:
+      type: object
+      description: >-
+        The gate's output element (ADR §1.3 port 1): `{ spine, band,
+        evidence, annotations }`. `band` restates `spine.band` at top level
+        per the port contract; the two always agree.
+      required: [spine, band, evidence, annotations]
+      additionalProperties: false
+      properties:
+        spine:
+          $ref: "#/components/schemas/TokenSpine"
+        band:
+          $ref: "#/components/schemas/Band"
+        evidence:
+          type: array
+          items:
+            $ref: "#/components/schemas/LegEvidence"
+        annotations:
+          $ref: "#/components/schemas/AnnotationEnvelope"
+
+    Error:
+      type: object
+      description: Language-agnostic error envelope.
+      required: [code, message]
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          description: Opaque machine-readable error code.
+        message:
+          type: string

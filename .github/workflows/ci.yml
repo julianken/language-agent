@@ -62,3 +62,34 @@ jobs:
 
       - name: Test
         run: pnpm run test
+
+      # --- Spec-first gates (ADR §3.2; issue #7's spec-first opening PR) ---
+      # The hand-authored src/packages/contract/sidecar/openapi.yaml is the
+      # single source of truth; every generated artifact is committed, so
+      # each gate is: regenerate, then fail on any drift. These run AFTER
+      # Build: the annotation-schema generator imports @la/lang-ar's dist/.
+
+      - name: Spec freshness — TS sidecar client + ar annotation schema (regenerate + git diff --exit-code)
+        run: |
+          pnpm run spec:generate:node
+          git diff --exit-code -- \
+            src/packages/contract/src/sidecar-client/openapi-types.gen.ts \
+            src/packages/lang-ar/ar-annotations.schema.json
+
+      - name: Set up uv (runs the pinned datamodel-code-generator via uvx)
+        uses: astral-sh/setup-uv@v8
+
+      - name: Spec freshness — Pydantic v2 models (regenerate + git diff --exit-code)
+        # The real command is scripts/generate-sidecar-models.sh — uvx with
+        # the exact pin from src/sidecars/ar/codegen/requirements.txt.
+        run: |
+          pnpm run spec:generate:python
+          git diff --exit-code -- src/sidecars/ar/generated
+
+      - name: Spec breaking-change gate — oasdiff (breaking without a major bump fails)
+        # checkout@v4 is shallow, so fetch the base branch tip explicitly;
+        # the script compares HEAD's spec against it (oasdiff via the pinned
+        # tufin/oasdiff docker image).
+        run: |
+          git fetch --depth=1 origin main
+          BASE_REF=FETCH_HEAD bash scripts/check-openapi-breaking.sh

@@ -13,7 +13,11 @@
     "test": "pnpm -r --if-present run test",
     "build": "pnpm -r --if-present run build",
     "boundary:deps": "depcruise --config .dependency-cruiser.cjs src/packages src/apps",
-    "boundary:lang-conditional": "eslint --config eslint.config.mjs src/packages/engine src/apps/server/src src/apps/web/src/shell && bash scripts/check-no-lang-conditional.sh"
+    "boundary:lang-conditional": "eslint --config eslint.config.mjs src/packages/engine src/apps/server/src src/apps/web/src/shell && bash scripts/check-no-lang-conditional.sh",
+    "spec:generate:node": "pnpm --filter @la/contract run generate:sidecar-client && pnpm --filter @la/lang-ar run generate:annotation-schema",
+    "spec:generate:python": "bash scripts/generate-sidecar-models.sh",
+    "spec:generate": "pnpm run spec:generate:node && pnpm run spec:generate:python",
+    "spec:check-breaking": "bash scripts/check-openapi-breaking.sh"
   },
   "devDependencies": {
     "@types/node": "^24.13.2",

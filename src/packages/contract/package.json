@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "The drop-in language-pack contract, v0: the nine port types (text-in/tokens-out verify, token spine with spanGroup, annotation + LearningEvent envelopes, per-(dim × unit) ScaffoldDirective, mastery-graph declarations incl. creditLeakEdges), the pack-manifest zod schema, and deriveCapabilities. ZERO workspace dependencies (ADR §2.4 rule c); zod is the one external runtime dep. The sidecar OpenAPI document is owned by #7's spec-first PR.",
+  "description": "The drop-in language-pack contract, v0: the nine port types (text-in/tokens-out verify, token spine with spanGroup, annotation + LearningEvent envelopes, per-(dim × unit) ScaffoldDirective, mastery-graph declarations incl. creditLeakEdges), the pack-manifest zod schema, and deriveCapabilities — plus the HAND-AUTHORED sidecar OpenAPI document (sidecar/openapi.yaml, ADR §3.2) and its generated typed client at the ./sidecar-client subpath (openapi-typescript + openapi-fetch; regenerate via `pnpm run generate:sidecar-client`, freshness-gated in CI). ZERO workspace dependencies (ADR §2.4 rule c); zod and openapi-fetch are the only external runtime deps (openapi-fetch loads only through the subpath).",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./sidecar-client": {
+      "types": "./dist/sidecar-client/index.d.ts",
+      "default": "./dist/sidecar-client/index.js"
     }
   },
   "main": "./dist/index.js",
@@ -15,9 +19,14 @@
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "generate:sidecar-client": "openapi-typescript sidecar/openapi.yaml -o src/sidecar-client/openapi-types.gen.ts"
   },
   "dependencies": {
+    "openapi-fetch": "^0.17.0",
     "zod": "catalog:"
+  },
+  "devDependencies": {
+    "openapi-typescript": "^7.13.0"
   }
 }

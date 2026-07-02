@@ -1,19 +1,22 @@
-# docker-compose profile STUBS only (issue #6). Service definitions are
-# placeholders — the real Prism mock service lands with #7's spec-first
-# opening PR (docs/decisions/language-module-architecture.md §3.6); real
-# sidecar images with #7 (ar) and the zh walking-skeleton child (§ dual-
-# instance amendment). This file only establishes the profile shape so #7
-# and #19 have somewhere to fill in real `build`/`image` entries.
+# docker-compose profiles (issue #6 established the shape; #7's spec-first
+# opening PR filled the `mock` profile — docs/decisions/
+# language-module-architecture.md §3.6). Remaining service definitions are
+# placeholders: real sidecar images land with #7's implementation PRs (ar)
+# and the zh walking-skeleton child (§ dual-instance amendment).
 #
 # Profiles:
 #   server      — the Node/TS SSE server (src/apps/server), needed by every leg.
 #   sidecar-ar  — the Arabic verification sidecar (build context
-#                 src/sidecars/ar; real image lands with #7).
+#                 src/sidecars/ar; real image lands with #7's implementation
+#                 PRs — NOT its spec-first opening PR).
 #   sidecar-zh  — the Chinese verification sidecar (build context
 #                 src/sidecars/zh; real image lands later).
-#   mock        — the Prism "null sidecar" serving src/packages/contract's
-#                 openapi.yaml once it exists (#7), letting #9 (hot path) and
-#                 frontend work proceed with zero Python.
+#   mock        — the Prism "null sidecar" serving the hand-authored shared
+#                 spec at src/packages/contract/sidecar/openapi.yaml, letting
+#                 #9 (hot path) and frontend work proceed with zero Python.
+#                 Boot it alone with:  docker compose --profile mock up mock
+#                 (the profile also activates `server`, whose image is still
+#                 a placeholder until #9).
 name: language-agent
 
 services:
@@ -30,7 +33,9 @@ services:
   sidecar-ar:
     profiles: ["sidecar-ar", "ar"]
     # Placeholder: real image + Dockerfile (build context src/sidecars/ar)
-    # land with issue #7's opening PR.
+    # land with issue #7's implementation PRs (stage 2 — the FastAPI routes
+    # type against src/sidecars/ar/generated/models.py, generated from the
+    # shared spec).
     image: "language-agent/sidecar-ar:placeholder"
 
   sidecar-zh:
@@ -42,8 +47,16 @@ services:
 
   mock:
     profiles: ["mock"]
-    # Placeholder: the real Prism mock (stoplight/prism) serving
-    # src/packages/contract/sidecar/openapi.yaml lands with issue #7's
-    # spec-first opening PR — that file does not exist yet.
-    image: "stoplight/prism:4"
-    command: "mock -h 0.0.0.0 /placeholder-openapi.yaml"
+    # The Prism "null sidecar" (ADR §3.6): serves the hand-authored shared
+    # OpenAPI document as a mock sidecar on :4010. Prism also VALIDATES
+    # inbound requests against the contract, so the engine's outbound
+    # requests get contract-checked here too.
+    image: "stoplight/prism:5"
+    # -m false: the multiprocess fork crashes under docker (upstream Prism
+    # issue: `isPrimary` undefined in createMultiProcessPrism); single
+    # process is all a mock needs.
+    command: "mock -h 0.0.0.0 -p 4010 -m false /contract/openapi.yaml"
+    volumes:
+      - "./src/packages/contract/sidecar/openapi.yaml:/contract/openapi.yaml:ro"
+    ports:
+      - "4010:4010"

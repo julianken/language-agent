@@ -1,0 +1,67 @@
+{
+  "$id": "ar-annotations/v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "diac": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skeleton": {
+      "type": "string",
+      "minLength": 1
+    },
+    "vowelState": {
+      "type": "string",
+      "enum": [
+        "full",
+        "partial",
+        "none"
+      ]
+    },
+    "morphology": {
+      "type": "object",
+      "properties": {
+        "lemma": {
+          "type": "string",
+          "minLength": 1
+        },
+        "root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pattern": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pos": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gloss": {
+          "type": "string",
+          "minLength": 1
+        },
+        "caphi": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "lemma",
+        "root",
+        "pattern",
+        "pos",
+        "gloss"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "diac",
+    "skeleton",
+    "vowelState",
+    "morphology"
+  ],
+  "additionalProperties": false
+}
