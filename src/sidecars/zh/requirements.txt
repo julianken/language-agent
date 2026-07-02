@@ -1,0 +1,18 @@
+# zh sidecar runtime dependencies — EXACT pins (the image is a measured,
+# reproducible artifact; drift must be an explicit edit here, never ambient).
+#
+# Deterministic-legs-only BY CONSTRUCTION (dual-instance amendment,
+# Decision 1): no torch, transformers, g2pW, g2pM/g2pC, HanLP, OpenCC or
+# pkuseg — their appearance is a regression, enforced by
+# scripts/assert-deterministic-only.sh (image) and
+# tests/test_no_neural_deps.py (env).
+#
+# All packages verified on PyPI with real publishers + release history
+# (anti-slopsquatting): fastapi (MIT, tiangolo), uvicorn (BSD-3, encode),
+# pydantic (MIT, pydantic), pypinyin (MIT, mozillazg/python-pinyin),
+# jieba (MIT, fxsjy/jieba).
+fastapi==0.139.0
+uvicorn==0.49.0
+pydantic==2.13.4
+pypinyin==0.55.0
+jieba==0.42.1

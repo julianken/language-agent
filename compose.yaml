@@ -1,16 +1,17 @@
 # docker-compose profiles (issue #6 established the shape; #7's spec-first
 # opening PR filled the `mock` profile — docs/decisions/
-# language-module-architecture.md §3.6). Remaining service definitions are
-# placeholders: real sidecar images land with #7's implementation PRs (ar)
-# and the zh walking-skeleton child (§ dual-instance amendment).
+# language-module-architecture.md §3.6; issue #19 filled `sidecar-zh`).
+# Remaining placeholders: the server image (issue #9) and the ar sidecar
+# image (#7's implementation PRs).
 #
 # Profiles:
 #   server      — the Node/TS SSE server (src/apps/server), needed by every leg.
 #   sidecar-ar  — the Arabic verification sidecar (build context
 #                 src/sidecars/ar; real image lands with #7's implementation
 #                 PRs — NOT its spec-first opening PR).
-#   sidecar-zh  — the Chinese verification sidecar (build context
-#                 src/sidecars/zh; real image lands later).
+#   sidecar-zh  — the Chinese verification sidecar v0 (build context
+#                 src/sidecars/zh; deterministic legs only, issue #19).
+#                 Boot it alone with:  docker compose --profile sidecar-zh up
 #   mock        — the Prism "null sidecar" serving the hand-authored shared
 #                 spec at src/packages/contract/sidecar/openapi.yaml, letting
 #                 #9 (hot path) and frontend work proceed with zero Python.
@@ -40,10 +41,14 @@ services:
 
   sidecar-zh:
     profiles: ["sidecar-zh", "zh"]
-    # Placeholder: real image (build context src/sidecars/zh) lands with the
-    # zh walking-skeleton sidecar child (deterministic-legs-only per the
-    # dual-instance amendment).
-    image: "language-agent/sidecar-zh:placeholder"
+    # The real zh verification sidecar v0 (issue #19): deterministic legs
+    # only per the dual-instance amendment — torch-free by construction,
+    # offline at runtime (all tables baked at build). /readyz reports honest
+    # readiness once the data tables + jieba voter are loaded (seconds-scale).
+    build: src/sidecars/zh
+    image: "language-agent/sidecar-zh:v0"
+    ports:
+      - "8137:8000"
 
   mock:
     profiles: ["mock"]

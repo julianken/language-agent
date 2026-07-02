@@ -10,6 +10,12 @@ build/
 dist/
 *.tsbuildinfo
 
+# Python (the sidecars are Python; envs and caches never belong in git)
+__pycache__/
+.venv/
+.pytest_cache/
+.schemathesis/
+
 # Misc
 .DS_Store
 *.log

@@ -1,0 +1,27 @@
+{
+  "name": "pass-yi-shift-before-4",
+  "description": "一 tone shift applied only where the enumeration marks it applicable: the (<START>|一|個) entry carries surface yí before 4th-tone 個.",
+  "data": "default",
+  "request": {
+    "targetText": "一個",
+    "intents": []
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "一",
+        "kind": "single",
+        "band": "GREEN",
+        "surfacePinyin": [
+          "yí"
+        ]
+      },
+      {
+        "surface": "個",
+        "kind": "word",
+        "band": "GREEN"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "provenance": "stub — replaced wholesale by #20",
+  "note": "Minimal C9-style context table, co-designed with the zh sidecar golden fixtures (issue #19, per its plan review). `singles` is the committed C3 definition — the v0 sliver function-word subset admitted as pinned single tokens (issue #19 step 2(a) parenthetical: {的, 了, 不, 一} plus 嗎/呢). `entries` enumerates the (prev, char, next) role-contexts the fixtures exercise, each carrying the curation-pinned base reading and the resolver-verified surface reading for that context. The sidecar leg is FAIL-CLOSED: any single occurring in a context absent from this enumeration regenerates. 呢 is C3-admitted but carries no entry (no fixture exercises it), so every 呢 occurrence regenerates — fail-closed, per the AC. #20 owns the real C9 enumeration (all in-world neighbor bigrams/trigrams, jury/native-assisted) and replaces this file wholesale.",
+  "contextMarkers": {
+    "START": "<START>",
+    "END": "<END>",
+    "meaning": "prev/next are the adjacent unit surfaces inside the same Han run; a run boundary (start/end of run, or adjacent punctuation) is <START>/<END>."
+  },
+  "singles": ["的", "了", "不", "一", "嗎", "呢"],
+  "entries": [
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "茶",
+      "base": "de5",
+      "surface": "de5",
+      "note": "possessive particle after pronoun"
+    },
+    {
+      "char": "了",
+      "prev": "喝",
+      "next": "茶",
+      "base": "le5",
+      "surface": "le5",
+      "note": "perfective aspect marker after verb, before object"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "好",
+      "base": "bu4",
+      "surface": "bu4",
+      "note": "negation before third tone — no 不 shift (shift applies before 4th tone only)"
+    },
+    {
+      "char": "一",
+      "prev": "星期",
+      "next": "<END>",
+      "base": "yi1",
+      "surface": "yi1",
+      "rule": "ordinal-date",
+      "note": "weekday ordinal — 一 stays unshifted yī; the ordinal/date hard rule requires exactly this rule marker"
+    },
+    {
+      "char": "一",
+      "prev": "<START>",
+      "next": "個",
+      "base": "yi1",
+      "surface": "yi2",
+      "rule": "tone-shift-before-4",
+      "note": "一 shifts to yí before 4th tone (個 gè)"
+    },
+    {
+      "char": "嗎",
+      "prev": "茶",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5",
+      "note": "sentence-final yes/no question particle"
+    }
+  ]
+}

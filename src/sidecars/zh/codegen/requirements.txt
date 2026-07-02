@@ -1,0 +1,11 @@
+# Pin for the Python half of the spec codegen pipeline (ADR §3.2), zh leg:
+# datamodel-code-generator renders src/packages/contract/sidecar/openapi.yaml
+# into Pydantic v2 models at src/sidecars/zh/generated/models.py.
+#
+# Exact pin on purpose — the generated file is committed and CI regenerates
+# + `git diff --exit-code`s it, so generator-version drift must be an
+# explicit edit here, never ambient. Run via scripts/generate-sidecar-models.sh
+# (uvx), the same command CI runs. Kept in lockstep with the ar pin
+# (src/sidecars/ar/codegen/requirements.txt): both sidecars generate from the
+# ONE shared document, so the generator version is a shared fact.
+datamodel-code-generator==0.66.3

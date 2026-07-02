@@ -1,0 +1,128 @@
+{
+  "provenance": "stub — replaced wholesale by #20",
+  "note": "Curation STUB co-designed with src/sidecars/zh/tests/fixtures/golden (issue #19, per its plan review). These are curation-SHAPED tuples — word, pinned reading_id, citation pinyin (tone-number form), curated within-word surface pinyin, POS class, sense id — NOT curated seed content. #20 (the zh seed sliver child) owns curation: it replaces this file wholesale with the ~30–100-word TOCFL-spine sliver, every tuple pre-verified offline through the FULL gate. Heteronym policy (dual-instance amendment, Decision 1): no surface form carries two sliver reading_ids; every non-sliver alternate CC-CEDICT reading of a word below is asserted closed-world-unreachable BY THIS STUB (a stub-level assertion — #20 re-establishes it with machine-checked injectivity + reviewed unreachability).",
+  "variantMap": {},
+  "variantMapNote": "variant→MOE-canonical normalization applied before lexicon/membership lookup. Empty: no variant forms are closed-world-reachable in the stub. #20 populates it with the sliver's real variant forms.",
+  "tuples": [
+    {
+      "word": "你",
+      "readingId": "你:ni3",
+      "citationPinyin": ["ni3"],
+      "surfacePinyin": ["ni3"],
+      "pos": "pronoun",
+      "senseId": "you",
+      "gloss": "you (informal)",
+      "intentBearing": false
+    },
+    {
+      "word": "我",
+      "readingId": "我:wo3",
+      "citationPinyin": ["wo3"],
+      "surfacePinyin": ["wo3"],
+      "pos": "pronoun",
+      "senseId": "i",
+      "gloss": "I; me",
+      "intentBearing": false
+    },
+    {
+      "word": "喝",
+      "readingId": "喝:he1",
+      "citationPinyin": ["he1"],
+      "surfacePinyin": ["he1"],
+      "pos": "verb",
+      "senseId": "drink",
+      "gloss": "to drink",
+      "intentBearing": true
+    },
+    {
+      "word": "茶",
+      "readingId": "茶:cha2",
+      "citationPinyin": ["cha2"],
+      "surfacePinyin": ["cha2"],
+      "pos": "noun",
+      "senseId": "tea",
+      "gloss": "tea",
+      "intentBearing": true
+    },
+    {
+      "word": "好",
+      "readingId": "好:hao3",
+      "citationPinyin": ["hao3"],
+      "surfacePinyin": ["hao3"],
+      "pos": "adjective",
+      "senseId": "good",
+      "gloss": "good",
+      "intentBearing": true
+    },
+    {
+      "word": "你好",
+      "readingId": "你好:ni3hao3",
+      "citationPinyin": ["ni3", "hao3"],
+      "surfacePinyin": ["ni2", "hao3"],
+      "pos": "interjection",
+      "senseId": "hello",
+      "gloss": "hello",
+      "intentBearing": true
+    },
+    {
+      "word": "想",
+      "readingId": "想:xiang3",
+      "citationPinyin": ["xiang3"],
+      "surfacePinyin": ["xiang3"],
+      "pos": "verb",
+      "senseId": "want-think",
+      "gloss": "to want; to think",
+      "intentBearing": true
+    },
+    {
+      "word": "展覽館",
+      "readingId": "展覽館:zhan3lan3guan3",
+      "citationPinyin": ["zhan3", "lan3", "guan3"],
+      "surfacePinyin": ["zhan2", "lan2", "guan3"],
+      "pos": "noun",
+      "senseId": "exhibition-hall",
+      "gloss": "exhibition hall",
+      "intentBearing": true
+    },
+    {
+      "word": "兩",
+      "readingId": "兩:liang3",
+      "citationPinyin": ["liang3"],
+      "surfacePinyin": ["liang3"],
+      "pos": "numeral",
+      "senseId": "two-quantity",
+      "gloss": "two (before measure words)",
+      "intentBearing": false
+    },
+    {
+      "word": "二",
+      "readingId": "二:er4",
+      "citationPinyin": ["er4"],
+      "surfacePinyin": ["er4"],
+      "pos": "numeral",
+      "senseId": "two-digit",
+      "gloss": "two; 2 (digit/ordinal)",
+      "intentBearing": false
+    },
+    {
+      "word": "個",
+      "readingId": "個:ge4",
+      "citationPinyin": ["ge4"],
+      "surfacePinyin": ["ge4"],
+      "pos": "classifier",
+      "senseId": "clf-general",
+      "gloss": "general classifier",
+      "intentBearing": false
+    },
+    {
+      "word": "星期",
+      "readingId": "星期:xing1qi1",
+      "citationPinyin": ["xing1", "qi1"],
+      "surfacePinyin": ["xing1", "qi1"],
+      "pos": "noun",
+      "senseId": "week",
+      "gloss": "week",
+      "intentBearing": true
+    }
+  ]
+}

@@ -4,16 +4,17 @@
 #
 #   src/packages/contract/sidecar/openapi.yaml
 #     → src/sidecars/ar/generated/models.py
+#     → src/sidecars/zh/generated/models.py
 #
-# The FastAPI routes of the ar sidecar (issue #7 stage 2) must type against
-# these models — the implementation types AGAINST the contract, it never
-# emits it.
+# The FastAPI routes of each sidecar (ar: issue #7 stage 2; zh: issue #19)
+# must type against these models — the implementation types AGAINST the
+# contract, it never emits it.
 #
 # Runs datamodel-code-generator under uv (uvx) at the exact version pinned
-# in src/sidecars/ar/codegen/requirements.txt. CI runs THIS script and then
-# `git diff --exit-code -- src/sidecars/ar/generated`, so the command below
-# is the command that actually runs — keep flags deterministic
-# (--disable-timestamp is load-bearing for the freshness gate).
+# per sidecar in src/sidecars/*/codegen/requirements.txt. CI runs THIS
+# script and then `git diff --exit-code -- src/sidecars/<lang>/generated`,
+# so the commands below are the commands that actually run — keep flags
+# deterministic (--disable-timestamp is load-bearing for the freshness gate).
 set -euo pipefail
 
 cd "$(cd "$(dirname "$0")/.." && pwd)"
@@ -37,3 +38,25 @@ uvx --from "$PIN" datamodel-codegen \
   --formatters builtin
 
 echo "wrote src/sidecars/ar/generated/models.py"
+
+# --- zh (issue #19) — identical pipeline, zh's own pin file. Additive block
+# on purpose: the ar block above is #7's and stays byte-identical.
+ZH_PIN_FILE="src/sidecars/zh/codegen/requirements.txt"
+ZH_PIN="$(grep -E '^datamodel-code-generator==' "$ZH_PIN_FILE")"
+
+mkdir -p src/sidecars/zh/generated
+
+uvx --from "$ZH_PIN" datamodel-codegen \
+  --input src/packages/contract/sidecar/openapi.yaml \
+  --input-file-type openapi \
+  --output src/sidecars/zh/generated/models.py \
+  --output-model-type pydantic_v2.BaseModel \
+  --target-python-version 3.12 \
+  --disable-timestamp \
+  --use-double-quotes \
+  --use-schema-description \
+  --use-standard-collections \
+  --use-union-operator \
+  --formatters builtin
+
+echo "wrote src/sidecars/zh/generated/models.py"
