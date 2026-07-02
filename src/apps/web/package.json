@@ -1,0 +1,20 @@
+{
+  "name": "@la/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Placeholder package root only. Real content (shell + component registry, importing only lang-*/react) is owned by issues #10/#11 and successors.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run --passWithNoTests"
+  }
+}

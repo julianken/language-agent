@@ -1,0 +1,25 @@
+{
+  "name": "language-agent",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "language-agent workspace root — pnpm workspace scaffold, boundary gates, and root CI scripts. All product code lives under src/ (src/packages/*, src/apps/*, src/sidecars/*); package content is owned by the individual packages/apps (see docs/decisions/language-module-architecture.md §5.2 for the exclusive-ownership map).",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@11.5.2",
+  "scripts": {
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "test": "pnpm -r --if-present run test",
+    "build": "pnpm -r --if-present run build",
+    "boundary:deps": "depcruise --config .dependency-cruiser.cjs src/packages src/apps",
+    "boundary:lang-conditional": "eslint --config eslint.config.mjs src/packages/engine src/apps/server/src src/apps/web/src/shell && bash scripts/check-no-lang-conditional.sh"
+  },
+  "devDependencies": {
+    "dependency-cruiser": "^18.0.0",
+    "eslint": "^10.6.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.1",
+    "vitest": "^4.1.9"
+  }
+}
