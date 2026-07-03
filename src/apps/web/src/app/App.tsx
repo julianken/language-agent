@@ -41,7 +41,7 @@ export function App() {
   // sample. An explicit `?fixture=` still overrides.
   const defaultFixture = document.baseURI.includes("/zh/")
     ? "zh-mixed-line"
-    : "ar-mixed-line";
+    : "ar-blend-intro";
   const fixture = turn ? null : (params.get("fixture") ?? defaultFixture);
   const delayMs = params.get("delayMs") ?? "60";
   const streamUrl = useMemo(() => {
