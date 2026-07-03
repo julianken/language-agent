@@ -1,0 +1,542 @@
+[
+  {
+    "lexemeId": "television",
+    "surface": "تلفزيون",
+    "diac": "تِلفِزيُونٌ",
+    "lemma": "تِلفِزيُون",
+    "gloss": "television",
+    "senseId": "television.device",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "radio",
+    "surface": "راديو",
+    "diac": "رادِيُو",
+    "lemma": "رادِيُو",
+    "gloss": "radio",
+    "senseId": "radio.device",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "telephone",
+    "surface": "هاتف",
+    "diac": "هاتِفٌ",
+    "lemma": "هاتِف",
+    "gloss": "telephone",
+    "senseId": "telephone.device",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "film",
+    "surface": "فيلم",
+    "diac": "فِيلمٌ",
+    "lemma": "فِيلْم",
+    "gloss": "film",
+    "senseId": "film.movie",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "bank",
+    "surface": "بنك",
+    "diac": "بَنْكٌ",
+    "lemma": "بَنْك",
+    "gloss": "bank",
+    "senseId": "bank.financial-institution",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "computer",
+    "surface": "كمبيوتر",
+    "diac": "كَمْبيُوتِرٌ",
+    "lemma": "كَمْبيُوتِر",
+    "gloss": "computer",
+    "senseId": "computer.device",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "video",
+    "surface": "فيديو",
+    "diac": "فِيدْيُو",
+    "lemma": "فِيدْيُو",
+    "gloss": "video",
+    "senseId": "video.recording",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "camera",
+    "surface": "كاميرا",
+    "diac": "كامِيرا",
+    "lemma": "كامِرا",
+    "gloss": "camera",
+    "senseId": "camera.device",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "bus",
+    "surface": "أوتوبيس",
+    "diac": "أُوتُوبِيسٌ",
+    "lemma": "أُوتُوبِيس",
+    "gloss": "bus",
+    "senseId": "bus.vehicle",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "taxi",
+    "surface": "تاكسي",
+    "diac": "تاكْسِيٌّ",
+    "lemma": "تاكْسِيّ",
+    "gloss": "taxi",
+    "senseId": "taxi.vehicle",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "zero",
+    "surface": "صفر",
+    "diac": "صِفْرٌ",
+    "lemma": "صِفْر",
+    "gloss": "zero",
+    "senseId": "zero.number",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "one",
+    "surface": "واحد",
+    "diac": "واحِدٌ",
+    "lemma": "واحِد",
+    "gloss": "one",
+    "senseId": "one.number",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "two",
+    "surface": "اثنان",
+    "diac": "اِثْنانِ",
+    "lemma": "اِثْنان",
+    "gloss": "two",
+    "senseId": "two.number",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "three",
+    "surface": "ثلاثة",
+    "diac": "ثَلاثَةٌ",
+    "lemma": "ثَلاثَة",
+    "gloss": "three",
+    "senseId": "three.number",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "four",
+    "surface": "أربعة",
+    "diac": "أَرْبَعَةٌ",
+    "lemma": "أَرْبَعَة",
+    "gloss": "four",
+    "senseId": "four.number",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "five",
+    "surface": "خمسة",
+    "diac": "خَمْسَةٌ",
+    "lemma": "خَمْسَة",
+    "gloss": "five",
+    "senseId": "five.number",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "six",
+    "surface": "ستة",
+    "diac": "سِتَّةٌ",
+    "lemma": "سِتَّة",
+    "gloss": "six",
+    "senseId": "six.number",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "seven",
+    "surface": "سبعة",
+    "diac": "سَبْعَةٌ",
+    "lemma": "سَبْعَة",
+    "gloss": "seven",
+    "senseId": "seven.number",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "eight",
+    "surface": "ثمانية",
+    "diac": "ثَمانِيَةٌ",
+    "lemma": "ثَمانِيَة",
+    "gloss": "eight",
+    "senseId": "eight.number",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "nine",
+    "surface": "تسعة",
+    "diac": "تِسْعَةٌ",
+    "lemma": "تِسْعَة",
+    "gloss": "nine",
+    "senseId": "nine.number",
+    "tier": "tier-0"
+  },
+  {
+    "lexemeId": "peace-greeting",
+    "surface": "سلام",
+    "diac": "سَلامٌ",
+    "lemma": "سَلام",
+    "gloss": "peace / hello",
+    "senseId": "salaam.greeting",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "morning",
+    "surface": "صباح",
+    "diac": "صَباحٌ",
+    "lemma": "صَباح",
+    "gloss": "morning",
+    "senseId": "sabah.morning",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "yes",
+    "surface": "نعم",
+    "diac": "نَعَم",
+    "lemma": "نَعَم",
+    "gloss": "yes",
+    "senseId": "naam.yes",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "no",
+    "surface": "لا",
+    "diac": "لا",
+    "lemma": "لا",
+    "gloss": "no",
+    "senseId": "laa.no",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "man",
+    "surface": "رجل",
+    "diac": "رَجُلٌ",
+    "lemma": "رَجُل",
+    "gloss": "man",
+    "senseId": "rajul.man",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "woman",
+    "surface": "امرأة",
+    "diac": "اِمْرَأَةٌ",
+    "lemma": "اِمْرَأَة",
+    "gloss": "woman",
+    "senseId": "imraa.woman",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "friend",
+    "surface": "صديق",
+    "diac": "صَدِيقٌ",
+    "lemma": "صَدِيق",
+    "gloss": "friend",
+    "senseId": "sadiq.friend",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "name",
+    "surface": "اسم",
+    "diac": "اِسْمٌ",
+    "lemma": "اِسْم",
+    "gloss": "name",
+    "senseId": "ism.name",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "father",
+    "surface": "أب",
+    "diac": "أَب",
+    "lemma": "أَب",
+    "gloss": "father",
+    "senseId": "ab.father",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "mother",
+    "surface": "أم",
+    "diac": "أُمٌّ",
+    "lemma": "أُمّ",
+    "gloss": "mother",
+    "senseId": "umm.mother",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "brother",
+    "surface": "أخ",
+    "diac": "أَخ",
+    "lemma": "أَخ",
+    "gloss": "brother",
+    "senseId": "akh.brother",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "sister",
+    "surface": "أخت",
+    "diac": "أُخْتٌ",
+    "lemma": "أُخْت",
+    "gloss": "sister",
+    "senseId": "ukht.sister",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "son",
+    "surface": "ابن",
+    "diac": "اِبْنٌ",
+    "lemma": "اِبْن",
+    "gloss": "son",
+    "senseId": "ibn.son",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "daughter",
+    "surface": "بنت",
+    "diac": "بِنْتٌ",
+    "lemma": "بِنْت",
+    "gloss": "daughter",
+    "senseId": "bint.daughter",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "bread",
+    "surface": "خبز",
+    "diac": "خُبْزٌ",
+    "lemma": "خُبْز",
+    "gloss": "bread",
+    "senseId": "khubz.bread",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "water",
+    "surface": "ماء",
+    "diac": "ماءُ",
+    "lemma": "ماء",
+    "gloss": "water",
+    "senseId": "maa.water",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "milk",
+    "surface": "حليب",
+    "diac": "حَلِيبٌ",
+    "lemma": "حَلِيب",
+    "gloss": "milk",
+    "senseId": "halib.milk",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "meat",
+    "surface": "لحم",
+    "diac": "لَحْمٌ",
+    "lemma": "لَحْم",
+    "gloss": "meat",
+    "senseId": "lahm.meat",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "rice",
+    "surface": "أرز",
+    "diac": "أَرُزٌّ",
+    "lemma": "رُزّ",
+    "gloss": "rice",
+    "senseId": "aruzz.rice",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "tea",
+    "surface": "شاي",
+    "diac": "شاي",
+    "lemma": "شاي",
+    "gloss": "tea",
+    "senseId": "shay.tea",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "apple",
+    "surface": "تفاح",
+    "diac": "تُفّاحٌ",
+    "lemma": "تُفّاح",
+    "gloss": "apples",
+    "senseId": "tuffah.apples",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "house",
+    "surface": "بيت",
+    "diac": "بَيْتٌ",
+    "lemma": "بَيْت",
+    "gloss": "house",
+    "senseId": "bayt.dwelling",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "door",
+    "surface": "باب",
+    "diac": "بابٌ",
+    "lemma": "باب",
+    "gloss": "door",
+    "senseId": "bab.door",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "window",
+    "surface": "نافذة",
+    "diac": "نافِذَةٌ",
+    "lemma": "نافِذَة",
+    "gloss": "window",
+    "senseId": "nafidha.window",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "table",
+    "surface": "طاولة",
+    "diac": "طاوِلَةٌ",
+    "lemma": "طاوِلَة",
+    "gloss": "table",
+    "senseId": "tawila.table",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "chair",
+    "surface": "كرسي",
+    "diac": "كُرْسِيٌّ",
+    "lemma": "كُرْسِيّ",
+    "gloss": "chair",
+    "senseId": "kursiyy.chair",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "room",
+    "surface": "غرفة",
+    "diac": "غُرْفَةٌ",
+    "lemma": "غُرْفَة",
+    "gloss": "room",
+    "senseId": "ghurfa.room",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "day",
+    "surface": "يوم",
+    "diac": "يَوْمٌ",
+    "lemma": "يَوْم",
+    "gloss": "day",
+    "senseId": "yawm.day",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "night",
+    "surface": "ليلة",
+    "diac": "لَيْلَةٌ",
+    "lemma": "لَيْلَة",
+    "gloss": "night",
+    "senseId": "layla.night",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "week",
+    "surface": "أسبوع",
+    "diac": "أُسْبُوعٌ",
+    "lemma": "أُسْبُوع",
+    "gloss": "week",
+    "senseId": "usbu.week",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "month",
+    "surface": "شهر",
+    "diac": "شَهْرٌ",
+    "lemma": "شَهْر",
+    "gloss": "month",
+    "senseId": "shahr.month",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "year",
+    "surface": "سنة",
+    "diac": "سَنَةٌ",
+    "lemma": "سَنَة",
+    "gloss": "year",
+    "senseId": "sana.year",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "time",
+    "surface": "وقت",
+    "diac": "وَقْتٌ",
+    "lemma": "وَقْت",
+    "gloss": "time",
+    "senseId": "waqt.time",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "write",
+    "surface": "كتب",
+    "diac": "كَتَبَ",
+    "lemma": "كَتَب",
+    "gloss": "write",
+    "senseId": "kataba.write",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "read",
+    "surface": "قرأ",
+    "diac": "قَرَأَ",
+    "lemma": "قَرَأ",
+    "gloss": "read",
+    "senseId": "qaraa.read",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "go",
+    "surface": "ذهب",
+    "diac": "ذَهَبَ",
+    "lemma": "ذَهَب",
+    "gloss": "go",
+    "senseId": "dhahaba.go",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "eat",
+    "surface": "أكل",
+    "diac": "أَكَلَ",
+    "lemma": "أَكَل",
+    "gloss": "eat",
+    "senseId": "akala.eat",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "drink",
+    "surface": "شرب",
+    "diac": "شَرِبَ",
+    "lemma": "شَرِب",
+    "gloss": "drink",
+    "senseId": "shariba.drink",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "open",
+    "surface": "فتح",
+    "diac": "فَتَحَ",
+    "lemma": "فَتَح",
+    "gloss": "open",
+    "senseId": "fataha.open",
+    "tier": "tier-1"
+  },
+  {
+    "lexemeId": "exit",
+    "surface": "خرج",
+    "diac": "خَرَجَ",
+    "lemma": "خَرَج",
+    "gloss": "exit",
+    "senseId": "kharaja.exit",
+    "tier": "tier-1"
+  }
+]

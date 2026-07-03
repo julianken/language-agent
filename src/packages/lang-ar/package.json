@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "The Arabic language pack. v0: the canonical annotation zod schema (seam 3's `schema` half — encode/decode are #9's pack wiring) + the GENERATED ar-annotations.schema.json artifact, plus (issue #10) the `/react` renderer entrant — seam 6 manifest, RTL pack container, <bdi dir=\"auto\"> word token with the per-(dimension × unit) ḥarakāt fade, root/pattern breakdown panel, and the pack's portable-story leg. The full LanguagePack export is owned by #9/#11.",
+  "description": "The Arabic language pack. v0: the canonical annotation zod schema (seam 3's `schema` half — encode/decode are #9's pack wiring) + the GENERATED ar-annotations.schema.json artifact, plus (issue #10) the `/react` renderer entrant — seam 6 manifest, RTL pack container, <bdi dir=\"auto\"> word token with the per-(dimension × unit) ḥarakāt fade, root/pattern breakdown panel, and the pack's portable-story leg — and (issue #8) the `/assets` subpath export: the seam-9 seed-vocab row schema + the 30-100 cleanroom-curated Tier-0/Tier-1 entries, GREEN-gated through the real ar sidecar's POST /v1/verify (`pnpm run validate:seed-vocab`). The full LanguagePack export is owned by #9/#11.",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -12,15 +12,24 @@
     "./react": {
       "types": "./dist/react/index.d.ts",
       "default": "./dist/react/index.js"
+    },
+    "./assets": {
+      "types": "./dist/assets/index.d.ts",
+      "default": "./dist/assets/index.js"
     }
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "assets"
+  ],
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
     "test": "vitest run --passWithNoTests",
-    "generate:annotation-schema": "node scripts/generate-annotation-schema.mjs"
+    "generate:annotation-schema": "node scripts/generate-annotation-schema.mjs",
+    "validate:seed-vocab": "node scripts/validate-seed-vocab.mjs"
   },
   "dependencies": {
     "@fontsource/amiri": "5.2.8",
