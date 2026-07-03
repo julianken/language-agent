@@ -13,6 +13,7 @@ import { describe, expect, it } from "vitest";
 import { CONTRACT_VERSION, type LanguagePack } from "@la/contract";
 import { FAKE_ASSETS_ROOT, pack as fakePack } from "@la/lang-fake";
 import { AR_ASSETS_ROOT } from "@la/lang-ar/assets";
+import { ZH_ASSETS_ROOT } from "@la/lang-zh/assets";
 import { composeApp } from "../composeApp.js";
 import { parseInstanceConfig, type InstanceConfig } from "../config.js";
 import {
@@ -22,6 +23,7 @@ import {
 } from "../boot.js";
 
 const SIDECAR_AR_BASE_URL = process.env["SIDECAR_AR_BASE_URL"];
+const SIDECAR_ZH_BASE_URL = process.env["SIDECAR_ZH_BASE_URL"];
 
 const fakeConfig = (): InstanceConfig =>
   parseInstanceConfig({
@@ -41,6 +43,16 @@ const arConfig = (): InstanceConfig =>
     sidecar: { baseUrl: SIDECAR_AR_BASE_URL ?? "http://127.0.0.1:9999", mode: "real" },
     assetsRoot: AR_ASSETS_ROOT,
     tts: { provider: "ar", voice: "v1" },
+  });
+
+/** Same placeholder-base-URL rationale as `arConfig` above — only the
+ * gate-verification test needs the real one. */
+const zhConfig = (): InstanceConfig =>
+  parseInstanceConfig({
+    language: "zh",
+    sidecar: { baseUrl: SIDECAR_ZH_BASE_URL ?? "http://127.0.0.1:9999", mode: "real" },
+    assetsRoot: ZH_ASSETS_ROOT,
+    tts: { provider: "zh", voice: "v1" },
   });
 
 describe("composeApp — end-to-end boot against @la/lang-fake (AC 6)", () => {
@@ -87,12 +99,6 @@ describe("composeApp — end-to-end boot against @la/lang-fake (AC 6)", () => {
     });
     expect(payload.content).toBe("fake/v1: zip zap");
   });
-
-  it("`zh` registry stub throws the named boot failure (flips to a real import in #21)", async () => {
-    await expect(
-      composeApp({ ...fakeConfig(), language: "zh" }),
-    ).rejects.toThrow(/lang-zh.*#21/s);
-  });
 });
 
 describe("composeApp — end-to-end boot against the real @la/lang-ar (issue #9's registry flip)", () => {
@@ -138,6 +144,65 @@ describe("composeApp — end-to-end boot against the real @la/lang-ar (issue #9'
         { turnId: "boot-e2e-ar" },
       );
       expect(tokens.map((t) => [t.spine.surface, t.band])).toEqual([["كَتَبَ", "GREEN"]]);
+    },
+  );
+});
+
+describe("composeApp — end-to-end boot against the real @la/lang-zh (issue #21's registry flip)", () => {
+  it("boots: registry resolves the REAL import, version assert passes, manifest parses, capabilities derive, assets validate", async () => {
+    const app = await composeApp(zhConfig());
+    expect(app.lang).toBe("zh");
+    expect(app.meta.contractVersion).toBe(CONTRACT_VERSION);
+    expect(app.capabilities).toMatchObject({
+      direction: "ltr",
+      masteryUnitKinds: ["word", "character"],
+      fadeDimensions: ["meaning", "segmentalPinyin", "tone"],
+      // v0 declares NO gating/leak edges — deferred to Phase 3 (see
+      // @la/lang-zh/src/mastery.ts's header for the full rationale).
+      gatingEdges: [],
+      creditLeakEdges: [],
+      requiredDataAssets: ["seed-tuples", "c9-context-table", "segmenter-normalization"],
+    });
+  });
+
+  it("the booted app's TTS accepts only the verified stream (seam-7 wiring)", async () => {
+    const app = await composeApp(zhConfig());
+    const verified = [
+      {
+        spine: { id: "t1", lang: "zh" as const, surface: "可以", kind: "word", status: "new", band: "GREEN" as const },
+        band: "GREEN" as const,
+        evidence: [],
+        annotations: {
+          readingId: "可以:ke3yi3",
+          perCharacter: [
+            { char: "可", citationPinyinChar: "kě", compositionalBoundFlag: false },
+            { char: "以", citationPinyinChar: "yǐ", compositionalBoundFlag: false },
+          ],
+          citationPinyin: ["kě", "yǐ"],
+          surfacePinyin: ["ké", "yǐ"],
+          toneTrack: [2, 3],
+          neutralToneSlots: [],
+          erhuaSlots: [],
+          pos: "verb",
+          senseId: "can",
+          gloss: "can; may",
+          boundMorpheme: false,
+        },
+      },
+    ];
+    const payload = await app.ports.ttsDriver.synthesize(verified, { provider: "zh", voice: "v1" });
+    expect(payload.content).toBe("zh/v1: 可以");
+  });
+
+  it.skipIf(!SIDECAR_ZH_BASE_URL)(
+    "the booted app's gate verifies text end-to-end through the REAL sidecar (factories really received the PackContext)",
+    async () => {
+      const app = await composeApp(zhConfig());
+      const tokens = await app.ports.verificationGate.verify(
+        { targetText: "可以", intents: [{ id: "can", description: "a request for permission" }] },
+        { turnId: "boot-e2e-zh" },
+      );
+      expect(tokens.map((t) => [t.spine.surface, t.band])).toEqual([["可以", "GREEN"]]);
     },
   );
 });

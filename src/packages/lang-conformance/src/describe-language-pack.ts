@@ -653,8 +653,9 @@ export function describeLanguagePack<TAnn = unknown>(
     // Law 6 — seam-5 curriculum laws (declared CoverageFloors)
     // -----------------------------------------------------------------------
     describe("law — seam-5 curriculum: declared CoverageFloors (seam 5)", () => {
-      // Generic over whatever floors a pack declares (zh's dual floor = two
-      // entries; a pack declaring none makes this category vacuously green).
+      // Generic over whatever floors a pack declares (zh's dual budget floor
+      // is deferred to Phase 3 — v0 declares none, same as ar; a pack
+      // declaring none makes this category vacuously green).
       // Cascade ordering and the novelty budget are ENGINE-owned inputs to
       // seam 5 and are exercised by #9's E2E turn script once the engine
       // cascade exists (the walking skeleton bypasses seam 5 — ADR §5.2 #9).

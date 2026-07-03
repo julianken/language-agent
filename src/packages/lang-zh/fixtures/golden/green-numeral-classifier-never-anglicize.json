@@ -1,0 +1,39 @@
+{
+  "name": "GREEN: 兩個 (two [general classifier]) — the never-anglicize allowlist probe: both the numeral AND the classifier stay Chinese at every fade level (design §4.3's own worked example, 'three 本 book — the classifier AND THE NUMERAL stay Chinese'). Mirrors src/sidecars/zh/tests/fixtures/golden/06-pass-numeral-liang.json.",
+  "targetText": "兩個",
+  "intents": [],
+  "expected": {
+    "tokens": [
+      { "surface": "兩", "band": "GREEN", "neverAnglicize": true },
+      { "surface": "個", "band": "GREEN", "neverAnglicize": true }
+    ],
+    "annotations": [
+      {
+        "readingId": "兩:liang3",
+        "perCharacter": [{ "char": "兩", "citationPinyinChar": "liǎng", "compositionalBoundFlag": false }],
+        "citationPinyin": ["liǎng"],
+        "surfacePinyin": ["liǎng"],
+        "toneTrack": [3],
+        "neutralToneSlots": [],
+        "erhuaSlots": [],
+        "pos": "numeral",
+        "senseId": "two-quantity",
+        "gloss": "two (before measure words)",
+        "boundMorpheme": false
+      },
+      {
+        "readingId": "個:ge4",
+        "perCharacter": [{ "char": "個", "citationPinyinChar": "gè", "compositionalBoundFlag": false }],
+        "citationPinyin": ["gè"],
+        "surfacePinyin": ["gè"],
+        "toneTrack": [4],
+        "neutralToneSlots": [],
+        "erhuaSlots": [],
+        "pos": "classifier",
+        "senseId": "clf-general",
+        "gloss": "general classifier",
+        "boundMorpheme": false
+      }
+    ]
+  }
+}

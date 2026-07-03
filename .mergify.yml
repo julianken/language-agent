@@ -44,5 +44,7 @@ queue_rules:
       # the matrix (no check to gate on) until #21 adds it to the live-set —
       # that PR uncomments the matching line here:
       # - "check-success = conformance (fake)"
-      # `ar` joined the live-set in issue #9 — required as of this PR:
+      # `ar` joined the live-set in issue #9 — required as of that PR:
       - "check-success = conformance (ar)"
+      # `zh` joined the live-set in issue #21 — required as of this PR:
+      - "check-success = conformance (zh)"

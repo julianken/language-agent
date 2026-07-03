@@ -1,0 +1,27 @@
+{
+  "name": "GREEN: 展覽館 (exhibition hall) — a WITHIN-WORD curated 3-syllable third-tone run (zhǎn lǎn guǎn citation → zhán lán guǎn curated surface grouping), NOT a cross-word run — the committed third-tone-adjacent probe §8 requires (design §3.4: within-word groupings are curation-pinned, conservative-by-construction per the dual-instance amendment; ALL cross-word 3+-syllable third-tone runs regenerate instead — never exercised here). Mirrors src/sidecars/zh/tests/fixtures/golden/08-pass-within-word-third-tone-run.json exactly.",
+  "targetText": "展覽館",
+  "intents": [{ "id": "exhibition-hall", "description": "a place with many exhibits" }],
+  "expected": {
+    "tokens": [{ "surface": "展覽館", "band": "GREEN" }],
+    "annotations": [
+      {
+        "readingId": "展覽館:zhan3lan3guan3",
+        "perCharacter": [
+          { "char": "展", "citationPinyinChar": "zhǎn", "compositionalBoundFlag": false },
+          { "char": "覽", "citationPinyinChar": "lǎn", "compositionalBoundFlag": false },
+          { "char": "館", "citationPinyinChar": "guǎn", "compositionalBoundFlag": false }
+        ],
+        "citationPinyin": ["zhǎn", "lǎn", "guǎn"],
+        "surfacePinyin": ["zhán", "lán", "guǎn"],
+        "toneTrack": [2, 2, 3],
+        "neutralToneSlots": [],
+        "erhuaSlots": [],
+        "pos": "noun",
+        "senseId": "exhibition-hall",
+        "gloss": "exhibition hall",
+        "boundMorpheme": false
+      }
+    ]
+  }
+}

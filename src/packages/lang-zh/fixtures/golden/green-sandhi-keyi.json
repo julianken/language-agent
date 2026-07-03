@@ -1,0 +1,26 @@
+{
+  "name": "GREEN: 可以 (can/may) — within-word citation-vs-surface sandhi disagreement (3rd-tone pairwise 2-3 shift, ké yǐ vs citation kě yǐ) — the sandhi surface-vs-citation probe (Decision 3's two zh-specific golden categories), pinned exactly to #20's curated seed-tuples.json entry",
+  "targetText": "可以",
+  "intents": [{ "id": "can", "description": "a request for permission" }],
+  "expected": {
+    "tokens": [{ "surface": "可以", "band": "GREEN" }],
+    "annotations": [
+      {
+        "readingId": "可以:ke3yi3",
+        "perCharacter": [
+          { "char": "可", "citationPinyinChar": "kě", "compositionalBoundFlag": false },
+          { "char": "以", "citationPinyinChar": "yǐ", "compositionalBoundFlag": false }
+        ],
+        "citationPinyin": ["kě", "yǐ"],
+        "surfacePinyin": ["ké", "yǐ"],
+        "toneTrack": [2, 3],
+        "neutralToneSlots": [],
+        "erhuaSlots": [],
+        "pos": "verb",
+        "senseId": "can",
+        "gloss": "can; may",
+        "boundMorpheme": false
+      }
+    ]
+  }
+}
