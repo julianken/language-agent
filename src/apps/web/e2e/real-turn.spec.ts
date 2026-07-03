@@ -90,3 +90,26 @@ test("an unknown ?turn id surfaces as a stream error, never a silent blank rende
   await expect(page.locator("[data-stream-error]")).toBeVisible();
   expect(await page.locator("[data-token-id]").count()).toBe(0);
 });
+
+test("screenshots of a real turn at mobile + desktop viewports", async ({ page, request }, testInfo) => {
+  const create = await request.post("/api/turns", {
+    data: { learnerMessage: "Tell me about zip zap zorg." },
+  });
+  const { turnId } = (await create.json()) as CreateTurnResponse;
+
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(`/?turn=${turnId}&delayMs=10`);
+  await page.waitForSelector(DONE);
+  await testInfo.attach("real-turn-desktop-1440x900", {
+    body: await page.screenshot({ path: "test-results/pr-screenshots/real-turn-desktop-1440x900.png", fullPage: true }),
+    contentType: "image/png",
+  });
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`/?turn=${turnId}&delayMs=10`);
+  await page.waitForSelector(DONE);
+  await testInfo.attach("real-turn-mobile-390x844", {
+    body: await page.screenshot({ path: "test-results/pr-screenshots/real-turn-mobile-390x844.png", fullPage: true }),
+    contentType: "image/png",
+  });
+});
