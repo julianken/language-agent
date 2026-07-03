@@ -310,6 +310,23 @@ export function createFixtureServer(opts: FixtureServerOptions): FixtureServer {
 
   const server = createServer((req, res) => {
     const url = new URL(req.url ?? "/", "http://localhost");
+
+    // SHARED_SECRET enforcement (Task 6b, R-C): the Worker (Task 7) injects
+    // `x-access-secret` on every proxied /ar|/zh request; the server must
+    // reject direct /api/* hits (e.g. straight at the raw run.app URL) that
+    // don't carry it. /api/health stays open for Cloud Run liveness. Reads
+    // process.env live (not cached at server construction) so an unset
+    // SHARED_SECRET — every dev/e2e environment today — is a complete
+    // no-op, same as before this gate existed.
+    const sharedSecret = process.env["SHARED_SECRET"];
+    if (sharedSecret && url.pathname.startsWith("/api/") && url.pathname !== "/api/health") {
+      const provided = req.headers["x-access-secret"];
+      if (typeof provided !== "string" || provided !== sharedSecret) {
+        json(res, 403, { error: "forbidden" });
+        return;
+      }
+    }
+
     void (async () => {
       if (req.method === "GET" && url.pathname === "/api/health") {
         json(res, 200, { ok: true });
