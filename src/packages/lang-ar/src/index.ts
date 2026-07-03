@@ -1,11 +1,15 @@
 // @la/lang-ar — the Arabic language pack.
 //
-// v0 content (issue #7's spec-first opening PR): the canonical annotation
-// zod schema — the `schema` half of seam 3 ONLY (see ./annotations.ts for
-// the ownership note; encode/decode are #9's pack wiring). The full Arabic
-// LanguagePack implementing the nine contract ports, plus the `/react` and
-// `/assets` subpath exports, is owned by issue #7's later implementation
-// PRs and successors (#8 seed vocab, #10 renderer).
+// v0: the full LanguagePack (issue #9, step 3b) — seams 1/2/4/5 wired here,
+// seam 3's zod schema (#7) + seam 6's renderer manifest (#10) + seam 9's
+// asset (#8) reused verbatim. The composition root's registry entry does
+// `import('@la/lang-ar')` and reads `pack`.
+export { pack } from "./pack.js";
+export { arAnnotationCodec } from "./codec.js";
+export { makeArGate } from "./gate.js";
+export { makeArSteering } from "./steering.js";
+export { AR_FADE_DIMENSIONS, AR_TARGET_BLEND_RATIO, arMasteryModel } from "./mastery.js";
+export { arCurriculumPolicy } from "./curriculum.js";
 export {
   AR_ANNOTATIONS_SCHEMA_ID,
   ArAnnotationsSchema,
