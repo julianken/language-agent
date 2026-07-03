@@ -1,10 +1,19 @@
 /**
  * The walking-skeleton conversation page: warm-paper canvas, one assistant
  * message bubble streaming over SSE (DESIGN.md: conversation-first layout;
- * the reading surface IS the progress display). Fixture and pacing come
- * from the query string:
+ * the reading surface IS the progress display). The stream source and
+ * pacing come from the query string — either a static fixture:
  *
  *   /?fixture=ar-mixed-line&delayMs=60
+ *
+ * or a REAL turn (the #10 real-#9-integration follow-up) already created
+ * via `POST /api/turns`, replayed by its server-assigned id:
+ *
+ *   /?turn=<turnId>&delayMs=60
+ *
+ * Both resolve to the same `/api/stream` wire contract
+ * (`message-start`/`token`/`message-end`) — this page requires ZERO
+ * changes to consume either source.
  *
  * The app (composition layer) knows nothing about any language either —
  * the message's `lang` arrives on the `message-start` event and is handed
@@ -24,13 +33,15 @@ const emitLearningEvent = makeLearningEventSink();
 
 export function App() {
   const params = new URLSearchParams(window.location.search);
-  const fixture = params.get("fixture") ?? "ar-mixed-line";
+  const turn = params.get("turn");
+  const fixture = turn ? null : (params.get("fixture") ?? "ar-mixed-line");
   const delayMs = params.get("delayMs") ?? "60";
-  const streamUrl = useMemo(
-    () =>
-      `/api/stream?fixture=${encodeURIComponent(fixture)}&delayMs=${encodeURIComponent(delayMs)}`,
-    [fixture, delayMs],
-  );
+  const streamUrl = useMemo(() => {
+    const suffix = `&delayMs=${encodeURIComponent(delayMs)}`;
+    return turn
+      ? `/api/stream?turn=${encodeURIComponent(turn)}${suffix}`
+      : `/api/stream?fixture=${encodeURIComponent(fixture ?? "ar-mixed-line")}${suffix}`;
+  }, [turn, fixture, delayMs]);
 
   const stream = useTokenStream(streamUrl);
 
@@ -66,7 +77,7 @@ export function App() {
             margin: "var(--la-space-xxs) 0 0",
           }}
         >
-          fixture: {fixture}
+          {turn ? `real turn: ${turn}` : `fixture: ${fixture}`}
         </p>
       </header>
 

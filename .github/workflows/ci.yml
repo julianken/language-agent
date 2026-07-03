@@ -337,6 +337,17 @@ jobs:
         env:
           SIDECAR_AR_BASE_URL: ${{ matrix.lang == 'ar' && 'http://127.0.0.1:8081' || '' }}
 
+      # The #10 real-#9-integration follow-up: the SAME real turn, driven
+      # through the REAL HTTP/SSE transport (POST /api/turns → GET
+      # /api/stream?turn=<id>) instead of an in-process call — proves the
+      # wiring `e2e-turn.test.ts` left open. Zero live LLM calls (asserted
+      # in-suite via a loopback-only fetch spy); the ar leg's gate is the
+      # same real sidecar booted above.
+      - name: E2E SSE turn script — @la/server (real runHotPathTurn streamed over the real SSE transport; zero live LLM calls)
+        run: pnpm --filter @la/server run test:e2e-sse
+        env:
+          SIDECAR_AR_BASE_URL: ${{ matrix.lang == 'ar' && 'http://127.0.0.1:8081' || '' }}
+
       - name: Stop the ar sidecar (ar leg only)
         if: always() && matrix.lang == 'ar'
         run: docker rm -f sidecar-ar-conformance || true
