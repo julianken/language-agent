@@ -16,7 +16,20 @@
 - **Never-show-wrong:** the gateway renders only fixed endonyms (`العربية`, `中文`) — no generated target text, no gate. Do not add live/sample target copy.
 - **Worktree-only:** all work in a linked worktree off `origin/main`, never the primary tree or `main` (repo policy). Conventional Commits; `Co-Authored-By:` the authoring model.
 - **Dependency:** the routing/Terraform tasks (Group C/D) build on the deploy IaC. The 11 apply-time deploy fixes live on branch `issue-11-deploy-live` (commit `2d2ebf9`); they must be merged to `main` before Group C/D land, or this plan's branch must rebase onto them.
-- **Base-path contract:** each per-language app is built with Vite `base = "/ar/"` or `"/zh/"`; the Worker strips exactly that one leading prefix segment before forwarding to the backend, and sets `Host` to the backend's `run.app` host. These two must always agree.
+- **Base-path contract:** the web is built ONCE with Vite `base = "./"` (relative asset URLs); at serve time each server injects `<base href="/${LANGUAGE}/">` into the served `index.html`, and the app derives every API URL from `document.baseURI`. The Worker strips exactly the one leading prefix segment before forwarding. All three must agree on the same prefix.
+
+---
+
+## Review-driven revisions (fresh-context plan review, 2026-07-03)
+
+A fresh-context review traced the architecture against the real code and confirmed the base-path/Worker contract holds end-to-end (SSE included), but required these changes — folded into the tasks below:
+
+- **R-A · Gateway is a single self-contained HTML embedded in the Worker.** The Cloudflare provider is pinned `~> 4.20` (lock 4.52.8); Workers **Static Assets** (`env.ASSETS`) needs provider **v5** — a breaking migration that also renames `cloudflare_record`/`cloudflare_ruleset`/`cloudflare_pages_*`. Avoid it: the gateway is one HTML string (inlined CSS + data-URI fonts) embedded in the Worker script; no `ASSETS` binding, no provider bump. (Kills Task-1 `assetsInlineLimit:0`; the router "build" emits one `index.html`.)
+- **R-B · One server image, runtime base-path** (preserves issue #11's documented single-image invariant in `locals.tf:43-47` / `server.Dockerfile` / `cloudbuild.yaml`). Build web once (`base:"./"`); the server injects `<base href="/${LANGUAGE}/">` into `index.html` at serve time; the app reads `document.baseURI` (NOT `import.meta.env.BASE_URL`). No `VITE_BASE`, no per-instance image, no `build-and-push.sh` change (that script doesn't exist on `main`; CI builds one image via `infra/cloudbuild.yaml`).
+- **R-C · Security is IN scope, not deferred.** Under path-routing the access gate silently dies: `access-gate/main.tf:12-43` keys its rate-limit on `http.host eq "api.lexercon.com"`, a host that ceases to exist, while `cloud-run-service/main.tf` keeps `allUsers` invoker → the raw `run.app` URL is world-open with the `SHARED_SECRET` unenforced. The Worker MUST inject the shared-secret header to the backend, the server MUST enforce it (reject requests lacking it → protects the direct `run.app` URL), and the rate-limit rule MUST move to `http.host eq "lexercon.com"` + the `/ar/api`,`/zh/api` path prefixes.
+- **R-D · Task 8 is a full topology change**, not "retire Pages + mapping": the entire `dns_domain` module and `frontend_pages` module are removed (`zh.lexercon.com`, `api.lexercon.com`, `zh-api.lexercon.com` all disappear); `outputs.tf` `frontend_urls`/`api_urls` and `locals.tf` `frontend_domain`/`api_domain` must be reconciled; a NEW proxied apex record must be added for the Worker route to bind. Bind the backend hosts as **bare hosts** — `trimprefix(module.cloud_run_service["ar"].service_uri, "https://")` — because `service_uri` is a full `https://…` URL and the Worker assigns it to `url.hostname`.
+- **R-E · All THREE `/api/` call sites** route through the new `apiUrl()` helper: `App.tsx:42-43` (stream) and its POST `/api/turns`, PLUS `src/apps/web/src/shell/learning-events.ts:11` (default `endpoint="/api/learning-events"`, constructed no-arg at `App.tsx:32`) — the latter silently breaks the `renderedScaffold` round-trip the #10 e2e asserts if missed.
+- **Depends on:** the deploy branch `issue-11-deploy-live` (`2d2ebf9`) merging to `main` first — it adds `ASSETS_ROOT`, `build-and-push.sh`, `cloudbuild.yaml`, and the infra modules this plan edits. On `main` today they are absent (review ran on `main`).
 
 ---
 
@@ -232,6 +245,8 @@ test("reduced-motion drops transforms", async ({ browser }) => {
 - [ ] **Step 3: Commit** `feat(router): playwright smoke + axe a11y gate`.
 
 ---
+
+> **⚠ Tasks 5–8 are amended by the Review-driven revisions (R-A…R-E) above — apply those, which supersede any conflicting build-time/`VITE_BASE`/two-image/Static-Assets detail written in the original task text below.** Concretely: Task 5 uses `base:"./"` + `document.baseURI` + all THREE call sites (R-B, R-E); Task 6 injects `<base href>` at serve time on ONE image (R-B) and adds server-side shared-secret enforcement (R-C); Task 7 embeds the gateway HTML string + injects the secret header + anchored prefix-strip (R-A, R-C); Task 8 is the full `dns_domain`+`frontend_pages` teardown with bare-host binding, a new apex record, and the rate-limit host/path move (R-C, R-D) — no provider v5 bump.
 
 ### Task 5: Per-language app base-path awareness
 
