@@ -21,29 +21,26 @@ compatibility_date = "2026-07-01"
 LA_AR_HOST = "REPLACE_WITH_LA_AR_RUN_APP_HOST"
 LA_ZH_HOST = "REPLACE_WITH_LA_ZH_RUN_APP_HOST"
 
-# SHARED_SECRET is deliberately NOT a plaintext [vars] entry — it's the
-# access-gate credential the server enforces (Task 6b). Set it as a
-# Worker secret instead, out of band, once this Worker is actually
-# deployed (Task 8):
+# SHARED_SECRET_AR / SHARED_SECRET_ZH are deliberately NOT plaintext
+# [vars] entries — they're the access-gate credentials the server
+# enforces (Task 6b), ONE PER INSTANCE (Group D resolved the Task-7
+# mismatch this NOTE used to flag here, by taking option (b): the Worker
+# now selects `env["SHARED_SECRET_" + seg.toUpperCase()]` per request —
+# see router-worker.js's route() — matching access-gate/main.tf's
+# existing distinct-secret-per-instance shape 1:1, never a shared
+# value). Set both as Worker secrets, out of band, once this Worker is
+# actually deployed (Task 8):
 #
-#   wrangler secret put SHARED_SECRET
+#   wrangler secret put SHARED_SECRET_AR
+#   wrangler secret put SHARED_SECRET_ZH
 #
-# NOTE (flagged for whoever picks up Task 8 / Group D): today
-# infra/modules/access-gate provisions a DISTINCT shared_secret PER
-# INSTANCE (ar and zh each get their own Secret Manager secret — see
-# access-gate/main.tf's "distinct-secret, no-cross-instance-access" note
-# and cloud-run-service/main.tf's per-instance `var.shared_secret_id`).
-# This Worker (per this plan's Task 7 spec, literally: "inject
-# x-access-secret: env.SHARED_SECRET") sends the SAME header value to
-# BOTH backends. Task 8 needs to resolve that mismatch one of two ways
-# before wiring real values in:
-#   (a) simplify access-gate to a single secret shared by both instances
-#       (mirroring anthropic-secret.tf's already-shared pattern), or
-#   (b) give the Worker two secrets (LA_AR_SECRET / LA_ZH_SECRET) and
-#       change router-worker.js's route() to send the per-segment one.
-# This file and router-worker.js implement (the simpler) option (a)'s
-# shape; not decided here since Task 8 (Terraform + DNS/Pages teardown)
-# is out of this task's scope.
+# infra/worker.tf's cloudflare_worker_script wires these two as
+# secret_text_binding blocks reading the SAME two Secret Manager secrets
+# (language-agent-ar-shared-secret / language-agent-zh-shared-secret)
+# the cloud-run-service module already injects into each backend's own
+# SHARED_SECRET env — so the Worker and each backend agree on the same
+# per-instance value without this file (or Terraform state outside the
+# private GCS backend) ever holding it in plaintext.
 
 # The route this Worker binds to zone-side (Task 8's
 # cloudflare_workers_route, not authored here):

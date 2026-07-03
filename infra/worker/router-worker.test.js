@@ -37,7 +37,12 @@ import { route } from "./router-worker.js";
 const ENV = {
   LA_AR_HOST: "la-ar-abc123-uc.a.run.app",
   LA_ZH_HOST: "la-zh-def456-uc.a.run.app",
-  SHARED_SECRET: "top-secret-value",
+  // Distinct PER-INSTANCE secrets (issue #11 AC: no shared secret reused
+  // across instances) — matches access-gate/main.tf's per-instance Secret
+  // Manager containers, wired here as two Worker secret bindings instead
+  // of one shared value.
+  SHARED_SECRET_AR: "top-secret-ar-value",
+  SHARED_SECRET_ZH: "top-secret-zh-value",
 };
 
 describe("route() — gateway paths", () => {
@@ -75,13 +80,23 @@ describe("route() — /ar/* proxy", () => {
     expect(url.pathname).toBe("/api/health");
   });
 
-  it("carries the shared-secret header on the proxied request", () => {
+  it("carries THIS instance's shared-secret header on the proxied request", () => {
     const decision = route(
       new Request("https://lexercon.com/ar/api/health"),
       ENV,
     );
     expect(decision.request.headers.get("x-access-secret")).toBe(
-      "top-secret-value",
+      "top-secret-ar-value",
+    );
+  });
+
+  it("never sends the zh secret on an /ar/* request", () => {
+    const decision = route(
+      new Request("https://lexercon.com/ar/api/health"),
+      ENV,
+    );
+    expect(decision.request.headers.get("x-access-secret")).not.toBe(
+      ENV.SHARED_SECRET_ZH,
     );
   });
 
@@ -150,14 +165,41 @@ describe("route() — /zh/* proxy", () => {
     );
     expect(new URL(decision.request.url).hostname).not.toBe(ENV.LA_AR_HOST);
   });
+
+  it("carries THIS instance's (zh) shared-secret header, distinct from ar's", () => {
+    const decision = route(
+      new Request("https://lexercon.com/zh/api/health"),
+      ENV,
+    );
+    expect(decision.request.headers.get("x-access-secret")).toBe(
+      "top-secret-zh-value",
+    );
+    expect(decision.request.headers.get("x-access-secret")).not.toBe(
+      ENV.SHARED_SECRET_AR,
+    );
+  });
 });
 
 describe("route() — edge cases", () => {
-  it("falls back to an empty secret header rather than throwing when SHARED_SECRET is unset", () => {
+  it("falls back to an empty secret header rather than throwing when SHARED_SECRET_<SEG> is unset", () => {
     const envNoSecret = { LA_AR_HOST: ENV.LA_AR_HOST, LA_ZH_HOST: ENV.LA_ZH_HOST };
     const decision = route(
       new Request("https://lexercon.com/ar/api/health"),
       envNoSecret,
+    );
+    expect(decision.request.headers.get("x-access-secret")).toBe("");
+  });
+
+  it("does not fall back to the OTHER instance's secret when this instance's is unset", () => {
+    // Only SHARED_SECRET_ZH is set; an /ar/* request must not pick it up.
+    const envZhOnly = {
+      LA_AR_HOST: ENV.LA_AR_HOST,
+      LA_ZH_HOST: ENV.LA_ZH_HOST,
+      SHARED_SECRET_ZH: "top-secret-zh-value",
+    };
+    const decision = route(
+      new Request("https://lexercon.com/ar/api/health"),
+      envZhOnly,
     );
     expect(decision.request.headers.get("x-access-secret")).toBe("");
   });
@@ -170,7 +212,8 @@ describe("route() — edge cases", () => {
  *   wrangler dev infra/worker/router-worker.js \
  *     --var LA_AR_HOST:la-ar-<hash>-uc.a.run.app \
  *     --var LA_ZH_HOST:la-zh-<hash>-uc.a.run.app \
- *     --var SHARED_SECRET:<the real value>
+ *     --var SHARED_SECRET_AR:<the ar instance's real value> \
+ *     --var SHARED_SECRET_ZH:<the zh instance's real value>
  *
  *   curl -s http://localhost:8787/ | grep -o '<title>[^<]*</title>'
  *     → <title>lexercon</title>
@@ -183,4 +226,9 @@ describe("route() — edge cases", () => {
  *     -H 'x-access-secret: wrong'
  *     → 403 from the SERVER (Task 6b), reached only because the Worker
  *       proxied it through — proves the header actually lands.
+ *
+ *   curl -s -D - -o /dev/null http://localhost:8787/ar/api/health \
+ *     -H "x-access-secret: $SHARED_SECRET_ZH"
+ *     → also 403 — proves the ar backend rejects the ZH instance's
+ *       secret too (the per-instance, no-cross-instance-reuse AC).
  */

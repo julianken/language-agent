@@ -9,11 +9,19 @@
  * Terraform migration this plan avoids (also renames
  * `cloudflare_record`/`cloudflare_ruleset`/`cloudflare_pages_*`).
  *
- * R-C: injects `x-access-secret: env.SHARED_SECRET` on every proxied
- * request — the server (Task 6b) rejects `/api/*` requests missing it,
- * so this Worker is the only path that can reach the backends' APIs at
- * all once the raw `run.app` URLs stop being reachable via the old
- * `api.lexercon.com`/`zh-api.lexercon.com` DNS (Task 8).
+ * R-C: injects `x-access-secret: env.SHARED_SECRET_<SEG>` (e.g.
+ * `SHARED_SECRET_AR` for `/ar`, `SHARED_SECRET_ZH` for `/zh`) on every
+ * proxied request — the server (Task 6b) rejects `/api/*` requests
+ * missing it, so this Worker is the only path that can reach the
+ * backends' APIs at all once the raw `run.app` URLs stop being
+ * reachable via the old `api.lexercon.com`/`zh-api.lexercon.com` DNS
+ * (Task 8). One secret PER INSTANCE, not a shared value — issue #11's
+ * AC is "no shared secret reused across the two instances", and
+ * `access-gate/main.tf` already provisions a distinct Secret Manager
+ * secret per instance; this Worker's binding now matches that shape
+ * (Group D resolves the mismatch `wrangler.toml`'s Task-7 NOTE flagged,
+ * taking option (b): two Worker secrets, per-segment selection — not
+ * option (a), collapsing the backend to one shared secret).
  *
  * `route()` is exported and extracted from `fetch` specifically so it's
  * unit-testable as a pure function (see router-worker.test.js's header
@@ -60,8 +68,10 @@ export function route(request, env) {
   target.protocol = "https:";
   target.pathname = url.pathname.slice(seg.length + 1) || "/";
 
+  const secretVar = `SHARED_SECRET_${seg.toUpperCase()}`;
+
   const proxied = new Request(target, request);
-  proxied.headers.set("x-access-secret", env.SHARED_SECRET ?? "");
+  proxied.headers.set("x-access-secret", env[secretVar] ?? "");
   proxied.headers.set("Host", host);
 
   return { kind: "proxy", request: proxied };
