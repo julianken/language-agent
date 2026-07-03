@@ -1,0 +1,37 @@
+{
+  "name": "pass-possessive",
+  "description": "的 as a C3 single resolved by the enumerated context (我|的|茶) → pinned de.",
+  "data": "default",
+  "request": {
+    "targetText": "我的茶",
+    "intents": [
+      {
+        "id": "tea",
+        "description": "t"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "我",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "的",
+        "kind": "single",
+        "band": "GREEN",
+        "surfacePinyin": [
+          "de"
+        ]
+      },
+      {
+        "surface": "茶",
+        "kind": "word",
+        "band": "GREEN"
+      }
+    ]
+  }
+}

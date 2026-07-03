@@ -1,0 +1,35 @@
+{
+  "name": "red-wrong-reading",
+  "description": "AC golden case: wrong-reading — a (deliberately poisoned, test-only) sliver tuple pins 茶 as chā; the CC-CEDICT+Unihan citation-membership re-check is the deterministic floor and bands the token RED. Proves a wrongly-pinned or corrupted table can never display.",
+  "data": "poisoned-wrong-reading",
+  "request": {
+    "targetText": "我的茶",
+    "intents": [
+      {
+        "id": "tea",
+        "description": "t"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "我",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "的",
+        "kind": "single",
+        "band": "GREEN"
+      },
+      {
+        "surface": "茶",
+        "kind": "word",
+        "band": "RED",
+        "redReason": "membership-miss"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "regen-crossword-third-tone-run",
+  "description": "AC: a 3-syllable third-tone run spanning more than one word (你|想|好, nǐ xiǎng hǎo) regenerates — grouping is not deterministic and no self-judging detector sits on the display path.",
+  "data": "default",
+  "request": {
+    "targetText": "你想好",
+    "intents": [
+      {
+        "id": "want-think",
+        "description": "w"
+      },
+      {
+        "id": "good",
+        "description": "g"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "regenerate",
+    "legId": "sandhi-resolver",
+    "reason": "crossword-third-tone-run"
+  }
+}

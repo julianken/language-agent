@@ -1,0 +1,20 @@
+{
+  "name": "deterministic YELLOW: the segmenter jury disagrees on a yellow-flagged lexeme (degraded, not refused)",
+  "targetText": "blen",
+  "intents": [{ "id": "hedge", "description": "express uncertainty" }],
+  "expected": {
+    "tokens": [{ "surface": "blen", "band": "YELLOW" }],
+    "annotations": [
+      {
+        "lexemeId": "blen",
+        "gloss": "maybe",
+        "glyphs": [
+          { "glyph": "b", "hint": "B" },
+          { "glyph": "l", "hint": "L" },
+          { "glyph": "e", "hint": "E" },
+          { "glyph": "n", "hint": "N" }
+        ]
+      }
+    ]
+  }
+}

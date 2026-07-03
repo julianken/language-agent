@@ -1,0 +1,19 @@
+{
+  "name": "regen-potential-infix",
+  "description": "Hard-coded pattern 1: V+不+了 (喝不了 — 了 reads liǎo, not the pinned le) → regenerate regardless of the enumeration.",
+  "data": "default",
+  "request": {
+    "targetText": "喝不了",
+    "intents": [
+      {
+        "id": "drink",
+        "description": "d"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "regenerate",
+    "legId": "headset-context-pinned",
+    "reason": "potential-infix"
+  }
+}

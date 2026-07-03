@@ -1,0 +1,32 @@
+{
+  "name": "pass-ordinal-yi",
+  "description": "Hard-coded pattern 2, positive half: ordinal/date 一 (星期一) resolved by the enumerated ordinal-date rule → stays UNSHIFTED yī (never yí/yì).",
+  "data": "default",
+  "request": {
+    "targetText": "星期一",
+    "intents": [
+      {
+        "id": "week",
+        "description": "w"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "星期",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "一",
+        "kind": "single",
+        "band": "GREEN",
+        "surfacePinyin": [
+          "yī"
+        ]
+      }
+    ]
+  }
+}

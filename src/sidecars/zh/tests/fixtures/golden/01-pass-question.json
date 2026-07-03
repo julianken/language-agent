@@ -1,0 +1,51 @@
+{
+  "name": "pass-question",
+  "description": "AC: pass case. All six legs green end-to-end: exact cover 你|喝|茶|嗎, membership, 嗎 context-pinned (茶|嗎|<END>), no sandhi shifts, jieba vote normalized (喝茶 → 喝|茶 via the AS-standard normalization table), intent↔sense bidirectional coverage.",
+  "data": "default",
+  "request": {
+    "targetText": "你喝茶嗎？",
+    "intents": [
+      {
+        "id": "drink",
+        "description": "asks about drinking"
+      },
+      {
+        "id": "tea",
+        "description": "the drink offered is tea"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "你",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "喝",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "茶",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "嗎",
+        "kind": "single",
+        "band": "GREEN",
+        "surfacePinyin": [
+          "ma"
+        ]
+      },
+      {
+        "surface": "？",
+        "kind": "punct",
+        "band": "GREEN"
+      }
+    ]
+  }
+}

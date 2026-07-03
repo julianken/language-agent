@@ -1,0 +1,24 @@
+{
+  "name": "pass-numeral-liang",
+  "description": "AC leg (f) positive half: 兩 before a measure word is the correct numeral.",
+  "data": "default",
+  "request": {
+    "targetText": "兩個",
+    "intents": []
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "兩",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "個",
+        "kind": "word",
+        "band": "GREEN"
+      }
+    ]
+  }
+}

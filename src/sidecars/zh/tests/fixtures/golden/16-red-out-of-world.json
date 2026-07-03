@@ -1,0 +1,30 @@
+{
+  "name": "red-out-of-world",
+  "description": "AC golden case: a wrong-but-real glyph outside the closed world → RED. 咖啡 is a real CC-CEDICT word but not in the sliver, so the run has no closed-world cover; the unanalyzable run bands RED (never a silent pass). Direction 1 of the intent check is skipped in the presence of RED (the withheld span may have realized it).",
+  "data": "default",
+  "request": {
+    "targetText": "你喝咖啡嗎？",
+    "intents": [
+      {
+        "id": "drink",
+        "description": "d"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "你喝咖啡嗎",
+        "kind": "unverified",
+        "band": "RED",
+        "redReason": "out-of-world"
+      },
+      {
+        "surface": "？",
+        "kind": "punct",
+        "band": "GREEN"
+      }
+    ]
+  }
+}

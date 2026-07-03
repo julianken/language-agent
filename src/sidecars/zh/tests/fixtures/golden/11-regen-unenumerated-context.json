@@ -1,0 +1,19 @@
+{
+  "name": "regen-unenumerated-context",
+  "description": "AC: the context-pinned lookup fails closed — 的 in 你|的|茶 is outside the verified enumeration (only 我|的|茶 is enumerated) → regenerate, never a guessed reading.",
+  "data": "default",
+  "request": {
+    "targetText": "你的茶",
+    "intents": [
+      {
+        "id": "tea",
+        "description": "t"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "regenerate",
+    "legId": "headset-context-pinned",
+    "reason": "unenumerated-context"
+  }
+}

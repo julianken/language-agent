@@ -1,0 +1,46 @@
+{
+  "name": "pass-perfective",
+  "description": "了 as a C3 single resolved by the enumerated context (喝|了|茶) → pinned le; the hard-coded potential-infix pattern does NOT overfire (no 不/得 before 了).",
+  "data": "default",
+  "request": {
+    "targetText": "我喝了茶",
+    "intents": [
+      {
+        "id": "drink",
+        "description": "d"
+      },
+      {
+        "id": "tea",
+        "description": "t"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "我",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "喝",
+        "kind": "word",
+        "band": "GREEN"
+      },
+      {
+        "surface": "了",
+        "kind": "single",
+        "band": "GREEN",
+        "surfacePinyin": [
+          "le"
+        ]
+      },
+      {
+        "surface": "茶",
+        "kind": "word",
+        "band": "GREEN"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "pass-bu-before-3",
+  "description": "不 before a 3rd tone stays bù (the 不 shift applies before 4th tone only); enumerated context (<START>|不|好); jieba's merged 不好 normalizes to 不|好.",
+  "data": "default",
+  "request": {
+    "targetText": "不好",
+    "intents": [
+      {
+        "id": "good",
+        "description": "g"
+      }
+    ]
+  },
+  "expect": {
+    "mode": "stream",
+    "tokens": [
+      {
+        "surface": "不",
+        "kind": "single",
+        "band": "GREEN",
+        "surfacePinyin": [
+          "bù"
+        ]
+      },
+      {
+        "surface": "好",
+        "kind": "word",
+        "band": "GREEN"
+      }
+    ]
+  }
+}

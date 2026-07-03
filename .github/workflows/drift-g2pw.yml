@@ -1,0 +1,63 @@
+name: drift-g2pw
+
+# Scheduled NON-BLOCKING drift detector (a) of ADR §4.3's scheduled-jobs
+# list, wired per the dual-instance amendment Decision 5 (issue #17 lands
+# the skeleton): run the REAL g2pW image (torch in CI ONLY — never in a
+# deployed image) over the zh curation corpus + logged generated turns and
+# diff against the pinned readings and the C9 context table.
+#
+# ACTIVATES WHEN #20 (Chinese seed sliver) LANDS — not "disabled until
+# #22/N4": #20 owns the curation-toolchain container (the only thing
+# allowed to run g2pW/HanLP) and its recorded curation baseline, and #20's
+# PR replaces the placeholder step below with the real diff against that
+# baseline. Until then the gate step detects the baseline's absence and
+# the job no-ops green. N4 does NOT enable this job; it inherits the
+# baseline as its acceptance floor.
+#
+# Deliberately OFF the PR-blocking path (schedule + manual dispatch only):
+# its nondeterminism and cost must never gate PRs; it is alarmed so
+# fixture rot is visible, not so merges stop.
+
+on:
+  schedule:
+    - cron: "17 5 * * 1" # weekly (Mon 05:17 UTC); drift detector, not a PR gate
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drift-g2pw-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  g2pw-corpus-diff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Gate on the curation baseline (#20)
+        id: gate
+        # #20 owns the baseline path; if it lands the baseline elsewhere,
+        # its PR updates this glob in the same change (Update Triggers).
+        run: |
+          if [ -d "src/sidecars/zh/curation" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::zh curation baseline found — running the real-g2pW corpus diff."
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No zh curation baseline yet (src/sidecars/zh/curation absent). This drift job activates when #20 lands its curation-toolchain container and recorded baseline. Skipping green."
+          fi
+
+      - name: Real-g2pW corpus diff against the curation baseline
+        if: steps.gate.outputs.present == 'true'
+        # Placeholder ON PURPOSE: the curation-toolchain container, the
+        # recorded baseline, and the diff command are #20's exclusive
+        # deliverables — authoring them here would double-claim #20's
+        # scope. This step failing loudly once the baseline directory
+        # exists is the activation tripwire: #20's PR must replace it
+        # with the real diff in the same change.
+        run: |
+          echo "::error::src/sidecars/zh/curation exists but the g2pW diff is not wired — #20 owns the curation-toolchain container and must replace this placeholder step with the real corpus diff (readings + C9 context table) in the PR that lands the baseline."
+          exit 1

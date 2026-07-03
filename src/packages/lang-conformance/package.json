@@ -1,9 +1,9 @@
 {
   "name": "@la/lang-conformance",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Placeholder package root only. Real content (the describeLanguagePack TCK, fast-check laws, golden-fixture harness, probeSidecar) is exclusively owned by issue #17 (lang-conformance-tck). Depends only on @la/contract per ADR §4.1.",
+  "description": "The language-pack TCK (ADR §4.1): describeLanguagePack — the parameterized Vitest conformance suite any pack instantiates in ~10 lines — running the six ADR §4.2 law categories as fast-check properties, plus the golden-fixture harness and the probeSidecar black-box HTTP helper. Runtime-depends ONLY on @la/contract (never engine, never a lang-* pack — ADR §4.1, enforced by dependency-cruiser); vitest and fast-check are dev-time surfaces of the consuming pack's own test run.",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -15,6 +15,13 @@
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@la/contract": "workspace:*"
+  },
+  "devDependencies": {
+    "fast-check": "^4.8.0",
+    "vitest": "catalog:"
   }
 }

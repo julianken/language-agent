@@ -23,7 +23,8 @@
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:conformance": "vitest run src/__tests__/conformance.test.ts"
   },
   "dependencies": {
     "@la/contract": "workspace:*",
@@ -31,6 +32,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@la/lang-conformance": "workspace:*",
     "@types/react": "catalog:"
   }
 }
