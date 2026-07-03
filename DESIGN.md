@@ -139,7 +139,7 @@ Motion was deferred in v1 and specified in v2; the binding token set lives in `�
 **`bubble-assistant`** — persona turn: `surface-card`, `radius/xl`, RTL, `arabic-reading-lg`, blended English + Arabic tokens. **`bubble-learner`** — learner turn: `surface-strong`, same geometry, corrected in the margin (never inline).
 
 ### Tokens (the core render)
-**`token-arabic-new`** — `status-new-bg` gold wash, full ḥarakāt. **`token-arabic-learning`** — `status-learning-bg` teal wash, minimal ḥarakāt. **`token-arabic-known`** — no tint, plain `ink`, bare. **`token-english-recede`** — `english-recede` grey, `latin-body`. Every token is bidi-isolated and individually clickable.
+**`token-arabic-new`** — `status-new-bg` gold wash, full ḥarakāt. **`token-arabic-learning`** — `status-learning-bg` teal wash, minimal ḥarakāt. **`token-arabic-known`** — no tint, plain `ink`, bare. **`token-english-recede`** — `english-recede` grey, `latin-body`. Every token is bidi-isolated and individually clickable. A new/learning Arabic token additionally carries an optional **`token-translit`** sub-label — the romanized reading stacked beneath the word in the `transliteration` type (13px/500, mono) at `muted-soft`, in its own LTR box outside the token's bidi isolate. It is the same recede-as-mastered training wheel as the ḥarakāt fade: shown on `new`/`learning`, dropped on `known` (which renders bare). The fuller **NEW WORD spotlight card** + right-margin gloss channel of the reading frame are richer than this inline sub-label — tracked follow-up, not v0.
 
 ### Word card (click-a-word)
 **`word-card-popover`** — compact floating card at the word: contextual meaning · audio · add-to-list. The only shadowed element (`0 8px 24px rgba(26,22,18,0.12)`). **`word-card-detail`** — the "more →" expansion into the margin: root + pattern breakdown, POS/features, root family. The root+pattern payload is the pedagogical core.
@@ -172,5 +172,5 @@ Motion was deferred in v1 and specified in v2; the binding token set lives in `�
 - **Dark / focus-reading mode** is sketched (`surface-dark`) but not fully specified — TBD.
 - **Dialect typography** (different orthographic conventions, Arabizi) is out of scope — deferred with dialect content.
 - **The skeleton-forward vowel treatment** (tinting ḥarakāt lighter than the consonant skeleton) is an optional variant, not the default — default renders ḥarakāt in full `ink`.
-- **Optional pronunciation/ASR surfaces** are deferred with the speaking feature.
+- **Pronunciation surfaces:** in-text romanization (the `token-translit` sub-label above) is now specced and shipping; **audio playback / ASR** surfaces remain deferred with the speaking feature.
 - **Detailed motion specimens / numbers** beyond the `§0` token set live in [`docs/plans/motion-spec.md`](docs/plans/motion-spec.md); reconcile both in the same PR when motion changes (per the `AGENTS.md` Update-Triggers table).
