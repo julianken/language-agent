@@ -1,9 +1,9 @@
 {
   "name": "@la/lang-ar",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "The Arabic language pack. v0: the canonical annotation zod schema (seam 3's `schema` half — encode/decode are #9's pack wiring) + the GENERATED ar-annotations.schema.json artifact, plus (issue #10) the `/react` renderer entrant — seam 6 manifest, RTL pack container, <bdi dir=\"auto\"> word token with the per-(dimension × unit) ḥarakāt fade, root/pattern breakdown panel, and the pack's portable-story leg — and (issue #8) the `/assets` subpath export: the seam-9 seed-vocab row schema + the 30-100 cleanroom-curated Tier-0/Tier-1 entries, GREEN-gated through the real ar sidecar's POST /v1/verify (`pnpm run validate:seed-vocab`). The full LanguagePack export is owned by #9/#11.",
+  "description": "The Arabic language pack v0 (issue #9's pack wiring completes the manifest): seam 1 gate wired through @la/contract's GENERATED sidecar client only; seam 2 steering (generation constraints + anglicizeDown); seam 3's canonical annotation zod schema (#7) + encode/decode halves (#9) + the GENERATED ar-annotations.schema.json artifact; seam 4 the FixedRatioScaffold walking-skeleton stand-in, authored pack-local (never in @la/engine — fade-level interpretation is exclusively pack-owned, ADR §1.5); seam 5 the SeedVocabBypassCurriculum stand-in (@la/engine's generic factory, configured here); seam 6 the `/react` renderer entrant (#10, reused verbatim) — RTL pack container, <bdi dir=\"auto\"> word token with the per-(dimension × unit) ḥarakāt fade, root/pattern breakdown panel, portable-story leg; seam 8 the ar sidecar descriptor; seam 9 the `/assets` subpath (#8, reused verbatim) — the seed-vocab row schema + cleanroom-curated Tier-0/Tier-1 entries, GREEN-gated through the real ar sidecar's POST /v1/verify (`pnpm run validate:seed-vocab`). `pack` (the complete LanguagePack) is the composition root's registry entry.",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -27,17 +27,20 @@
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "test": "vitest run --passWithNoTests",
+    "test": "vitest run --exclude src/__tests__/conformance.test.ts",
+    "test:conformance": "vitest run src/__tests__/conformance.test.ts",
     "generate:annotation-schema": "node scripts/generate-annotation-schema.mjs",
     "validate:seed-vocab": "node scripts/validate-seed-vocab.mjs"
   },
   "dependencies": {
     "@fontsource/amiri": "5.2.8",
     "@la/contract": "workspace:*",
+    "@la/engine": "workspace:*",
     "react": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@la/lang-conformance": "workspace:*",
     "@types/react": "catalog:"
   }
 }

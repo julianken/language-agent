@@ -1,0 +1,13 @@
+{
+  "declarations": {
+    "unitKinds": [],
+    "fadeDimensions": [],
+    "gatingEdges": [],
+    "creditLeakEdges": []
+  },
+  "directive": {
+    "fadeLevels": [],
+    "blend": { "anglicize": false },
+    "dueness": { "dueNow": true }
+  }
+}

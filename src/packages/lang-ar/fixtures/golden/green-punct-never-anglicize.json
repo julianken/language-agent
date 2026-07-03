@@ -1,0 +1,22 @@
+{
+  "name": "GREEN: a bare punctuation token — non-lexical, leg-2 honestly absent, NEVER anglicized (allowlist member per src/packages/lang-ar/src/steering.ts: non-word kinds are never swapped to English) — payload derived from src/sidecars/ar/app/gate.py's deterministic non-word branch, matching src/sidecars/ar/tests/test_golden_fixtures.py::test_punctuation_tokens_are_punct_green",
+  "targetText": ".",
+  "intents": [],
+  "expected": {
+    "tokens": [{ "surface": ".", "band": "GREEN", "neverAnglicize": true }],
+    "annotations": [
+      {
+        "diac": ".",
+        "skeleton": ".",
+        "vowelState": "none",
+        "morphology": {
+          "lemma": ".",
+          "root": ".",
+          "pattern": ".",
+          "pos": "punc",
+          "gloss": "."
+        }
+      }
+    ]
+  }
+}

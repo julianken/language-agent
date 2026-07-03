@@ -1,0 +1,5 @@
+{
+  "source": "authored",
+  "learnerMessage": "Something with a tricky word.",
+  "attempts": [[{ "text": "zip qux" }], [{ "text": "zip zap zorg" }]]
+}

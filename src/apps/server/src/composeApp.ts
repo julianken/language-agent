@@ -43,20 +43,14 @@ import {
  * exhaustive `Record<LanguageId, …>` makes adding language N a
  * compiler-checked one-line edit (ADR §2.3).
  *
- * `ar` and `zh` are STUB entries within this epic: each flips to a real
- * literal `import('@la/lang-…')` in a one-line, compiler-checked registry
- * edit — `ar` when the Arabic pack lands (#9/#10/#11 wire it), `zh` in
- * #21 (the flip that closes the v0.x churn window; dual-instance
- * amendment, Decision 2).
+ * `zh` is a STUB entry within this epic: it flips to a real literal
+ * `import('@la/lang-zh')` in a one-line, compiler-checked registry edit in
+ * #21 (the flip that closes the v0.x churn window; dual-instance amendment,
+ * Decision 2). `ar` flipped to its real literal import in #9.
  */
 const registry: Record<LanguageId, () => Promise<{ pack: LanguagePack }>> = {
   fake: () => import("@la/lang-fake"),
-  ar: () => {
-    throw new Error(
-      "boot failure [registry]: '@la/lang-ar' is not wired yet — the real " +
-        "literal import lands in #9/#10/#11 (one compiler-checked registry line)",
-    );
-  },
+  ar: () => import("@la/lang-ar"),
   zh: () => {
     throw new Error(
       "boot failure [registry]: '@la/lang-zh' is not wired yet — the real " +

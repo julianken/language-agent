@@ -10,6 +10,13 @@
 # directory returns zero hits, which would read as "no direction code" when
 # it is really file-not-found (the plan review's silently-pass-for-the-
 # wrong-reason hazard; same inert-gate class as PR #25 review finding 1).
+#
+# node_modules EXCLUSION (issue #9 fix, same root cause as
+# check-no-engine-fade.sh): `grep -R` follows symlinks, and pnpm's
+# workspace linking puts a `node_modules/@la/contract` SYMLINK inside every
+# package that declares it as a dependency, including
+# src/packages/engine — recursing into it would false-positive on
+# contract's own (legitimate) content.
 set -euo pipefail
 
 root="$(git rev-parse --show-toplevel)"
@@ -31,7 +38,7 @@ for scoped_path in "${scoped_paths[@]}"; do
     echo "FAILED: scoped path '$scoped_path' does not exist — the gate's path anchors have drifted from the tree; re-anchor scoped_paths in $0."
     exit 1
   fi
-  if grep -RniE "$pattern" "$scoped_path" --include='*.ts' --include='*.tsx'; then
+  if grep -RniE "$pattern" "$scoped_path" --include='*.ts' --include='*.tsx' --exclude-dir='node_modules'; then
     fail=1
   fi
 done

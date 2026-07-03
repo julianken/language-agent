@@ -1,0 +1,23 @@
+{
+  "name": "GREEN: كَتَبَ (he wrote) verifies with intent-gloss alignment — exact analyzer tuple pinned from src/sidecars/ar/tests/test_golden_fixtures.py::test_green_exact_vocalization_with_intent_alignment",
+  "targetText": "كَتَبَ",
+  "intents": [{ "id": "i1", "description": "write" }],
+  "expected": {
+    "tokens": [{ "surface": "كَتَبَ", "band": "GREEN" }],
+    "annotations": [
+      {
+        "diac": "كَتَبَ",
+        "skeleton": "كتب",
+        "vowelState": "full",
+        "morphology": {
+          "lemma": "كَتَب",
+          "root": "ك.ت.ب",
+          "pattern": "1َ2َ3َ",
+          "pos": "verb",
+          "gloss": "write+he;it_<verb>",
+          "caphi": "k_a_t_a_b_a"
+        }
+      }
+    ]
+  }
+}

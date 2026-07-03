@@ -1,0 +1,22 @@
+{
+  "name": "RED: a pure-Latin word token is out-of-world by construction (belt 1, fail-closed BEFORE the analyzer is consulted — src/sidecars/ar/app/gate.py's out-of-world rule) — payload is the deterministic no-analysis fallback, matching src/sidecars/ar/tests/test_golden_fixtures.py::test_red_pure_latin_text",
+  "targetText": "book",
+  "intents": [],
+  "expected": {
+    "tokens": [{ "surface": "book", "band": "RED" }],
+    "annotations": [
+      {
+        "diac": "book",
+        "skeleton": "book",
+        "vowelState": "none",
+        "morphology": {
+          "lemma": "book",
+          "root": "unknown",
+          "pattern": "unknown",
+          "pos": "unknown",
+          "gloss": "unknown"
+        }
+      }
+    ]
+  }
+}

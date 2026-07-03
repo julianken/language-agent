@@ -5,22 +5,18 @@
  * composition layer registers this whole entry.
  *
  * The full `LanguagePack` export (all nine seams) is #9's wiring; this
- * module owns only the seam-6 half #10 needs.
+ * module owns only the seam-6 half #10 needs. `arRendererManifest` itself
+ * is re-exported from `./manifest.js` (one source, zero React imports) —
+ * see that file's header for why `pack.ts` must not import the React
+ * components this file also pulls in.
  */
 
-import type { RendererManifest } from "@la/contract";
 import { ArMessageContainer } from "./ArMessageContainer.js";
 import { ArPunctToken, ArWordToken } from "./ArWordToken.js";
+import { arRendererManifest } from "./manifest.js";
 import type { RendererPackEntry } from "./renderer-types.js";
 
-export const arRendererManifest: RendererManifest = {
-  direction: "rtl",
-  tokenRenderers: {
-    word: "ar-word-token",
-    punct: "ar-punct-token",
-  },
-  breakdownPanel: "ar-breakdown-panel",
-};
+export { arRendererManifest } from "./manifest.js";
 
 export const arRendererEntry: RendererPackEntry = {
   lang: "ar",
