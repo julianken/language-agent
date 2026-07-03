@@ -1,0 +1,5 @@
+{
+  "source": "authored",
+  "learnerMessage": "Something with a word the gate should reject once.",
+  "attempts": [[{ "text": "book" }], [{ "text": "بَيْتٌ" }]]
+}
