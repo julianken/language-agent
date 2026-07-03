@@ -11,16 +11,31 @@
  *     and wires `POST /api/turns` + `GET /api/stream?turn=<id>` (the #10
  *     real-#9-integration follow-up) — a real turn: generation from
  *     agent-authored replay corpora (zero live LLM calls), verification
- *     through the pack's REAL gate. This file stays language-blind: it
- *     only forwards `LANGUAGE` to the generic `parseInstanceConfig` /
- *     `composeApp` — it never branches on the value (ADR §2.4 mechanism 4;
- *     `composeApp.ts` is the sole sanctioned exception, not this file).
+ *     through the pack's REAL gate. See the `LANGUAGE` entry below for
+ *     this file's language-blindness invariant.
  *
  *   PORT                listen port (default 8787)
  *   HOST                bind address (default 127.0.0.1)
  *   FIXTURES_DIR        fixture documents (default <package>/fixtures)
  *   WEB_DIST            built web app to serve statically (optional)
- *   LANGUAGE            fake|ar|zh — when set, boots real-turn mode
+ *   WEB_BASE            runtime base-path (e.g. "/ar/", "/zh/") spliced
+ *                       into the served index.html as `<base href>`
+ *                       (Task 6, R-B of the language-router-gateway
+ *                       plan) — set directly by the deploying
+ *                       environment (cloud-run-service module, next to
+ *                       ASSETS_ROOT), NOT derived from LANGUAGE here
+ *                       (ADR §2.4 mechanism 4 forbids an equality check
+ *                       against the language value in this file). Unset
+ *                       (every dev/e2e config today, incl. @la/web's
+ *                       playwright.config.ts) means root-served, no
+ *                       `<base>` injected — unchanged from before this
+ *                       existed.
+ *   LANGUAGE            fake|ar|zh — when set, boots real-turn mode. This
+ *                       file stays language-blind: it only forwards
+ *                       LANGUAGE to the generic `parseInstanceConfig` /
+ *                       `composeApp` — it never branches on the value
+ *                       (ADR §2.4 mechanism 4; `composeApp.ts` is the
+ *                       sole sanctioned exception, not this file).
  *   SIDECAR_BASE_URL    the pack's sidecar base URL (real mode)
  *   SIDECAR_MODE        real|fixture|mock (default "real")
  *   ASSETS_ROOT         the pack's asset root (real mode; required then)
@@ -77,14 +92,25 @@ async function buildRealTurnOptions(language: string): Promise<RealTurnOptions> 
 async function main(): Promise<void> {
   const language = process.env["LANGUAGE"];
   const realTurn = language ? await buildRealTurnOptions(language) : undefined;
+  // Runtime base-path (Task 6, R-B): an opaque passthrough, deliberately
+  // NOT derived from `language` here — ADR §2.4 mechanism 4 forbids
+  // `lang === `/`language === ` conditionals in this file (the boundary:
+  // lang-conditional CI gate greps/lints for exactly that). The deploying
+  // environment (cloud-run-service module) sets WEB_BASE directly, the
+  // same way it already sets ASSETS_ROOT per instance; dev/e2e configs
+  // (e.g. @la/web's playwright.config.ts, LANGUAGE=fake) simply don't set
+  // it, so webBase stays undefined there — unchanged from before this
+  // existed.
+  const webBase = process.env["WEB_BASE"];
 
-  const { server } = createFixtureServer({ fixturesDir, webDist, realTurn });
+  const { server } = createFixtureServer({ fixturesDir, webDist, realTurn, webBase });
 
   server.listen(port, host, () => {
     console.info(
       `server on http://${host}:${port} (fixtures: ${fixturesDir}` +
         `${webDist ? `, web: ${webDist}` : ""}` +
-        `${language ? `, real-turn language: ${language}` : ""})`,
+        `${language ? `, real-turn language: ${language}` : ""}` +
+        `${webBase ? `, web base: ${webBase}` : ""})`,
     );
   });
 }

@@ -1,0 +1,80 @@
+{
+ "type": "tutor-message",
+ "schemaVersion": "1.0",
+ "messageId": "m_zh_0001",
+ "role": "assistant",
+ "lang": "zh",
+ "blend": {
+  "ratio": 0.34,
+  "ceiling": 0.5,
+  "advancedBy": "mastery",
+  "guard": "clause-coherent",
+  "unknownTokenShare": 0.0
+ },
+ "tokens": [
+  {
+   "id": "t0",
+   "text": "yes, you",
+   "lang": "en",
+   "kind": "text",
+   "status": "scaffold"
+  },
+  {
+   "id": "t1",
+   "text": "可以",
+   "lang": "zh",
+   "kind": "word",
+   "status": "learning",
+   "band": "GREEN",
+   "annotations": {
+    "readingId": "可以:ke3yi3",
+    "perCharacter": [
+     {
+      "char": "可",
+      "citationPinyinChar": "kě",
+      "compositionalBoundFlag": false
+     },
+     {
+      "char": "以",
+      "citationPinyinChar": "yǐ",
+      "compositionalBoundFlag": false
+     }
+    ],
+    "citationPinyin": [
+     "kě",
+     "yǐ"
+    ],
+    "surfacePinyin": [
+     "ké",
+     "yǐ"
+    ],
+    "toneTrack": [
+     2,
+     3
+    ],
+    "neutralToneSlots": [],
+    "erhuaSlots": [],
+    "pos": "verb",
+    "senseId": "can",
+    "gloss": "can; may",
+    "boundMorpheme": false
+   },
+   "directive": {
+    "fadeLevels": [],
+    "blend": {
+     "anglicize": false
+    },
+    "dueness": {
+     "dueNow": true
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "text": "— that means: can.",
+   "lang": "en",
+   "kind": "text",
+   "status": "scaffold"
+  }
+ ]
+}

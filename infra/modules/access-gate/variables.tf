@@ -8,11 +8,6 @@ variable "cloudflare_zone_id" {
   description = "Cloudflare zone id for lexercon.com."
 }
 
-variable "api_domain" {
-  type        = string
-  description = "This instance's API domain the rate-limit ruleset protects."
-}
-
 variable "gcp_project_id" {
   type        = string
   description = "GCP project id for the Secret Manager secret container."

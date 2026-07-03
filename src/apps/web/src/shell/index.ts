@@ -7,6 +7,7 @@
  * layer, never from here.
  */
 
+export { apiUrl } from "./api-url.js";
 export { RendererRegistry } from "./registry.js";
 export type { RendererRegistryEntry } from "./registry.js";
 export { TokenStream } from "./TokenStream.js";

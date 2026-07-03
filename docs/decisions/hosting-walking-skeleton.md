@@ -81,3 +81,52 @@ Containers matured substantially through 2025–26 (verified via Cloudflare docs
 One Cloud Run service PER language instance — the existing Terraform module instantiated twice (`for_each` over `["ar","zh"]`), each keeping the hosting ADR's shape verbatim (sidecar as second container, localhost networking, one deploy unit). Rejected: both sidecars in one service (violates the language-module ADR's "one language per instance" YAGNI guardrail and forces runtime routing the registry deliberately lacks). Domains: `zh.lexercon.com` (frontend) + `zh-api.lexercon.com` (API) — both single-level labels because Cloudflare Universal SSL covers only `*.lexercon.com`; ar keeps `lexercon.com`/`api.lexercon.com`. One Pages project, both custom domains, a build-time host→API-origin config map (composition config, no `lang===` conditional in engine code). **Deploy zh**, by this ADR's own economics: the deterministic v0 image is the same class as ar's 553 MB (**est. 300–600 MB — the single range used in the epic risk row and here**; N1 measures it, >2× deviation amends this ADR); marginal run-rate ≈ $0–2/mo. CI-only would fail to prove exactly the seam the directive exists to enforce: that the Terraform module, the one-variable rule, the startup probe, and SSE-behind-proxy are genuinely language-parameterized. `zh-api.lexercon.com` gets the same rate-limit/WAF ruleset + shared secret before URLs are public. The measured-numbers table gains a zh row (TBD → filled by N1; **filled 2026-07-02** — see "zh row" above: 207 MB, ≈1.2–1.3 s cold start, ≈143 MiB RSS). Recorded contingency: had a neural leg been required hot in v0, the recommendation would flip to CI-only-until-measured per §10.2's re-measure mandate — Decision 1's fail-closed construction is what keeps that branch untaken.
 
 *(Full dual-instance decision record — incl. the zh deterministic-legs sidecar v0, CI matrix, and the neural-legs deferral — lives in `docs/decisions/language-module-architecture.md` → "Amendment — dual-instance walking skeleton".)*
+
+## Amendment — apex router (language-router-gateway plan, 2026-07-03)
+
+Supersedes the "Amendment — lexercon.com" and "Amendment — dual-instance
+topology" sections above wherever they describe **split origins**
+(`zh.lexercon.com` frontend, `api.lexercon.com` / `zh-api.lexercon.com`
+API subdomains, the single Cloudflare Pages project, and the per-instance
+`google_cloud_run_domain_mapping`). The platform decision itself is
+unchanged (Cloud Run compute, one service per instance, Terraform
+`for_each` over `local.instances`) — only the **name/routing layer** in
+front of it moves.
+
+**Before → after:**
+
+| | Before (retired) | After |
+|---|---|---|
+| Frontend | Cloudflare Pages project, per-instance custom domain (`lexercon.com` for ar, `zh.lexercon.com` for zh) | A single self-contained gateway page (`src/apps/router`), embedded as one HTML string directly in a Cloudflare Worker script |
+| API | Per-instance proxied CNAME + `google_cloud_run_domain_mapping` (`api.lexercon.com`, `zh-api.lexercon.com`) | Same Worker proxies `lexercon.com/ar/*` → the `la-ar` Cloud Run service's bare `run.app` host, `/zh/*` → `la-zh`, with the leading segment stripped and `Host` overridden |
+| DNS | Per-instance `cloudflare_record` CNAMEs (one per custom domain) | One proxied placeholder apex `cloudflare_record` (`@`, type A) so the zone resolves; the Worker route (not DNS) is what actually dispatches |
+| Access gate, Layer 1 (edge rate limit) | One rule, OR'd over `http.host eq "api.lexercon.com"` / `"...zh-api..."` | One rule: `http.host eq "lexercon.com"` AND OR'd over each instance's `<base_path>/api` path prefix |
+| Access gate, Layer 2 (server-side secret) | `SHARED_SECRET` env wired but **not enforced** by the server | **Enforced**: the server rejects `/api/*` requests missing `x-access-secret`; the Worker is the only path that can supply it, injecting a value from a PER-INSTANCE Cloudflare secret binding (`SHARED_SECRET_AR` / `SHARED_SECRET_ZH`) that reads the same Secret Manager secret each backend already uses |
+| Terraform | `frontend-pages` module (1) + `dns-domain` module (×2, `for_each`) | `worker.tf`: `cloudflare_workers_script` + `cloudflare_workers_route` + the apex record — no `for_each`, since one Worker fronts both instances |
+
+**Why:** the split-origin topology never actually shipped pretty
+`lexercon.com/ar` / `lexercon.com/zh` URLs — it hard-required a second
+subdomain per instance and a Google domain-verification step per API
+domain, and (per the deferred item this amendment also closes) left the
+access gate's Layer 2 wired but inert. The apex router collapses both
+instances onto one host, needs no Google domain verification (the Worker
+overrides `Host` directly against each service's own `run.app` URL —
+no `google_cloud_run_domain_mapping` involved), and is what finally
+makes the server-side secret check load-bearing: once the old API
+subdomains stop resolving, the Worker (with its per-instance secret) is
+the only path that can reach either backend's `/api/*` surface at all.
+
+**Consequences:**
+- `INSTANCE.md` → Status: URL map amended (same PR) — apex router +
+  `/ar` `/zh` path routes replace the split-origin map.
+- `DESIGN.md` → Components: gains `router-page`, `language-card`,
+  `router-wordmark` (same PR) — no new tokens.
+- A real `terraform plan` against this amendment **destroys** the
+  `frontend_pages` module's Pages project + custom-domain bindings +
+  CNAME records, and each instance's `dns_domain` module's proxied CNAME
+  + `google_cloud_run_domain_mapping` — and **creates** the Worker
+  script, Worker route, and the new apex record. Not yet applied (this
+  PR is author + `validate` only, per the worktree's hard constraints).
+- **Cold-start TTFT stays open**, tracked in `GAPS.md`: scale-to-zero
+  measured ≈12s (ar) / ≈6s (zh) first-token, ≈0.2s warm — a
+  `min_instances` decision this amendment doesn't resolve.

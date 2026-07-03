@@ -124,6 +124,28 @@ resource "google_cloud_run_v2_service" "this" {
         value = "/repo/src/packages/lang-${var.instance_key}/assets"
       }
 
+      # The one shared web SITE bundle the server Dockerfile builds and
+      # COPYs to this path (language-router-gateway plan, Task 6, R-B) —
+      # NOT instance-specific (no ${var.instance_key} here, unlike
+      # ASSETS_ROOT above): one bundle (Vite base:"./") serves both
+      # instances; WEB_BASE below is what differentiates them.
+      env {
+        name  = "WEB_DIST"
+        value = "/repo/web-dist"
+      }
+
+      # The runtime base-path the server splices into the served
+      # index.html as `<base href>` (Task 6, R-B). Set directly here
+      # (instance_key-templated, same pattern as ASSETS_ROOT above)
+      # rather than derived from LANGUAGE in server code: ADR §2.4
+      # mechanism 4 forbids an equality check against the language value
+      # in src/apps/server/src (the boundary:lang-conditional CI gate),
+      # so http/main.ts just forwards this opaque string through.
+      env {
+        name  = "WEB_BASE"
+        value = "/${var.instance_key}/"
+      }
+
       resources {
         limits = {
           cpu    = "1"
