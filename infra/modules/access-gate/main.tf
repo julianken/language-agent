@@ -1,46 +1,11 @@
-# The two-layer access gate for ONE instance's API domain, per the hosting
-# ADR's lexercon.com amendment: "a Cloudflare rate-limit/WAF ruleset ... PLUS
-# a server-side shared-secret check — edge rules alone don't protect the
-# direct run.app URL, so the server verifies regardless of path." Called once
-# per entry in local.instances (for_each in root main.tf) — no "ar"/"zh"
-# literal appears in this file itself.
-
-# ── Layer 1: Cloudflare rate-limit ruleset (edge) ────────────────────────
-# Mirrors bird-watch/infra/terraform/rate-limit.tf's read_api_rate_limit
-# shape (phase = http_ratelimit is the non-deprecated ruleset engine path,
-# not the legacy cloudflare_rate_limit resource).
-resource "cloudflare_ruleset" "api_rate_limit" {
-  zone_id     = var.cloudflare_zone_id
-  name        = "${var.instance_key}-api-rate-limit"
-  description = "Access-gate rate limit on ${var.api_domain} (issue #11) — required before this URL is public"
-  kind        = "zone"
-  phase       = "http_ratelimit"
-
-  rules {
-    description = "Rate limit all requests to ${var.api_domain}"
-    expression  = "(http.host eq \"${var.api_domain}\")"
-    action      = "block"
-    enabled     = true
-
-    ratelimit {
-      # cf.colo.id is REQUIRED by the Cloudflare API in characteristics
-      # (rate limiting is enforced at the colo level) — same constraint
-      # bird-watch's rate-limit.tf documents.
-      characteristics     = ["ip.src", "cf.colo.id"]
-      period              = 10
-      requests_per_period = 10
-      mitigation_timeout  = 10
-    }
-
-    action_parameters {
-      response {
-        status_code  = 429
-        content      = "{\"error\":\"rate limit exceeded\"}"
-        content_type = "application/json"
-      }
-    }
-  }
-}
+# The server-side shared-secret container for ONE instance, per the hosting
+# ADR's lexercon.com amendment's two-layer access gate. The edge rate-limit
+# ruleset is deliberately NOT here: Cloudflare allows only ONE http_ratelimit
+# ruleset per zone, and both instances share the lexercon.com zone — so the
+# rate limit lives as a single consolidated zone ruleset (../rate-limit.tf)
+# with one rule per api_domain. This module keeps only Layer 2 (the per-
+# instance secret). Called once per entry in local.instances (for_each in
+# root main.tf) — no "ar"/"zh" literal appears in this file itself.
 
 # ── Layer 2: server-side shared secret (Secret Manager container only) ──
 # Declares the SECRET CONTAINER — never a google_secret_manager_secret_version

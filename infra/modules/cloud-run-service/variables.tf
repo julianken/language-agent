@@ -31,8 +31,8 @@ variable "server_port" {
 
 variable "sidecar_port" {
   type        = number
-  description = "Sidecar container's HTTP port (localhost-only — never an ingress port)."
-  default     = 8081
+  description = "Sidecar container's HTTP port (localhost-only — never an ingress port). MUST match the port the sidecar image's uvicorn CMD binds (src/sidecars/{ar,zh}/Dockerfile → --port 8000)."
+  default     = 8000
 }
 
 variable "sidecar_memory" {

@@ -57,7 +57,13 @@ build_and_push() {
   local name="$1" dockerfile="$2" context="$3"
   local ref="${registry}/${name}"
   echo "== building ${ref}:${tag} (and :latest) from ${dockerfile}, context ${context} =="
+  # --platform linux/amd64 is MANDATORY: Cloud Run runs linux/amd64, but a
+  # build on Apple Silicon (arm64) produces arm64 images that fail on Cloud
+  # Run with "exec format error" (the sidecar's uvicorn, or Node, won't
+  # start). On an arm64 host this uses emulation (slower); on amd64 CI it's
+  # a no-op. TARGET_PLATFORM overrides if ever needed.
   docker build \
+    --platform "${TARGET_PLATFORM:-linux/amd64}" \
     -f "$dockerfile" \
     -t "${ref}:${tag}" \
     -t "${ref}:latest" \
