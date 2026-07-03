@@ -49,6 +49,25 @@ const STATUS_WASH: Record<string, string> = {
   learning: "var(--la-color-status-learning-bg)",
 };
 
+/**
+ * The romanized-reading sub-label (DESIGN.md §0 `transliteration`: 13px /
+ * 500, mono — the fading trainer-key color `muted-soft`). It rides in its
+ * OWN `dir="ltr"` box, a SIBLING of the Arabic `<bdi>` (never a child) so
+ * it can't perturb the token's bidi isolate. tokens.json carries no
+ * dedicated `transliteration` ramp; it shares the annotation ramp's
+ * 13px/500 numerics, so we bind those + the mono family rather than mint a
+ * new §0 token (no raw values — DESIGN.md §0). */
+const transliterationStyle: CSSProperties = {
+  display: "block",
+  fontFamily: "var(--la-font-mono)",
+  fontSize: "var(--la-type-annotation-size)",
+  fontWeight: "var(--la-type-annotation-weight)" as CSSProperties["fontWeight"],
+  lineHeight: "var(--la-type-annotation-line-height)",
+  color: "var(--la-color-muted-soft)",
+  direction: "ltr",
+  unicodeBidi: "isolate",
+};
+
 function tokenStyle(status: string | undefined, band: string | undefined): CSSProperties {
   const style: CSSProperties = {
     color: "var(--la-color-ink)",
@@ -107,6 +126,14 @@ export function ArWordToken({ token, emitLearningEvent }: TokenRendererProps) {
   const display = ann ? renderVowels(ann.diac, levels) : token.text;
   const isolated = LEADS_RTL.test(display) ? display : ambiguousFirstIsolate(display);
 
+  // The romanized-reading training wheel: shown only while the word is
+  // still being learned (`new`/`learning`). A `known` word renders bare —
+  // no romanization — the same recede-as-mastered law as the ḥarakāt fade
+  // (DESIGN.md §Components → Tokens).
+  const translit = ann?.translit;
+  const showTranslit =
+    translit !== undefined && (token.status === "new" || token.status === "learning");
+
   const onActivate = () => {
     const opening = !open;
     setOpen(opening);
@@ -124,8 +151,22 @@ export function ArWordToken({ token, emitLearningEvent }: TokenRendererProps) {
     }
   };
 
+  // Only stack into a column when a romanization rides beneath the word;
+  // an ordinary token keeps the original inline-block box, so every
+  // non-translit line (e.g. the existing ar-mixed-line fixture) renders
+  // byte-for-byte as before.
+  const wrapperStyle: CSSProperties = showTranslit
+    ? {
+        position: "relative",
+        display: "inline-flex",
+        flexDirection: "column",
+        alignItems: "center",
+        verticalAlign: "baseline",
+      }
+    : { position: "relative", display: "inline-block" };
+
   return (
-    <span style={{ position: "relative", display: "inline-block" }}>
+    <span style={wrapperStyle}>
       <bdi
         dir="auto"
         data-token-id={token.id}
@@ -145,6 +186,11 @@ export function ArWordToken({ token, emitLearningEvent }: TokenRendererProps) {
       >
         {isolated}
       </bdi>
+      {showTranslit && (
+        <span dir="ltr" lang="ar-Latn" data-translit={token.id} style={transliterationStyle}>
+          {translit}
+        </span>
+      )}
       {open && (
         <ArBreakdownPanel
           morphology={ann?.morphology}
