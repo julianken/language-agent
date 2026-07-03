@@ -14,6 +14,11 @@ output "shared_secret_ids" {
   value = { for key, mod in module.access_gate : key => mod.shared_secret_id }
 }
 
+output "anthropic_secret_id" {
+  value       = google_secret_manager_secret.anthropic_api_key.secret_id
+  description = "The shared Secret Manager secret_id (both instances read the SAME key) — pass to `gcloud secrets versions add <this> --data-file=-` out-of-band at apply time."
+}
+
 output "deploy_service_account_email" {
   value = google_service_account.deploy.email
 }

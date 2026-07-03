@@ -58,12 +58,15 @@ playwright-report/
 # tfvars (which would carry a live Cloudflare API token), and the
 # validate-only local-backend override documented in infra/README.md.
 # Committed tree always shows the real GCS backend, never a local one.
+# *.tfvars (not just terraform.tfvars/*.auto.tfvars) — issue #11 PR2's
+# apply-time tfvars carries the live Cloudflare API token and must never be
+# committed under any filename ending .tfvars.
 infra/**/.terraform/
 infra/**/.terraform.lock.hcl.bak
 infra/**/*.tfstate
 infra/**/*.tfstate.*
 infra/**/*.tfplan
-infra/**/*.auto.tfvars
-infra/**/terraform.tfvars
+infra/**/*.tfvars
+infra/**/.env
 infra/override.tf
 infra/crash.log

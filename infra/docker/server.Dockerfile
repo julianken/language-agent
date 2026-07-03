@@ -40,9 +40,12 @@ COPY src/apps/server src/apps/server
 
 # Build order matches ci.yml's note: workspace `exports` maps resolve
 # @la/* only to ./dist/*, so cross-package imports need every dependency
-# built before @la/server's own build step runs. `pnpm run build` at the
-# workspace root is topological (pnpm -r), so this single command covers it.
-RUN pnpm run build
+# built before @la/server's own build step runs. Filter to @la/server AND
+# its dependency closure (`...` suffix) — pnpm builds them topologically.
+# NOT a workspace-wide `pnpm run build`: that also builds @la/web (the
+# Cloudflare Pages frontend, deployed separately — its source isn't even
+# COPY'd into this server image), which fails on its missing tsconfig here.
+RUN pnpm --filter "@la/server..." build
 
 # ── Runtime stage — no toolchain, no devDependencies, no source outside dist.
 FROM node:24-slim AS runtime
@@ -67,6 +70,12 @@ COPY --from=build /repo/src/packages/engine/dist src/packages/engine/dist
 COPY --from=build /repo/src/packages/lang-fake/dist src/packages/lang-fake/dist
 COPY --from=build /repo/src/packages/lang-ar/dist src/packages/lang-ar/dist
 COPY --from=build /repo/src/packages/lang-zh/dist src/packages/lang-zh/dist
+# The pack asset DATA dirs (seed vocab etc.) — the server's composeApp boot
+# validates these via assertAssetsPresent against ASSETS_ROOT (set by the
+# Cloud Run module to /repo/src/packages/lang-<lang>/assets). dist alone is
+# not enough; without these the server boots-fails "asset 'seedVocab' missing".
+COPY --from=build /repo/src/packages/lang-ar/assets src/packages/lang-ar/assets
+COPY --from=build /repo/src/packages/lang-zh/assets src/packages/lang-zh/assets
 COPY --from=build /repo/src/apps/server/dist src/apps/server/dist
 COPY --from=build /repo/src/apps/server/fixtures src/apps/server/fixtures
 

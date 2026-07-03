@@ -31,8 +31,8 @@ variable "server_port" {
 
 variable "sidecar_port" {
   type        = number
-  description = "Sidecar container's HTTP port (localhost-only — never an ingress port)."
-  default     = 8081
+  description = "Sidecar container's HTTP port (localhost-only — never an ingress port). MUST match the port the sidecar image's uvicorn CMD binds (src/sidecars/{ar,zh}/Dockerfile → --port 8000)."
+  default     = 8000
 }
 
 variable "sidecar_memory" {
@@ -54,6 +54,11 @@ variable "readyz_failure_threshold" {
 variable "shared_secret_id" {
   type        = string
   description = "Secret Manager secret_id (short id, not full resource name) holding this instance's server-side shared secret for the access gate. Distinct per instance — never reused across ar/zh."
+}
+
+variable "anthropic_secret_id" {
+  type        = string
+  description = "Secret Manager secret_id (short id, not full resource name) holding the live Anthropic API key that drives the server's live-generation boot mode (ANTHROPIC_API_KEY — src/apps/server/src/llm/select-generator.ts). SHARED across both instances (same key, same secret_id) — unlike shared_secret_id above, this is deliberately NOT per-instance. Its VERSION/value is added out-of-band via `gcloud secrets versions add` at apply time; no google_secret_manager_secret_version with a real value exists anywhere in this tree."
 }
 
 variable "min_instance_count" {

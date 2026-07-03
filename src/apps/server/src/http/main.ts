@@ -27,14 +27,22 @@
  *   TTS_PROVIDER        default voice provider (real mode; default "test")
  *   TTS_VOICE           default voice id (real mode; default "v1")
  *   REPLAY_FIXTURES_DIR the ReplayCandidateGenerator's corpus dir (real
- *                       mode; required then — e.g. `fixtures/llm-replay/ar`)
+ *                       mode, fallback branch only — e.g.
+ *                       `fixtures/llm-replay/ar`)
+ *   ANTHROPIC_API_KEY   live-generation boot mode (issue #11 PR2, real mode
+ *                       only): when present, `runHotPathTurn` is wired
+ *                       against the REAL `AnthropicCandidateGenerator`
+ *                       (claude-sonnet-5) instead of the replay/fixture
+ *                       generator — see `llm/select-generator.ts`. Never
+ *                       exercised by the PR-blocking E2E; absent in
+ *                       every local/CI environment on purpose.
  */
 
 import { fileURLToPath } from "node:url";
 import { dirname, join, resolve } from "node:path";
 import { composeApp } from "../composeApp.js";
 import { parseInstanceConfig } from "../config.js";
-import { ReplayCandidateGenerator } from "../llm/replay-client.js";
+import { selectCandidateGenerator } from "../llm/select-generator.js";
 import { createFixtureServer, type RealTurnOptions } from "./server.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -59,7 +67,8 @@ async function buildRealTurnOptions(language: string): Promise<RealTurnOptions> 
     },
   });
   const app = await composeApp(config);
-  const generator = new ReplayCandidateGenerator({
+  const generator = selectCandidateGenerator({
+    anthropicApiKey: process.env["ANTHROPIC_API_KEY"],
     fixturesDir: resolve(process.env["REPLAY_FIXTURES_DIR"] ?? ""),
   });
   return { app, generator };

@@ -21,21 +21,26 @@
 #          shared value").
 locals {
   instances = {
+    # readyz_failure_threshold is a generous STARTUP budget, not the measured
+    # steady-state /readyz latency: Cloud Run throttles CPU during startup
+    # (unless startup_cpu_boost, which the module also sets), so the ar CAMeL
+    # morphology DB and the zh data tables load much slower than the ~2s /
+    # ~1.3s measured locally. period × threshold gives ar ~40s, zh ~30s.
     ar = {
       language                 = "ar"
       frontend_domain          = "lexercon.com"
       api_domain               = "api.lexercon.com"
       sidecar_image_repo       = "sidecar-ar"
       readyz_period_seconds    = 2
-      readyz_failure_threshold = 3
+      readyz_failure_threshold = 20
     }
     zh = {
       language                 = "zh"
       frontend_domain          = "zh.lexercon.com"
       api_domain               = "zh-api.lexercon.com"
       sidecar_image_repo       = "sidecar-zh"
-      readyz_period_seconds    = 1
-      readyz_failure_threshold = 2
+      readyz_period_seconds    = 2
+      readyz_failure_threshold = 15
     }
   }
 

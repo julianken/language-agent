@@ -25,10 +25,27 @@ resource "google_secret_manager_secret_iam_member" "shared_secret_accessor" {
   member    = "serviceAccount:${google_service_account.runtime.email}"
 }
 
+# Unlike shared_secret_accessor above, the SAME anthropic_secret_id is
+# granted to both instances' runtime SAs — this is the one deliberately
+# shared credential (issue #11 PR2): one live Anthropic account, not a
+# per-instance secret.
+resource "google_secret_manager_secret_iam_member" "anthropic_secret_accessor" {
+  project   = var.gcp_project_id
+  secret_id = var.anthropic_secret_id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = "serviceAccount:${google_service_account.runtime.email}"
+}
+
 resource "google_cloud_run_v2_service" "this" {
   name     = "la-${var.instance_key}"
   location = var.location
   project  = var.gcp_project_id
+
+  # Cloud Run v2 defaults deletion_protection = true, which blocks Terraform
+  # from replacing a tainted service (e.g. after a failed first revision) —
+  # "cannot destroy service without setting deletion_protection=false". A
+  # walking-skeleton instance is Terraform-managed lifecycle, so disable it.
+  deletion_protection = false
 
   template {
     service_account = google_service_account.runtime.email
@@ -48,6 +65,17 @@ resource "google_cloud_run_v2_service" "this" {
         container_port = var.server_port
       }
 
+      # Cloud Run injects PORT automatically (matching container_port
+      # above); it does NOT set HOST, and http/main.ts's own default
+      # (127.0.0.1, the local dev/e2e bind) is unreachable from outside the
+      # container — this env var closes that gap for the deploy target
+      # (see http/main.ts's file header: "the platform injects PORT and
+      # the bind is 0.0.0.0").
+      env {
+        name  = "HOST"
+        value = "0.0.0.0"
+      }
+
       env {
         name  = "LANGUAGE"
         value = var.instance_key
@@ -63,9 +91,37 @@ resource "google_cloud_run_v2_service" "this" {
         }
       }
 
+      # Live-generation boot mode (issue #11 PR2,
+      # src/apps/server/src/llm/select-generator.ts): when present, the
+      # server wires the REAL AnthropicCandidateGenerator instead of the
+      # replay/fixture generator. SHARED across both instances — same
+      # secret_id, same key, unlike SHARED_SECRET above.
       env {
-        name  = "SIDECAR_URL"
+        name = "ANTHROPIC_API_KEY"
+        value_source {
+          secret_key_ref {
+            secret  = var.anthropic_secret_id
+            version = "latest"
+          }
+        }
+      }
+
+      # The server reads SIDECAR_BASE_URL (src/apps/server/src/http/main.ts) —
+      # NOT "SIDECAR_URL". With SIDECAR_MODE defaulting to "real", this points
+      # the real gate client at the localhost sidecar container.
+      env {
+        name  = "SIDECAR_BASE_URL"
         value = "http://localhost:${var.sidecar_port}"
+      }
+
+      # The server's composeApp boot resolves the pack's assets against
+      # ASSETS_ROOT (src/apps/server/src/http/main.ts) — unset it defaults to
+      # cwd (/repo) and boot-fails "asset 'seedVocab' missing at /repo/...".
+      # instance_key is the language, so this is this instance's pack assets
+      # dir (the server Dockerfile COPYs lang-<lang>/assets to this path).
+      env {
+        name  = "ASSETS_ROOT"
+        value = "/repo/src/packages/lang-${var.instance_key}/assets"
       }
 
       resources {
@@ -89,9 +145,14 @@ resource "google_cloud_run_v2_service" "this" {
       name  = "sidecar"
       image = var.sidecar_image
 
-      ports {
-        container_port = var.sidecar_port
-      }
+      # NO `ports` block: Cloud Run multi-container allows exactly ONE
+      # container with an exposed (ingress) port — that's the server above.
+      # The sidecar still listens on sidecar_port internally; the server
+      # reaches it via http://localhost:${sidecar_port} (SIDECAR_URL) and the
+      # startup_probe below targets that port directly — neither needs a
+      # Cloud Run `ports` declaration. (Declaring it here failed apply with
+      # "template.containers: Revision template should contain exactly one
+      # container with an exposed port.")
 
       resources {
         limits = {
@@ -130,6 +191,7 @@ resource "google_cloud_run_v2_service" "this" {
 
   depends_on = [
     google_secret_manager_secret_iam_member.shared_secret_accessor,
+    google_secret_manager_secret_iam_member.anthropic_secret_accessor,
   ]
 }
 
