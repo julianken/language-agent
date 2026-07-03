@@ -15,7 +15,11 @@ infra/
 │                       # committed default — supplied at real-apply time)
 ├── locals.tf           # local.instances — the ONE map that differentiates ar/zh;
 │                       # every module below is for_each'd over it
-├── main.tf             # wires the four modules via for_each = local.instances
+├── main.tf             # wires the per-instance modules via for_each = local.instances
+├── worker.tf            # the apex router: cloudflare_workers_script + cloudflare_workers_route
+│                        # (lexercon.com/* → the embedded gateway + /ar /zh proxy) + the
+│                        # new proxied apex DNS record (language-router-gateway plan, Task 8)
+├── rate-limit.tf        # the one Free-plan http_ratelimit rule, path-routed since Task 8
 ├── registry.tf         # the shared Artifact Registry repo (server + both sidecars)
 ├── anthropic-secret.tf # the SHARED Anthropic API key secret container (issue #11
 │                       # PR2) — same key, both instances; container only, no value
@@ -28,12 +32,23 @@ infra/
 │   ├── generate-secrets.sh # authored only — never run by this PR
 │   └── build-and-push.sh   # authored only — never run by this PR (issue #11 PR2):
 │                           # builds + pushes server/sidecar-ar/sidecar-zh
+├── worker/                 # the router Worker's JS source (router-worker.js, its
+│                           # generated embedded-HTML module, wrangler.toml for local
+│                           # `wrangler dev`, vitest unit tests) — worker.tf's `content`
+│                           # inlines these two JS files at Terraform-eval time (R-A)
 └── modules/
     ├── cloud-run-service/  # multicontainer: server + this instance's sidecar
-    ├── frontend-pages/     # ONE Cloudflare Pages project, two custom domains
-    ├── dns-domain/         # per-instance proxied CNAME + Cloud Run domain mapping
-    └── access-gate/        # per-instance rate-limit ruleset + Secret Manager container
+    └── access-gate/        # per-instance Secret Manager shared-secret container
 ```
+
+**Retired (language-router-gateway plan, Task 8):** the `frontend-pages` module
+(one Cloudflare Pages project, two custom domains) and the `dns-domain` module
+(per-instance proxied CNAME + `google_cloud_run_domain_mapping`) are gone —
+both instances now sit behind the single `lexercon.com` apex Worker in
+`worker.tf`, path-routed at `/ar` and `/zh` rather than split across
+subdomains. See `docs/decisions/hosting-walking-skeleton.md`'s "Amendment —
+apex router" for the full before/after and the destroy set a real `plan`
+produces.
 
 ## Validating without touching real cloud state
 
@@ -66,7 +81,7 @@ terraform plan \
   -var="cloudflare_zone_id=dryrunzoneid000000000000000000000" \
   -var="cloudflare_api_token=dryrunA1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q7s8" \
   -target=module.access_gate -target=module.cloud_run_service \
-  -target=module.dns_domain -target=module.frontend_pages \
+  -target=cloudflare_record.apex -target=cloudflare_ruleset.api_rate_limit \
   -target=google_secret_manager_secret.anthropic_api_key \
   -target=google_artifact_registry_repository.images
 
@@ -78,16 +93,22 @@ terraform init -reconfigure -backend=false   # back to a clean validate-only sta
 The `cloudflare_api_token` dummy value must satisfy the provider's own
 client-side format check (`a-z`, `A-Z`, `0-9`, `-`, `_` — a too-short or
 oddly-shaped string is rejected before any network call). The `-target`
-flags scope the dry-run around `wif.tf`'s `data "google_project" "this"`
-(and the one resource that consumes its output,
-`google_service_account_iam_member.deploy_wif`) — that data source does a
-LIVE read against the real Google Cloud Resource Manager API to resolve a
-project NUMBER from the project id, which a placeholder `-var` project id
-cannot satisfy without actually touching real GCP. Everything else in this
-tree (all four `for_each`-instantiated modules, the registry, the shared
-Anthropic secret) plans cleanly offline. `override.tf`, `*.tfstate*`,
-`.terraform/`, and any `*.tfvars` are `.gitignore`d — none of this dry-run
-scaffolding is committed.
+flags scope the dry-run around TWO live-read data sources a placeholder
+project id can't satisfy without actually touching real GCP:
+`wif.tf`'s `data "google_project" "this"` (and the one resource that
+consumes its output, `google_service_account_iam_member.deploy_wif`),
+which resolves a project NUMBER from the project id; and, as of the
+language-router-gateway plan's Task 8, `worker.tf`'s two
+`data "google_secret_manager_secret_version"` reads (`ar_shared_secret`
+/ `zh_shared_secret`) — which the dry run therefore also excludes
+`cloudflare_workers_script.router` and `cloudflare_workers_route.router`
+(the route depends on the script) for, since the script resource
+consumes both data sources' output. Everything else in this tree (the
+two remaining `for_each`-instantiated modules, the new apex record +
+rate-limit ruleset, the registry, the shared Anthropic secret) plans
+cleanly offline. `override.tf`, `*.tfstate*`, `.terraform/`, and any
+`*.tfvars` are `.gitignore`d — none of this dry-run scaffolding is
+committed.
 
 ## What's real vs. placeholder right now
 

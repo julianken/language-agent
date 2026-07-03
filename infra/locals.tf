@@ -26,18 +26,23 @@ locals {
     # (unless startup_cpu_boost, which the module also sets), so the ar CAMeL
     # morphology DB and the zh data tables load much slower than the ~2s /
     # ~1.3s measured locally. period × threshold gives ar ~40s, zh ~30s.
+    #
+    # base_path (language-router-gateway plan, Task 8, R-D) replaces the
+    # retired frontend_domain/api_domain per-instance subdomains
+    # ("zh.lexercon.com", "api.lexercon.com", "zh-api.lexercon.com" — all
+    # superseded): both instances now share the ONE lexercon.com apex,
+    # fronted by the routing Worker (worker.tf), which dispatches on this
+    # path prefix instead of a distinct host per instance.
     ar = {
       language                 = "ar"
-      frontend_domain          = "lexercon.com"
-      api_domain               = "api.lexercon.com"
+      base_path                = "/ar"
       sidecar_image_repo       = "sidecar-ar"
       readyz_period_seconds    = 2
       readyz_failure_threshold = 20
     }
     zh = {
       language                 = "zh"
-      frontend_domain          = "zh.lexercon.com"
-      api_domain               = "zh-api.lexercon.com"
+      base_path                = "/zh"
       sidecar_image_repo       = "sidecar-zh"
       readyz_period_seconds    = 2
       readyz_failure_threshold = 15

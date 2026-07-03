@@ -2,10 +2,13 @@
 # ADR's lexercon.com amendment's two-layer access gate. The edge rate-limit
 # ruleset is deliberately NOT here: Cloudflare allows only ONE http_ratelimit
 # ruleset per zone, and both instances share the lexercon.com zone — so the
-# rate limit lives as a single consolidated zone ruleset (../rate-limit.tf)
-# with one rule per api_domain. This module keeps only Layer 2 (the per-
-# instance secret). Called once per entry in local.instances (for_each in
-# root main.tf) — no "ar"/"zh" literal appears in this file itself.
+# rate limit lives as a single consolidated zone ruleset (../rate-limit.tf),
+# now keyed on the apex host + the /ar/api, /zh/api path prefixes
+# (language-router-gateway plan, Task 8 — the per-instance api_domain
+# subdomains this comment used to reference are retired). This module keeps
+# only Layer 2 (the per-instance secret). Called once per entry in
+# local.instances (for_each in root main.tf) — no "ar"/"zh" literal appears
+# in this file itself.
 
 # ── Layer 2: server-side shared secret (Secret Manager container only) ──
 # Declares the SECRET CONTAINER — never a google_secret_manager_secret_version
