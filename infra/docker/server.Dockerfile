@@ -40,6 +40,12 @@ RUN pnpm install --frozen-lockfile
 
 # Now the real source — invalidates only from here down on a source change.
 COPY tsconfig.base.json ./
+# @la/web's tokens.json -> CSS custom-property bridge imports this by
+# relative path (src/apps/web/src/tokens/applyTokens.ts) — without it the
+# site build fails UNRESOLVED_IMPORT (caught by this task's own local
+# `docker build` verification; not needed at runtime, only baked into the
+# built JS/CSS at this build step).
+COPY tokens.json ./
 COPY src/packages src/packages
 COPY src/apps/server src/apps/server
 COPY src/apps/web src/apps/web
