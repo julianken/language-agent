@@ -1,9 +1,9 @@
 {
   "name": "@la/engine",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Placeholder package root only. Engine is language-blind and depends ONLY on @la/contract at runtime — never a lang-* package (ADR §2.4 rule a). Real content (turn loop, scheduler cascade, tuple store) lands with issue #9 and successors.",
+  "description": "The language-blind turn-loop engine (issue #9): generate → verify → anglicize, built to the candidates(1..N) → cheap-rank → gate-the-winner shape (ADR §1.5, N=1 in the walking skeleton); the tutor-message wire-schema builder (architecture.md §3); the injected CandidateGenerator boundary; and the reusable seam-4/5 walking-skeleton stand-ins (FixedRatioScaffold, SeedVocabBypassCurriculum) a pack's own manifest configures. Depends ONLY on @la/contract + zod at runtime — never a lang-* package (ADR §2.4 rule a).",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -15,6 +15,13 @@
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@la/contract": "workspace:*",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "fast-check": "^4.8.0"
   }
 }
