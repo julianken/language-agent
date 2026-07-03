@@ -143,6 +143,36 @@ jobs:
             -v "$PWD/src/packages/contract/sidecar/openapi.yaml:/contract/openapi.yaml:ro" \
             language-agent/sidecar-ar:ci-test bash tests/run-schemathesis.sh
 
+      # --- issue #8 seed-vocab gate: every @la/lang-ar seed entry MUST band
+      # GREEN through the REAL sidecar's POST /v1/verify (never the Prism
+      # mock, never a direct camel-tools call — issue #8 AC2's
+      # mock-exclusion clause). This needs the CI-built runtime image
+      # actually SERVING traffic (network on, unlike the offline steps
+      # above), so it runs as its own boot/validate/teardown trio.
+      - name: Boot the ar sidecar image — issue #8 seed-vocab validation
+        run: |
+          docker run -d --name sidecar-ar-seedvocab -p 8081:8000 language-agent/sidecar-ar:ci
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:8081/readyz >/dev/null 2>&1; then exit 0; fi
+            sleep 1
+          done
+          echo "sidecar never became ready"; docker logs sidecar-ar-seedvocab; exit 1
+
+      - name: Set up Node (seed-vocab validation script only — no pnpm install needed, this job otherwise stays docker-only)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Validate @la/lang-ar seed vocab — every entry GREEN through POST /v1/verify (issue #8 AC2)
+        run: node src/packages/lang-ar/scripts/validate-seed-vocab.mjs
+        env:
+          SIDECAR_AR_BASE_URL: http://127.0.0.1:8081
+          SIDECAR_AR_SKIP_BOOT: "1"
+
+      - name: Stop the seed-vocab validation container
+        if: always()
+        run: docker rm -f sidecar-ar-seedvocab
+
   # --- zh verification sidecar v0 (issue #19) — deterministic legs only. ---
   # Independent of the pnpm workspace build: the sidecar sits outside the
   # workspace globs (Python, own pinned deps). Gates, in order: model + baked-
