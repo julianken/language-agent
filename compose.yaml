@@ -1,14 +1,15 @@
 # docker-compose profiles (issue #6 established the shape; #7's spec-first
 # opening PR filled the `mock` profile — docs/decisions/
-# language-module-architecture.md §3.6; issue #19 filled `sidecar-zh`).
-# Remaining placeholders: the server image (issue #9) and the ar sidecar
-# image (#7's implementation PRs).
+# language-module-architecture.md §3.6; #7 stage 2 filled `sidecar-ar` and
+# issue #19 filled `sidecar-zh` with real images). Remaining placeholder:
+# the server image (issue #9).
 #
 # Profiles:
 #   server      — the Node/TS SSE server (src/apps/server), needed by every leg.
 #   sidecar-ar  — the Arabic verification sidecar (build context
-#                 src/sidecars/ar; real image lands with #7's implementation
-#                 PRs — NOT its spec-first opening PR).
+#                 src/sidecars/ar — the REAL image, issue #7 stage 2):
+#                 docker compose --profile sidecar-ar up sidecar-ar
+#                 serves the gate on :8081 (container :8000).
 #   sidecar-zh  — the Chinese verification sidecar v0 (build context
 #                 src/sidecars/zh; deterministic legs only, issue #19).
 #                 Boot it alone with:  docker compose --profile sidecar-zh up
@@ -33,11 +34,36 @@ services:
 
   sidecar-ar:
     profiles: ["sidecar-ar", "ar"]
-    # Placeholder: real image + Dockerfile (build context src/sidecars/ar)
-    # land with issue #7's implementation PRs (stage 2 — the FastAPI routes
-    # type against src/sidecars/ar/generated/models.py, generated from the
-    # shared spec).
-    image: "language-agent/sidecar-ar:placeholder"
+    # The real Arabic verification sidecar (issue #7 stage 2): FastAPI
+    # routes typed against src/sidecars/ar/generated/models.py (generated
+    # from the shared spec); dediac-roundtrip + calima-msa-r13
+    # analyzer-membership legs; fully offline at runtime (morphology DB
+    # baked at build).
+    build:
+      context: src/sidecars/ar
+      target: runtime
+    image: "language-agent/sidecar-ar:dev"
+    # Hosting ADR (docs/decisions/hosting-walking-skeleton.md): the sidecar
+    # container gets 1 GiB — analyzer RSS ≈ 399 MB; 512 MB is too tight
+    # with the HTTP layer on top.
+    mem_limit: "1g"
+    ports:
+      - "8081:8000"
+    # Mirrors the Cloud Run startup-probe shape (#11): poll /readyz —
+    # honest readiness, 200 only once the analyzer DB is loaded (measured
+    # warmup ≈ 2 s from container start on the dev host).
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz', timeout=2)",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 5s
 
   sidecar-zh:
     profiles: ["sidecar-zh", "zh"]
