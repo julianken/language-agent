@@ -1,34 +1,460 @@
 {
-  "provenance": "stub — replaced wholesale by #20",
-  "note": "Curation STUB co-designed with src/sidecars/zh/tests/fixtures/golden (issue #19, per its plan review). These are curation-SHAPED tuples — word, pinned reading_id, citation pinyin (tone-number form), curated within-word surface pinyin, POS class, sense id — NOT curated seed content. #20 (the zh seed sliver child) owns curation: it replaces this file wholesale with the ~30–100-word TOCFL-spine sliver, every tuple pre-verified offline through the FULL gate. Heteronym policy (dual-instance amendment, Decision 1): no surface form carries two sliver reading_ids; every non-sliver alternate CC-CEDICT reading of a word below is asserted closed-world-unreachable BY THIS STUB (a stub-level assertion — #20 re-establishes it with machine-checked injectivity + reviewed unreachability).",
-  "variantMap": {},
-  "variantMapNote": "variant→MOE-canonical normalization applied before lexicon/membership lookup. Empty: no variant forms are closed-world-reachable in the stub. #20 populates it with the sliver's real variant forms.",
+  "provenance": "curated — machine gate complete; native gold pass pending (#20 AC7)",
+  "note": "The zh seed sliver (issue #20): 58 hand-curated TOCFL/SC-TOP band-1 Traditional words (one deliberate exemplar exception, 展覽館 — see curation/sliver/words.json), Sinica-frequency-informed ordering, cleanroom-curated (no copied content; CC-CEDICT/Unihan consulted as membership authorities only). BUILD-GENERATED from src/sidecars/zh/curation/sliver/words.json by curation/tools/build_assets.py — edit the curation source, never this file. Every tuple has a recorded pass through the full offline machine gate (curation/results/gate-results.json); the one-time native-checker gold pass is #20 AC7, tracked in GAPS.md. Heteronym policy (ADR-verbatim): no surface form carries two sliver `reading_id`s; every non-sliver alternate CC-CEDICT reading of a sliver word is confirmed closed-world-unreachable at curation (machine-checked injectivity + reviewed unreachability); head-set singles admitted per C3/C9.",
+  "variantMap": {
+    "甚": "什",
+    "説": "說",
+    "麽": "麼"
+  },
+  "variantMapNote": "variant→MOE-canonical glyph normalization applied before lexicon/membership lookup. 説 (U+8AAA variant) → 說 (MOE canonical); 麽 (U+9EBD variant) → 麼 (U+9EBC, reachable via 什麼); 甚 → 什 (the 甚麼 spelling of 什麼 — CC-CEDICT records 甚 as a variant of 什 in exactly this use; 甚's independent shen4 reading is closed-world-unreachable because no in-world word contains 甚 outside this variant spelling).",
   "tuples": [
-    {
-      "word": "你",
-      "readingId": "你:ni3",
-      "citationPinyin": ["ni3"],
-      "surfacePinyin": ["ni3"],
-      "pos": "pronoun",
-      "senseId": "you",
-      "gloss": "you (informal)",
-      "intentBearing": false
-    },
     {
       "word": "我",
       "readingId": "我:wo3",
-      "citationPinyin": ["wo3"],
-      "surfacePinyin": ["wo3"],
+      "citationPinyin": [
+        "wo3"
+      ],
+      "surfacePinyin": [
+        "wo3"
+      ],
       "pos": "pronoun",
       "senseId": "i",
       "gloss": "I; me",
       "intentBearing": false
     },
     {
+      "word": "你",
+      "readingId": "你:ni3",
+      "citationPinyin": [
+        "ni3"
+      ],
+      "surfacePinyin": [
+        "ni3"
+      ],
+      "pos": "pronoun",
+      "senseId": "you",
+      "gloss": "you (informal)",
+      "intentBearing": false
+    },
+    {
+      "word": "是",
+      "readingId": "是:shi4",
+      "citationPinyin": [
+        "shi4"
+      ],
+      "surfacePinyin": [
+        "shi4"
+      ],
+      "pos": "verb",
+      "senseId": "be",
+      "gloss": "to be",
+      "intentBearing": true
+    },
+    {
+      "word": "他",
+      "readingId": "他:ta1",
+      "citationPinyin": [
+        "ta1"
+      ],
+      "surfacePinyin": [
+        "ta1"
+      ],
+      "pos": "pronoun",
+      "senseId": "he",
+      "gloss": "he; him",
+      "intentBearing": false
+    },
+    {
+      "word": "有",
+      "readingId": "有:you3",
+      "citationPinyin": [
+        "you3"
+      ],
+      "surfacePinyin": [
+        "you3"
+      ],
+      "pos": "verb",
+      "senseId": "have",
+      "gloss": "to have; there is",
+      "intentBearing": true
+    },
+    {
+      "word": "在",
+      "readingId": "在:zai4",
+      "citationPinyin": [
+        "zai4"
+      ],
+      "surfacePinyin": [
+        "zai4"
+      ],
+      "pos": "verb",
+      "senseId": "be-at",
+      "gloss": "to be at; in (a place)",
+      "intentBearing": true
+    },
+    {
+      "word": "這",
+      "readingId": "這:zhe4",
+      "citationPinyin": [
+        "zhe4"
+      ],
+      "surfacePinyin": [
+        "zhe4"
+      ],
+      "pos": "determiner",
+      "senseId": "this",
+      "gloss": "this",
+      "intentBearing": false
+    },
+    {
+      "word": "個",
+      "readingId": "個:ge4",
+      "citationPinyin": [
+        "ge4"
+      ],
+      "surfacePinyin": [
+        "ge4"
+      ],
+      "pos": "classifier",
+      "senseId": "clf-general",
+      "gloss": "general classifier",
+      "intentBearing": false
+    },
+    {
+      "word": "好",
+      "readingId": "好:hao3",
+      "citationPinyin": [
+        "hao3"
+      ],
+      "surfacePinyin": [
+        "hao3"
+      ],
+      "pos": "adjective",
+      "senseId": "good",
+      "gloss": "good",
+      "intentBearing": true
+    },
+    {
+      "word": "來",
+      "readingId": "來:lai2",
+      "citationPinyin": [
+        "lai2"
+      ],
+      "surfacePinyin": [
+        "lai2"
+      ],
+      "pos": "verb",
+      "senseId": "come",
+      "gloss": "to come",
+      "intentBearing": true
+    },
+    {
+      "word": "去",
+      "readingId": "去:qu4",
+      "citationPinyin": [
+        "qu4"
+      ],
+      "surfacePinyin": [
+        "qu4"
+      ],
+      "pos": "verb",
+      "senseId": "go",
+      "gloss": "to go",
+      "intentBearing": true
+    },
+    {
+      "word": "要",
+      "readingId": "要:yao4",
+      "citationPinyin": [
+        "yao4"
+      ],
+      "surfacePinyin": [
+        "yao4"
+      ],
+      "pos": "verb",
+      "senseId": "want-need",
+      "gloss": "to want; to need; will",
+      "intentBearing": true
+    },
+    {
+      "word": "人",
+      "readingId": "人:ren2",
+      "citationPinyin": [
+        "ren2"
+      ],
+      "surfacePinyin": [
+        "ren2"
+      ],
+      "pos": "noun",
+      "senseId": "person",
+      "gloss": "person; people",
+      "intentBearing": true
+    },
+    {
+      "word": "想",
+      "readingId": "想:xiang3",
+      "citationPinyin": [
+        "xiang3"
+      ],
+      "surfacePinyin": [
+        "xiang3"
+      ],
+      "pos": "verb",
+      "senseId": "want-think",
+      "gloss": "to want; to think",
+      "intentBearing": true
+    },
+    {
+      "word": "看",
+      "readingId": "看:kan4",
+      "citationPinyin": [
+        "kan4"
+      ],
+      "surfacePinyin": [
+        "kan4"
+      ],
+      "pos": "verb",
+      "senseId": "look",
+      "gloss": "to look at; to read; to watch",
+      "intentBearing": true
+    },
+    {
+      "word": "說",
+      "readingId": "說:shuo1",
+      "citationPinyin": [
+        "shuo1"
+      ],
+      "surfacePinyin": [
+        "shuo1"
+      ],
+      "pos": "verb",
+      "senseId": "say",
+      "gloss": "to say; to speak",
+      "intentBearing": true
+    },
+    {
+      "word": "我們",
+      "readingId": "我們:wo3men5",
+      "citationPinyin": [
+        "wo3",
+        "men5"
+      ],
+      "surfacePinyin": [
+        "wo3",
+        "men5"
+      ],
+      "pos": "pronoun",
+      "senseId": "we",
+      "gloss": "we; us",
+      "intentBearing": false
+    },
+    {
+      "word": "都",
+      "readingId": "都:dou1",
+      "citationPinyin": [
+        "dou1"
+      ],
+      "surfacePinyin": [
+        "dou1"
+      ],
+      "pos": "adverb",
+      "senseId": "all",
+      "gloss": "all; both",
+      "intentBearing": false
+    },
+    {
+      "word": "很",
+      "readingId": "很:hen3",
+      "citationPinyin": [
+        "hen3"
+      ],
+      "surfacePinyin": [
+        "hen3"
+      ],
+      "pos": "adverb",
+      "senseId": "very",
+      "gloss": "very",
+      "intentBearing": false
+    },
+    {
+      "word": "也",
+      "readingId": "也:ye3",
+      "citationPinyin": [
+        "ye3"
+      ],
+      "surfacePinyin": [
+        "ye3"
+      ],
+      "pos": "adverb",
+      "senseId": "also",
+      "gloss": "also; too",
+      "intentBearing": false
+    },
+    {
+      "word": "買",
+      "readingId": "買:mai3",
+      "citationPinyin": [
+        "mai3"
+      ],
+      "surfacePinyin": [
+        "mai3"
+      ],
+      "pos": "verb",
+      "senseId": "buy",
+      "gloss": "to buy",
+      "intentBearing": true
+    },
+    {
+      "word": "大",
+      "readingId": "大:da4",
+      "citationPinyin": [
+        "da4"
+      ],
+      "surfacePinyin": [
+        "da4"
+      ],
+      "pos": "adjective",
+      "senseId": "big",
+      "gloss": "big; large",
+      "intentBearing": true
+    },
+    {
+      "word": "多",
+      "readingId": "多:duo1",
+      "citationPinyin": [
+        "duo1"
+      ],
+      "surfacePinyin": [
+        "duo1"
+      ],
+      "pos": "adjective",
+      "senseId": "many",
+      "gloss": "many; much",
+      "intentBearing": true
+    },
+    {
+      "word": "太",
+      "readingId": "太:tai4",
+      "citationPinyin": [
+        "tai4"
+      ],
+      "surfacePinyin": [
+        "tai4"
+      ],
+      "pos": "adverb",
+      "senseId": "too-much",
+      "gloss": "too; excessively",
+      "intentBearing": false
+    },
+    {
+      "word": "吃",
+      "readingId": "吃:chi1",
+      "citationPinyin": [
+        "chi1"
+      ],
+      "surfacePinyin": [
+        "chi1"
+      ],
+      "pos": "verb",
+      "senseId": "eat",
+      "gloss": "to eat",
+      "intentBearing": true
+    },
+    {
+      "word": "家",
+      "readingId": "家:jia1",
+      "citationPinyin": [
+        "jia1"
+      ],
+      "surfacePinyin": [
+        "jia1"
+      ],
+      "pos": "noun",
+      "senseId": "home",
+      "gloss": "home; family",
+      "intentBearing": true
+    },
+    {
+      "word": "做",
+      "readingId": "做:zuo4",
+      "citationPinyin": [
+        "zuo4"
+      ],
+      "surfacePinyin": [
+        "zuo4"
+      ],
+      "pos": "verb",
+      "senseId": "do-make",
+      "gloss": "to do; to make",
+      "intentBearing": true
+    },
+    {
+      "word": "學",
+      "readingId": "學:xue2",
+      "citationPinyin": [
+        "xue2"
+      ],
+      "surfacePinyin": [
+        "xue2"
+      ],
+      "pos": "verb",
+      "senseId": "study",
+      "gloss": "to learn; to study",
+      "intentBearing": true
+    },
+    {
+      "word": "什麼",
+      "readingId": "什麼:shen2me5",
+      "citationPinyin": [
+        "shen2",
+        "me5"
+      ],
+      "surfacePinyin": [
+        "shen2",
+        "me5"
+      ],
+      "pos": "pronoun",
+      "senseId": "what",
+      "gloss": "what",
+      "intentBearing": false
+    },
+    {
+      "word": "誰",
+      "readingId": "誰:shei2",
+      "citationPinyin": [
+        "shei2"
+      ],
+      "surfacePinyin": [
+        "shei2"
+      ],
+      "pos": "pronoun",
+      "senseId": "who",
+      "gloss": "who",
+      "intentBearing": false
+    },
+    {
+      "word": "水",
+      "readingId": "水:shui3",
+      "citationPinyin": [
+        "shui3"
+      ],
+      "surfacePinyin": [
+        "shui3"
+      ],
+      "pos": "noun",
+      "senseId": "water",
+      "gloss": "water",
+      "intentBearing": true
+    },
+    {
       "word": "喝",
       "readingId": "喝:he1",
-      "citationPinyin": ["he1"],
-      "surfacePinyin": ["he1"],
+      "citationPinyin": [
+        "he1"
+      ],
+      "surfacePinyin": [
+        "he1"
+      ],
       "pos": "verb",
       "senseId": "drink",
       "gloss": "to drink",
@@ -37,58 +463,180 @@
     {
       "word": "茶",
       "readingId": "茶:cha2",
-      "citationPinyin": ["cha2"],
-      "surfacePinyin": ["cha2"],
+      "citationPinyin": [
+        "cha2"
+      ],
+      "surfacePinyin": [
+        "cha2"
+      ],
       "pos": "noun",
       "senseId": "tea",
       "gloss": "tea",
       "intentBearing": true
     },
     {
-      "word": "好",
-      "readingId": "好:hao3",
-      "citationPinyin": ["hao3"],
-      "surfacePinyin": ["hao3"],
-      "pos": "adjective",
-      "senseId": "good",
-      "gloss": "good",
-      "intentBearing": true
-    },
-    {
-      "word": "你好",
-      "readingId": "你好:ni3hao3",
-      "citationPinyin": ["ni3", "hao3"],
-      "surfacePinyin": ["ni2", "hao3"],
-      "pos": "interjection",
-      "senseId": "hello",
-      "gloss": "hello",
-      "intentBearing": true
-    },
-    {
-      "word": "想",
-      "readingId": "想:xiang3",
-      "citationPinyin": ["xiang3"],
-      "surfacePinyin": ["xiang3"],
-      "pos": "verb",
-      "senseId": "want-think",
-      "gloss": "to want; to think",
-      "intentBearing": true
-    },
-    {
-      "word": "展覽館",
-      "readingId": "展覽館:zhan3lan3guan3",
-      "citationPinyin": ["zhan3", "lan3", "guan3"],
-      "surfacePinyin": ["zhan2", "lan2", "guan3"],
+      "word": "老師",
+      "readingId": "老師:lao3shi1",
+      "citationPinyin": [
+        "lao3",
+        "shi1"
+      ],
+      "surfacePinyin": [
+        "lao3",
+        "shi1"
+      ],
       "pos": "noun",
-      "senseId": "exhibition-hall",
-      "gloss": "exhibition hall",
+      "senseId": "teacher",
+      "gloss": "teacher",
       "intentBearing": true
+    },
+    {
+      "word": "學生",
+      "readingId": "學生:xue2sheng5",
+      "citationPinyin": [
+        "xue2",
+        "sheng5"
+      ],
+      "surfacePinyin": [
+        "xue2",
+        "sheng5"
+      ],
+      "pos": "noun",
+      "senseId": "student",
+      "gloss": "student",
+      "intentBearing": true
+    },
+    {
+      "word": "朋友",
+      "readingId": "朋友:peng2you5",
+      "citationPinyin": [
+        "peng2",
+        "you5"
+      ],
+      "surfacePinyin": [
+        "peng2",
+        "you5"
+      ],
+      "pos": "noun",
+      "senseId": "friend",
+      "gloss": "friend",
+      "intentBearing": true
+    },
+    {
+      "word": "知道",
+      "readingId": "知道:zhi1dao4",
+      "citationPinyin": [
+        "zhi1",
+        "dao4"
+      ],
+      "surfacePinyin": [
+        "zhi1",
+        "dao4"
+      ],
+      "pos": "verb",
+      "senseId": "know",
+      "gloss": "to know",
+      "intentBearing": true
+    },
+    {
+      "word": "喜歡",
+      "readingId": "喜歡:xi3huan5",
+      "citationPinyin": [
+        "xi3",
+        "huan5"
+      ],
+      "surfacePinyin": [
+        "xi3",
+        "huan5"
+      ],
+      "pos": "verb",
+      "senseId": "like",
+      "gloss": "to like",
+      "intentBearing": true
+    },
+    {
+      "word": "今天",
+      "readingId": "今天:jin1tian1",
+      "citationPinyin": [
+        "jin1",
+        "tian1"
+      ],
+      "surfacePinyin": [
+        "jin1",
+        "tian1"
+      ],
+      "pos": "noun",
+      "senseId": "today",
+      "gloss": "today",
+      "intentBearing": true
+    },
+    {
+      "word": "明天",
+      "readingId": "明天:ming2tian1",
+      "citationPinyin": [
+        "ming2",
+        "tian1"
+      ],
+      "surfacePinyin": [
+        "ming2",
+        "tian1"
+      ],
+      "pos": "noun",
+      "senseId": "tomorrow",
+      "gloss": "tomorrow",
+      "intentBearing": true
+    },
+    {
+      "word": "三",
+      "readingId": "三:san1",
+      "citationPinyin": [
+        "san1"
+      ],
+      "surfacePinyin": [
+        "san1"
+      ],
+      "pos": "numeral",
+      "senseId": "three",
+      "gloss": "three; 3",
+      "intentBearing": false
+    },
+    {
+      "word": "五",
+      "readingId": "五:wu3",
+      "citationPinyin": [
+        "wu3"
+      ],
+      "surfacePinyin": [
+        "wu3"
+      ],
+      "pos": "numeral",
+      "senseId": "five",
+      "gloss": "five; 5",
+      "intentBearing": false
+    },
+    {
+      "word": "十",
+      "readingId": "十:shi2",
+      "citationPinyin": [
+        "shi2"
+      ],
+      "surfacePinyin": [
+        "shi2"
+      ],
+      "pos": "numeral",
+      "senseId": "ten",
+      "gloss": "ten; 10",
+      "intentBearing": false
     },
     {
       "word": "兩",
       "readingId": "兩:liang3",
-      "citationPinyin": ["liang3"],
-      "surfacePinyin": ["liang3"],
+      "citationPinyin": [
+        "liang3"
+      ],
+      "surfacePinyin": [
+        "liang3"
+      ],
       "pos": "numeral",
       "senseId": "two-quantity",
       "gloss": "two (before measure words)",
@@ -97,31 +645,213 @@
     {
       "word": "二",
       "readingId": "二:er4",
-      "citationPinyin": ["er4"],
-      "surfacePinyin": ["er4"],
+      "citationPinyin": [
+        "er4"
+      ],
+      "surfacePinyin": [
+        "er4"
+      ],
       "pos": "numeral",
       "senseId": "two-digit",
       "gloss": "two; 2 (digit/ordinal)",
       "intentBearing": false
     },
     {
-      "word": "個",
-      "readingId": "個:ge4",
-      "citationPinyin": ["ge4"],
-      "surfacePinyin": ["ge4"],
+      "word": "本",
+      "readingId": "本:ben3",
+      "citationPinyin": [
+        "ben3"
+      ],
+      "surfacePinyin": [
+        "ben3"
+      ],
       "pos": "classifier",
-      "senseId": "clf-general",
-      "gloss": "general classifier",
+      "senseId": "clf-volume",
+      "gloss": "classifier for books",
       "intentBearing": false
+    },
+    {
+      "word": "小",
+      "readingId": "小:xiao3",
+      "citationPinyin": [
+        "xiao3"
+      ],
+      "surfacePinyin": [
+        "xiao3"
+      ],
+      "pos": "adjective",
+      "senseId": "small",
+      "gloss": "small; little",
+      "intentBearing": true
+    },
+    {
+      "word": "書",
+      "readingId": "書:shu1",
+      "citationPinyin": [
+        "shu1"
+      ],
+      "surfacePinyin": [
+        "shu1"
+      ],
+      "pos": "noun",
+      "senseId": "book",
+      "gloss": "book",
+      "intentBearing": true
+    },
+    {
+      "word": "飯",
+      "readingId": "飯:fan4",
+      "citationPinyin": [
+        "fan4"
+      ],
+      "surfacePinyin": [
+        "fan4"
+      ],
+      "pos": "noun",
+      "senseId": "rice-meal",
+      "gloss": "cooked rice; a meal",
+      "intentBearing": true
+    },
+    {
+      "word": "狗",
+      "readingId": "狗:gou3",
+      "citationPinyin": [
+        "gou3"
+      ],
+      "surfacePinyin": [
+        "gou3"
+      ],
+      "pos": "noun",
+      "senseId": "dog",
+      "gloss": "dog",
+      "intentBearing": true
+    },
+    {
+      "word": "爸爸",
+      "readingId": "爸爸:ba4ba5",
+      "citationPinyin": [
+        "ba4",
+        "ba5"
+      ],
+      "surfacePinyin": [
+        "ba4",
+        "ba5"
+      ],
+      "pos": "noun",
+      "senseId": "dad",
+      "gloss": "dad; father",
+      "intentBearing": true
+    },
+    {
+      "word": "媽媽",
+      "readingId": "媽媽:ma1ma5",
+      "citationPinyin": [
+        "ma1",
+        "ma5"
+      ],
+      "surfacePinyin": [
+        "ma1",
+        "ma5"
+      ],
+      "pos": "noun",
+      "senseId": "mom",
+      "gloss": "mom; mother",
+      "intentBearing": true
     },
     {
       "word": "星期",
       "readingId": "星期:xing1qi1",
-      "citationPinyin": ["xing1", "qi1"],
-      "surfacePinyin": ["xing1", "qi1"],
+      "citationPinyin": [
+        "xing1",
+        "qi1"
+      ],
+      "surfacePinyin": [
+        "xing1",
+        "qi1"
+      ],
       "pos": "noun",
       "senseId": "week",
       "gloss": "week",
+      "intentBearing": true
+    },
+    {
+      "word": "可以",
+      "readingId": "可以:ke3yi3",
+      "citationPinyin": [
+        "ke3",
+        "yi3"
+      ],
+      "surfacePinyin": [
+        "ke2",
+        "yi3"
+      ],
+      "pos": "verb",
+      "senseId": "can",
+      "gloss": "can; may",
+      "intentBearing": true
+    },
+    {
+      "word": "請",
+      "readingId": "請:qing3",
+      "citationPinyin": [
+        "qing3"
+      ],
+      "surfacePinyin": [
+        "qing3"
+      ],
+      "pos": "verb",
+      "senseId": "please",
+      "gloss": "please; to invite",
+      "intentBearing": true
+    },
+    {
+      "word": "謝謝",
+      "readingId": "謝謝:xie4xie5",
+      "citationPinyin": [
+        "xie4",
+        "xie5"
+      ],
+      "surfacePinyin": [
+        "xie4",
+        "xie5"
+      ],
+      "pos": "verb",
+      "senseId": "thanks",
+      "gloss": "thank you; to thank",
+      "intentBearing": true
+    },
+    {
+      "word": "你好",
+      "readingId": "你好:ni3hao3",
+      "citationPinyin": [
+        "ni3",
+        "hao3"
+      ],
+      "surfacePinyin": [
+        "ni2",
+        "hao3"
+      ],
+      "pos": "interjection",
+      "senseId": "hello",
+      "gloss": "hello",
+      "intentBearing": true
+    },
+    {
+      "word": "展覽館",
+      "readingId": "展覽館:zhan3lan3guan3",
+      "citationPinyin": [
+        "zhan3",
+        "lan3",
+        "guan3"
+      ],
+      "surfacePinyin": [
+        "zhan2",
+        "lan2",
+        "guan3"
+      ],
+      "pos": "noun",
+      "senseId": "exhibition-hall",
+      "gloss": "exhibition hall",
       "intentBearing": true
     }
   ]

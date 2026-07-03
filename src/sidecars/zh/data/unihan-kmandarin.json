@@ -20,10 +20,22 @@
         "yī"
       ]
     },
+    "三": {
+      "codepoint": "U+4E09",
+      "kMandarin": [
+        "sān"
+      ]
+    },
     "不": {
       "codepoint": "U+4E0D",
       "kMandarin": [
         "bù"
+      ]
+    },
+    "也": {
+      "codepoint": "U+4E5F",
+      "kMandarin": [
+        "yě"
       ]
     },
     "了": {
@@ -38,10 +50,52 @@
         "èr"
       ]
     },
+    "五": {
+      "codepoint": "U+4E94",
+      "kMandarin": [
+        "wǔ"
+      ]
+    },
+    "人": {
+      "codepoint": "U+4EBA",
+      "kMandarin": [
+        "rén"
+      ]
+    },
+    "什": {
+      "codepoint": "U+4EC0",
+      "kMandarin": [
+        "shén"
+      ]
+    },
+    "今": {
+      "codepoint": "U+4ECA",
+      "kMandarin": [
+        "jīn"
+      ]
+    },
+    "他": {
+      "codepoint": "U+4ED6",
+      "kMandarin": [
+        "tā"
+      ]
+    },
+    "以": {
+      "codepoint": "U+4EE5",
+      "kMandarin": [
+        "yǐ"
+      ]
+    },
     "你": {
       "codepoint": "U+4F60",
       "kMandarin": [
         "nǐ"
+      ]
+    },
+    "來": {
+      "codepoint": "U+4F86",
+      "kMandarin": [
+        "lái"
       ]
     },
     "個": {
@@ -50,16 +104,64 @@
         "gè"
       ]
     },
+    "們": {
+      "codepoint": "U+5011",
+      "kMandarin": [
+        "men"
+      ]
+    },
+    "做": {
+      "codepoint": "U+505A",
+      "kMandarin": [
+        "zuò"
+      ]
+    },
     "兩": {
       "codepoint": "U+5169",
       "kMandarin": [
         "liǎng"
       ]
     },
+    "十": {
+      "codepoint": "U+5341",
+      "kMandarin": [
+        "shí"
+      ]
+    },
+    "去": {
+      "codepoint": "U+53BB",
+      "kMandarin": [
+        "qù"
+      ]
+    },
+    "友": {
+      "codepoint": "U+53CB",
+      "kMandarin": [
+        "yǒu"
+      ]
+    },
+    "可": {
+      "codepoint": "U+53EF",
+      "kMandarin": [
+        "kě"
+      ]
+    },
+    "吃": {
+      "codepoint": "U+5403",
+      "kMandarin": [
+        "chī"
+      ]
+    },
     "呢": {
       "codepoint": "U+5462",
       "kMandarin": [
         "ne"
+      ]
+    },
+    "喜": {
+      "codepoint": "U+559C",
+      "kMandarin": [
+        "xǐ"
       ]
     },
     "喝": {
@@ -74,16 +176,82 @@
         "ma"
       ]
     },
+    "在": {
+      "codepoint": "U+5728",
+      "kMandarin": [
+        "zài"
+      ]
+    },
+    "多": {
+      "codepoint": "U+591A",
+      "kMandarin": [
+        "duō"
+      ]
+    },
+    "大": {
+      "codepoint": "U+5927",
+      "kMandarin": [
+        "dà"
+      ]
+    },
+    "天": {
+      "codepoint": "U+5929",
+      "kMandarin": [
+        "tiān"
+      ]
+    },
+    "太": {
+      "codepoint": "U+592A",
+      "kMandarin": [
+        "tài"
+      ]
+    },
     "好": {
       "codepoint": "U+597D",
       "kMandarin": [
         "hǎo"
       ]
     },
+    "媽": {
+      "codepoint": "U+5ABD",
+      "kMandarin": [
+        "mā"
+      ]
+    },
+    "學": {
+      "codepoint": "U+5B78",
+      "kMandarin": [
+        "xué"
+      ]
+    },
+    "家": {
+      "codepoint": "U+5BB6",
+      "kMandarin": [
+        "jiā"
+      ]
+    },
+    "小": {
+      "codepoint": "U+5C0F",
+      "kMandarin": [
+        "xiǎo"
+      ]
+    },
     "展": {
       "codepoint": "U+5C55",
       "kMandarin": [
         "zhǎn"
+      ]
+    },
+    "師": {
+      "codepoint": "U+5E2B",
+      "kMandarin": [
+        "shī"
+      ]
+    },
+    "很": {
+      "codepoint": "U+5F88",
+      "kMandarin": [
+        "hěn"
       ]
     },
     "想": {
@@ -98,10 +266,40 @@
         "wǒ"
       ]
     },
+    "明": {
+      "codepoint": "U+660E",
+      "kMandarin": [
+        "míng"
+      ]
+    },
     "星": {
       "codepoint": "U+661F",
       "kMandarin": [
         "xīng"
+      ]
+    },
+    "是": {
+      "codepoint": "U+662F",
+      "kMandarin": [
+        "shì"
+      ]
+    },
+    "書": {
+      "codepoint": "U+66F8",
+      "kMandarin": [
+        "shū"
+      ]
+    },
+    "有": {
+      "codepoint": "U+6709",
+      "kMandarin": [
+        "yǒu"
+      ]
+    },
+    "朋": {
+      "codepoint": "U+670B",
+      "kMandarin": [
+        "péng"
       ]
     },
     "期": {
@@ -110,10 +308,64 @@
         "qī"
       ]
     },
+    "本": {
+      "codepoint": "U+672C",
+      "kMandarin": [
+        "běn"
+      ]
+    },
+    "歡": {
+      "codepoint": "U+6B61",
+      "kMandarin": [
+        "huān"
+      ]
+    },
+    "水": {
+      "codepoint": "U+6C34",
+      "kMandarin": [
+        "shuǐ"
+      ]
+    },
+    "爸": {
+      "codepoint": "U+7238",
+      "kMandarin": [
+        "bà"
+      ]
+    },
+    "狗": {
+      "codepoint": "U+72D7",
+      "kMandarin": [
+        "gǒu"
+      ]
+    },
+    "生": {
+      "codepoint": "U+751F",
+      "kMandarin": [
+        "shēng"
+      ]
+    },
     "的": {
       "codepoint": "U+7684",
       "kMandarin": [
         "de"
+      ]
+    },
+    "看": {
+      "codepoint": "U+770B",
+      "kMandarin": [
+        "kàn"
+      ]
+    },
+    "知": {
+      "codepoint": "U+77E5",
+      "kMandarin": [
+        "zhī"
+      ]
+    },
+    "老": {
+      "codepoint": "U+8001",
+      "kMandarin": [
+        "lǎo"
       ]
     },
     "茶": {
@@ -122,16 +374,84 @@
         "chá"
       ]
     },
+    "要": {
+      "codepoint": "U+8981",
+      "kMandarin": [
+        "yào"
+      ]
+    },
     "覽": {
       "codepoint": "U+89BD",
       "kMandarin": [
         "lǎn"
       ]
     },
+    "說": {
+      "codepoint": "U+8AAA",
+      "kMandarin": [
+        "shuō"
+      ]
+    },
+    "誰": {
+      "codepoint": "U+8AB0",
+      "kMandarin": [
+        "shuí",
+        "shéi"
+      ]
+    },
+    "請": {
+      "codepoint": "U+8ACB",
+      "kMandarin": [
+        "qǐng"
+      ]
+    },
+    "謝": {
+      "codepoint": "U+8B1D",
+      "kMandarin": [
+        "xiè"
+      ]
+    },
+    "買": {
+      "codepoint": "U+8CB7",
+      "kMandarin": [
+        "mǎi"
+      ]
+    },
+    "這": {
+      "codepoint": "U+9019",
+      "kMandarin": [
+        "zhè"
+      ]
+    },
+    "道": {
+      "codepoint": "U+9053",
+      "kMandarin": [
+        "dào"
+      ]
+    },
+    "都": {
+      "codepoint": "U+90FD",
+      "kMandarin": [
+        "dōu",
+        "dū"
+      ]
+    },
+    "飯": {
+      "codepoint": "U+98EF",
+      "kMandarin": [
+        "fàn"
+      ]
+    },
     "館": {
       "codepoint": "U+9928",
       "kMandarin": [
         "guǎn"
+      ]
+    },
+    "麼": {
+      "codepoint": "U+9EBC",
+      "kMandarin": [
+        "me"
       ]
     }
   }

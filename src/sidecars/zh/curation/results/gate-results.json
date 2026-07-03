@@ -1,0 +1,6150 @@
+{
+  "$doc": "The recorded offline machine gate results (issue #20 AC6): every sliver tuple, every C9 context, and every curated corpus sentence, each with its per-leg record. ALL-GREEN UNDER THE LEGS RUN TO DATE ships; any non-GREEN item is dropped or corrected, never merged. The one-time native-checker gold pass (AC7) is the separate completion step — tracked in GAPS.md, goldpass/ carries the task package. Agreement classes and their per-position records: see tools/gate_lib.py and the leg-*.json files.",
+  "date": "2026-07-02",
+  "legsRun": [
+    "cedict-unihan-membership",
+    "g2pw-base-reading",
+    "multi-segmenter-vote (pypinyin + jieba/shipped-map + AS-configured HanLP)",
+    "sandhi-resolver",
+    "diverse-vendor-refutation-jury (single-vendor panel — see leg-jury.json)",
+    "opencc-roundtrip-screen (advisory)"
+  ],
+  "juryPanel": [
+    "gpt-5.2-2025-12-11",
+    "gpt-4.1-2025-04-14"
+  ],
+  "juryVendors": [
+    "openai"
+  ],
+  "vendorDiversityNote": "single-vendor panel (OpenAI, two pinned model snapshots) — the widest panel current credentials allow; cross-vendor vs the Anthropic-authored pins; AC7's native gold pass backstops (see module doc)",
+  "counts": {
+    "tuples": 58,
+    "contexts": 267,
+    "sentences": 55,
+    "green": 380,
+    "notGreen": 0
+  },
+  "items": [
+    {
+      "itemId": "tuple:我:wo3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s03",
+        "sentence:s04",
+        "sentence:s09",
+        "sentence:s15",
+        "sentence:s16",
+        "sentence:s18",
+        "sentence:s28",
+        "sentence:s30",
+        "sentence:s32",
+        "sentence:s42",
+        "sentence:s46",
+        "carrier:一|吃|個",
+        "carrier:一|有|個",
+        "carrier:一|有|本",
+        "carrier:一|看|本",
+        "carrier:一|要|個",
+        "carrier:一|要|本",
+        "carrier:一|買|個",
+        "carrier:一|買|本",
+        "carrier:不|我|去",
+        "carrier:不|我|可以",
+        "carrier:不|我|吃",
+        "carrier:不|我|喜歡",
+        "carrier:不|我|喝",
+        "carrier:不|我|好",
+        "carrier:不|我|想",
+        "carrier:不|我|是",
+        "carrier:不|我|看",
+        "carrier:不|我|知道",
+        "carrier:不|我|要",
+        "carrier:不|我|買",
+        "carrier:了|做|飯",
+        "carrier:了|吃|飯",
+        "carrier:了|喝|水",
+        "carrier:了|喝|茶",
+        "carrier:了|看|書",
+        "carrier:了|買|書",
+        "carrier:了|買|水",
+        "carrier:了|買|茶",
+        "carrier:了|買|飯",
+        "carrier:呢|我|<END>",
+        "carrier:的|我|<END>",
+        "carrier:的|我|媽媽",
+        "carrier:的|我|家",
+        "carrier:的|我|書",
+        "carrier:的|我|朋友",
+        "carrier:的|我|水",
+        "carrier:的|我|狗",
+        "carrier:的|我|老師",
+        "carrier:的|我|茶",
+        "carrier:的|我|飯"
+      ]
+    },
+    {
+      "itemId": "tuple:你:ni3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s02",
+        "sentence:s10",
+        "sentence:s22",
+        "sentence:s27",
+        "sentence:s34",
+        "sentence:s35",
+        "sentence:s39",
+        "sentence:s45",
+        "sentence:s52",
+        "sentence:s54",
+        "carrier:不|你|去",
+        "carrier:不|你|可以",
+        "carrier:不|你|吃",
+        "carrier:不|你|喜歡",
+        "carrier:不|你|喝",
+        "carrier:不|你|好",
+        "carrier:不|你|想",
+        "carrier:不|你|是",
+        "carrier:不|你|看",
+        "carrier:不|你|知道",
+        "carrier:不|你|要",
+        "carrier:不|你|買",
+        "carrier:了|來|嗎",
+        "carrier:了|做|嗎",
+        "carrier:了|去|嗎",
+        "carrier:了|吃|嗎",
+        "carrier:了|喝|嗎",
+        "carrier:了|學|嗎",
+        "carrier:了|書|<END>",
+        "carrier:了|書|嗎",
+        "carrier:了|水|<END>",
+        "carrier:了|水|嗎",
+        "carrier:了|看|嗎",
+        "carrier:了|茶|<END>",
+        "carrier:了|茶|嗎",
+        "carrier:了|說|嗎",
+        "carrier:了|買|嗎",
+        "carrier:了|飯|<END>",
+        "carrier:了|飯|嗎",
+        "carrier:呢|你|<END>",
+        "carrier:嗎|了|<END>",
+        "carrier:的|你|<END>",
+        "carrier:的|你|媽媽",
+        "carrier:的|你|家",
+        "carrier:的|你|書",
+        "carrier:的|你|朋友",
+        "carrier:的|你|水",
+        "carrier:的|你|狗",
+        "carrier:的|你|老師",
+        "carrier:的|你|茶",
+        "carrier:的|你|飯"
+      ]
+    },
+    {
+      "itemId": "tuple:是:shi4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s04",
+        "sentence:s06",
+        "sentence:s07",
+        "sentence:s14",
+        "sentence:s34",
+        "sentence:s41",
+        "carrier:一|是|個",
+        "carrier:一|是|本",
+        "carrier:不|<START>|是",
+        "carrier:不|也|是",
+        "carrier:不|他|是",
+        "carrier:不|你|是",
+        "carrier:不|我|是",
+        "carrier:不|我們|是",
+        "carrier:不|都|是",
+        "carrier:嗎|今天|<END>",
+        "carrier:嗎|他|<END>",
+        "carrier:嗎|是|<END>",
+        "carrier:的|他|<END>",
+        "carrier:的|他|媽媽",
+        "carrier:的|他|家",
+        "carrier:的|他|書",
+        "carrier:的|他|朋友",
+        "carrier:的|他|水",
+        "carrier:的|他|狗",
+        "carrier:的|他|老師",
+        "carrier:的|他|茶",
+        "carrier:的|他|飯",
+        "carrier:的|你|<END>",
+        "carrier:的|你|媽媽",
+        "carrier:的|你|家",
+        "carrier:的|你|書",
+        "carrier:的|你|朋友",
+        "carrier:的|你|水",
+        "carrier:的|你|狗",
+        "carrier:的|你|老師",
+        "carrier:的|你|茶",
+        "carrier:的|你|飯",
+        "carrier:的|媽媽|<END>",
+        "carrier:的|媽媽|媽媽",
+        "carrier:的|媽媽|家",
+        "carrier:的|媽媽|書",
+        "carrier:的|媽媽|朋友",
+        "carrier:的|媽媽|水",
+        "carrier:的|媽媽|狗",
+        "carrier:的|媽媽|老師",
+        "carrier:的|媽媽|茶",
+        "carrier:的|媽媽|飯",
+        "carrier:的|我|<END>",
+        "carrier:的|我|媽媽",
+        "carrier:的|我|家",
+        "carrier:的|我|書",
+        "carrier:的|我|朋友",
+        "carrier:的|我|水",
+        "carrier:的|我|狗",
+        "carrier:的|我|老師",
+        "carrier:的|我|茶",
+        "carrier:的|我|飯",
+        "carrier:的|我們|<END>",
+        "carrier:的|我們|媽媽",
+        "carrier:的|我們|家",
+        "carrier:的|我們|書",
+        "carrier:的|我們|朋友",
+        "carrier:的|我們|水",
+        "carrier:的|我們|狗",
+        "carrier:的|我們|老師",
+        "carrier:的|我們|茶",
+        "carrier:的|我們|飯",
+        "carrier:的|老師|<END>",
+        "carrier:的|老師|媽媽",
+        "carrier:的|老師|家",
+        "carrier:的|老師|書",
+        "carrier:的|老師|朋友",
+        "carrier:的|老師|水",
+        "carrier:的|老師|狗",
+        "carrier:的|老師|老師",
+        "carrier:的|老師|茶",
+        "carrier:的|老師|飯",
+        "carrier:的|誰|<END>",
+        "carrier:的|誰|媽媽",
+        "carrier:的|誰|家",
+        "carrier:的|誰|書",
+        "carrier:的|誰|朋友",
+        "carrier:的|誰|水",
+        "carrier:的|誰|狗",
+        "carrier:的|誰|老師",
+        "carrier:的|誰|茶",
+        "carrier:的|誰|飯"
+      ]
+    },
+    {
+      "itemId": "tuple:他:ta1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s07",
+        "sentence:s13",
+        "sentence:s16",
+        "sentence:s20",
+        "sentence:s26",
+        "sentence:s30",
+        "sentence:s51",
+        "carrier:一|是|個",
+        "carrier:不|他|去",
+        "carrier:不|他|可以",
+        "carrier:不|他|吃",
+        "carrier:不|他|喜歡",
+        "carrier:不|他|喝",
+        "carrier:不|他|好",
+        "carrier:不|他|想",
+        "carrier:不|他|是",
+        "carrier:不|他|看",
+        "carrier:不|他|知道",
+        "carrier:不|他|要",
+        "carrier:不|他|買",
+        "carrier:了|來|<END>",
+        "carrier:了|做|<END>",
+        "carrier:了|去|<END>",
+        "carrier:了|吃|<END>",
+        "carrier:了|喝|<END>",
+        "carrier:了|學|<END>",
+        "carrier:了|看|<END>",
+        "carrier:了|說|<END>",
+        "carrier:了|買|<END>",
+        "carrier:呢|他|<END>",
+        "carrier:嗎|他|<END>",
+        "carrier:的|他|<END>",
+        "carrier:的|他|媽媽",
+        "carrier:的|他|家",
+        "carrier:的|他|書",
+        "carrier:的|他|朋友",
+        "carrier:的|他|水",
+        "carrier:的|他|狗",
+        "carrier:的|他|老師",
+        "carrier:的|他|茶",
+        "carrier:的|他|飯"
+      ]
+    },
+    {
+      "itemId": "tuple:有:you3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s09",
+        "sentence:s18",
+        "sentence:s23",
+        "carrier:一|有|個",
+        "carrier:一|有|本",
+        "carrier:嗎|有|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:在:zai4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s33",
+        "sentence:s51",
+        "carrier:嗎|在|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:這:zhe4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s04",
+        "sentence:s14",
+        "sentence:s43",
+        "carrier:一|是|本",
+        "carrier:的|他|<END>",
+        "carrier:的|他|媽媽",
+        "carrier:的|他|家",
+        "carrier:的|他|書",
+        "carrier:的|他|朋友",
+        "carrier:的|他|水",
+        "carrier:的|他|狗",
+        "carrier:的|他|老師",
+        "carrier:的|他|茶",
+        "carrier:的|他|飯",
+        "carrier:的|你|<END>",
+        "carrier:的|你|媽媽",
+        "carrier:的|你|家",
+        "carrier:的|你|書",
+        "carrier:的|你|朋友",
+        "carrier:的|你|水",
+        "carrier:的|你|狗",
+        "carrier:的|你|老師",
+        "carrier:的|你|茶",
+        "carrier:的|你|飯",
+        "carrier:的|媽媽|<END>",
+        "carrier:的|媽媽|媽媽",
+        "carrier:的|媽媽|家",
+        "carrier:的|媽媽|書",
+        "carrier:的|媽媽|朋友",
+        "carrier:的|媽媽|水",
+        "carrier:的|媽媽|狗",
+        "carrier:的|媽媽|老師",
+        "carrier:的|媽媽|茶",
+        "carrier:的|媽媽|飯",
+        "carrier:的|我|<END>",
+        "carrier:的|我|媽媽",
+        "carrier:的|我|家",
+        "carrier:的|我|書",
+        "carrier:的|我|朋友",
+        "carrier:的|我|水",
+        "carrier:的|我|狗",
+        "carrier:的|我|老師",
+        "carrier:的|我|茶",
+        "carrier:的|我|飯",
+        "carrier:的|我們|<END>",
+        "carrier:的|我們|媽媽",
+        "carrier:的|我們|家",
+        "carrier:的|我們|書",
+        "carrier:的|我們|朋友",
+        "carrier:的|我們|水",
+        "carrier:的|我們|狗",
+        "carrier:的|我們|老師",
+        "carrier:的|我們|茶",
+        "carrier:的|我們|飯",
+        "carrier:的|老師|<END>",
+        "carrier:的|老師|媽媽",
+        "carrier:的|老師|家",
+        "carrier:的|老師|書",
+        "carrier:的|老師|朋友",
+        "carrier:的|老師|水",
+        "carrier:的|老師|狗",
+        "carrier:的|老師|老師",
+        "carrier:的|老師|茶",
+        "carrier:的|老師|飯",
+        "carrier:的|誰|<END>",
+        "carrier:的|誰|媽媽",
+        "carrier:的|誰|家",
+        "carrier:的|誰|書",
+        "carrier:的|誰|朋友",
+        "carrier:的|誰|水",
+        "carrier:的|誰|狗",
+        "carrier:的|誰|老師",
+        "carrier:的|誰|茶",
+        "carrier:的|誰|飯"
+      ]
+    },
+    {
+      "itemId": "tuple:個:ge4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s23",
+        "sentence:s36",
+        "sentence:s47",
+        "sentence:s48",
+        "carrier:一|<START>|個",
+        "carrier:一|吃|個",
+        "carrier:一|是|個",
+        "carrier:一|有|個",
+        "carrier:一|要|個",
+        "carrier:一|買|個"
+      ],
+      "notes": [
+        "g2pW sentence:s23@4: neutral-register (pinned ge4, tool ge5 — neutral-tone register variant (full tone attested))",
+        "g2pW sentence:s36@1: neutral-register (pinned ge4, tool ge5 — neutral-tone register variant (full tone attested))",
+        "g2pW sentence:s47@1: neutral-register (pinned ge4, tool ge5 — neutral-tone register variant (full tone attested))",
+        "g2pW sentence:s48@1: neutral-register (pinned ge4, tool ge5 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:一|<START>|個@1: neutral-register (pinned ge4, tool ge5 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:一|吃|個@3: neutral-register (pinned ge4, tool ge5 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:一|是|個@3: neutral-register (pinned ge4, tool ge5 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:一|有|個@3: neutral-register (pinned ge4, tool ge5 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:一|要|個@3: neutral-register (pinned ge4, tool ge5 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:一|買|個@3: neutral-register (pinned ge4, tool ge5 — neutral-tone register variant (full tone attested))"
+      ]
+    },
+    {
+      "itemId": "tuple:好:hao3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s08",
+        "sentence:s12",
+        "sentence:s25",
+        "sentence:s31",
+        "sentence:s50",
+        "sentence:s55",
+        "carrier:不|<START>|好",
+        "carrier:不|也|好",
+        "carrier:不|他|好",
+        "carrier:不|你|好",
+        "carrier:不|我|好",
+        "carrier:不|我們|好",
+        "carrier:不|都|好",
+        "carrier:了|好|<END>",
+        "carrier:嗎|好|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:來:lai2",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s16",
+        "sentence:s26",
+        "sentence:s30",
+        "sentence:s35",
+        "sentence:s47",
+        "sentence:s48",
+        "carrier:一|<START>|個",
+        "carrier:了|來|<END>",
+        "carrier:了|來|嗎",
+        "carrier:嗎|來|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:去:qu4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s11",
+        "sentence:s27",
+        "sentence:s32",
+        "carrier:不|<START>|去",
+        "carrier:不|也|去",
+        "carrier:不|他|去",
+        "carrier:不|你|去",
+        "carrier:不|我|去",
+        "carrier:不|我們|去",
+        "carrier:不|都|去",
+        "carrier:了|去|<END>",
+        "carrier:了|去|嗎",
+        "carrier:嗎|去|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:要:yao4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s10",
+        "sentence:s29",
+        "sentence:s32",
+        "sentence:s37",
+        "sentence:s40",
+        "carrier:一|看|本",
+        "carrier:一|要|個",
+        "carrier:一|要|本",
+        "carrier:不|<START>|要",
+        "carrier:不|也|要",
+        "carrier:不|他|要",
+        "carrier:不|你|要",
+        "carrier:不|我|要",
+        "carrier:不|我們|要",
+        "carrier:不|都|要",
+        "carrier:嗎|要|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:人:ren2",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s23",
+        "carrier:一|<START>|個",
+        "carrier:了|多|<END>",
+        "carrier:嗎|多|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:想:xiang3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s52",
+        "carrier:不|<START>|想",
+        "carrier:不|也|想",
+        "carrier:不|他|想",
+        "carrier:不|你|想",
+        "carrier:不|我|想",
+        "carrier:不|我們|想",
+        "carrier:不|都|想",
+        "carrier:嗎|想|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:看:kan4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s28",
+        "sentence:s44",
+        "carrier:一|看|本",
+        "carrier:不|<START>|看",
+        "carrier:不|也|看",
+        "carrier:不|他|看",
+        "carrier:不|你|看",
+        "carrier:不|我|看",
+        "carrier:不|我們|看",
+        "carrier:不|都|看",
+        "carrier:了|書|<END>",
+        "carrier:了|書|嗎",
+        "carrier:了|看|<END>",
+        "carrier:了|看|嗎",
+        "carrier:了|看|書",
+        "carrier:嗎|看|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:說:shuo1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s50",
+        "carrier:了|說|<END>",
+        "carrier:了|說|嗎",
+        "carrier:嗎|說|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:我們:wo3men5",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s06",
+        "sentence:s11",
+        "sentence:s19",
+        "sentence:s23",
+        "sentence:s33",
+        "carrier:不|我們|去",
+        "carrier:不|我們|可以",
+        "carrier:不|我們|吃",
+        "carrier:不|我們|喜歡",
+        "carrier:不|我們|喝",
+        "carrier:不|我們|好",
+        "carrier:不|我們|想",
+        "carrier:不|我們|是",
+        "carrier:不|我們|看",
+        "carrier:不|我們|知道",
+        "carrier:不|我們|要",
+        "carrier:不|我們|買",
+        "carrier:呢|我們|<END>",
+        "carrier:的|我們|<END>",
+        "carrier:的|我們|媽媽",
+        "carrier:的|我們|家",
+        "carrier:的|我們|書",
+        "carrier:的|我們|朋友",
+        "carrier:的|我們|水",
+        "carrier:的|我們|狗",
+        "carrier:的|我們|老師",
+        "carrier:的|我們|茶",
+        "carrier:的|我們|飯"
+      ]
+    },
+    {
+      "itemId": "tuple:都:dou1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s12",
+        "sentence:s33",
+        "sentence:s48",
+        "carrier:不|都|去",
+        "carrier:不|都|可以",
+        "carrier:不|都|吃",
+        "carrier:不|都|喜歡",
+        "carrier:不|都|喝",
+        "carrier:不|都|多",
+        "carrier:不|都|大",
+        "carrier:不|都|好",
+        "carrier:不|都|想",
+        "carrier:不|都|是",
+        "carrier:不|都|看",
+        "carrier:不|都|知道",
+        "carrier:不|都|要",
+        "carrier:不|都|買"
+      ]
+    },
+    {
+      "itemId": "tuple:很:hen3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s08",
+        "sentence:s12",
+        "sentence:s25",
+        "sentence:s38",
+        "sentence:s43",
+        "sentence:s50"
+      ]
+    },
+    {
+      "itemId": "tuple:也:ye3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s32",
+        "carrier:不|也|去",
+        "carrier:不|也|可以",
+        "carrier:不|也|吃",
+        "carrier:不|也|喜歡",
+        "carrier:不|也|喝",
+        "carrier:不|也|多",
+        "carrier:不|也|大",
+        "carrier:不|也|好",
+        "carrier:不|也|想",
+        "carrier:不|也|是",
+        "carrier:不|也|看",
+        "carrier:不|也|知道",
+        "carrier:不|也|要",
+        "carrier:不|也|買"
+      ]
+    },
+    {
+      "itemId": "tuple:買:mai3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s10",
+        "sentence:s17",
+        "carrier:一|買|個",
+        "carrier:一|買|本",
+        "carrier:不|<START>|買",
+        "carrier:不|也|買",
+        "carrier:不|他|買",
+        "carrier:不|你|買",
+        "carrier:不|我|買",
+        "carrier:不|我們|買",
+        "carrier:不|都|買",
+        "carrier:了|買|<END>",
+        "carrier:了|買|嗎",
+        "carrier:了|買|書",
+        "carrier:了|買|水",
+        "carrier:了|買|茶",
+        "carrier:了|買|飯",
+        "carrier:嗎|買|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:大:da4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s24",
+        "carrier:不|<START>|大",
+        "carrier:不|也|大",
+        "carrier:不|都|大",
+        "carrier:了|大|<END>",
+        "carrier:嗎|大|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:多:duo1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s37",
+        "sentence:s38",
+        "carrier:不|<START>|多",
+        "carrier:不|也|多",
+        "carrier:不|都|多",
+        "carrier:了|多|<END>",
+        "carrier:嗎|多|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:太:tai4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s31",
+        "sentence:s37"
+      ]
+    },
+    {
+      "itemId": "tuple:吃:chi1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s39",
+        "sentence:s52",
+        "carrier:一|吃|個",
+        "carrier:不|<START>|吃",
+        "carrier:不|也|吃",
+        "carrier:不|他|吃",
+        "carrier:不|你|吃",
+        "carrier:不|我|吃",
+        "carrier:不|我們|吃",
+        "carrier:不|都|吃",
+        "carrier:了|吃|<END>",
+        "carrier:了|吃|嗎",
+        "carrier:了|吃|飯",
+        "carrier:了|飯|<END>",
+        "carrier:了|飯|嗎",
+        "carrier:嗎|了|<END>",
+        "carrier:嗎|吃|<END>"
+      ],
+      "notes": [
+        "opencc roundtrip flagged (advisory): 吃 -> 喫"
+      ]
+    },
+    {
+      "itemId": "tuple:家:jia1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s11",
+        "sentence:s16",
+        "sentence:s30",
+        "sentence:s33",
+        "sentence:s51",
+        "carrier:呢|家|<END>",
+        "carrier:嗎|家|<END>",
+        "carrier:的|他|家",
+        "carrier:的|你|家",
+        "carrier:的|媽媽|家",
+        "carrier:的|我|家",
+        "carrier:的|我們|家",
+        "carrier:的|老師|家",
+        "carrier:的|誰|家"
+      ]
+    },
+    {
+      "itemId": "tuple:做:zuo4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s20",
+        "sentence:s42",
+        "carrier:了|做|<END>",
+        "carrier:了|做|嗎",
+        "carrier:了|做|飯",
+        "carrier:嗎|做|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:學:xue2",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s19",
+        "sentence:s42",
+        "carrier:了|學|<END>",
+        "carrier:了|學|嗎",
+        "carrier:嗎|學|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:什麼:shen2me5",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s10",
+        "sentence:s19",
+        "sentence:s52"
+      ]
+    },
+    {
+      "itemId": "tuple:誰:shei2",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s14",
+        "sentence:s34",
+        "sentence:s40",
+        "sentence:s41",
+        "carrier:的|誰|<END>",
+        "carrier:的|誰|媽媽",
+        "carrier:的|誰|家",
+        "carrier:的|誰|書",
+        "carrier:的|誰|朋友",
+        "carrier:的|誰|水",
+        "carrier:的|誰|狗",
+        "carrier:的|誰|老師",
+        "carrier:的|誰|茶",
+        "carrier:的|誰|飯"
+      ],
+      "notes": [
+        "pypinyin sentence:s14@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin sentence:s34@5: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin sentence:s40@0: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin sentence:s41@6: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin carrier:的|誰|<END>@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin carrier:的|誰|媽媽@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin carrier:的|誰|家@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin carrier:的|誰|書@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin carrier:的|誰|朋友@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin carrier:的|誰|水@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin carrier:的|誰|狗@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin carrier:的|誰|老師@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin carrier:的|誰|茶@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "pypinyin carrier:的|誰|飯@2: attested-variant (pinned shei2, tool shui2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))"
+      ]
+    },
+    {
+      "itemId": "tuple:水:shui3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s13",
+        "sentence:s29",
+        "sentence:s36",
+        "carrier:了|喝|水",
+        "carrier:了|水|<END>",
+        "carrier:了|水|嗎",
+        "carrier:了|買|水",
+        "carrier:呢|水|<END>",
+        "carrier:嗎|水|<END>",
+        "carrier:的|他|水",
+        "carrier:的|你|水",
+        "carrier:的|媽媽|水",
+        "carrier:的|我|水",
+        "carrier:的|我們|水",
+        "carrier:的|老師|水",
+        "carrier:的|誰|水"
+      ]
+    },
+    {
+      "itemId": "tuple:喝:he1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s02",
+        "sentence:s03",
+        "sentence:s13",
+        "sentence:s21",
+        "sentence:s29",
+        "sentence:s36",
+        "sentence:s40",
+        "carrier:不|<START>|喝",
+        "carrier:不|也|喝",
+        "carrier:不|他|喝",
+        "carrier:不|你|喝",
+        "carrier:不|我|喝",
+        "carrier:不|我們|喝",
+        "carrier:不|都|喝",
+        "carrier:了|喝|<END>",
+        "carrier:了|喝|嗎",
+        "carrier:了|喝|水",
+        "carrier:了|喝|茶",
+        "carrier:了|水|<END>",
+        "carrier:了|水|嗎",
+        "carrier:了|茶|<END>",
+        "carrier:了|茶|嗎",
+        "carrier:嗎|喝|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:茶:cha2",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s02",
+        "sentence:s03",
+        "sentence:s04",
+        "sentence:s21",
+        "sentence:s25",
+        "sentence:s40",
+        "sentence:s53",
+        "carrier:了|喝|茶",
+        "carrier:了|好|<END>",
+        "carrier:了|茶|<END>",
+        "carrier:了|茶|嗎",
+        "carrier:了|買|茶",
+        "carrier:呢|茶|<END>",
+        "carrier:嗎|茶|<END>",
+        "carrier:的|他|茶",
+        "carrier:的|你|茶",
+        "carrier:的|媽媽|茶",
+        "carrier:的|我|茶",
+        "carrier:的|我們|茶",
+        "carrier:的|老師|茶",
+        "carrier:的|誰|茶"
+      ]
+    },
+    {
+      "itemId": "tuple:老師:lao3shi1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s07",
+        "sentence:s08",
+        "sentence:s11",
+        "sentence:s34",
+        "sentence:s48",
+        "sentence:s50",
+        "carrier:呢|老師|<END>",
+        "carrier:嗎|老師|<END>",
+        "carrier:的|他|老師",
+        "carrier:的|你|老師",
+        "carrier:的|媽媽|老師",
+        "carrier:的|我|老師",
+        "carrier:的|我們|老師",
+        "carrier:的|老師|<END>",
+        "carrier:的|老師|媽媽",
+        "carrier:的|老師|家",
+        "carrier:的|老師|書",
+        "carrier:的|老師|朋友",
+        "carrier:的|老師|水",
+        "carrier:的|老師|狗",
+        "carrier:的|老師|老師",
+        "carrier:的|老師|茶",
+        "carrier:的|老師|飯",
+        "carrier:的|誰|老師"
+      ]
+    },
+    {
+      "itemId": "tuple:學生:xue2sheng5",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s06",
+        "sentence:s36",
+        "carrier:一|是|個",
+        "carrier:呢|學生|<END>",
+        "carrier:嗎|學生|<END>"
+      ],
+      "notes": [
+        "g2pW sentence:s06@4: neutral-register (pinned sheng5, tool sheng1 — neutral-tone register variant (full tone attested))",
+        "pypinyin sentence:s06@4: neutral-register (pinned sheng5, tool sheng1 — neutral-tone register variant (full tone attested))",
+        "g2pW sentence:s36@3: neutral-register (pinned sheng5, tool sheng1 — neutral-tone register variant (full tone attested))",
+        "pypinyin sentence:s36@3: neutral-register (pinned sheng5, tool sheng1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:一|是|個@5: neutral-register (pinned sheng5, tool sheng1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:一|是|個@5: neutral-register (pinned sheng5, tool sheng1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:呢|學生|<END>@1: neutral-register (pinned sheng5, tool sheng1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:呢|學生|<END>@1: neutral-register (pinned sheng5, tool sheng1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:嗎|學生|<END>@1: neutral-register (pinned sheng5, tool sheng1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:嗎|學生|<END>@1: neutral-register (pinned sheng5, tool sheng1 — neutral-tone register variant (full tone attested))"
+      ]
+    },
+    {
+      "itemId": "tuple:朋友:peng2you5",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s47",
+        "carrier:一|有|個",
+        "carrier:呢|朋友|<END>",
+        "carrier:嗎|朋友|<END>",
+        "carrier:的|他|朋友",
+        "carrier:的|你|朋友",
+        "carrier:的|媽媽|朋友",
+        "carrier:的|我|朋友",
+        "carrier:的|我們|朋友",
+        "carrier:的|老師|朋友",
+        "carrier:的|誰|朋友"
+      ],
+      "notes": [
+        "g2pW sentence:s47@3: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin sentence:s47@3: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:一|有|個@5: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:一|有|個@5: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:呢|朋友|<END>@1: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:呢|朋友|<END>@1: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:嗎|朋友|<END>@1: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:嗎|朋友|<END>@1: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:的|他|朋友@5: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|他|朋友@5: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:的|你|朋友@5: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|你|朋友@5: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:的|媽媽|朋友@6: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|朋友@6: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:的|我|朋友@5: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|我|朋友@5: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:的|我們|朋友@6: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|我們|朋友@6: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:的|老師|朋友@6: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|老師|朋友@6: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:的|誰|朋友@5: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|誰|朋友@5: neutral-register (pinned you5, tool you3 — neutral-tone register variant (full tone attested))"
+      ]
+    },
+    {
+      "itemId": "tuple:知道:zhi1dao4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s15",
+        "sentence:s45",
+        "carrier:不|<START>|知道",
+        "carrier:不|也|知道",
+        "carrier:不|他|知道",
+        "carrier:不|你|知道",
+        "carrier:不|我|知道",
+        "carrier:不|我們|知道",
+        "carrier:不|都|知道",
+        "carrier:嗎|知道|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:喜歡:xi3huan5",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s46",
+        "carrier:不|<START>|喜歡",
+        "carrier:不|也|喜歡",
+        "carrier:不|他|喜歡",
+        "carrier:不|你|喜歡",
+        "carrier:不|我|喜歡",
+        "carrier:不|我們|喜歡",
+        "carrier:不|都|喜歡",
+        "carrier:嗎|喜歡|<END>"
+      ],
+      "notes": [
+        "g2pW sentence:s46@2: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "pypinyin sentence:s46@2: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:不|<START>|喜歡@2: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:不|<START>|喜歡@2: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:不|也|喜歡@3: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:不|也|喜歡@3: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:不|他|喜歡@3: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:不|他|喜歡@3: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:不|你|喜歡@3: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:不|你|喜歡@3: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:不|我|喜歡@3: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:不|我|喜歡@3: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:不|我們|喜歡@4: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:不|我們|喜歡@4: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:不|都|喜歡@3: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:不|都|喜歡@3: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "g2pW carrier:嗎|喜歡|<END>@1: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:嗎|喜歡|<END>@1: neutral-register (pinned huan5, tool huan1 — neutral-tone register variant (full tone attested))"
+      ]
+    },
+    {
+      "itemId": "tuple:今天:jin1tian1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s05",
+        "sentence:s11",
+        "sentence:s49",
+        "sentence:s50",
+        "carrier:一|星期|<END>",
+        "carrier:一|星期|嗎",
+        "carrier:呢|今天|<END>",
+        "carrier:嗎|一|<END>",
+        "carrier:嗎|今天|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:明天:ming2tian1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s30",
+        "carrier:呢|明天|<END>",
+        "carrier:嗎|明天|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:三:san1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s18",
+        "carrier:一|<START>|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:五:wu3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s35",
+        "sentence:s47"
+      ]
+    },
+    {
+      "itemId": "tuple:十:shi2",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s23"
+      ]
+    },
+    {
+      "itemId": "tuple:兩:liang3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s48"
+      ]
+    },
+    {
+      "itemId": "tuple:二:er4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s49",
+        "carrier:一|<START>|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:本:ben3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s09",
+        "sentence:s18",
+        "sentence:s43",
+        "carrier:一|<START>|本",
+        "carrier:一|是|本",
+        "carrier:一|有|本",
+        "carrier:一|看|本",
+        "carrier:一|要|本",
+        "carrier:一|買|本"
+      ]
+    },
+    {
+      "itemId": "tuple:小:xiao3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s29",
+        "sentence:s43",
+        "carrier:嗎|小|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:書:shu1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s09",
+        "sentence:s17",
+        "sentence:s18",
+        "sentence:s28",
+        "sentence:s38",
+        "sentence:s43",
+        "sentence:s44",
+        "carrier:一|<START>|本",
+        "carrier:一|是|本",
+        "carrier:一|有|本",
+        "carrier:一|看|本",
+        "carrier:一|要|本",
+        "carrier:一|買|本",
+        "carrier:了|書|<END>",
+        "carrier:了|書|嗎",
+        "carrier:了|看|書",
+        "carrier:了|買|書",
+        "carrier:呢|書|<END>",
+        "carrier:嗎|大|<END>",
+        "carrier:嗎|書|<END>",
+        "carrier:的|他|書",
+        "carrier:的|你|書",
+        "carrier:的|媽媽|書",
+        "carrier:的|我|書",
+        "carrier:的|我們|書",
+        "carrier:的|老師|書",
+        "carrier:的|誰|書"
+      ]
+    },
+    {
+      "itemId": "tuple:飯:fan4",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s20",
+        "sentence:s39",
+        "sentence:s42",
+        "sentence:s55",
+        "carrier:了|做|飯",
+        "carrier:了|吃|飯",
+        "carrier:了|買|飯",
+        "carrier:了|飯|<END>",
+        "carrier:了|飯|嗎",
+        "carrier:呢|飯|<END>",
+        "carrier:嗎|飯|<END>",
+        "carrier:的|他|飯",
+        "carrier:的|你|飯",
+        "carrier:的|媽媽|飯",
+        "carrier:的|我|飯",
+        "carrier:的|我們|飯",
+        "carrier:的|老師|飯",
+        "carrier:的|誰|飯"
+      ]
+    },
+    {
+      "itemId": "tuple:狗:gou3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s14",
+        "sentence:s29",
+        "sentence:s46",
+        "carrier:了|大|<END>",
+        "carrier:呢|狗|<END>",
+        "carrier:嗎|狗|<END>",
+        "carrier:的|他|狗",
+        "carrier:的|你|狗",
+        "carrier:的|媽媽|狗",
+        "carrier:的|我|狗",
+        "carrier:的|我們|狗",
+        "carrier:的|老師|狗",
+        "carrier:的|誰|狗"
+      ]
+    },
+    {
+      "itemId": "tuple:爸爸:ba4ba5",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s12",
+        "carrier:呢|爸爸|<END>",
+        "carrier:嗎|爸爸|<END>"
+      ],
+      "notes": [
+        "pypinyin sentence:s12@1: neutral-register (pinned ba5, tool ba4 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:呢|爸爸|<END>@1: neutral-register (pinned ba5, tool ba4 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:嗎|爸爸|<END>@1: neutral-register (pinned ba5, tool ba4 — neutral-tone register variant (full tone attested))"
+      ]
+    },
+    {
+      "itemId": "tuple:媽媽:ma1ma5",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s12",
+        "sentence:s17",
+        "sentence:s41",
+        "carrier:呢|媽媽|<END>",
+        "carrier:嗎|媽媽|<END>",
+        "carrier:的|他|媽媽",
+        "carrier:的|你|媽媽",
+        "carrier:的|媽媽|<END>",
+        "carrier:的|媽媽|媽媽",
+        "carrier:的|媽媽|家",
+        "carrier:的|媽媽|書",
+        "carrier:的|媽媽|朋友",
+        "carrier:的|媽媽|水",
+        "carrier:的|媽媽|狗",
+        "carrier:的|媽媽|老師",
+        "carrier:的|媽媽|茶",
+        "carrier:的|媽媽|飯",
+        "carrier:的|我|媽媽",
+        "carrier:的|我們|媽媽",
+        "carrier:的|老師|媽媽",
+        "carrier:的|誰|媽媽"
+      ],
+      "notes": [
+        "pypinyin sentence:s12@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin sentence:s17@1: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin sentence:s41@1: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin sentence:s41@4: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:呢|媽媽|<END>@1: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:嗎|媽媽|<END>@1: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|他|媽媽@5: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|你|媽媽@5: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|<END>@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|媽媽@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|媽媽@6: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|家@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|書@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|朋友@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|水@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|狗@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|老師@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|茶@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|媽媽|飯@3: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|我|媽媽@5: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|我們|媽媽@6: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|老師|媽媽@6: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))",
+        "pypinyin carrier:的|誰|媽媽@5: neutral-register (pinned ma5, tool ma1 — neutral-tone register variant (full tone attested))"
+      ]
+    },
+    {
+      "itemId": "tuple:星期:xing1qi1",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s05",
+        "sentence:s35",
+        "sentence:s49",
+        "carrier:一|星期|<END>",
+        "carrier:一|星期|嗎",
+        "carrier:嗎|一|<END>"
+      ],
+      "notes": [
+        "g2pW sentence:s05@3: attested-variant (pinned qi1, tool qi2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "g2pW sentence:s35@1: attested-variant (pinned qi1, tool qi2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "g2pW sentence:s49@3: attested-variant (pinned qi1, tool qi2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "g2pW carrier:一|星期|<END>@3: attested-variant (pinned qi1, tool qi2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "g2pW carrier:一|星期|嗎@3: attested-variant (pinned qi1, tool qi2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))",
+        "g2pW carrier:嗎|一|<END>@3: attested-variant (pinned qi1, tool qi2 — same CC-CEDICT entry records it (Taiwan pr./also pr.))"
+      ]
+    },
+    {
+      "itemId": "tuple:可以:ke3yi3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s16",
+        "carrier:不|<START>|可以",
+        "carrier:不|也|可以",
+        "carrier:不|他|可以",
+        "carrier:不|你|可以",
+        "carrier:不|我|可以",
+        "carrier:不|我們|可以",
+        "carrier:不|都|可以",
+        "carrier:嗎|可以|<END>"
+      ]
+    },
+    {
+      "itemId": "tuple:請:qing3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s21",
+        "sentence:s44"
+      ]
+    },
+    {
+      "itemId": "tuple:謝謝:xie4xie5",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s22"
+      ],
+      "notes": [
+        "pypinyin sentence:s22@1: neutral-register (pinned xie5, tool xie4 — neutral-tone register variant (full tone attested))"
+      ]
+    },
+    {
+      "itemId": "tuple:你好:ni3hao3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s01"
+      ]
+    },
+    {
+      "itemId": "tuple:展覽館:zhan3lan3guan3",
+      "kind": "tuple",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "corpus(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "sentence:s24"
+      ]
+    },
+    {
+      "itemId": "context:一|<START>|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|<START>|<END>"
+      ]
+    },
+    {
+      "itemId": "context:一|<START>|個",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|<START>|個"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|<START>|本",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|<START>|本"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi4 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|吃|個",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|吃|個"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|星期|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|星期|<END>"
+      ]
+    },
+    {
+      "itemId": "context:一|星期|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|星期|嗎"
+      ]
+    },
+    {
+      "itemId": "context:一|是|個",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|是|個"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|是|本",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|是|本"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi4 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|有|個",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|有|個"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|有|本",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|有|本"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi4 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|看|本",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|看|本"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi4 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|要|個",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|要|個"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|要|本",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|要|本"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi4 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|買|個",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|買|個"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:一|買|本",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:一|買|本"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface yi4 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|去",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|去"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|可以",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|可以"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|吃",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|吃"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|喜歡",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|喜歡"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|喝",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|喝"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|多",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|多"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|大",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|大"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|好",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|好"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|想",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|想"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|是",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|是"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|看",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|看"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|知道",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|知道"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|要",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|要"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|<START>|買",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|<START>|買"
+      ]
+    },
+    {
+      "itemId": "context:不|也|去",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|去"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|也|可以",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|可以"
+      ]
+    },
+    {
+      "itemId": "context:不|也|吃",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|吃"
+      ]
+    },
+    {
+      "itemId": "context:不|也|喜歡",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|喜歡"
+      ]
+    },
+    {
+      "itemId": "context:不|也|喝",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|喝"
+      ]
+    },
+    {
+      "itemId": "context:不|也|多",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|多"
+      ]
+    },
+    {
+      "itemId": "context:不|也|大",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|大"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|也|好",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|好"
+      ]
+    },
+    {
+      "itemId": "context:不|也|想",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|想"
+      ]
+    },
+    {
+      "itemId": "context:不|也|是",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|是"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|也|看",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|看"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|也|知道",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|知道"
+      ]
+    },
+    {
+      "itemId": "context:不|也|要",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|要"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|也|買",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|也|買"
+      ]
+    },
+    {
+      "itemId": "context:不|他|去",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|去"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|他|可以",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|可以"
+      ]
+    },
+    {
+      "itemId": "context:不|他|吃",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|吃"
+      ]
+    },
+    {
+      "itemId": "context:不|他|喜歡",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|喜歡"
+      ]
+    },
+    {
+      "itemId": "context:不|他|喝",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|喝"
+      ]
+    },
+    {
+      "itemId": "context:不|他|好",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|好"
+      ]
+    },
+    {
+      "itemId": "context:不|他|想",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|想"
+      ]
+    },
+    {
+      "itemId": "context:不|他|是",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|是"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|他|看",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|看"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|他|知道",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|知道"
+      ]
+    },
+    {
+      "itemId": "context:不|他|要",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|要"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|他|買",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|他|買"
+      ]
+    },
+    {
+      "itemId": "context:不|你|去",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|去"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|你|可以",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|可以"
+      ]
+    },
+    {
+      "itemId": "context:不|你|吃",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|吃"
+      ]
+    },
+    {
+      "itemId": "context:不|你|喜歡",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|喜歡"
+      ]
+    },
+    {
+      "itemId": "context:不|你|喝",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|喝"
+      ]
+    },
+    {
+      "itemId": "context:不|你|好",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|好"
+      ]
+    },
+    {
+      "itemId": "context:不|你|想",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|想"
+      ]
+    },
+    {
+      "itemId": "context:不|你|是",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|是"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|你|看",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|看"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|你|知道",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|知道"
+      ]
+    },
+    {
+      "itemId": "context:不|你|要",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|要"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|你|買",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|你|買"
+      ]
+    },
+    {
+      "itemId": "context:不|我|去",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|去"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|我|可以",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|可以"
+      ]
+    },
+    {
+      "itemId": "context:不|我|吃",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|吃"
+      ]
+    },
+    {
+      "itemId": "context:不|我|喜歡",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|喜歡"
+      ]
+    },
+    {
+      "itemId": "context:不|我|喝",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|喝"
+      ]
+    },
+    {
+      "itemId": "context:不|我|好",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|好"
+      ]
+    },
+    {
+      "itemId": "context:不|我|想",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|想"
+      ]
+    },
+    {
+      "itemId": "context:不|我|是",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|是"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|我|看",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|看"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|我|知道",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|知道"
+      ]
+    },
+    {
+      "itemId": "context:不|我|要",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|要"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|我|買",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我|買"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|去",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|去"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|可以",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|可以"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|吃",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|吃"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|喜歡",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|喜歡"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|喝",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|喝"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|好",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|好"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|想",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|想"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|是",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|是"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|看",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|看"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|知道",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|知道"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|要",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|要"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|我們|買",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|我們|買"
+      ]
+    },
+    {
+      "itemId": "context:不|都|去",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|去"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|都|可以",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|可以"
+      ]
+    },
+    {
+      "itemId": "context:不|都|吃",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|吃"
+      ]
+    },
+    {
+      "itemId": "context:不|都|喜歡",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|喜歡"
+      ]
+    },
+    {
+      "itemId": "context:不|都|喝",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|喝"
+      ]
+    },
+    {
+      "itemId": "context:不|都|多",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|多"
+      ]
+    },
+    {
+      "itemId": "context:不|都|大",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|大"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|都|好",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|好"
+      ]
+    },
+    {
+      "itemId": "context:不|都|想",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|想"
+      ]
+    },
+    {
+      "itemId": "context:不|都|是",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|是"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|都|看",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|看"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|都|知道",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|知道"
+      ]
+    },
+    {
+      "itemId": "context:不|都|要",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|要"
+      ],
+      "notes": [
+        "g2pW: singles-surface (matched pinned surface bu2 (sandhi-aware tool))"
+      ]
+    },
+    {
+      "itemId": "context:不|都|買",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:不|都|買"
+      ]
+    },
+    {
+      "itemId": "context:了|來|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|來|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|來|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|來|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|做|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|做|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|做|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|做|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|做|飯",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|做|飯"
+      ]
+    },
+    {
+      "itemId": "context:了|去|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|去|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|去|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|去|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|吃|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|吃|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|吃|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|吃|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|吃|飯",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|吃|飯"
+      ]
+    },
+    {
+      "itemId": "context:了|喝|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|喝|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|喝|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|喝|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|喝|水",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|喝|水"
+      ]
+    },
+    {
+      "itemId": "context:了|喝|茶",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|喝|茶"
+      ]
+    },
+    {
+      "itemId": "context:了|多|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|多|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|大|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|大|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|好|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|好|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|學|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|學|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|學|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|學|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|書|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|書|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|書|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|書|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|水|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|水|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|水|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|水|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|看|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|看|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|看|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|看|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|看|書",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|看|書"
+      ]
+    },
+    {
+      "itemId": "context:了|茶|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|茶|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|茶|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|茶|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|說|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|說|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|說|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|說|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|買|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|買|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|買|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|買|嗎"
+      ]
+    },
+    {
+      "itemId": "context:了|買|書",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|買|書"
+      ]
+    },
+    {
+      "itemId": "context:了|買|水",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|買|水"
+      ]
+    },
+    {
+      "itemId": "context:了|買|茶",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|買|茶"
+      ]
+    },
+    {
+      "itemId": "context:了|買|飯",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|買|飯"
+      ]
+    },
+    {
+      "itemId": "context:了|飯|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|飯|<END>"
+      ]
+    },
+    {
+      "itemId": "context:了|飯|嗎",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:了|飯|嗎"
+      ]
+    },
+    {
+      "itemId": "context:呢|今天|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|今天|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|他|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|他|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|你|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|你|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|媽媽|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|媽媽|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|學生|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|學生|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|家|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|家|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|我|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|我|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|我們|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|我們|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|明天|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|明天|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|書|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|書|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|朋友|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|朋友|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|水|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|水|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|爸爸|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|爸爸|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|狗|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|狗|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|老師|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|老師|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|茶|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|茶|<END>"
+      ]
+    },
+    {
+      "itemId": "context:呢|飯|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:呢|飯|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|一|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|一|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|了|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|了|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|今天|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|今天|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|他|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|他|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|來|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|來|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|做|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|做|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|去|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|去|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|可以|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|可以|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|吃|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|吃|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|喜歡|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|喜歡|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|喝|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|喝|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|在|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|在|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|多|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|多|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|大|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|大|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|好|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|好|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|媽媽|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|媽媽|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|學|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|學|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|學生|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|學生|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|家|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|家|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|小|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|小|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|想|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|想|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|明天|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|明天|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|是|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|是|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|書|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|書|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|有|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|有|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|朋友|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|朋友|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|水|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|水|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|爸爸|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|爸爸|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|狗|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|狗|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|看|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|看|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|知道|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|知道|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|老師|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|老師|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|茶|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|茶|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|要|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|要|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|說|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|說|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|買|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|買|<END>"
+      ]
+    },
+    {
+      "itemId": "context:嗎|飯|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:嗎|飯|<END>"
+      ]
+    },
+    {
+      "itemId": "context:的|他|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|他|<END>"
+      ]
+    },
+    {
+      "itemId": "context:的|他|媽媽",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|他|媽媽"
+      ]
+    },
+    {
+      "itemId": "context:的|他|家",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|他|家"
+      ]
+    },
+    {
+      "itemId": "context:的|他|書",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|他|書"
+      ]
+    },
+    {
+      "itemId": "context:的|他|朋友",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|他|朋友"
+      ]
+    },
+    {
+      "itemId": "context:的|他|水",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|他|水"
+      ]
+    },
+    {
+      "itemId": "context:的|他|狗",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|他|狗"
+      ]
+    },
+    {
+      "itemId": "context:的|他|老師",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|他|老師"
+      ]
+    },
+    {
+      "itemId": "context:的|他|茶",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|他|茶"
+      ]
+    },
+    {
+      "itemId": "context:的|他|飯",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|他|飯"
+      ]
+    },
+    {
+      "itemId": "context:的|你|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|你|<END>"
+      ]
+    },
+    {
+      "itemId": "context:的|你|媽媽",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|你|媽媽"
+      ]
+    },
+    {
+      "itemId": "context:的|你|家",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|你|家"
+      ]
+    },
+    {
+      "itemId": "context:的|你|書",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|你|書"
+      ]
+    },
+    {
+      "itemId": "context:的|你|朋友",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|你|朋友"
+      ]
+    },
+    {
+      "itemId": "context:的|你|水",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|你|水"
+      ]
+    },
+    {
+      "itemId": "context:的|你|狗",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|你|狗"
+      ]
+    },
+    {
+      "itemId": "context:的|你|老師",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|你|老師"
+      ]
+    },
+    {
+      "itemId": "context:的|你|茶",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|你|茶"
+      ]
+    },
+    {
+      "itemId": "context:的|你|飯",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|你|飯"
+      ]
+    },
+    {
+      "itemId": "context:的|媽媽|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|媽媽|<END>"
+      ]
+    },
+    {
+      "itemId": "context:的|媽媽|媽媽",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|媽媽|媽媽"
+      ]
+    },
+    {
+      "itemId": "context:的|媽媽|家",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|媽媽|家"
+      ]
+    },
+    {
+      "itemId": "context:的|媽媽|書",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|媽媽|書"
+      ]
+    },
+    {
+      "itemId": "context:的|媽媽|朋友",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|媽媽|朋友"
+      ]
+    },
+    {
+      "itemId": "context:的|媽媽|水",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|媽媽|水"
+      ]
+    },
+    {
+      "itemId": "context:的|媽媽|狗",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|媽媽|狗"
+      ]
+    },
+    {
+      "itemId": "context:的|媽媽|老師",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|媽媽|老師"
+      ]
+    },
+    {
+      "itemId": "context:的|媽媽|茶",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|媽媽|茶"
+      ]
+    },
+    {
+      "itemId": "context:的|媽媽|飯",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|媽媽|飯"
+      ]
+    },
+    {
+      "itemId": "context:的|我|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我|<END>"
+      ]
+    },
+    {
+      "itemId": "context:的|我|媽媽",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我|媽媽"
+      ]
+    },
+    {
+      "itemId": "context:的|我|家",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我|家"
+      ]
+    },
+    {
+      "itemId": "context:的|我|書",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我|書"
+      ]
+    },
+    {
+      "itemId": "context:的|我|朋友",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我|朋友"
+      ]
+    },
+    {
+      "itemId": "context:的|我|水",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我|水"
+      ]
+    },
+    {
+      "itemId": "context:的|我|狗",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我|狗"
+      ]
+    },
+    {
+      "itemId": "context:的|我|老師",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我|老師"
+      ]
+    },
+    {
+      "itemId": "context:的|我|茶",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我|茶"
+      ]
+    },
+    {
+      "itemId": "context:的|我|飯",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我|飯"
+      ]
+    },
+    {
+      "itemId": "context:的|我們|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我們|<END>"
+      ]
+    },
+    {
+      "itemId": "context:的|我們|媽媽",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我們|媽媽"
+      ]
+    },
+    {
+      "itemId": "context:的|我們|家",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我們|家"
+      ]
+    },
+    {
+      "itemId": "context:的|我們|書",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我們|書"
+      ]
+    },
+    {
+      "itemId": "context:的|我們|朋友",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我們|朋友"
+      ]
+    },
+    {
+      "itemId": "context:的|我們|水",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我們|水"
+      ]
+    },
+    {
+      "itemId": "context:的|我們|狗",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我們|狗"
+      ]
+    },
+    {
+      "itemId": "context:的|我們|老師",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我們|老師"
+      ]
+    },
+    {
+      "itemId": "context:的|我們|茶",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我們|茶"
+      ]
+    },
+    {
+      "itemId": "context:的|我們|飯",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|我們|飯"
+      ]
+    },
+    {
+      "itemId": "context:的|老師|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|老師|<END>"
+      ]
+    },
+    {
+      "itemId": "context:的|老師|媽媽",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|老師|媽媽"
+      ]
+    },
+    {
+      "itemId": "context:的|老師|家",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|老師|家"
+      ]
+    },
+    {
+      "itemId": "context:的|老師|書",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|老師|書"
+      ]
+    },
+    {
+      "itemId": "context:的|老師|朋友",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|老師|朋友"
+      ]
+    },
+    {
+      "itemId": "context:的|老師|水",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|老師|水"
+      ]
+    },
+    {
+      "itemId": "context:的|老師|狗",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|老師|狗"
+      ]
+    },
+    {
+      "itemId": "context:的|老師|老師",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|老師|老師"
+      ]
+    },
+    {
+      "itemId": "context:的|老師|茶",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|老師|茶"
+      ]
+    },
+    {
+      "itemId": "context:的|老師|飯",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|老師|飯"
+      ]
+    },
+    {
+      "itemId": "context:的|誰|<END>",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|誰|<END>"
+      ]
+    },
+    {
+      "itemId": "context:的|誰|媽媽",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|誰|媽媽"
+      ]
+    },
+    {
+      "itemId": "context:的|誰|家",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|誰|家"
+      ]
+    },
+    {
+      "itemId": "context:的|誰|書",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|誰|書"
+      ]
+    },
+    {
+      "itemId": "context:的|誰|朋友",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|誰|朋友"
+      ]
+    },
+    {
+      "itemId": "context:的|誰|水",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|誰|水"
+      ]
+    },
+    {
+      "itemId": "context:的|誰|狗",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|誰|狗"
+      ]
+    },
+    {
+      "itemId": "context:的|誰|老師",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|誰|老師"
+      ]
+    },
+    {
+      "itemId": "context:的|誰|茶",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|誰|茶"
+      ]
+    },
+    {
+      "itemId": "context:的|誰|飯",
+      "kind": "context",
+      "verdict": "GREEN",
+      "legs": {
+        "membership": true,
+        "sandhi": true,
+        "carrier(g2pw+vote)": true,
+        "jury": true
+      },
+      "coveredBy": [
+        "carrier:的|誰|飯"
+      ]
+    },
+    {
+      "itemId": "sentence:s01",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s02",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s03",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s04",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s05",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s06",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s07",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s08",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s09",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s10",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s11",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s12",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s13",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s14",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s15",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s16",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s17",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s18",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s19",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s20",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s21",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s22",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s23",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s24",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s25",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s26",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s27",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s28",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s29",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s30",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s31",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s32",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s33",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s34",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s35",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s36",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s37",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s38",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s39",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s40",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s41",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s42",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s43",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s44",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s45",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s46",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s47",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s48",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s49",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s50",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s51",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s52",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s53",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s54",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    },
+    {
+      "itemId": "sentence:s55",
+      "kind": "sentence",
+      "verdict": "GREEN",
+      "legs": {
+        "sandhi": true,
+        "g2pw+vote": true,
+        "jury": true
+      }
+    }
+  ]
+}

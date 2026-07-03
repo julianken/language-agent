@@ -1,0 +1,40 @@
+# zh CURATION-TOOLCHAIN dependencies — EXACT pins (issue #20, ADR dual-
+# instance amendment Decisions 1/5).
+#
+# THIS ENVIRONMENT IS NEVER DEPLOYED. It is the only container/profile in
+# the tree permitted to run g2pW / HanLP / OpenCC / torch (Decision 5); the
+# deployed zh sidecar image (src/sidecars/zh/Dockerfile) bans all of these
+# by construction — enforced by scripts/assert-deterministic-only.sh and
+# tests/test_no_neural_deps.py, and `curation/` is .dockerignore'd out of
+# the sidecar build context. Torch legitimately lives HERE and in CI's
+# scheduled drift job only (torch in CI only — never in a deployed image).
+#
+# All packages verified on PyPI with real publishers + release history
+# (anti-slopsquatting, verified 2026-07-02):
+#   torch        (BSD-3, PyTorch team, 48 releases)  — g2pw DataLoader dep.
+#                CPU-ONLY build pinned explicitly (+cpu local version, off
+#                the official PyTorch CPU wheel index below) — this
+#                container never has a GPU (local runs and GitHub Actions
+#                CPU-only runners alike), and the default PyPI linux wheel
+#                drags in the full nvidia-*/cuda-toolkit dependency chain
+#                (~2 GB) for hardware that is never present.
+#   transformers (Apache-2.0, Hugging Face, 233 releases) — 4.x pinned:
+#                hanlp 2.1.3 uses BertTokenizer.encode_plus, removed in 5.x
+#   g2pw         (Apache-2.0, Yi-Chang Chen — the g2pW author; ONNX inference,
+#                model auto-downloads from the esun-ai bucket on first run)
+#   onnxruntime  (MIT, Microsoft) — g2pw inference runtime; CPU build (the
+#                GPU variant is the separately-named onnxruntime-gpu package
+#                — not requested here, so no CUDA pull from this dep either)
+#   hanlp        (Apache-2.0, hankcs, 199 releases)
+#   OpenCC       (Apache-2.0, Carbo Kuo/BYVoid, 19 releases)
+#   pypinyin     (MIT, mozillazg) — same pin as the deployed sidecar
+#   jieba        (MIT, Sun Junyi) — same pin as the deployed sidecar
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.12.1+cpu
+transformers==4.57.6
+g2pw==0.1.1
+onnxruntime==1.27.0
+hanlp==2.1.3
+OpenCC==1.4.0
+pypinyin==0.55.0
+jieba==0.42.1

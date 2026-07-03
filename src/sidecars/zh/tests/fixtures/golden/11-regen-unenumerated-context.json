@@ -1,9 +1,9 @@
 {
   "name": "regen-unenumerated-context",
-  "description": "AC: the context-pinned lookup fails closed — 的 in 你|的|茶 is outside the verified enumeration (only 我|的|茶 is enumerated) → regenerate, never a guessed reading.",
+  "description": "AC: the context-pinned lookup fails closed — run-initial possessive 的 (<START>|的|茶) is ungrammatical, so #20's curated C9 enumeration deliberately never licenses it → regenerate, never a guessed reading. (Pre-#20 this fixture used 你的茶 against a stub gap; real curation enumerates that context, so the fixture now exercises a context that stays out BY DESIGN.)",
   "data": "default",
   "request": {
-    "targetText": "你的茶",
+    "targetText": "的茶",
     "intents": [
       {
         "id": "tea",

@@ -1,6 +1,7 @@
 """Baked-data coherence: the committed lexicon matches the assets (the
-same invariant CI's freshness gate enforces), the stub provenance marker is
-present, and the heteronym policy holds."""
+same invariant CI's freshness gate enforces), the curated provenance marker
+(#20 — machine gate complete, gold pass pending) is present, and the
+heteronym policy holds."""
 
 from __future__ import annotations
 
@@ -26,14 +27,18 @@ def test_lexicon_is_fresh_against_assets():
     )
 
 
-def test_stub_provenance_is_declared():
+def test_curated_provenance_is_declared():
+    # #20 replaced the #19 curation stub wholesale; the provenance records the
+    # machine gate as complete and the native gold pass (#20 AC7) as pending —
+    # the AC7 completion step flips this string when its record lands.
+    expected = "curated — machine gate complete; native gold pass pending (#20 AC7)"
     lexicon = json.loads((SIDECAR_ROOT / "data" / "lexicon.json").read_text("utf-8"))
-    assert lexicon["provenance"] == "stub — replaced wholesale by #20"
+    assert lexicon["provenance"] == expected
     for asset in ("seed-tuples.json", "c9-context-table.json", "segmenter-normalization.json"):
         doc = json.loads(
             (REPO_ROOT / "src" / "packages" / "lang-zh" / "assets" / asset).read_text("utf-8")
         )
-        assert doc["provenance"] == "stub — replaced wholesale by #20", asset
+        assert doc["provenance"] == expected, asset
 
 
 def test_heteronym_policy_no_double_reading_ids(tables):

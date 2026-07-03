@@ -1,0 +1,704 @@
+{
+  "$doc": "The g2pW drift baseline (issue #20, ADR Decision 5): the recorded fingerprint of every non-exact g2pW position over the curation corpus + C9 carriers at curation time, each classed per gate_lib (neutral-register / attested-variant / singles-surface). The scheduled non-blocking CI job (.github/workflows/drift-g2pw.yml) recomputes and diffs against this; any NEW or changed position is drift and reds the (non-blocking) job. N4 inherits this baseline as its acceptance floor and does NOT re-enable the job.",
+  "tool": "g2pw 0.1.1 (G2PWModel-v2-onnx, Traditional-native), style=pinyin",
+  "corpusSentences": 55,
+  "carriers": 267,
+  "fingerprint": [
+    {
+      "id": "s05",
+      "pos": 3,
+      "char": "期",
+      "pinned": "qi1",
+      "g2pw": "qi2",
+      "class": "attested-variant"
+    },
+    {
+      "id": "s06",
+      "pos": 4,
+      "char": "生",
+      "pinned": "sheng5",
+      "g2pw": "sheng1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "s09",
+      "pos": 2,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi4",
+      "class": "singles-surface"
+    },
+    {
+      "id": "s23",
+      "pos": 4,
+      "char": "個",
+      "pinned": "ge4",
+      "g2pw": "ge5",
+      "class": "neutral-register"
+    },
+    {
+      "id": "s35",
+      "pos": 1,
+      "char": "期",
+      "pinned": "qi1",
+      "g2pw": "qi2",
+      "class": "attested-variant"
+    },
+    {
+      "id": "s36",
+      "pos": 0,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "s36",
+      "pos": 1,
+      "char": "個",
+      "pinned": "ge4",
+      "g2pw": "ge5",
+      "class": "neutral-register"
+    },
+    {
+      "id": "s36",
+      "pos": 3,
+      "char": "生",
+      "pinned": "sheng5",
+      "g2pw": "sheng1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "s37",
+      "pos": 0,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "s46",
+      "pos": 2,
+      "char": "歡",
+      "pinned": "huan5",
+      "g2pw": "huan1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "s47",
+      "pos": 1,
+      "char": "個",
+      "pinned": "ge4",
+      "g2pw": "ge5",
+      "class": "neutral-register"
+    },
+    {
+      "id": "s47",
+      "pos": 3,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    },
+    {
+      "id": "s48",
+      "pos": 1,
+      "char": "個",
+      "pinned": "ge4",
+      "g2pw": "ge5",
+      "class": "neutral-register"
+    },
+    {
+      "id": "s49",
+      "pos": 3,
+      "char": "期",
+      "pinned": "qi1",
+      "g2pw": "qi2",
+      "class": "attested-variant"
+    },
+    {
+      "id": "一|<START>|個",
+      "pos": 0,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|<START>|個",
+      "pos": 1,
+      "char": "個",
+      "pinned": "ge4",
+      "g2pw": "ge5",
+      "class": "neutral-register"
+    },
+    {
+      "id": "一|<START>|本",
+      "pos": 0,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi4",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|吃|個",
+      "pos": 2,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|吃|個",
+      "pos": 3,
+      "char": "個",
+      "pinned": "ge4",
+      "g2pw": "ge5",
+      "class": "neutral-register"
+    },
+    {
+      "id": "一|星期|<END>",
+      "pos": 3,
+      "char": "期",
+      "pinned": "qi1",
+      "g2pw": "qi2",
+      "class": "attested-variant"
+    },
+    {
+      "id": "一|星期|嗎",
+      "pos": 3,
+      "char": "期",
+      "pinned": "qi1",
+      "g2pw": "qi2",
+      "class": "attested-variant"
+    },
+    {
+      "id": "一|是|個",
+      "pos": 2,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|是|個",
+      "pos": 3,
+      "char": "個",
+      "pinned": "ge4",
+      "g2pw": "ge5",
+      "class": "neutral-register"
+    },
+    {
+      "id": "一|是|個",
+      "pos": 5,
+      "char": "生",
+      "pinned": "sheng5",
+      "g2pw": "sheng1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "一|是|本",
+      "pos": 2,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi4",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|有|個",
+      "pos": 2,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|有|個",
+      "pos": 3,
+      "char": "個",
+      "pinned": "ge4",
+      "g2pw": "ge5",
+      "class": "neutral-register"
+    },
+    {
+      "id": "一|有|個",
+      "pos": 5,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    },
+    {
+      "id": "一|有|本",
+      "pos": 2,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi4",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|看|本",
+      "pos": 3,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi4",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|要|個",
+      "pos": 2,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|要|個",
+      "pos": 3,
+      "char": "個",
+      "pinned": "ge4",
+      "g2pw": "ge5",
+      "class": "neutral-register"
+    },
+    {
+      "id": "一|要|本",
+      "pos": 2,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi4",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|買|個",
+      "pos": 2,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "一|買|個",
+      "pos": 3,
+      "char": "個",
+      "pinned": "ge4",
+      "g2pw": "ge5",
+      "class": "neutral-register"
+    },
+    {
+      "id": "一|買|本",
+      "pos": 2,
+      "char": "一",
+      "pinned": "yi1",
+      "g2pw": "yi4",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|<START>|去",
+      "pos": 0,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|<START>|喜歡",
+      "pos": 2,
+      "char": "歡",
+      "pinned": "huan5",
+      "g2pw": "huan1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "不|<START>|大",
+      "pos": 0,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|<START>|是",
+      "pos": 0,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|<START>|看",
+      "pos": 0,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|<START>|要",
+      "pos": 0,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|也|去",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|也|喜歡",
+      "pos": 3,
+      "char": "歡",
+      "pinned": "huan5",
+      "g2pw": "huan1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "不|也|大",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|也|是",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|也|看",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|也|要",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|他|去",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|他|喜歡",
+      "pos": 3,
+      "char": "歡",
+      "pinned": "huan5",
+      "g2pw": "huan1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "不|他|是",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|他|看",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|他|要",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|你|去",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|你|喜歡",
+      "pos": 3,
+      "char": "歡",
+      "pinned": "huan5",
+      "g2pw": "huan1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "不|你|是",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|你|看",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|你|要",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|我|去",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|我|喜歡",
+      "pos": 3,
+      "char": "歡",
+      "pinned": "huan5",
+      "g2pw": "huan1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "不|我|是",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|我|看",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|我|要",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|我們|去",
+      "pos": 2,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|我們|喜歡",
+      "pos": 4,
+      "char": "歡",
+      "pinned": "huan5",
+      "g2pw": "huan1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "不|我們|是",
+      "pos": 2,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|我們|看",
+      "pos": 2,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|我們|要",
+      "pos": 2,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|都|去",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|都|喜歡",
+      "pos": 3,
+      "char": "歡",
+      "pinned": "huan5",
+      "g2pw": "huan1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "不|都|大",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|都|是",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|都|看",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "不|都|要",
+      "pos": 1,
+      "char": "不",
+      "pinned": "bu4",
+      "g2pw": "bu2",
+      "class": "singles-surface"
+    },
+    {
+      "id": "呢|學生|<END>",
+      "pos": 1,
+      "char": "生",
+      "pinned": "sheng5",
+      "g2pw": "sheng1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "呢|朋友|<END>",
+      "pos": 1,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    },
+    {
+      "id": "嗎|一|<END>",
+      "pos": 3,
+      "char": "期",
+      "pinned": "qi1",
+      "g2pw": "qi2",
+      "class": "attested-variant"
+    },
+    {
+      "id": "嗎|喜歡|<END>",
+      "pos": 1,
+      "char": "歡",
+      "pinned": "huan5",
+      "g2pw": "huan1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "嗎|學生|<END>",
+      "pos": 1,
+      "char": "生",
+      "pinned": "sheng5",
+      "g2pw": "sheng1",
+      "class": "neutral-register"
+    },
+    {
+      "id": "嗎|朋友|<END>",
+      "pos": 1,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    },
+    {
+      "id": "的|他|朋友",
+      "pos": 5,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    },
+    {
+      "id": "的|你|朋友",
+      "pos": 5,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    },
+    {
+      "id": "的|媽媽|朋友",
+      "pos": 6,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    },
+    {
+      "id": "的|我|朋友",
+      "pos": 5,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    },
+    {
+      "id": "的|我們|朋友",
+      "pos": 6,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    },
+    {
+      "id": "的|老師|朋友",
+      "pos": 6,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    },
+    {
+      "id": "的|誰|朋友",
+      "pos": 5,
+      "char": "友",
+      "pinned": "you5",
+      "g2pw": "you3",
+      "class": "neutral-register"
+    }
+  ]
+}

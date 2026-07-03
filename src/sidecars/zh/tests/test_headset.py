@@ -25,18 +25,22 @@ def test_enumerated_context_resolves(tables):
 
 
 def test_unenumerated_context_fails_closed(tables):
+    # Run-initial possessive 的 is ungrammatical, so #20's curated C9
+    # enumeration deliberately never licenses it — fail-closed regenerate.
     with pytest.raises(Regenerate) as exc:
-        _run_headset("你的茶", tables)
+        _run_headset("的茶", tables)
     assert exc.value.leg_id == "headset-context-pinned"
     assert exc.value.reason == "unenumerated-context"
 
 
-def test_c3_admitted_single_without_any_entry_fails_closed(tables):
-    # 呢 is C3-admitted (a pinned single in the cover lattice) but the stub
-    # enumerates no context for it — every occurrence must regenerate.
+def test_c3_admitted_single_outside_its_enumerated_role_fails_closed(tables):
+    # 呢 is C3-admitted and (since #20) enumerated for topic-final contexts
+    # (X呢?) — but a 呢 outside that role (run-initial here) has no entry and
+    # must regenerate: enumeration licenses ROLES, not the character.
     assert "呢" in tables.singles
+    assert ("呢", "茶", "<END>") in tables.context  # the curated topic-final role
     with pytest.raises(Regenerate) as exc:
-        _run_headset("茶呢", tables)
+        _run_headset("呢茶", tables)
     assert exc.value.reason == "unenumerated-context"
 
 

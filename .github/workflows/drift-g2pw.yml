@@ -6,13 +6,16 @@ name: drift-g2pw
 # deployed image) over the zh curation corpus + logged generated turns and
 # diff against the pinned readings and the C9 context table.
 #
-# ACTIVATES WHEN #20 (Chinese seed sliver) LANDS — not "disabled until
-# #22/N4": #20 owns the curation-toolchain container (the only thing
-# allowed to run g2pW/HanLP) and its recorded curation baseline, and #20's
-# PR replaces the placeholder step below with the real diff against that
-# baseline. Until then the gate step detects the baseline's absence and
-# the job no-ops green. N4 does NOT enable this job; it inherits the
-# baseline as its acceptance floor.
+# ACTIVE since #20 (Chinese seed sliver) landed: #20 owns the curation-
+# toolchain container (src/sidecars/zh/curation/ — the only thing allowed
+# to run g2pW/HanLP; NEVER deployed) and the recorded curation baseline
+# (src/sidecars/zh/curation/baseline/g2pw-drift-baseline.json). This job
+# builds that container and re-runs real g2pW over the curation corpus +
+# every C9 carrier sentence, diffing per-position against the baseline
+# (tools/gate_g2pw.py --check). Logged generated turns join the corpus
+# once a deployed system produces them (none exist yet — pre-deploy).
+# N4 does NOT enable this job; it inherits the baseline as its acceptance
+# floor.
 #
 # Deliberately OFF the PR-blocking path (schedule + manual dispatch only):
 # its nondeterminism and cost must never gate PRs; it is alarmed so
@@ -39,25 +42,29 @@ jobs:
 
       - name: Gate on the curation baseline (#20)
         id: gate
-        # #20 owns the baseline path; if it lands the baseline elsewhere,
-        # its PR updates this glob in the same change (Update Triggers).
         run: |
-          if [ -d "src/sidecars/zh/curation" ]; then
+          if [ -f "src/sidecars/zh/curation/baseline/g2pw-drift-baseline.json" ]; then
             echo "present=true" >> "$GITHUB_OUTPUT"
             echo "::notice::zh curation baseline found — running the real-g2pW corpus diff."
           else
             echo "present=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::No zh curation baseline yet (src/sidecars/zh/curation absent). This drift job activates when #20 lands its curation-toolchain container and recorded baseline. Skipping green."
+            echo "::notice::No zh curation baseline (src/sidecars/zh/curation/baseline absent). Skipping green."
           fi
+
+      - name: Build the curation-toolchain container (torch in CI only — never deployed)
+        if: steps.gate.outputs.present == 'true'
+        run: docker build -t language-agent/curation-zh:ci src/sidecars/zh/curation
 
       - name: Real-g2pW corpus diff against the curation baseline
         if: steps.gate.outputs.present == 'true'
-        # Placeholder ON PURPOSE: the curation-toolchain container, the
-        # recorded baseline, and the diff command are #20's exclusive
-        # deliverables — authoring them here would double-claim #20's
-        # scope. This step failing loudly once the baseline directory
-        # exists is the activation tripwire: #20's PR must replace it
-        # with the real diff in the same change.
+        # Re-runs real g2pW (G2PWModel-v2-onnx, downloaded at run time) over
+        # the curation corpus + every C9 carrier and diffs the per-position
+        # reading fingerprint against the committed baseline. Exit 1 = drift
+        # (readings or the C9 context table no longer match what curation
+        # verified) — this job is non-blocking by construction (schedule +
+        # manual dispatch only; never a PR gate), so a red run is the alarm.
         run: |
-          echo "::error::src/sidecars/zh/curation exists but the g2pW diff is not wired — #20 owns the curation-toolchain container and must replace this placeholder step with the real corpus diff (readings + C9 context table) in the PR that lands the baseline."
-          exit 1
+          docker run --rm -v "$PWD":/repo -w /repo \
+            language-agent/curation-zh:ci \
+            python3 src/sidecars/zh/curation/tools/gate_g2pw.py \
+              --check src/sidecars/zh/curation/baseline/g2pw-drift-baseline.json

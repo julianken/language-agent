@@ -35,16 +35,18 @@ ambiguous cover this is literally true: the gate refuses to mint boundaries.
 **C3 (committed definition, issue #19 step 2(a)):** {的, 了, 不, 一} plus
 嗎/呢, admitted as pinned singles. Distinct from the full §6.8 hand-pinned
 head set (的/地/得, 了, 不, 一, 行, 重, 著, 和) — NOT implemented in v0.
-呢 carries no context entry in the stub, so every 呢 regenerates (fail-closed).
+Since #20, every single resolves over the real curated C9 enumeration
+(267 role-licensed contexts); anything outside it regenerates (fail-closed).
 
 ## Excluded by construction
 
 `torch`, `transformers`, `g2pW`, `g2pM`/`g2pC`, `HanLP`, `OpenCC`, `pkuseg`
 never ship in this image — an appearance is a **regression**, not a judgment
 call (Decision 1: the full gate — g2pW, AS-configured HanLP, the refutation
-jury — runs at curation time only, in #20's curation-toolchain container).
-Enforced twice: `scripts/assert-deterministic-only.sh` (built image, CI) and
-`tests/test_no_neural_deps.py` (dependency environment).
+jury — runs at curation time only, in the curation-toolchain container at
+`curation/`, which is `.dockerignore`d out of this image's build context and
+never deployed). Enforced twice: `scripts/assert-deterministic-only.sh`
+(built image, CI) and `tests/test_no_neural_deps.py` (dependency environment).
 
 ## Data
 
@@ -56,8 +58,11 @@ Enforced twice: `scripts/assert-deterministic-only.sh` (built image, CI) and
   world grows.
 - `data/lexicon.json` — BUILD-GENERATED from `src/packages/lang-zh/assets/`
   by `scripts/build_lexicon.py`; never hand-edited. CI freshness gate:
-  regenerate + `git diff --exit-code`. Currently generated from the **#19
-  curation stub** (`provenance: stub — replaced wholesale by #20`).
+  regenerate + `git diff --exit-code`. Generated from the **#20 curated
+  sliver** (58 words + 267 C9 contexts; `provenance: curated — machine gate
+  complete; native gold pass pending (#20 AC7)`) — the curation pipeline,
+  its recorded gate results, and the g2pW drift baseline live in
+  `curation/` (see its README).
 
 ## Annotations
 

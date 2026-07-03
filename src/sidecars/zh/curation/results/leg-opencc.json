@@ -1,0 +1,421 @@
+{
+  "leg": "opencc-roundtrip-screen (advisory)",
+  "tool": "OpenCC 1.4.0 (t2s/s2t)",
+  "records": [
+    {
+      "id": "tuple:我:wo3",
+      "word": "我",
+      "t2s": "我",
+      "s2t": "我",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:你:ni3",
+      "word": "你",
+      "t2s": "你",
+      "s2t": "你",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:是:shi4",
+      "word": "是",
+      "t2s": "是",
+      "s2t": "是",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:他:ta1",
+      "word": "他",
+      "t2s": "他",
+      "s2t": "他",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:有:you3",
+      "word": "有",
+      "t2s": "有",
+      "s2t": "有",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:在:zai4",
+      "word": "在",
+      "t2s": "在",
+      "s2t": "在",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:這:zhe4",
+      "word": "這",
+      "t2s": "这",
+      "s2t": "這",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:個:ge4",
+      "word": "個",
+      "t2s": "个",
+      "s2t": "個",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:好:hao3",
+      "word": "好",
+      "t2s": "好",
+      "s2t": "好",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:來:lai2",
+      "word": "來",
+      "t2s": "来",
+      "s2t": "來",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:去:qu4",
+      "word": "去",
+      "t2s": "去",
+      "s2t": "去",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:要:yao4",
+      "word": "要",
+      "t2s": "要",
+      "s2t": "要",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:人:ren2",
+      "word": "人",
+      "t2s": "人",
+      "s2t": "人",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:想:xiang3",
+      "word": "想",
+      "t2s": "想",
+      "s2t": "想",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:看:kan4",
+      "word": "看",
+      "t2s": "看",
+      "s2t": "看",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:說:shuo1",
+      "word": "說",
+      "t2s": "说",
+      "s2t": "說",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:我們:wo3men5",
+      "word": "我們",
+      "t2s": "我们",
+      "s2t": "我們",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:都:dou1",
+      "word": "都",
+      "t2s": "都",
+      "s2t": "都",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:很:hen3",
+      "word": "很",
+      "t2s": "很",
+      "s2t": "很",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:也:ye3",
+      "word": "也",
+      "t2s": "也",
+      "s2t": "也",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:買:mai3",
+      "word": "買",
+      "t2s": "买",
+      "s2t": "買",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:大:da4",
+      "word": "大",
+      "t2s": "大",
+      "s2t": "大",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:多:duo1",
+      "word": "多",
+      "t2s": "多",
+      "s2t": "多",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:太:tai4",
+      "word": "太",
+      "t2s": "太",
+      "s2t": "太",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:吃:chi1",
+      "word": "吃",
+      "t2s": "吃",
+      "s2t": "喫",
+      "roundtrip": false
+    },
+    {
+      "id": "tuple:家:jia1",
+      "word": "家",
+      "t2s": "家",
+      "s2t": "家",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:做:zuo4",
+      "word": "做",
+      "t2s": "做",
+      "s2t": "做",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:學:xue2",
+      "word": "學",
+      "t2s": "学",
+      "s2t": "學",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:什麼:shen2me5",
+      "word": "什麼",
+      "t2s": "什么",
+      "s2t": "什麼",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:誰:shei2",
+      "word": "誰",
+      "t2s": "谁",
+      "s2t": "誰",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:水:shui3",
+      "word": "水",
+      "t2s": "水",
+      "s2t": "水",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:喝:he1",
+      "word": "喝",
+      "t2s": "喝",
+      "s2t": "喝",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:茶:cha2",
+      "word": "茶",
+      "t2s": "茶",
+      "s2t": "茶",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:老師:lao3shi1",
+      "word": "老師",
+      "t2s": "老师",
+      "s2t": "老師",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:學生:xue2sheng5",
+      "word": "學生",
+      "t2s": "学生",
+      "s2t": "學生",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:朋友:peng2you5",
+      "word": "朋友",
+      "t2s": "朋友",
+      "s2t": "朋友",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:知道:zhi1dao4",
+      "word": "知道",
+      "t2s": "知道",
+      "s2t": "知道",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:喜歡:xi3huan5",
+      "word": "喜歡",
+      "t2s": "喜欢",
+      "s2t": "喜歡",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:今天:jin1tian1",
+      "word": "今天",
+      "t2s": "今天",
+      "s2t": "今天",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:明天:ming2tian1",
+      "word": "明天",
+      "t2s": "明天",
+      "s2t": "明天",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:三:san1",
+      "word": "三",
+      "t2s": "三",
+      "s2t": "三",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:五:wu3",
+      "word": "五",
+      "t2s": "五",
+      "s2t": "五",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:十:shi2",
+      "word": "十",
+      "t2s": "十",
+      "s2t": "十",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:兩:liang3",
+      "word": "兩",
+      "t2s": "两",
+      "s2t": "兩",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:二:er4",
+      "word": "二",
+      "t2s": "二",
+      "s2t": "二",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:本:ben3",
+      "word": "本",
+      "t2s": "本",
+      "s2t": "本",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:小:xiao3",
+      "word": "小",
+      "t2s": "小",
+      "s2t": "小",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:書:shu1",
+      "word": "書",
+      "t2s": "书",
+      "s2t": "書",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:飯:fan4",
+      "word": "飯",
+      "t2s": "饭",
+      "s2t": "飯",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:狗:gou3",
+      "word": "狗",
+      "t2s": "狗",
+      "s2t": "狗",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:爸爸:ba4ba5",
+      "word": "爸爸",
+      "t2s": "爸爸",
+      "s2t": "爸爸",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:媽媽:ma1ma5",
+      "word": "媽媽",
+      "t2s": "妈妈",
+      "s2t": "媽媽",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:星期:xing1qi1",
+      "word": "星期",
+      "t2s": "星期",
+      "s2t": "星期",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:可以:ke3yi3",
+      "word": "可以",
+      "t2s": "可以",
+      "s2t": "可以",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:請:qing3",
+      "word": "請",
+      "t2s": "请",
+      "s2t": "請",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:謝謝:xie4xie5",
+      "word": "謝謝",
+      "t2s": "谢谢",
+      "s2t": "謝謝",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:你好:ni3hao3",
+      "word": "你好",
+      "t2s": "你好",
+      "s2t": "你好",
+      "roundtrip": true
+    },
+    {
+      "id": "tuple:展覽館:zhan3lan3guan3",
+      "word": "展覽館",
+      "t2s": "展览馆",
+      "s2t": "展覽館",
+      "roundtrip": true
+    }
+  ],
+  "flagged": [
+    {
+      "id": "tuple:吃:chi1",
+      "word": "吃",
+      "t2s": "吃",
+      "s2t": "喫",
+      "roundtrip": false
+    }
+  ]
+}
