@@ -124,6 +124,18 @@ resource "google_cloud_run_v2_service" "this" {
         value = "/repo/src/packages/lang-${var.instance_key}/assets"
       }
 
+      # The one shared web SITE bundle the server Dockerfile builds and
+      # COPYs to this path (language-router-gateway plan, Task 6, R-B) —
+      # NOT instance-specific (no ${var.instance_key} here, unlike
+      # ASSETS_ROOT above): the server splices this instance's
+      # `<base href="/${LANGUAGE}/">` into index.html per-request from the
+      # LANGUAGE env var already set below, so one bundle serves both
+      # instances.
+      env {
+        name  = "WEB_DIST"
+        value = "/repo/web-dist"
+      }
+
       resources {
         limits = {
           cpu    = "1"

@@ -20,7 +20,17 @@
  *   HOST                bind address (default 127.0.0.1)
  *   FIXTURES_DIR        fixture documents (default <package>/fixtures)
  *   WEB_DIST            built web app to serve statically (optional)
- *   LANGUAGE            fake|ar|zh — when set, boots real-turn mode
+ *   LANGUAGE            fake|ar|zh — when set, boots real-turn mode. ALSO
+ *                       drives runtime `<base href>` injection (Task 6,
+ *                       R-B of the language-router-gateway plan): "ar"/
+ *                       "zh" (the two real deployed instances, each
+ *                       served under a path prefix behind the Cloudflare
+ *                       Worker) inject `<base href="/${LANGUAGE}/">` into
+ *                       the served index.html; "fake" (dev/e2e real-turn
+ *                       mode, always root-served — see
+ *                       @la/web/playwright.config.ts) and unset both
+ *                       inject nothing, unchanged from before this
+ *                       existed.
  *   SIDECAR_BASE_URL    the pack's sidecar base URL (real mode)
  *   SIDECAR_MODE        real|fixture|mock (default "real")
  *   ASSETS_ROOT         the pack's asset root (real mode; required then)
@@ -77,14 +87,19 @@ async function buildRealTurnOptions(language: string): Promise<RealTurnOptions> 
 async function main(): Promise<void> {
   const language = process.env["LANGUAGE"];
   const realTurn = language ? await buildRealTurnOptions(language) : undefined;
+  // Only the two real deployed instances are served under a path prefix
+  // (Task 6, R-B) — "fake" and unset stay root-served, matching every
+  // existing dev/e2e server config unchanged.
+  const webBase = language === "ar" || language === "zh" ? `/${language}/` : undefined;
 
-  const { server } = createFixtureServer({ fixturesDir, webDist, realTurn });
+  const { server } = createFixtureServer({ fixturesDir, webDist, realTurn, webBase });
 
   server.listen(port, host, () => {
     console.info(
       `server on http://${host}:${port} (fixtures: ${fixturesDir}` +
         `${webDist ? `, web: ${webDist}` : ""}` +
-        `${language ? `, real-turn language: ${language}` : ""})`,
+        `${language ? `, real-turn language: ${language}` : ""}` +
+        `${webBase ? `, web base: ${webBase}` : ""})`,
     );
   });
 }

@@ -99,6 +99,15 @@ export interface FixtureServerOptions {
   fixturesDir: string;
   /** Built web app to serve statically (optional — API-only otherwise). */
   webDist?: string | undefined;
+  /**
+   * Runtime base-path (e.g. `"/ar/"`, `"/zh/"`) spliced into the served
+   * `index.html`'s `<head>` as `<base href="...">` (language-router-
+   * gateway plan, Task 6, R-B). Absent means root-served — no `<base>` is
+   * injected, matching every dev/e2e server today. The web bundle itself
+   * is built ONCE with Vite `base: "./"` (relative asset URLs); this is
+   * the only place a path prefix is applied, at serve time.
+   */
+  webBase?: string | undefined;
   /** Real-turn mode (optional — absent means fixture-only, #10's original
    * scope, unchanged). */
   realTurn?: RealTurnOptions | undefined;
@@ -119,6 +128,16 @@ const MIME: Record<string, string> = {
   ".woff2": "font/woff2",
   ".txt": "text/plain; charset=utf-8",
 };
+
+/**
+ * Splices `<base href="${base}">` immediately after the `<head>` open tag
+ * (Task 6, R-B). Anchored on the actual `<head ...>` tag rather than a
+ * blind string prepend so it survives an attribute on `<head>` (there
+ * isn't one today, but this doesn't assume that).
+ */
+function injectBaseHref(html: string, base: string): string {
+  return html.replace(/<head(\s[^>]*)?>/i, (match) => `${match}<base href="${base}">`);
+}
 
 function sseEvent(name: string, data: unknown): string {
   return `event: ${name}\ndata: ${JSON.stringify(data)}\n\n`;
@@ -276,7 +295,10 @@ export function createFixtureServer(opts: FixtureServerOptions): FixtureServer {
     }
     if (extname(filePath) === "") filePath = join(distRoot, "index.html"); // SPA fallback
     try {
-      const content = await readFile(filePath);
+      let content: Buffer | string = await readFile(filePath);
+      if (extname(filePath) === ".html" && opts.webBase) {
+        content = injectBaseHref(content.toString("utf8"), opts.webBase);
+      }
       res.writeHead(200, {
         "content-type": MIME[extname(filePath)] ?? "application/octet-stream",
       });
