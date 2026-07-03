@@ -1,7 +1,33 @@
 {
   "generatedBy": "src/sidecars/zh/scripts/build_lexicon.py — DO NOT EDIT; edit src/packages/lang-zh/assets/ and rebuild",
-  "provenance": "stub — replaced wholesale by #20",
+  "provenance": "curated — machine gate complete; native gold pass pending (#20 AC7)",
   "words": {
+    "三": {
+      "readingId": "三:san1",
+      "citationPinyin": [
+        "san1"
+      ],
+      "surfacePinyin": [
+        "san1"
+      ],
+      "pos": "numeral",
+      "senseId": "three",
+      "gloss": "three; 3",
+      "intentBearing": false
+    },
+    "也": {
+      "readingId": "也:ye3",
+      "citationPinyin": [
+        "ye3"
+      ],
+      "surfacePinyin": [
+        "ye3"
+      ],
+      "pos": "adverb",
+      "senseId": "also",
+      "gloss": "also; too",
+      "intentBearing": false
+    },
     "二": {
       "readingId": "二:er4",
       "citationPinyin": [
@@ -13,6 +39,75 @@
       "pos": "numeral",
       "senseId": "two-digit",
       "gloss": "two; 2 (digit/ordinal)",
+      "intentBearing": false
+    },
+    "五": {
+      "readingId": "五:wu3",
+      "citationPinyin": [
+        "wu3"
+      ],
+      "surfacePinyin": [
+        "wu3"
+      ],
+      "pos": "numeral",
+      "senseId": "five",
+      "gloss": "five; 5",
+      "intentBearing": false
+    },
+    "人": {
+      "readingId": "人:ren2",
+      "citationPinyin": [
+        "ren2"
+      ],
+      "surfacePinyin": [
+        "ren2"
+      ],
+      "pos": "noun",
+      "senseId": "person",
+      "gloss": "person; people",
+      "intentBearing": true
+    },
+    "什麼": {
+      "readingId": "什麼:shen2me5",
+      "citationPinyin": [
+        "shen2",
+        "me5"
+      ],
+      "surfacePinyin": [
+        "shen2",
+        "me5"
+      ],
+      "pos": "pronoun",
+      "senseId": "what",
+      "gloss": "what",
+      "intentBearing": false
+    },
+    "今天": {
+      "readingId": "今天:jin1tian1",
+      "citationPinyin": [
+        "jin1",
+        "tian1"
+      ],
+      "surfacePinyin": [
+        "jin1",
+        "tian1"
+      ],
+      "pos": "noun",
+      "senseId": "today",
+      "gloss": "today",
+      "intentBearing": true
+    },
+    "他": {
+      "readingId": "他:ta1",
+      "citationPinyin": [
+        "ta1"
+      ],
+      "surfacePinyin": [
+        "ta1"
+      ],
+      "pos": "pronoun",
+      "senseId": "he",
+      "gloss": "he; him",
       "intentBearing": false
     },
     "你": {
@@ -43,6 +138,19 @@
       "gloss": "hello",
       "intentBearing": true
     },
+    "來": {
+      "readingId": "來:lai2",
+      "citationPinyin": [
+        "lai2"
+      ],
+      "surfacePinyin": [
+        "lai2"
+      ],
+      "pos": "verb",
+      "senseId": "come",
+      "gloss": "to come",
+      "intentBearing": true
+    },
     "個": {
       "readingId": "個:ge4",
       "citationPinyin": [
@@ -55,6 +163,19 @@
       "senseId": "clf-general",
       "gloss": "general classifier",
       "intentBearing": false
+    },
+    "做": {
+      "readingId": "做:zuo4",
+      "citationPinyin": [
+        "zuo4"
+      ],
+      "surfacePinyin": [
+        "zuo4"
+      ],
+      "pos": "verb",
+      "senseId": "do-make",
+      "gloss": "to do; to make",
+      "intentBearing": true
     },
     "兩": {
       "readingId": "兩:liang3",
@@ -69,6 +190,75 @@
       "gloss": "two (before measure words)",
       "intentBearing": false
     },
+    "十": {
+      "readingId": "十:shi2",
+      "citationPinyin": [
+        "shi2"
+      ],
+      "surfacePinyin": [
+        "shi2"
+      ],
+      "pos": "numeral",
+      "senseId": "ten",
+      "gloss": "ten; 10",
+      "intentBearing": false
+    },
+    "去": {
+      "readingId": "去:qu4",
+      "citationPinyin": [
+        "qu4"
+      ],
+      "surfacePinyin": [
+        "qu4"
+      ],
+      "pos": "verb",
+      "senseId": "go",
+      "gloss": "to go",
+      "intentBearing": true
+    },
+    "可以": {
+      "readingId": "可以:ke3yi3",
+      "citationPinyin": [
+        "ke3",
+        "yi3"
+      ],
+      "surfacePinyin": [
+        "ke2",
+        "yi3"
+      ],
+      "pos": "verb",
+      "senseId": "can",
+      "gloss": "can; may",
+      "intentBearing": true
+    },
+    "吃": {
+      "readingId": "吃:chi1",
+      "citationPinyin": [
+        "chi1"
+      ],
+      "surfacePinyin": [
+        "chi1"
+      ],
+      "pos": "verb",
+      "senseId": "eat",
+      "gloss": "to eat",
+      "intentBearing": true
+    },
+    "喜歡": {
+      "readingId": "喜歡:xi3huan5",
+      "citationPinyin": [
+        "xi3",
+        "huan5"
+      ],
+      "surfacePinyin": [
+        "xi3",
+        "huan5"
+      ],
+      "pos": "verb",
+      "senseId": "like",
+      "gloss": "to like",
+      "intentBearing": true
+    },
     "喝": {
       "readingId": "喝:he1",
       "citationPinyin": [
@@ -82,6 +272,58 @@
       "gloss": "to drink",
       "intentBearing": true
     },
+    "在": {
+      "readingId": "在:zai4",
+      "citationPinyin": [
+        "zai4"
+      ],
+      "surfacePinyin": [
+        "zai4"
+      ],
+      "pos": "verb",
+      "senseId": "be-at",
+      "gloss": "to be at; in (a place)",
+      "intentBearing": true
+    },
+    "多": {
+      "readingId": "多:duo1",
+      "citationPinyin": [
+        "duo1"
+      ],
+      "surfacePinyin": [
+        "duo1"
+      ],
+      "pos": "adjective",
+      "senseId": "many",
+      "gloss": "many; much",
+      "intentBearing": true
+    },
+    "大": {
+      "readingId": "大:da4",
+      "citationPinyin": [
+        "da4"
+      ],
+      "surfacePinyin": [
+        "da4"
+      ],
+      "pos": "adjective",
+      "senseId": "big",
+      "gloss": "big; large",
+      "intentBearing": true
+    },
+    "太": {
+      "readingId": "太:tai4",
+      "citationPinyin": [
+        "tai4"
+      ],
+      "surfacePinyin": [
+        "tai4"
+      ],
+      "pos": "adverb",
+      "senseId": "too-much",
+      "gloss": "too; excessively",
+      "intentBearing": false
+    },
     "好": {
       "readingId": "好:hao3",
       "citationPinyin": [
@@ -93,6 +335,75 @@
       "pos": "adjective",
       "senseId": "good",
       "gloss": "good",
+      "intentBearing": true
+    },
+    "媽媽": {
+      "readingId": "媽媽:ma1ma5",
+      "citationPinyin": [
+        "ma1",
+        "ma5"
+      ],
+      "surfacePinyin": [
+        "ma1",
+        "ma5"
+      ],
+      "pos": "noun",
+      "senseId": "mom",
+      "gloss": "mom; mother",
+      "intentBearing": true
+    },
+    "學": {
+      "readingId": "學:xue2",
+      "citationPinyin": [
+        "xue2"
+      ],
+      "surfacePinyin": [
+        "xue2"
+      ],
+      "pos": "verb",
+      "senseId": "study",
+      "gloss": "to learn; to study",
+      "intentBearing": true
+    },
+    "學生": {
+      "readingId": "學生:xue2sheng5",
+      "citationPinyin": [
+        "xue2",
+        "sheng5"
+      ],
+      "surfacePinyin": [
+        "xue2",
+        "sheng5"
+      ],
+      "pos": "noun",
+      "senseId": "student",
+      "gloss": "student",
+      "intentBearing": true
+    },
+    "家": {
+      "readingId": "家:jia1",
+      "citationPinyin": [
+        "jia1"
+      ],
+      "surfacePinyin": [
+        "jia1"
+      ],
+      "pos": "noun",
+      "senseId": "home",
+      "gloss": "home; family",
+      "intentBearing": true
+    },
+    "小": {
+      "readingId": "小:xiao3",
+      "citationPinyin": [
+        "xiao3"
+      ],
+      "surfacePinyin": [
+        "xiao3"
+      ],
+      "pos": "adjective",
+      "senseId": "small",
+      "gloss": "small; little",
       "intentBearing": true
     },
     "展覽館": {
@@ -111,6 +422,19 @@
       "senseId": "exhibition-hall",
       "gloss": "exhibition hall",
       "intentBearing": true
+    },
+    "很": {
+      "readingId": "很:hen3",
+      "citationPinyin": [
+        "hen3"
+      ],
+      "surfacePinyin": [
+        "hen3"
+      ],
+      "pos": "adverb",
+      "senseId": "very",
+      "gloss": "very",
+      "intentBearing": false
     },
     "想": {
       "readingId": "想:xiang3",
@@ -138,6 +462,36 @@
       "gloss": "I; me",
       "intentBearing": false
     },
+    "我們": {
+      "readingId": "我們:wo3men5",
+      "citationPinyin": [
+        "wo3",
+        "men5"
+      ],
+      "surfacePinyin": [
+        "wo3",
+        "men5"
+      ],
+      "pos": "pronoun",
+      "senseId": "we",
+      "gloss": "we; us",
+      "intentBearing": false
+    },
+    "明天": {
+      "readingId": "明天:ming2tian1",
+      "citationPinyin": [
+        "ming2",
+        "tian1"
+      ],
+      "surfacePinyin": [
+        "ming2",
+        "tian1"
+      ],
+      "pos": "noun",
+      "senseId": "tomorrow",
+      "gloss": "tomorrow",
+      "intentBearing": true
+    },
     "星期": {
       "readingId": "星期:xing1qi1",
       "citationPinyin": [
@@ -153,6 +507,157 @@
       "gloss": "week",
       "intentBearing": true
     },
+    "是": {
+      "readingId": "是:shi4",
+      "citationPinyin": [
+        "shi4"
+      ],
+      "surfacePinyin": [
+        "shi4"
+      ],
+      "pos": "verb",
+      "senseId": "be",
+      "gloss": "to be",
+      "intentBearing": true
+    },
+    "書": {
+      "readingId": "書:shu1",
+      "citationPinyin": [
+        "shu1"
+      ],
+      "surfacePinyin": [
+        "shu1"
+      ],
+      "pos": "noun",
+      "senseId": "book",
+      "gloss": "book",
+      "intentBearing": true
+    },
+    "有": {
+      "readingId": "有:you3",
+      "citationPinyin": [
+        "you3"
+      ],
+      "surfacePinyin": [
+        "you3"
+      ],
+      "pos": "verb",
+      "senseId": "have",
+      "gloss": "to have; there is",
+      "intentBearing": true
+    },
+    "朋友": {
+      "readingId": "朋友:peng2you5",
+      "citationPinyin": [
+        "peng2",
+        "you5"
+      ],
+      "surfacePinyin": [
+        "peng2",
+        "you5"
+      ],
+      "pos": "noun",
+      "senseId": "friend",
+      "gloss": "friend",
+      "intentBearing": true
+    },
+    "本": {
+      "readingId": "本:ben3",
+      "citationPinyin": [
+        "ben3"
+      ],
+      "surfacePinyin": [
+        "ben3"
+      ],
+      "pos": "classifier",
+      "senseId": "clf-volume",
+      "gloss": "classifier for books",
+      "intentBearing": false
+    },
+    "水": {
+      "readingId": "水:shui3",
+      "citationPinyin": [
+        "shui3"
+      ],
+      "surfacePinyin": [
+        "shui3"
+      ],
+      "pos": "noun",
+      "senseId": "water",
+      "gloss": "water",
+      "intentBearing": true
+    },
+    "爸爸": {
+      "readingId": "爸爸:ba4ba5",
+      "citationPinyin": [
+        "ba4",
+        "ba5"
+      ],
+      "surfacePinyin": [
+        "ba4",
+        "ba5"
+      ],
+      "pos": "noun",
+      "senseId": "dad",
+      "gloss": "dad; father",
+      "intentBearing": true
+    },
+    "狗": {
+      "readingId": "狗:gou3",
+      "citationPinyin": [
+        "gou3"
+      ],
+      "surfacePinyin": [
+        "gou3"
+      ],
+      "pos": "noun",
+      "senseId": "dog",
+      "gloss": "dog",
+      "intentBearing": true
+    },
+    "看": {
+      "readingId": "看:kan4",
+      "citationPinyin": [
+        "kan4"
+      ],
+      "surfacePinyin": [
+        "kan4"
+      ],
+      "pos": "verb",
+      "senseId": "look",
+      "gloss": "to look at; to read; to watch",
+      "intentBearing": true
+    },
+    "知道": {
+      "readingId": "知道:zhi1dao4",
+      "citationPinyin": [
+        "zhi1",
+        "dao4"
+      ],
+      "surfacePinyin": [
+        "zhi1",
+        "dao4"
+      ],
+      "pos": "verb",
+      "senseId": "know",
+      "gloss": "to know",
+      "intentBearing": true
+    },
+    "老師": {
+      "readingId": "老師:lao3shi1",
+      "citationPinyin": [
+        "lao3",
+        "shi1"
+      ],
+      "surfacePinyin": [
+        "lao3",
+        "shi1"
+      ],
+      "pos": "noun",
+      "senseId": "teacher",
+      "gloss": "teacher",
+      "intentBearing": true
+    },
     "茶": {
       "readingId": "茶:cha2",
       "citationPinyin": [
@@ -164,6 +669,125 @@
       "pos": "noun",
       "senseId": "tea",
       "gloss": "tea",
+      "intentBearing": true
+    },
+    "要": {
+      "readingId": "要:yao4",
+      "citationPinyin": [
+        "yao4"
+      ],
+      "surfacePinyin": [
+        "yao4"
+      ],
+      "pos": "verb",
+      "senseId": "want-need",
+      "gloss": "to want; to need; will",
+      "intentBearing": true
+    },
+    "說": {
+      "readingId": "說:shuo1",
+      "citationPinyin": [
+        "shuo1"
+      ],
+      "surfacePinyin": [
+        "shuo1"
+      ],
+      "pos": "verb",
+      "senseId": "say",
+      "gloss": "to say; to speak",
+      "intentBearing": true
+    },
+    "誰": {
+      "readingId": "誰:shei2",
+      "citationPinyin": [
+        "shei2"
+      ],
+      "surfacePinyin": [
+        "shei2"
+      ],
+      "pos": "pronoun",
+      "senseId": "who",
+      "gloss": "who",
+      "intentBearing": false
+    },
+    "請": {
+      "readingId": "請:qing3",
+      "citationPinyin": [
+        "qing3"
+      ],
+      "surfacePinyin": [
+        "qing3"
+      ],
+      "pos": "verb",
+      "senseId": "please",
+      "gloss": "please; to invite",
+      "intentBearing": true
+    },
+    "謝謝": {
+      "readingId": "謝謝:xie4xie5",
+      "citationPinyin": [
+        "xie4",
+        "xie5"
+      ],
+      "surfacePinyin": [
+        "xie4",
+        "xie5"
+      ],
+      "pos": "verb",
+      "senseId": "thanks",
+      "gloss": "thank you; to thank",
+      "intentBearing": true
+    },
+    "買": {
+      "readingId": "買:mai3",
+      "citationPinyin": [
+        "mai3"
+      ],
+      "surfacePinyin": [
+        "mai3"
+      ],
+      "pos": "verb",
+      "senseId": "buy",
+      "gloss": "to buy",
+      "intentBearing": true
+    },
+    "這": {
+      "readingId": "這:zhe4",
+      "citationPinyin": [
+        "zhe4"
+      ],
+      "surfacePinyin": [
+        "zhe4"
+      ],
+      "pos": "determiner",
+      "senseId": "this",
+      "gloss": "this",
+      "intentBearing": false
+    },
+    "都": {
+      "readingId": "都:dou1",
+      "citationPinyin": [
+        "dou1"
+      ],
+      "surfacePinyin": [
+        "dou1"
+      ],
+      "pos": "adverb",
+      "senseId": "all",
+      "gloss": "all; both",
+      "intentBearing": false
+    },
+    "飯": {
+      "readingId": "飯:fan4",
+      "citationPinyin": [
+        "fan4"
+      ],
+      "surfacePinyin": [
+        "fan4"
+      ],
+      "pos": "noun",
+      "senseId": "rice-meal",
+      "gloss": "cooked rice; a meal",
       "intentBearing": true
     }
   },
@@ -179,6 +803,29 @@
     {
       "char": "一",
       "prev": "<START>",
+      "next": "<END>",
+      "base": "yi1",
+      "surface": "yi1"
+    },
+    {
+      "char": "一",
+      "prev": "<START>",
+      "next": "個",
+      "base": "yi1",
+      "surface": "yi2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "一",
+      "prev": "<START>",
+      "next": "本",
+      "base": "yi1",
+      "surface": "yi4",
+      "rule": "tone-shift-before-non-4"
+    },
+    {
+      "char": "一",
+      "prev": "吃",
       "next": "個",
       "base": "yi1",
       "surface": "yi2",
@@ -193,11 +840,836 @@
       "rule": "ordinal-date"
     },
     {
+      "char": "一",
+      "prev": "星期",
+      "next": "嗎",
+      "base": "yi1",
+      "surface": "yi1",
+      "rule": "ordinal-date"
+    },
+    {
+      "char": "一",
+      "prev": "是",
+      "next": "個",
+      "base": "yi1",
+      "surface": "yi2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "一",
+      "prev": "是",
+      "next": "本",
+      "base": "yi1",
+      "surface": "yi4",
+      "rule": "tone-shift-before-non-4"
+    },
+    {
+      "char": "一",
+      "prev": "有",
+      "next": "個",
+      "base": "yi1",
+      "surface": "yi2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "一",
+      "prev": "有",
+      "next": "本",
+      "base": "yi1",
+      "surface": "yi4",
+      "rule": "tone-shift-before-non-4"
+    },
+    {
+      "char": "一",
+      "prev": "看",
+      "next": "本",
+      "base": "yi1",
+      "surface": "yi4",
+      "rule": "tone-shift-before-non-4"
+    },
+    {
+      "char": "一",
+      "prev": "要",
+      "next": "個",
+      "base": "yi1",
+      "surface": "yi2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "一",
+      "prev": "要",
+      "next": "本",
+      "base": "yi1",
+      "surface": "yi4",
+      "rule": "tone-shift-before-non-4"
+    },
+    {
+      "char": "一",
+      "prev": "買",
+      "next": "個",
+      "base": "yi1",
+      "surface": "yi2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "一",
+      "prev": "買",
+      "next": "本",
+      "base": "yi1",
+      "surface": "yi4",
+      "rule": "tone-shift-before-non-4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "去",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "可以",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "吃",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "喜歡",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "喝",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "多",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "大",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
       "char": "不",
       "prev": "<START>",
       "next": "好",
       "base": "bu4",
       "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "想",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "是",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "看",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "知道",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "要",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "<START>",
+      "next": "買",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "去",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "可以",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "吃",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "喜歡",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "喝",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "多",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "大",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "好",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "想",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "是",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "看",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "知道",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "要",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "也",
+      "next": "買",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "去",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "可以",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "吃",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "喜歡",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "喝",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "好",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "想",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "是",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "看",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "知道",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "要",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "他",
+      "next": "買",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "去",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "可以",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "吃",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "喜歡",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "喝",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "好",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "想",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "是",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "看",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "知道",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "要",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "你",
+      "next": "買",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "去",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "可以",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "吃",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "喜歡",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "喝",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "好",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "想",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "是",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "看",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "知道",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "要",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "我",
+      "next": "買",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "去",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "可以",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "吃",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "喜歡",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "喝",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "好",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "想",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "是",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "看",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "知道",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "要",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "我們",
+      "next": "買",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "去",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "可以",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "吃",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "喜歡",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "喝",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "多",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "大",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "好",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "想",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "是",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "看",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "知道",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "要",
+      "base": "bu4",
+      "surface": "bu2",
+      "rule": "tone-shift-before-4"
+    },
+    {
+      "char": "不",
+      "prev": "都",
+      "next": "買",
+      "base": "bu4",
+      "surface": "bu4"
+    },
+    {
+      "char": "了",
+      "prev": "來",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "來",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "做",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "做",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "做",
+      "next": "飯",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "去",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "去",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "吃",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "吃",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "吃",
+      "next": "飯",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "喝",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "喝",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "喝",
+      "next": "水",
+      "base": "le5",
+      "surface": "le5"
     },
     {
       "char": "了",
@@ -207,6 +1679,517 @@
       "surface": "le5"
     },
     {
+      "char": "了",
+      "prev": "多",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "大",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "好",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "學",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "學",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "書",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "書",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "水",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "水",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "看",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "看",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "看",
+      "next": "書",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "茶",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "茶",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "說",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "說",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "買",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "買",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "買",
+      "next": "書",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "買",
+      "next": "水",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "買",
+      "next": "茶",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "買",
+      "next": "飯",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "飯",
+      "next": "<END>",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "了",
+      "prev": "飯",
+      "next": "嗎",
+      "base": "le5",
+      "surface": "le5"
+    },
+    {
+      "char": "呢",
+      "prev": "今天",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "他",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "你",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "媽媽",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "學生",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "家",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "我",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "我們",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "明天",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "書",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "朋友",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "水",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "爸爸",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "狗",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "老師",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "茶",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "呢",
+      "prev": "飯",
+      "next": "<END>",
+      "base": "ne5",
+      "surface": "ne5"
+    },
+    {
+      "char": "嗎",
+      "prev": "一",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "了",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "今天",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "他",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "來",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "做",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "去",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "可以",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "吃",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "喜歡",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "喝",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "在",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "多",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "大",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "好",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "媽媽",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "學",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "學生",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "家",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "小",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "想",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "明天",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "是",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "書",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "有",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "朋友",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "水",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "爸爸",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "狗",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "看",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "知道",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "老師",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
       "char": "嗎",
       "prev": "茶",
       "next": "<END>",
@@ -214,26 +2197,606 @@
       "surface": "ma5"
     },
     {
+      "char": "嗎",
+      "prev": "要",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "說",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "買",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "嗎",
+      "prev": "飯",
+      "next": "<END>",
+      "base": "ma5",
+      "surface": "ma5"
+    },
+    {
+      "char": "的",
+      "prev": "他",
+      "next": "<END>",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "他",
+      "next": "媽媽",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "他",
+      "next": "家",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "他",
+      "next": "書",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "他",
+      "next": "朋友",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "他",
+      "next": "水",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "他",
+      "next": "狗",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "他",
+      "next": "老師",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "他",
+      "next": "茶",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "他",
+      "next": "飯",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "你",
+      "next": "<END>",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "你",
+      "next": "媽媽",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "你",
+      "next": "家",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "你",
+      "next": "書",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "你",
+      "next": "朋友",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "你",
+      "next": "水",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "你",
+      "next": "狗",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "你",
+      "next": "老師",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "你",
+      "next": "茶",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "你",
+      "next": "飯",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "媽媽",
+      "next": "<END>",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "媽媽",
+      "next": "媽媽",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "媽媽",
+      "next": "家",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "媽媽",
+      "next": "書",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "媽媽",
+      "next": "朋友",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "媽媽",
+      "next": "水",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "媽媽",
+      "next": "狗",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "媽媽",
+      "next": "老師",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "媽媽",
+      "next": "茶",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "媽媽",
+      "next": "飯",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "<END>",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "媽媽",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "家",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "書",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "朋友",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "水",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "狗",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "老師",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
       "char": "的",
       "prev": "我",
       "next": "茶",
       "base": "de5",
       "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我",
+      "next": "飯",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我們",
+      "next": "<END>",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我們",
+      "next": "媽媽",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我們",
+      "next": "家",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我們",
+      "next": "書",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我們",
+      "next": "朋友",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我們",
+      "next": "水",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我們",
+      "next": "狗",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我們",
+      "next": "老師",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我們",
+      "next": "茶",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "我們",
+      "next": "飯",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "老師",
+      "next": "<END>",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "老師",
+      "next": "媽媽",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "老師",
+      "next": "家",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "老師",
+      "next": "書",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "老師",
+      "next": "朋友",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "老師",
+      "next": "水",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "老師",
+      "next": "狗",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "老師",
+      "next": "老師",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "老師",
+      "next": "茶",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "老師",
+      "next": "飯",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "誰",
+      "next": "<END>",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "誰",
+      "next": "媽媽",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "誰",
+      "next": "家",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "誰",
+      "next": "書",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "誰",
+      "next": "朋友",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "誰",
+      "next": "水",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "誰",
+      "next": "狗",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "誰",
+      "next": "老師",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "誰",
+      "next": "茶",
+      "base": "de5",
+      "surface": "de5"
+    },
+    {
+      "char": "的",
+      "prev": "誰",
+      "next": "飯",
+      "base": "de5",
+      "surface": "de5"
     }
   ],
   "segmenterNormalization": {
+    "一本": [
+      "一",
+      "本"
+    ],
+    "三本": [
+      "三",
+      "本"
+    ],
+    "不吃": [
+      "不",
+      "吃"
+    ],
+    "不大": [
+      "不",
+      "大"
+    ],
     "不好": [
       "不",
       "好"
+    ],
+    "不想": [
+      "不",
+      "想"
+    ],
+    "不是": [
+      "不",
+      "是"
+    ],
+    "不要": [
+      "不",
+      "要"
+    ],
+    "喝水": [
+      "喝",
+      "水"
     ],
     "喝茶": [
       "喝",
       "茶"
     ],
+    "在家": [
+      "在",
+      "家"
+    ],
+    "太好了": [
+      "太",
+      "好",
+      "了"
+    ],
+    "小狗": [
+      "小",
+      "狗"
+    ],
+    "很多": [
+      "很",
+      "多"
+    ],
+    "很小": [
+      "很",
+      "小"
+    ],
+    "我家": [
+      "我",
+      "家"
+    ],
     "星期一": [
       "星期",
       "一"
+    ],
+    "星期二": [
+      "星期",
+      "二"
+    ],
+    "星期五": [
+      "星期",
+      "五"
     ]
   },
-  "variantMap": {}
+  "variantMap": {
+    "甚": "什",
+    "説": "說",
+    "麽": "麼"
+  }
 }

@@ -1,5 +1,9 @@
 tests/
 codegen/
+# The curation toolchain (issue #20) must NEVER enter the deployed image —
+# it names torch/g2pW/HanLP/OpenCC (its own separate, never-deployed
+# container); assert-deterministic-only.sh guards the built image too.
+curation/
 scripts/build_lexicon.py
 scripts/extract_membership.py
 scripts/assert-deterministic-only.sh
