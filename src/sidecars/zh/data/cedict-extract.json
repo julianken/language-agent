@@ -23,11 +23,39 @@
       "line": "一 一 [yi1] /one/single/a (article)/as soon as/entire; whole; all; throughout/\"one\" radical in Chinese characters (Kangxi radical 1)/also pr. [yao1] for greater clarity when spelling out numbers digit by digit/"
     },
     {
+      "traditional": "三",
+      "pinyin": [
+        "San1"
+      ],
+      "line": "三 三 [San1] /surname San/"
+    },
+    {
+      "traditional": "三",
+      "pinyin": [
+        "san1"
+      ],
+      "line": "三 三 [san1] /three/3/"
+    },
+    {
       "traditional": "不",
       "pinyin": [
         "bu4"
       ],
       "line": "不 不 [bu4] /no; not so/(bound form) not; un-/"
+    },
+    {
+      "traditional": "也",
+      "pinyin": [
+        "Ye3"
+      ],
+      "line": "也 也 [Ye3] /surname Ye/"
+    },
+    {
+      "traditional": "也",
+      "pinyin": [
+        "ye3"
+      ],
+      "line": "也 也 [ye3] /also; too; as well; (not ...) either/(used after a verbal or nominal expression X to indicate that X is an extreme or unexpected case) even (X)/(literary) particle having functions similar to 啊[a5]/"
     },
     {
       "traditional": "了",
@@ -51,6 +79,78 @@
       "line": "二 二 [er4] /two/2/(Beijing dialect) stupid/"
     },
     {
+      "traditional": "五",
+      "pinyin": [
+        "wu3"
+      ],
+      "line": "五 五 [wu3] /five/5/"
+    },
+    {
+      "traditional": "人",
+      "pinyin": [
+        "ren2"
+      ],
+      "line": "人 人 [ren2] /person; people/CL:個|个[ge4],位[wei4],名[ming2]/"
+    },
+    {
+      "traditional": "什",
+      "pinyin": [
+        "shen2"
+      ],
+      "line": "什 什 [shen2] /what/"
+    },
+    {
+      "traditional": "什",
+      "pinyin": [
+        "shi2"
+      ],
+      "line": "什 什 [shi2] /ten (used in fractions, writing checks etc)/assorted/miscellaneous/"
+    },
+    {
+      "traditional": "什麼",
+      "pinyin": [
+        "shen2",
+        "me5"
+      ],
+      "line": "什麼 什么 [shen2 me5] /what?/something; anything/"
+    },
+    {
+      "traditional": "今",
+      "pinyin": [
+        "jin1"
+      ],
+      "line": "今 今 [jin1] /now/the present time/current/contemporary/this (day, year etc)/"
+    },
+    {
+      "traditional": "今天",
+      "pinyin": [
+        "jin1",
+        "tian1"
+      ],
+      "line": "今天 今天 [jin1 tian1] /today/the present time; now/"
+    },
+    {
+      "traditional": "他",
+      "pinyin": [
+        "ta1"
+      ],
+      "line": "他 他 [ta1] /(third-person singular) (since the early 20th century, usu. male) he; him; his/(bound form) other; another; some other (as in 他日[ta1 ri4] and 他人[ta1 ren2])/"
+    },
+    {
+      "traditional": "以",
+      "pinyin": [
+        "Yi3"
+      ],
+      "line": "以 以 [Yi3] /abbr. for Israel 以色列[Yi3 se4 lie4]/"
+    },
+    {
+      "traditional": "以",
+      "pinyin": [
+        "yi3"
+      ],
+      "line": "以 以 [yi3] /to use/by means of/according to/in order to/because of/at (a certain date or place)/"
+    },
+    {
       "traditional": "你",
       "pinyin": [
         "ni3"
@@ -64,6 +164,13 @@
         "hao3"
       ],
       "line": "你好 你好 [ni3 hao3] /hello; hi/"
+    },
+    {
+      "traditional": "來",
+      "pinyin": [
+        "lai2"
+      ],
+      "line": "來 来 [lai2] /to come/(used as a substitute for a more specific verb)/hither (directional complement for motion toward the speaker, as in 回來|回来[hui2 lai5])/ever since (as in 自古以來|自古以来[zi4 gu3 yi3 lai2])/for the past (amount of time)/(prefix) the coming ...; the next ... (as in 來世|来世[lai2 shi4])/(between two verbs) in order to/(after a round number) approximately/(used after 得[de2] to indicate possibility, as in 談得來|谈得来[tan2 de5 lai2], or after 不[bu4] to indicate impossibility, as in 吃不來|吃不来[chi1 bu5 lai2])/"
     },
     {
       "traditional": "個",
@@ -80,11 +187,75 @@
       "line": "個 个 [ge4] /(classifier used before a noun that has no specific classifier)/(bound form) individual/"
     },
     {
+      "traditional": "們",
+      "pinyin": [
+        "men5"
+      ],
+      "line": "們 们 [men5] /plural marker for pronouns, and nouns referring to individuals/"
+    },
+    {
+      "traditional": "做",
+      "pinyin": [
+        "zuo4"
+      ],
+      "line": "做 做 [zuo4] /to make; to produce/to write; to compose/to do; to engage in; to hold (a party etc)/(of a person) to be (an intermediary, a good student etc); to become (husband and wife, friends etc)/(of a thing) to serve as; to be used for/to assume (an air or manner)/"
+    },
+    {
       "traditional": "兩",
       "pinyin": [
         "liang3"
       ],
       "line": "兩 两 [liang3] /two/both/some/a few/tael, unit of weight equal to 50 grams (modern) or 1⁄16 of a catty 斤[jin1] (old)/"
+    },
+    {
+      "traditional": "十",
+      "pinyin": [
+        "shi2"
+      ],
+      "line": "十 十 [shi2] /ten/10/"
+    },
+    {
+      "traditional": "去",
+      "pinyin": [
+        "qu4"
+      ],
+      "line": "去 去 [qu4] /to go/to go to (a place)/(of a time etc) last/just passed/to send/to remove/to get rid of/to reduce/to be apart from in space or time/to die (euphemism)/to play (a part)/(when used either before or after a verb) to go in order to do sth/(after a verb of motion indicates movement away from the speaker)/(used after certain verbs to indicate detachment or separation)/"
+    },
+    {
+      "traditional": "友",
+      "pinyin": [
+        "you3"
+      ],
+      "line": "友 友 [you3] /friend/"
+    },
+    {
+      "traditional": "可",
+      "pinyin": [
+        "ke3"
+      ],
+      "line": "可 可 [ke3] /(prefix) can; may; able to; -able/to approve; to permit/to suit/(particle used for emphasis) certainly; very/but; however/"
+    },
+    {
+      "traditional": "可",
+      "pinyin": [
+        "ke4"
+      ],
+      "line": "可 可 [ke4] /used in 可汗[ke4 han2]/"
+    },
+    {
+      "traditional": "可以",
+      "pinyin": [
+        "ke3",
+        "yi3"
+      ],
+      "line": "可以 可以 [ke3 yi3] /can/may/possible/able to/not bad/pretty good/"
+    },
+    {
+      "traditional": "吃",
+      "pinyin": [
+        "chi1"
+      ],
+      "line": "吃 吃 [chi1] /to eat; to consume/to eat at (a cafeteria etc)/to eradicate; to destroy/to absorb/to suffer (shock, injury, defeat etc)/"
     },
     {
       "traditional": "呢",
@@ -99,6 +270,21 @@
         "ni2"
       ],
       "line": "呢 呢 [ni2] /dense wool fabric (used for coats and jackets)/"
+    },
+    {
+      "traditional": "喜",
+      "pinyin": [
+        "xi3"
+      ],
+      "line": "喜 喜 [xi3] /to be fond of/to like/to enjoy/to be happy/to feel pleased/happiness/delight/glad/"
+    },
+    {
+      "traditional": "喜歡",
+      "pinyin": [
+        "xi3",
+        "huan5"
+      ],
+      "line": "喜歡 喜欢 [xi3 huan5] /to like; to be fond of/"
     },
     {
       "traditional": "喝",
@@ -136,6 +322,48 @@
       "line": "嗎 吗 [ma5] /(question particle for \"yes-no\" questions)/"
     },
     {
+      "traditional": "在",
+      "pinyin": [
+        "zai4"
+      ],
+      "line": "在 在 [zai4] /to exist; to be alive/(of sb or sth) to be (located) at/(used before a verb to indicate an action in progress)/"
+    },
+    {
+      "traditional": "多",
+      "pinyin": [
+        "duo1"
+      ],
+      "line": "多 多 [duo1] /many; much; more; a lot of/too many; in excess/(after a numeral) ... odd/how (to what extent) (Taiwan pr. [duo2])/(bound form) multi-; poly-/"
+    },
+    {
+      "traditional": "大",
+      "pinyin": [
+        "da4"
+      ],
+      "line": "大 大 [da4] /big; large; great/older (than another person)/eldest (as in 大姐[da4 jie3])/greatly; freely; fully/(dialect) father/(dialect) uncle (father's brother)/"
+    },
+    {
+      "traditional": "大",
+      "pinyin": [
+        "dai4"
+      ],
+      "line": "大 大 [dai4] /see 大夫[dai4 fu5]/"
+    },
+    {
+      "traditional": "天",
+      "pinyin": [
+        "tian1"
+      ],
+      "line": "天 天 [tian1] /day/sky/heaven/"
+    },
+    {
+      "traditional": "太",
+      "pinyin": [
+        "tai4"
+      ],
+      "line": "太 太 [tai4] /highest/greatest/too (much)/very/extremely/"
+    },
+    {
       "traditional": "好",
       "pinyin": [
         "hao3"
@@ -148,6 +376,50 @@
         "hao4"
       ],
       "line": "好 好 [hao4] /to be fond of; to have a tendency to; to be prone to/"
+    },
+    {
+      "traditional": "媽",
+      "pinyin": [
+        "ma1"
+      ],
+      "line": "媽 妈 [ma1] /ma/mom/mother/"
+    },
+    {
+      "traditional": "媽媽",
+      "pinyin": [
+        "ma1",
+        "ma5"
+      ],
+      "line": "媽媽 妈妈 [ma1 ma5] /mama/mommy/mother/CL:個|个[ge4],位[wei4]/"
+    },
+    {
+      "traditional": "學",
+      "pinyin": [
+        "xue2"
+      ],
+      "line": "學 学 [xue2] /to learn/to study/to imitate/science/-ology/"
+    },
+    {
+      "traditional": "學生",
+      "pinyin": [
+        "xue2",
+        "sheng5"
+      ],
+      "line": "學生 学生 [xue2 sheng5] /student/schoolchild/"
+    },
+    {
+      "traditional": "家",
+      "pinyin": [
+        "jia1"
+      ],
+      "line": "家 家 [jia1] /home/family/(polite) my (sister, uncle etc)/classifier for families or businesses/refers to the philosophical schools of pre-Han China/noun suffix for a specialist in some activity, such as a musician or revolutionary, corresponding to English -ist, -er, -ary or -ian/CL:個|个[ge4]/"
+    },
+    {
+      "traditional": "小",
+      "pinyin": [
+        "xiao3"
+      ],
+      "line": "小 小 [xiao3] /small/tiny/few/young/"
     },
     {
       "traditional": "展",
@@ -173,6 +445,27 @@
       "line": "展覽館 展览馆 [zhan3 lan3 guan3] /exhibition hall/"
     },
     {
+      "traditional": "師",
+      "pinyin": [
+        "Shi1"
+      ],
+      "line": "師 师 [Shi1] /surname Shi/"
+    },
+    {
+      "traditional": "師",
+      "pinyin": [
+        "shi1"
+      ],
+      "line": "師 师 [shi1] /teacher/master/expert/model/army division/(old) troops/to dispatch troops/"
+    },
+    {
+      "traditional": "很",
+      "pinyin": [
+        "hen3"
+      ],
+      "line": "很 很 [hen3] /very; quite/(also, often used before an adjective without intensifying its meaning, i.e. as a meaningless syntactic element)/"
+    },
+    {
       "traditional": "想",
       "pinyin": [
         "xiang3"
@@ -185,6 +478,36 @@
         "wo3"
       ],
       "line": "我 我 [wo3] /I; me; my/"
+    },
+    {
+      "traditional": "我們",
+      "pinyin": [
+        "wo3",
+        "men5"
+      ],
+      "line": "我們 我们 [wo3 men5] /we; us; ourselves; our/"
+    },
+    {
+      "traditional": "明",
+      "pinyin": [
+        "Ming2"
+      ],
+      "line": "明 明 [Ming2] /Ming Dynasty (1368–1644)/surname Ming/Ming (c. 2000 BC), fourth of the legendary Flame Emperors, 炎帝[Yan2 di4] descended from Shennong 神農|神农[Shen2 nong2] Farmer God/"
+    },
+    {
+      "traditional": "明",
+      "pinyin": [
+        "ming2"
+      ],
+      "line": "明 明 [ming2] /bright/opposite: dark 暗[an4]/(of meaning) clear/to understand/next/public or open/wise/generic term for a sacrifice to the gods/"
+    },
+    {
+      "traditional": "明天",
+      "pinyin": [
+        "ming2",
+        "tian1"
+      ],
+      "line": "明天 明天 [ming2 tian1] /tomorrow/"
     },
     {
       "traditional": "星",
@@ -202,11 +525,111 @@
       "line": "星期 星期 [xing1 qi1] /week/CL:個|个[ge4]/day of the week/Sunday/"
     },
     {
+      "traditional": "是",
+      "pinyin": [
+        "shi4"
+      ],
+      "line": "是 是 [shi4] /to be (followed by substantives only)/correct; right; true/(respectful acknowledgement of a command) very well/(adverb for emphatic assertion)/"
+    },
+    {
+      "traditional": "書",
+      "pinyin": [
+        "Shu1"
+      ],
+      "line": "書 书 [Shu1] /abbr. for 書經|书经[Shu1 jing1]/"
+    },
+    {
+      "traditional": "書",
+      "pinyin": [
+        "shu1"
+      ],
+      "line": "書 书 [shu1] /book/letter/document/CL:本[ben3],冊|册[ce4],部[bu4]/to write/"
+    },
+    {
+      "traditional": "有",
+      "pinyin": [
+        "you3"
+      ],
+      "line": "有 有 [you3] /to have; there is/(bound form) having; with; -ful; -ed; -al (as in 有意[you3 yi4] intentional)/"
+    },
+    {
+      "traditional": "朋",
+      "pinyin": [
+        "peng2"
+      ],
+      "line": "朋 朋 [peng2] /friend/"
+    },
+    {
+      "traditional": "朋友",
+      "pinyin": [
+        "peng2",
+        "you5"
+      ],
+      "line": "朋友 朋友 [peng2 you5] /friend/CL:個|个[ge4],位[wei4]/"
+    },
+    {
       "traditional": "期",
       "pinyin": [
         "qi1"
       ],
       "line": "期 期 [qi1] /a period of time/phase/stage/classifier for issues of a periodical, courses of study/time/term/period/to hope/Taiwan pr. [qi2]/"
+    },
+    {
+      "traditional": "本",
+      "pinyin": [
+        "ben3"
+      ],
+      "line": "本 本 [ben3] /(bound form) root; stem/(bound form) origin; source/(bound form) one's own; this/(bound form) this; the current (year etc)/(bound form) original/(bound form) inherent/originally; initially/capital; principal/classifier for books, periodicals, files etc/"
+    },
+    {
+      "traditional": "歡",
+      "pinyin": [
+        "huan1"
+      ],
+      "line": "歡 欢 [huan1] /joyous/happy/pleased/"
+    },
+    {
+      "traditional": "水",
+      "pinyin": [
+        "Shui3"
+      ],
+      "line": "水 水 [Shui3] /surname Shui/Shui ethnic group/"
+    },
+    {
+      "traditional": "水",
+      "pinyin": [
+        "shui3"
+      ],
+      "line": "水 水 [shui3] /water/(after a name) ... River/to swim (used mostly in 會水|会水[hui4 shui3] and 水性[shui3 xing4])/(coll.) lacking in substance; shoddy/(bound form) additional cost; extra income/classifier for washings of a garment/"
+    },
+    {
+      "traditional": "爸",
+      "pinyin": [
+        "ba4"
+      ],
+      "line": "爸 爸 [ba4] /father/dad/pa/papa/"
+    },
+    {
+      "traditional": "爸爸",
+      "pinyin": [
+        "ba4",
+        "ba5"
+      ],
+      "line": "爸爸 爸爸 [ba4 ba5] /(coll.) father; dad/CL:位[wei4]/"
+    },
+    {
+      "traditional": "狗",
+      "pinyin": [
+        "gou3"
+      ],
+      "line": "狗 狗 [gou3] /dog/CL:隻|只[zhi1],條|条[tiao2]/"
+    },
+    {
+      "traditional": "生",
+      "pinyin": [
+        "sheng1"
+      ],
+      "line": "生 生 [sheng1] /to grow; to give birth; to produce; to be born/to arise; to occur/to light (a fire)/to live; to be alive/life/raw; uncooked; unprocessed/unfamiliar; strange/(bound form) student; person engaged in a field/(bound form) male role in traditional opera/(bound form) life; lifetime/(bound form) means of livelihood/(bound form) very; intensely (as in 生疼[sheng1 teng2])/(bound form) in a forced manner (as in 生拉硬拽[sheng1 la1 ying4 zhuai4])/"
     },
     {
       "traditional": "的",
@@ -237,11 +660,69 @@
       "line": "的 的 [di4] /(bound form) bull's-eye; target/"
     },
     {
+      "traditional": "看",
+      "pinyin": [
+        "kan1"
+      ],
+      "line": "看 看 [kan1] /to look after/to take care of/to watch/to guard/"
+    },
+    {
+      "traditional": "看",
+      "pinyin": [
+        "kan4"
+      ],
+      "line": "看 看 [kan4] /to see; to look at/to read/to watch/to visit; to call on/to consider; to regard as/to look after/to treat (a patient or illness)/to depend on/to feel (that)/(after a verb) to give it a try/to watch out for/"
+    },
+    {
+      "traditional": "知",
+      "pinyin": [
+        "zhi1"
+      ],
+      "line": "知 知 [zhi1] /to know/to be aware/"
+    },
+    {
+      "traditional": "知道",
+      "pinyin": [
+        "zhi1",
+        "dao4"
+      ],
+      "line": "知道 知道 [zhi1 dao4] /to know; to become aware of/also pr. [zhi1dao5]/"
+    },
+    {
+      "traditional": "老",
+      "pinyin": [
+        "lao3"
+      ],
+      "line": "老 老 [lao3] /prefix used before the surname of a person or a numeral indicating the order of birth of the children in a family or to indicate affection or familiarity/old (of people)/venerable (person)/experienced/of long standing/always/all the time/of the past/very/outdated/(of meat etc) tough/"
+    },
+    {
+      "traditional": "老師",
+      "pinyin": [
+        "lao3",
+        "shi1"
+      ],
+      "line": "老師 老师 [lao3 shi1] /teacher/"
+    },
+    {
       "traditional": "茶",
       "pinyin": [
         "cha2"
       ],
       "line": "茶 茶 [cha2] /tea/tea plant/CL:杯[bei1],壺|壶[hu2]/"
+    },
+    {
+      "traditional": "要",
+      "pinyin": [
+        "yao1"
+      ],
+      "line": "要 要 [yao1] /(bound form) to demand; to coerce/"
+    },
+    {
+      "traditional": "要",
+      "pinyin": [
+        "yao4"
+      ],
+      "line": "要 要 [yao4] /to want; to need; to ask for/will; shall; about to/need to; should/if (same as 要是[yao4 shi5])/(bound form) important/"
     },
     {
       "traditional": "覽",
@@ -251,11 +732,145 @@
       "line": "覽 览 [lan3] /to look at/to view/to read/"
     },
     {
+      "traditional": "說",
+      "pinyin": [
+        "shui4"
+      ],
+      "line": "說 说 [shui4] /to persuade/"
+    },
+    {
+      "traditional": "說",
+      "pinyin": [
+        "shuo1"
+      ],
+      "line": "說 说 [shuo1] /to speak; to talk; to say/to explain; to comment/to scold; to tell off/(bound form) theory; doctrine/"
+    },
+    {
+      "traditional": "誰",
+      "pinyin": [
+        "shei2"
+      ],
+      "line": "誰 谁 [shei2] /who/also pr. [shui2]/"
+    },
+    {
+      "traditional": "請",
+      "pinyin": [
+        "qing3"
+      ],
+      "line": "請 请 [qing3] /to ask/to invite/please (do sth)/to treat (to a meal etc)/to request/"
+    },
+    {
+      "traditional": "謝",
+      "pinyin": [
+        "Xie4"
+      ],
+      "line": "謝 谢 [Xie4] /surname Xie/"
+    },
+    {
+      "traditional": "謝",
+      "pinyin": [
+        "xie4"
+      ],
+      "line": "謝 谢 [xie4] /to thank/(bound form) to apologize/(bound form) to decline; to refuse/(bound form) (of flowers, leaves etc) to wither/"
+    },
+    {
+      "traditional": "謝謝",
+      "pinyin": [
+        "xie4",
+        "xie5"
+      ],
+      "line": "謝謝 谢谢 [xie4 xie5] /to thank/thanks/thank you/"
+    },
+    {
+      "traditional": "買",
+      "pinyin": [
+        "mai3"
+      ],
+      "line": "買 买 [mai3] /to buy/to purchase/"
+    },
+    {
+      "traditional": "這",
+      "pinyin": [
+        "zhe4"
+      ],
+      "line": "這 这 [zhe4] /(pronoun) this; these/(bound form) this; the (followed by a noun)/(bound form) this; these (followed by a classifier) (in this sense, commonly pr. [zhei4], esp. in Beijing)/"
+    },
+    {
+      "traditional": "這",
+      "pinyin": [
+        "zhei4"
+      ],
+      "line": "這 这 [zhei4] /(coll.) this/"
+    },
+    {
+      "traditional": "道",
+      "pinyin": [
+        "dao4"
+      ],
+      "line": "道 道 [dao4] /road; path (CL:條|条[tiao2],股[gu3])/(bound form) way; reason; principle/(bound form) a skill; an art; a specialization/(Daoism) the Way; the Dao/to say (introducing a direct quotation, as in a novel)/(bound form) to express; to extend (polite words)/classifier for long thin things (rivers, cracks, shadows etc), barriers (walls, doors etc), questions (in an exam etc), commands, courses in a meal, steps in a process/(old) circuit (administrative division)/"
+    },
+    {
+      "traditional": "都",
+      "pinyin": [
+        "Du1"
+      ],
+      "line": "都 都 [Du1] /surname Du/"
+    },
+    {
+      "traditional": "都",
+      "pinyin": [
+        "dou1"
+      ],
+      "line": "都 都 [dou1] /all; both; entirely/(used for emphasis) even/already/(not) at all/"
+    },
+    {
+      "traditional": "都",
+      "pinyin": [
+        "du1"
+      ],
+      "line": "都 都 [du1] /capital city/metropolis/"
+    },
+    {
+      "traditional": "飯",
+      "pinyin": [
+        "fan4"
+      ],
+      "line": "飯 饭 [fan4] /cooked rice/CL:碗[wan3]/meal/CL:頓|顿[dun4]/(loanword) fan/devotee/"
+    },
+    {
       "traditional": "館",
       "pinyin": [
         "guan3"
       ],
       "line": "館 馆 [guan3] /building/shop/term for certain service establishments/embassy or consulate/schoolroom (old)/CL:家[jia1]/"
+    },
+    {
+      "traditional": "麼",
+      "pinyin": [
+        "ma2"
+      ],
+      "line": "麼 么 [ma2] /exclamatory final particle/"
+    },
+    {
+      "traditional": "麼",
+      "pinyin": [
+        "ma5"
+      ],
+      "line": "麼 么 [ma5] /interrogative final particle/"
+    },
+    {
+      "traditional": "麼",
+      "pinyin": [
+        "me5"
+      ],
+      "line": "麼 么 [me5] /suffix, used to form interrogative 什麼|什么[shen2 me5], what?, indefinite 這麼|这么[zhe4 me5] thus, etc/"
+    },
+    {
+      "traditional": "麼",
+      "pinyin": [
+        "mo2"
+      ],
+      "line": "麼 麽 [mo2] /tiny/insignificant/"
     }
   ]
 }

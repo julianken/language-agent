@@ -1,0 +1,5743 @@
+{
+  "leg": "diverse-vendor-refutation-jury",
+  "panel": [
+    "gpt-5.2-2025-12-11",
+    "gpt-4.1-2025-04-14"
+  ],
+  "juryVendors": [
+    "openai"
+  ],
+  "vendorDiversityNote": "single-vendor panel (OpenAI, two pinned model snapshots) — the widest panel current credentials allow; cross-vendor vs the Anthropic-authored pins; AC7's native gold pass backstops (see module doc)",
+  "protocol": "refutation frame; majority gate; downgrade-only (never overrides the deterministic floor); splits require committed adjudication",
+  "records": [
+    {
+      "id": "tuple:我:wo3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:你:ni3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:是:shi4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:他:ta1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:有:you3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:在:zai4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:這:zhe4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:個:ge4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "In Taiwan Mandarin, 個 as a classifier is very commonly read in neutral tone (ge5). The listed ge4 is dictionary tone and still acceptable."
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:好:hao3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:來:lai2",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:去:qu4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:要:yao4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:人:ren2",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:想:xiang3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:看:kan4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:說:shuo1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "In Taiwan Mandarin, 說 is often pronounced with a more open vowel (shuō≈shuo1 vs colloquial shuì/shuō variants depending on speaker); shuo1 is standard and correct."
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:我們:wo3men5",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:都:dou1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:很:hen3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:也:ye3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:買:mai3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:大:da4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:多:duo1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:太:tai4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:吃:chi1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:家:jia1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:做:zuo4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:學:xue2",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:什麼:shen2me5",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「什麼」的 me5 為常見輕聲；也可見字典標 shen2me0 等，屬標記差異非錯誤。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:誰:shei2",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "臺灣常讀 shui2，「shei2」也通行；屬地區/習慣差異非錯誤。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:水:shui3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:喝:he1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:茶:cha2",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:老師:lao3shi1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:學生:xue2sheng5",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "Pinyin should be xue2 sheng1; second syllable is tone 1, not neutral tone."
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:朋友:peng2you5",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:知道:zhi1dao4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:喜歡:xi3huan5",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:今天:jin1tian1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:明天:ming2tian1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:三:san1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:五:wu3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:十:shi2",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:兩:liang3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:二:er4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:本:ben3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:小:xiao3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:書:shu1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:飯:fan4",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:狗:gou3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:爸爸:ba4ba5",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "第二音節標作輕聲（ba5）符合台灣常見讀法。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:媽媽:ma1ma5",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "第二音節標作輕聲（ma5）符合台灣常見讀法。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:星期:xing1qi1",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:可以:ke3yi3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "符合三聲連讀變調：ke3 yi3 → 表層 ke2 yi3。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": "This uses third-tone sandhi correctly: ke3 yi3 -> ke2 yi3."
+        }
+      }
+    },
+    {
+      "id": "tuple:請:qing3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "tuple:謝謝:xie4xie5",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "第二音節標作輕聲（xie5）可接受。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": "Tone 5 for the second 謝 is standard in Taiwan Mandarin."
+        }
+      }
+    },
+    {
+      "id": "tuple:你好:ni3hao3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "符合三聲連讀變調：ni3 hao3 → 表層 ni2 hao3。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": "This surface (ni2 hao3) uses third-tone sandhi correctly."
+        }
+      }
+    },
+    {
+      "id": "tuple:展覽館:zhan3lan3guan3",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "符合連續三聲變調：zhan3 lan3 guan3 → 表層 zhan2 lan2 guan3。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": "Surface (zhan2 lan2 guan3) correctly follows 3rd tone sandhi."
+        }
+      }
+    },
+    {
+      "id": "context:一|<START>|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "列舉/數數用法的「一」可讀 yi1；載體「一、二、三。」可用。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": "Bare number counting—this is the correct sandhi setting."
+        }
+      }
+    },
+    {
+      "id": "context:一|<START>|個",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依題目規則 tone-shift-before-4，表層 yi2 與規則一致；另外「個」在台灣常讀輕聲，yi2 仍常見（亦有人讀得更輕/近 yi1，屬變異非錯）。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": "Surface and rule match: 'tone-shift-before-4' (yi2 ge)."
+        }
+      }
+    },
+    {
+      "id": "context:一|<START>|本",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依規則 tone-shift-before-non-4，表層 yi4 正確；「一本書」作片語片段也可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": "Surface and rule match: non-4 after, surfaces yi4."
+        }
+      }
+    },
+    {
+      "id": "context:一|吃|個",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依規則 tone-shift-before-4，表層 yi2 正確；「我吃一個。」在語境省略下可成立。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": "Surface (yi2) and rule (tone-shift-before-4) correctly applied."
+        }
+      }
+    },
+    {
+      "id": "context:一|星期|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "星期幾/序數用法依 ordinal-date 讀 yi1 正確；句子自然。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": "Surface and rule for ordinal/date use match."
+        }
+      }
+    },
+    {
+      "id": "context:一|星期|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "星期幾/序數用法依 ordinal-date 讀 yi1 正確；句子自然。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": "Surface and rule for ordinal/date use match."
+        }
+      }
+    },
+    {
+      "id": "context:一|是|個",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依題目所示規則 tone-shift-before-4，表層 yi2 與規則一致；句子「他是一個學生。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:一|是|本",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依 tone-shift-before-non-4，表層 yi4 正確；「這是一本書。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:一|有|個",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依題目規則 tone-shift-before-4，表層 yi2 與規則一致；「我有一個朋友。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:一|有|本",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依 tone-shift-before-non-4，表層 yi4 正確；「我有一本書。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:一|看|本",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依 tone-shift-before-non-4，表層 yi4 正確；「我要看一本書。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:一|要|個",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依 tone-shift-before-4，表層 yi2 與規則一致；「我要一個。」作為省略受詞的片語在語法上可成立。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:一|要|本",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依 tone-shift-before-non-4，表層 yi4 正確；「我要一本書。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:一|買|個",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依題目規則 tone-shift-before-4，表層 yi2 與規則一致；「我買一個。」作為省略賓語/語境可知之片語語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:一|買|本",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "依 tone-shift-before-non-4，表層 yi4 正確；「我買一本書。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|去",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "去 qu4（四聲）前，不 應變調為 bu2；表層 bu2 正確；「不去。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|可以",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "可 ke3（非四聲）前，不 保持 bu4 正確；另「可以」常見三聲變調讀作 ke2yi3（屬正常變調差異，非錯）。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|吃",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "吃 chi1 前，不 讀 bu4 正確；「不吃。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|喜歡",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "喜 xi3（非四聲）前，不 讀 bu4 正確；「不喜歡。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|喝",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "喝 he1 前，不 讀 bu4 正確；「不喝。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|多",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "多 duo1 前，不 讀 bu4 正確；「不多。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|大",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "大 da4（四聲）前，不 應變調為 bu2；表層 bu2 正確；「不大。」語法可。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|好",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|想",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|是",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|看",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|知道",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|要",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|<START>|買",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|去",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|可以",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|吃",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|喜歡",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|喝",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|多",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|大",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|好",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|想",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|是",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|看",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Juror self-contradiction, not a real disagreement: gpt-4.1-2025-04-14's own note concludes '...the rule name and surface are correct. No error.' while its verdict field says 'error' — the two are inconsistent within the same juror response. gpt-5.2-2025-12-11 independently confirms bu2 before kan4 (tone 4) is the correct tone-shift-before-4 surface. The reading is undisputed by both jurors' own reasoning; only one juror's verdict field mis-recorded its own conclusion."
+    },
+    {
+      "id": "context:不|也|知道",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|要",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|也|買",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "error",
+          "note": "Surface reading should be bu2 before fourth-tone verb 買; tone-sandhi not applied."
+        }
+      },
+      "adjudication": "Juror hallucination: gpt-4.1-2025-04-14's note asserts 'the surface tone of 不 before 買 should remain bu4, not bu2' as if correcting an error — but the committed c9-context-table.json entry for (不,也,買) already pins surface=bu4 (unshifted; 買=mai3 is tone 3, not tone 4, so no tone-shift-before-4 rule fires). The juror is describing a defect that does not exist in the data; gpt-5.2-2025-12-11 independently verdicts no-error."
+    },
+    {
+      "id": "context:不|他|去",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|可以",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|吃",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|喜歡",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|喝",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|好",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|想",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|是",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|看",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|知道",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|要",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|他|買",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|去",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|可以",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|吃",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|喜歡",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|喝",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|好",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|想",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|是",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error: gpt-5.2-2025-12-11's own note confirms 'bu2 正確且 rule 一致' (bu2 is correct and rule-consistent) before objecting only to the carrier '你不是。' feeling incomplete as a free-standing sentence. gpt-4.1-2025-04-14 independently verdicts no-error. Same class as the 嗎/的-carrier entries below — the carrier is a deliberately minimal single-context verification instrument (see gate_jury.py's context-item framing, added after this run to state that terseness alone is not a defect), not a display sentence."
+    },
+    {
+      "id": "context:不|你|看",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|知道",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|要",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|你|買",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|去",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|可以",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|吃",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|喜歡",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|喝",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|好",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|想",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|是",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|看",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|知道",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|要",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我|買",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|去",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|可以",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|吃",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|喜歡",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|喝",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|好",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|想",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|是",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|看",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|知道",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|要",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|我們|買",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "error",
+          "note": "The surface reading should be bu2 before 買 (tone 4), per tone-shift rule. This data has bu4 (no sandhi) in surface, which is incorrect."
+        }
+      },
+      "adjudication": "Same juror hallucination as context:不|也|買 (see that entry) — 買=mai3 (tone 3) never triggers the tone-shift-before-4 rule, and the committed surface is already the unshifted bu4 gpt-4.1-2025-04-14 asks for. gpt-5.2-2025-12-11 independently verdicts no-error."
+    },
+    {
+      "id": "context:不|都|去",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|可以",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|吃",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|喜歡",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|喝",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|多",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|大",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|好",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|想",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|是",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|看",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|知道",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "不在「知道」(zhi1) 前不變調，bu4 正確；「都不知道。」語法可成立。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|要",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "不在第四聲「要」(yao4) 前應變調為 bu2；規則與表面讀音一致；「都不要。」可成立。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:不|都|買",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "不在第三聲「買」(mai3) 前不變調，bu4 正確；「都不買。」可成立。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|來|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "句末語氣/完成貌助詞「了」讀輕聲 le5 正確；「他來了。」自然。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|來|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "助詞「了」輕聲 le5 正確；「你來了嗎？」自然。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|做|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "助詞「了」輕聲 le5 正確；「他做了。」可作省略受詞的完成表達。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|做|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "助詞「了」輕聲 le5 正確；「你做了嗎？」可成立（受詞可省略）。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|做|飯",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「做了飯」中「了」作完成貌助詞讀 le5 正確；句子可成立。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|去|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「他去了。」中「了」輕聲 le5 正確；句子自然。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|去|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「你去了嗎？」中「了」輕聲 le5 正確；句子自然。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|吃|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「他吃了。」中「了」輕聲 le5 正確；可作省略受詞的完成表達。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|吃|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「你吃了嗎？」中「了」輕聲 le5 正確；句子可成立（常見口語問法亦可用「你吃了沒？」屬風格差異非錯）。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|吃|飯",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「我吃了飯。」中「了」輕聲 le5 正確；句子自然。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|喝|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「他喝了。」中「了」輕聲 le5 正確；可作省略受詞的完成表達。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|喝|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「你喝了嗎？」中「了」輕聲 le5 正確；句子可成立。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|喝|水",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「我喝了水。」中「了」輕聲 le5 正確；句子自然。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|喝|茶",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|多|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|大|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|好|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|學|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|學|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|書|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|書|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|水|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|水|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|看|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|看|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|看|書",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|茶|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|茶|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|說|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|說|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|買|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|買|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|買|書",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|買|水",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|買|茶",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|買|飯",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|飯|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:了|飯|嗎",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|今天|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|他|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|你|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|媽媽|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|學生|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|家|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|我|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|我們|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|明天|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|書|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|朋友|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|水|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|爸爸|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|狗|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|老師|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|茶|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:呢|飯|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|一|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|了|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|今天|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|他|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|來|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|做|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|去|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|可以|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|吃|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|喜歡|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|喝|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|在|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|多|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|大|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|好|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|媽媽|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|學|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|學生|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|家|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|小|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|想|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|明天|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|是|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|書|<END>",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "error",
+          "note": "「書嗎？」前面缺少系詞/判斷成分（如「是」），單用名詞+「嗎」不自然，會影響此語氣詞用法驗證。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|有|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|朋友|<END>",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "error",
+          "note": "「朋友嗎？」單用名詞+「嗎」不自然；一般需「是朋友嗎？」等結構。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|水|<END>",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "error",
+          "note": "「水嗎？」單用名詞+「嗎」不自然；一般需「是水嗎？」或有謂語。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|爸爸|<END>",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "error",
+          "note": "「爸爸嗎？」單用名詞+「嗎」不自然；一般需「是爸爸嗎？」等。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|狗|<END>",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "error",
+          "note": "「狗嗎？」單用名詞+「嗎」不自然；一般需「是狗嗎？」等。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|看|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|知道|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|老師|<END>",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "error",
+          "note": "「老師嗎？」單用名詞+「嗎」不自然；一般需「是老師嗎？」等。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|茶|<END>",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "error",
+          "note": "「茶嗎？」單用名詞+「嗎」不自然；一般需「是茶嗎？」或有謂語。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|要|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:嗎|說|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|買|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:嗎|飯|<END>",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "error",
+          "note": "「飯嗎？」單用名詞+「嗎」不自然；一般需「是飯嗎？」等。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:的|他|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「的」讀 de5 正確；口語也常弱化為輕聲（不算錯）。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|他|媽媽",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|他|家",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|他|書",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|他|朋友",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|他|水",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:的|他|狗",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|他|老師",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|他|茶",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:的|他|飯",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:的|你|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|你|媽媽",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|你|家",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|你|書",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|你|朋友",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|你|水",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Carrier-naturalness style disagreement, not a reading error — see the class note below."
+    },
+    {
+      "id": "context:的|你|狗",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|你|老師",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|你|茶",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|你|飯",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|媽媽|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|媽媽|媽媽",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|媽媽|家",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|媽媽|書",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|媽媽|朋友",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|媽媽|水",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|媽媽|狗",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|媽媽|老師",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|媽媽|茶",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|媽媽|飯",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我|媽媽",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我|家",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我|書",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我|朋友",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我|水",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我|狗",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我|老師",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我|茶",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我|飯",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我們|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「這是我們的。」可作名詞性省略（= 這是我們的〔東西/那一份〕），語法可成立。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我們|媽媽",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我們|家",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我們|書",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我們|朋友",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我們|水",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我們|狗",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我們|老師",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我們|茶",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|我們|飯",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|老師|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「這是老師的。」作為省略受詞的所有格用法在語法上成立；只是語境依賴較強，但不構成錯誤。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|老師|媽媽",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|老師|家",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|老師|書",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|老師|朋友",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|老師|水",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|老師|狗",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|老師|老師",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|老師|茶",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|老師|飯",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|誰|<END>",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|誰|媽媽",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|誰|家",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|誰|書",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|誰|朋友",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|誰|水",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|誰|狗",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|誰|老師",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|誰|茶",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "context:的|誰|飯",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s01",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s02",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s03",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s04",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s05",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Deliberate segmentation convention, not an error: gpt-5.2-2025-12-11 objects to 星期一 being cut as 星期|一 rather than one token. This sliver deliberately treats weekday numerals as compositional (星期 + the C3 single 一, so C9's ordinal-date context enumeration can pin 一's unshifted reading in this exact role) — the same convention already recorded in segmenter-normalization.json (jieba's natural 星期一 boundary is mapped back to the pinned 星期|一 cut) and now stated directly in the sentence-item prompt text (added after this run) alongside the other listed segmentation conventions. gpt-4.1-2025-04-14 independently verdicts no-error."
+    },
+    {
+      "id": "sentence:s06",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "學生的「生」多為輕聲（sheng5）屬常見口語讀法，非錯誤。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s07",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s08",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s09",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s10",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "什麼常見也可讀作 shen2me（me 輕聲）；此處標 ma5? 無，標 me5 合理，屬可接受變體。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s11",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s12",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s13",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s14",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「誰」讀 shei2 為臺灣常見讀音；亦可見字典讀音 shui2，非錯誤。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s15",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Juror self-contradiction, not a real disagreement: gpt-4.1-2025-04-14's own note explicitly concludes '...No error here; this is acceptable. Correction: no-error.' while its verdict field says 'error' — the juror's verdict field contradicts its own stated correction. gpt-5.2-2025-12-11 independently verdicts no-error. 不 stays bu4 before 知道 (zhi1dao5, base tone 1) per the standard tone-shift-before-4 rule (no shift applies outside tone 4) — correctly pinned."
+    },
+    {
+      "id": "sentence:s16",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s17",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s18",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s19",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s20",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s21",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s22",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「謝謝」第二個「謝」常念輕聲 xie5（也有人念 xie4），此處不算錯。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s23",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "量詞「個」在口語常作輕聲 ge5；此處標 ge4 亦可接受，屬語體差異。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s24",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s25",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s26",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s27",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s28",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s29",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s30",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s31",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s32",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s33",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s34",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s35",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s36",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「個」在台灣口語常讀輕聲（ge5）；此處標 ge4 也可，不算錯。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Documented neutral-register variation, not an error: gpt-5.2-2025-12-11 flags 學生 pinned as xue2 sheng5 (neutral tone) and expects xue2 sheng1 (full tone). This is exactly the neutral-register agreement class this curation gate's own tooling documents and expects (tools/gate_lib.py module docstring: '個 ge4/ge5, 學生 sheng5/sheng1, 朋友 you5/you3 class — dictionaries pin citation tones, Taiwan usage neutralizes some, tools differ by register'). gpt-4.1-2025-04-14 independently verdicts no-error. Both readings are attested; the sliver pins the Taiwan-colloquial neutral-tone register, consistent with every other neutral-tone word in the sliver (see words.json)."
+    },
+    {
+      "id": "sentence:s37",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s38",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s39",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s40",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s41",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s42",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s43",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s44",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s45",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s46",
+      "status": "split",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "error",
+          "note": "喜歡的「歡」應讀 huan1（常也可輕聲），不是 huan5。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      },
+      "adjudication": "Documented neutral-register variation, not an error (same class as sentence:s36): gpt-5.2-2025-12-11 flags 喜歡 pinned as xi3 huan5 (neutral tone) and expects xi3 huan1 (full tone). words.json pins citationPinyin == surfacePinyin == ['xi3','huan5'] deliberately — the Taiwan-colloquial neutral-tone register for the second syllable, the same documented tools/gate_lib.py class ('個 ge4/ge5 ... 朋友 you5/you3 class'). gpt-4.1-2025-04-14 independently verdicts no-error."
+    },
+    {
+      "id": "sentence:s47",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": "「朋友」的「友」本調 you3；口語常讀輕聲（可記作 you5/0），此處不算錯。"
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s48",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s49",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s50",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s51",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s52",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s53",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s54",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "sentence:s55",
+      "status": "pass",
+      "pass": true,
+      "jurors": {
+        "gpt-5.2-2025-12-11": {
+          "verdict": "no-error",
+          "note": ""
+        },
+        "gpt-4.1-2025-04-14": {
+          "verdict": "no-error",
+          "note": ""
+        }
+      }
+    }
+  ]
+}

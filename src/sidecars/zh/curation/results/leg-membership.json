@@ -1,0 +1,4067 @@
+{
+  "leg": "cedict-unihan-membership",
+  "sources": "committed extracts src/sidecars/zh/data/{cedict-extract,unihan-kmandarin}.json (regenerated for this closed world; see NOTICE.md for licenses)",
+  "records": [
+    {
+      "kind": "tuple",
+      "id": "tuple:我:wo3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "wo3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "我",
+          "syllable": "wo3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:你:ni3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ni3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "你",
+          "syllable": "ni3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:是:shi4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "shi4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "是",
+          "syllable": "shi4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:他:ta1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ta1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "他",
+          "syllable": "ta1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:有:you3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "you3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "有",
+          "syllable": "you3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:在:zai4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "zai4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "在",
+          "syllable": "zai4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:這:zhe4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "zhe4"
+          ],
+          [
+            "zhei4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "這",
+          "syllable": "zhe4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:個:ge4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ge3"
+          ],
+          [
+            "ge4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "個",
+          "syllable": "ge4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:好:hao3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "hao3"
+          ],
+          [
+            "hao4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "好",
+          "syllable": "hao3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:來:lai2",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "lai2"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "來",
+          "syllable": "lai2",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:去:qu4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "qu4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "去",
+          "syllable": "qu4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:要:yao4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "yao1"
+          ],
+          [
+            "yao4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "要",
+          "syllable": "yao4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:人:ren2",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ren2"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "人",
+          "syllable": "ren2",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:想:xiang3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "xiang3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "想",
+          "syllable": "xiang3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:看:kan4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "kan1"
+          ],
+          [
+            "kan4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "看",
+          "syllable": "kan4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:說:shuo1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "shui4"
+          ],
+          [
+            "shuo1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "說",
+          "syllable": "shuo1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:我們:wo3men5",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "wo3",
+            "men5"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "我",
+          "syllable": "wo3",
+          "pass": true
+        },
+        {
+          "char": "們",
+          "syllable": "men5",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:都:dou1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "du1"
+          ],
+          [
+            "dou1"
+          ],
+          [
+            "du1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "都",
+          "syllable": "dou1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:很:hen3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "hen3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "很",
+          "syllable": "hen3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:也:ye3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ye3"
+          ],
+          [
+            "ye3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "也",
+          "syllable": "ye3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:買:mai3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "mai3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "買",
+          "syllable": "mai3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:大:da4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "da4"
+          ],
+          [
+            "dai4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "大",
+          "syllable": "da4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:多:duo1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "duo1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "多",
+          "syllable": "duo1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:太:tai4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "tai4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "太",
+          "syllable": "tai4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:吃:chi1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "chi1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "吃",
+          "syllable": "chi1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:家:jia1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "jia1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "家",
+          "syllable": "jia1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:做:zuo4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "zuo4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "做",
+          "syllable": "zuo4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:學:xue2",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "xue2"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "學",
+          "syllable": "xue2",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:什麼:shen2me5",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "shen2",
+            "me5"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "什",
+          "syllable": "shen2",
+          "pass": true
+        },
+        {
+          "char": "麼",
+          "syllable": "me5",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:誰:shei2",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "shei2"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "誰",
+          "syllable": "shei2",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:水:shui3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "shui3"
+          ],
+          [
+            "shui3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "水",
+          "syllable": "shui3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:喝:he1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "he1"
+          ],
+          [
+            "he4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "喝",
+          "syllable": "he1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:茶:cha2",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "cha2"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "茶",
+          "syllable": "cha2",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:老師:lao3shi1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "lao3",
+            "shi1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "老",
+          "syllable": "lao3",
+          "pass": true
+        },
+        {
+          "char": "師",
+          "syllable": "shi1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:學生:xue2sheng5",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "xue2",
+            "sheng5"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "學",
+          "syllable": "xue2",
+          "pass": true
+        },
+        {
+          "char": "生",
+          "syllable": "sheng5",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:朋友:peng2you5",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "peng2",
+            "you5"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "朋",
+          "syllable": "peng2",
+          "pass": true
+        },
+        {
+          "char": "友",
+          "syllable": "you5",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:知道:zhi1dao4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "zhi1",
+            "dao4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "知",
+          "syllable": "zhi1",
+          "pass": true
+        },
+        {
+          "char": "道",
+          "syllable": "dao4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:喜歡:xi3huan5",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "xi3",
+            "huan5"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "喜",
+          "syllable": "xi3",
+          "pass": true
+        },
+        {
+          "char": "歡",
+          "syllable": "huan5",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:今天:jin1tian1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "jin1",
+            "tian1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "今",
+          "syllable": "jin1",
+          "pass": true
+        },
+        {
+          "char": "天",
+          "syllable": "tian1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:明天:ming2tian1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ming2",
+            "tian1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "明",
+          "syllable": "ming2",
+          "pass": true
+        },
+        {
+          "char": "天",
+          "syllable": "tian1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:三:san1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "san1"
+          ],
+          [
+            "san1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "三",
+          "syllable": "san1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:五:wu3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "wu3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "五",
+          "syllable": "wu3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:十:shi2",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "shi2"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "十",
+          "syllable": "shi2",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:兩:liang3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "liang3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "兩",
+          "syllable": "liang3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:二:er4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "er4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "二",
+          "syllable": "er4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:本:ben3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ben3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "本",
+          "syllable": "ben3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:小:xiao3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "xiao3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "小",
+          "syllable": "xiao3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:書:shu1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "shu1"
+          ],
+          [
+            "shu1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "書",
+          "syllable": "shu1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:飯:fan4",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "fan4"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "飯",
+          "syllable": "fan4",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:狗:gou3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "gou3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "狗",
+          "syllable": "gou3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:爸爸:ba4ba5",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ba4",
+            "ba5"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "爸",
+          "syllable": "ba4",
+          "pass": true
+        },
+        {
+          "char": "爸",
+          "syllable": "ba5",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:媽媽:ma1ma5",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ma1",
+            "ma5"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "媽",
+          "syllable": "ma1",
+          "pass": true
+        },
+        {
+          "char": "媽",
+          "syllable": "ma5",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:星期:xing1qi1",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "xing1",
+            "qi1"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "星",
+          "syllable": "xing1",
+          "pass": true
+        },
+        {
+          "char": "期",
+          "syllable": "qi1",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:可以:ke3yi3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ke3",
+            "yi3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "可",
+          "syllable": "ke3",
+          "pass": true
+        },
+        {
+          "char": "以",
+          "syllable": "yi3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:請:qing3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "qing3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "請",
+          "syllable": "qing3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:謝謝:xie4xie5",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "xie4",
+            "xie5"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "謝",
+          "syllable": "xie4",
+          "pass": true
+        },
+        {
+          "char": "謝",
+          "syllable": "xie5",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:你好:ni3hao3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "ni3",
+            "hao3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "你",
+          "syllable": "ni3",
+          "pass": true
+        },
+        {
+          "char": "好",
+          "syllable": "hao3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:展覽館:zhan3lan3guan3",
+      "wordLevel": {
+        "pass": true,
+        "cedictReadings": [
+          [
+            "zhan3",
+            "lan3",
+            "guan3"
+          ]
+        ]
+      },
+      "perCharacter": [
+        {
+          "char": "展",
+          "syllable": "zhan3",
+          "pass": true
+        },
+        {
+          "char": "覽",
+          "syllable": "lan3",
+          "pass": true
+        },
+        {
+          "char": "館",
+          "syllable": "guan3",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|<START>|<END>",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|<START>|個",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|<START>|本",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|吃|個",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|星期|<END>",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|星期|嗎",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|是|個",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|是|本",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|有|個",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|有|本",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|看|本",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|要|個",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|要|本",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|買|個",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|買|本",
+      "base": "yi1",
+      "candidates": [
+        "yao1",
+        "yi1"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|去",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|可以",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|吃",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|喜歡",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|喝",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|多",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|大",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|好",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|想",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|是",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|看",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|知道",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|要",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|買",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|去",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|可以",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|吃",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|喜歡",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|喝",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|多",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|大",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|好",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|想",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|是",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|看",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|知道",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|要",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|買",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|去",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|可以",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|吃",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|喜歡",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|喝",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|好",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|想",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|是",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|看",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|知道",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|要",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|買",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|去",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|可以",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|吃",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|喜歡",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|喝",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|好",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|想",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|是",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|看",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|知道",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|要",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|買",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|去",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|可以",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|吃",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|喜歡",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|喝",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|好",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|想",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|是",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|看",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|知道",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|要",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|買",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|去",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|可以",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|吃",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|喜歡",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|喝",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|好",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|想",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|是",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|看",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|知道",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|要",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|買",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|去",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|可以",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|吃",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|喜歡",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|喝",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|多",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|大",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|好",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|想",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|是",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|看",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|知道",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|要",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|買",
+      "base": "bu4",
+      "candidates": [
+        "bu4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|來|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|來|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|做|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|做|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|做|飯",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|去|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|去|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|吃|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|吃|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|吃|飯",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|喝|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|喝|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|喝|水",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|喝|茶",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|多|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|大|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|好|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|學|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|學|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|書|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|書|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|水|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|水|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|看|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|看|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|看|書",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|茶|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|茶|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|說|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|說|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|書",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|水",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|茶",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|飯",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|飯|<END>",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|飯|嗎",
+      "base": "le5",
+      "candidates": [
+        "le5",
+        "liao3"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|今天|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|他|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|你|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|媽媽|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|學生|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|家|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|我|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|我們|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|明天|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|書|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|朋友|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|水|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|爸爸|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|狗|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|老師|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|茶|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|飯|<END>",
+      "base": "ne5",
+      "candidates": [
+        "ne5",
+        "ni2"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|一|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|了|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|今天|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|他|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|來|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|做|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|去|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|可以|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|吃|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|喜歡|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|喝|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|在|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|多|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|大|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|好|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|媽媽|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|學|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|學生|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|家|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|小|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|想|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|明天|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|是|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|書|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|有|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|朋友|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|水|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|爸爸|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|狗|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|看|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|知道|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|老師|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|茶|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|要|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|說|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|買|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|飯|<END>",
+      "base": "ma5",
+      "candidates": [
+        "ma2",
+        "ma3",
+        "ma5"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|<END>",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|媽媽",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|家",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|書",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|朋友",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|水",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|狗",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|老師",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|茶",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|飯",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|<END>",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|媽媽",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|家",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|書",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|朋友",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|水",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|狗",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|老師",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|茶",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|飯",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|<END>",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|媽媽",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|家",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|書",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|朋友",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|水",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|狗",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|老師",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|茶",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|飯",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|<END>",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|媽媽",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|家",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|書",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|朋友",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|水",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|狗",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|老師",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|茶",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|飯",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|<END>",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|媽媽",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|家",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|書",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|朋友",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|水",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|狗",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|老師",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|茶",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|飯",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|<END>",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|媽媽",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|家",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|書",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|朋友",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|水",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|狗",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|老師",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|茶",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|飯",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|<END>",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|媽媽",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|家",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|書",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|朋友",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|水",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|狗",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|老師",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|茶",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|飯",
+      "base": "de5",
+      "candidates": [
+        "de5",
+        "di1",
+        "di2",
+        "di4"
+      ],
+      "pass": true
+    }
+  ]
+}

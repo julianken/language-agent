@@ -1,0 +1,1907 @@
+{
+  "leg": "sandhi-resolver",
+  "records": [
+    {
+      "kind": "tuple",
+      "id": "tuple:我:wo3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:你:ni3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:是:shi4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:他:ta1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:有:you3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:在:zai4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:這:zhe4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:個:ge4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:好:hao3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:來:lai2",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:去:qu4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:要:yao4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:人:ren2",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:想:xiang3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:看:kan4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:說:shuo1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:我們:wo3men5",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:都:dou1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:很:hen3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:也:ye3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:買:mai3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:大:da4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:多:duo1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:太:tai4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:吃:chi1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:家:jia1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:做:zuo4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:學:xue2",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:什麼:shen2me5",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:誰:shei2",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:水:shui3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:喝:he1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:茶:cha2",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:老師:lao3shi1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:學生:xue2sheng5",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:朋友:peng2you5",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:知道:zhi1dao4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:喜歡:xi3huan5",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:今天:jin1tian1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:明天:ming2tian1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:三:san1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:五:wu3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:十:shi2",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:兩:liang3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:二:er4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:本:ben3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:小:xiao3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:書:shu1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:飯:fan4",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:狗:gou3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:爸爸:ba4ba5",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:媽媽:ma1ma5",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:星期:xing1qi1",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:可以:ke3yi3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:請:qing3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:謝謝:xie4xie5",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:你好:ni3hao3",
+      "pass": true
+    },
+    {
+      "kind": "tuple",
+      "id": "tuple:展覽館:zhan3lan3guan3",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|<START>|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|<START>|個",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|<START>|本",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|吃|個",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|星期|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|星期|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|是|個",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|是|本",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|有|個",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|有|本",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|看|本",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|要|個",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|要|本",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|買|個",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:一|買|本",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|去",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|可以",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|吃",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|喜歡",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|喝",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|多",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|大",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|好",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|想",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|是",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|看",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|知道",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|要",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|<START>|買",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|去",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|可以",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|吃",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|喜歡",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|喝",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|多",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|大",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|好",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|想",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|是",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|看",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|知道",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|要",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|也|買",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|去",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|可以",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|吃",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|喜歡",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|喝",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|好",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|想",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|是",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|看",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|知道",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|要",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|他|買",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|去",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|可以",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|吃",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|喜歡",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|喝",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|好",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|想",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|是",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|看",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|知道",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|要",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|你|買",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|去",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|可以",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|吃",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|喜歡",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|喝",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|好",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|想",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|是",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|看",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|知道",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|要",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我|買",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|去",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|可以",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|吃",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|喜歡",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|喝",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|好",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|想",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|是",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|看",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|知道",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|要",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|我們|買",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|去",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|可以",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|吃",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|喜歡",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|喝",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|多",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|大",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|好",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|想",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|是",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|看",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|知道",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|要",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:不|都|買",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|來|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|來|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|做|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|做|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|做|飯",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|去|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|去|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|吃|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|吃|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|吃|飯",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|喝|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|喝|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|喝|水",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|喝|茶",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|多|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|大|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|好|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|學|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|學|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|書|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|書|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|水|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|水|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|看|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|看|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|看|書",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|茶|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|茶|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|說|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|說|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|書",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|水",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|茶",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|買|飯",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|飯|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:了|飯|嗎",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|今天|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|他|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|你|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|媽媽|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|學生|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|家|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|我|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|我們|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|明天|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|書|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|朋友|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|水|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|爸爸|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|狗|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|老師|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|茶|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:呢|飯|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|一|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|了|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|今天|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|他|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|來|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|做|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|去|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|可以|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|吃|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|喜歡|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|喝|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|在|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|多|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|大|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|好|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|媽媽|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|學|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|學生|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|家|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|小|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|想|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|明天|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|是|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|書|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|有|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|朋友|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|水|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|爸爸|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|狗|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|看|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|知道|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|老師|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|茶|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|要|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|說|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|買|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:嗎|飯|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|媽媽",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|家",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|書",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|朋友",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|水",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|狗",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|老師",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|茶",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|他|飯",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|媽媽",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|家",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|書",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|朋友",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|水",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|狗",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|老師",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|茶",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|你|飯",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|媽媽",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|家",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|書",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|朋友",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|水",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|狗",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|老師",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|茶",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|媽媽|飯",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|媽媽",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|家",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|書",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|朋友",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|水",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|狗",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|老師",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|茶",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我|飯",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|媽媽",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|家",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|書",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|朋友",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|水",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|狗",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|老師",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|茶",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|我們|飯",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|媽媽",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|家",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|書",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|朋友",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|水",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|狗",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|老師",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|茶",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|老師|飯",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|<END>",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|媽媽",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|家",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|書",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|朋友",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|水",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|狗",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|老師",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|茶",
+      "pass": true
+    },
+    {
+      "kind": "context",
+      "id": "context:的|誰|飯",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s01",
+      "pass": true,
+      "note": "cover-ambiguous exemplar (你好) — display path regenerates by design"
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s02",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s03",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s04",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s05",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s06",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s07",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s08",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s09",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s10",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s11",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s12",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s13",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s14",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s15",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s16",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s17",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s18",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s19",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s20",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s21",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s22",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s23",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s24",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s25",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s26",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s27",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s28",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s29",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s30",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s31",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s32",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s33",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s34",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s35",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s36",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s37",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s38",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s39",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s40",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s41",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s42",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s43",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s44",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s45",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s46",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s47",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s48",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s49",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s50",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s51",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s52",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s53",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s54",
+      "pass": true
+    },
+    {
+      "kind": "sentence",
+      "id": "sentence:s55",
+      "pass": true
+    }
+  ],
+  "carrierAdvisories": []
+}

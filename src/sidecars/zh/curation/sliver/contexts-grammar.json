@@ -1,0 +1,158 @@
+{
+  "$doc": "The C9 context-enumeration GRAMMAR (issue #20, constraint C9; design §6.8; ADR dual-instance amendment Decision 1). This file is the committed definition of 'reachable': a (prev, char, next) local context of a C3 single is REACHABLE iff it is licensed by one of the role templates below, closed over the sliver. tools/build_assets.py expands these templates into the machine-readable context table (src/packages/lang-zh/assets/c9-context-table.json) that #19's fail-closed `headset-context-pinned` leg consumes; anything outside the expansion regenerates at runtime BY DESIGN (fail-closed default). Every expanded context is machine-verified by the offline gate (membership + g2pW carrier agreement + segmenter vote + sandhi-consistency + refutation jury) and carries one gold-pass verdict row. Carriers are the g2pW verification sentences: the builder asserts each carrier REALIZES its exact (prev, char, next) context (run boundaries included) before it is used.",
+  "$singles": "C3 (committed definition, issue #19 step 2(a)): {的, 了, 不, 一} plus the non-heteronymic sentence particles 嗎/呢, admitted as pinned singles. Distinct from the full §6.8 hand-pinned head set (的/地/得, 了, 不, 一, 行, 重, 著, 和) — NOT implemented in v0; head-set singles admitted per C3/C9.",
+  "$surfaceRules": "不/一 surface tone shifts are COMPUTED by the builder from the next unit's first base-tone syllable and marked with a rule id, mirroring the deterministic resolver the sidecar re-checks (`_consistency_check` in app/legs/sandhi.py): 不 → bu2 before tone 4 (rule tone-shift-before-4), else bu4; 一 → yi2 before tone 4 (rule tone-shift-before-4), yi4 before tones 1/2/3 (rule tone-shift-before-non-4), yi1 in ordinal/date roles (rule ordinal-date — the hard-coded pattern accepts ONLY entries carrying this marker) and in run-final counting positions.",
+  "$hardPatterns": "Deliberately NOT enumerable here: any 了 context with prev 不/得 (the V+不/得+了 potential infix — hard-coded regenerate in the sidecar regardless of enumeration), and any 一 ordinal/date context without the ordinal-date rule marker.",
+  "singles": ["的", "了", "不", "一", "嗎", "呢"],
+  "templates": [
+    {
+      "id": "de-possessive",
+      "char": "的",
+      "base": "de5",
+      "role": "possessive/attributive particle after a nominal possessor",
+      "prev": ["我", "你", "他", "我們", "誰", "老師", "媽媽"],
+      "next": ["茶", "水", "飯", "書", "家", "狗", "老師", "朋友", "媽媽", "<END>"],
+      "carrier": "這是{prev}的{next}{q}"
+    },
+    {
+      "id": "le-perfective-VO",
+      "char": "了",
+      "base": "le5",
+      "role": "perfective aspect marker between verb and object",
+      "pairs": [
+        ["喝", "茶"], ["喝", "水"],
+        ["吃", "飯"],
+        ["買", "書"], ["買", "茶"], ["買", "水"], ["買", "飯"],
+        ["看", "書"],
+        ["做", "飯"]
+      ],
+      "carrier": "我{prev}了{next}。"
+    },
+    {
+      "id": "le-perfective-final",
+      "char": "了",
+      "base": "le5",
+      "role": "perfective/change-of-state marker after a verb, clause-final",
+      "prev": ["喝", "吃", "買", "看", "學", "做", "去", "來", "說"],
+      "next": ["<END>"],
+      "carrier": "他{prev}了。"
+    },
+    {
+      "id": "le-perfective-question",
+      "char": "了",
+      "base": "le5",
+      "role": "perfective marker after a verb, followed by the question particle",
+      "prev": ["喝", "吃", "買", "看", "學", "做", "去", "來", "說"],
+      "next": ["嗎"],
+      "carrier": "你{prev}了嗎？"
+    },
+    {
+      "id": "le-change-of-state-after-object",
+      "char": "了",
+      "base": "le5",
+      "role": "clause-final change-of-state marker after a nominal (吃飯了-class)",
+      "pairs": [
+        ["茶", "<END>"], ["茶", "嗎"],
+        ["水", "<END>"], ["水", "嗎"],
+        ["飯", "<END>"], ["飯", "嗎"],
+        ["書", "<END>"], ["書", "嗎"]
+      ],
+      "carrierByPrev": { "茶": "你喝茶了{next}？", "水": "你喝水了{next}？", "飯": "你吃飯了{next}？", "書": "你看書了{next}？" },
+      "carrierNote": "the realizing verb is chosen per object (喝茶/喝水/吃飯/看書) so the carrier is idiomatic; the verified context is the 了 trigram, which the verb choice does not touch"
+    },
+    {
+      "id": "le-change-of-state-adj",
+      "char": "了",
+      "base": "le5",
+      "role": "clause-final change-of-state marker after an adjective",
+      "pairs": [["好", "<END>"], ["大", "<END>"], ["多", "<END>"]],
+      "carrierByPrev": { "好": "茶好了。", "大": "狗大了。", "多": "人多了。" }
+    },
+    {
+      "id": "bu-negation",
+      "char": "不",
+      "base": "bu4",
+      "role": "negation before a verb or adjective (surface tone per the next unit's first base tone) — run-initial/adverb-scoped, where elliptical 不+Adj answers are natural",
+      "prev": ["<START>", "都", "也"],
+      "next": ["是", "去", "看", "吃", "買", "要", "想", "喝", "喜歡", "知道", "好", "大", "多", "可以"],
+      "carrier": "{prev}不{next}。"
+    },
+    {
+      "id": "bu-negation-subject",
+      "char": "不",
+      "base": "bu4",
+      "role": "negation after a pronoun subject, before a verb (jury finding, 2026-07 run: pronoun + 不 + bare 多/大 — 我不多/我不大 as full clauses — is unnatural Taiwan Mandarin, so those contexts are deliberately UNREACHABLE: fail-closed regenerate at runtime)",
+      "prev": ["我", "你", "他", "我們"],
+      "next": ["是", "去", "看", "吃", "買", "要", "想", "喝", "喜歡", "知道", "好", "可以"],
+      "carrier": "{prev}不{next}。"
+    },
+    {
+      "id": "yi-quantity-classifier",
+      "char": "一",
+      "base": "yi1",
+      "role": "cardinal 一 before a classifier (surface tone per the classifier's base tone)",
+      "pairs": [
+        ["<START>", "個"], ["有", "個"], ["買", "個"], ["要", "個"], ["吃", "個"], ["是", "個"],
+        ["<START>", "本"], ["有", "本"], ["買", "本"], ["要", "本"], ["看", "本"], ["是", "本"]
+      ],
+      "carrierByPair": {
+        "<START>|個": "一個人來了。",
+        "有|個": "我有一個朋友。",
+        "買|個": "我買一個。",
+        "要|個": "我要一個。",
+        "吃|個": "我吃一個。",
+        "是|個": "他是一個學生。",
+        "<START>|本": "一本書。",
+        "有|本": "我有一本書。",
+        "買|本": "我買一本書。",
+        "要|本": "我要一本書。",
+        "看|本": "我要看一本書。",
+        "是|本": "這是一本書。"
+      }
+    },
+    {
+      "id": "yi-ordinal-date",
+      "char": "一",
+      "base": "yi1",
+      "role": "ordinal/date 一 (weekday) — stays unshifted yī; the hard-coded ordinal pattern accepts ONLY entries carrying this rule",
+      "rule": "ordinal-date",
+      "pairs": [["星期", "<END>"], ["星期", "嗎"]],
+      "carrierByPair": { "星期|<END>": "今天星期一。", "星期|嗎": "今天星期一嗎？" }
+    },
+    {
+      "id": "yi-counting-standalone",
+      "char": "一",
+      "base": "yi1",
+      "role": "bare counting 一 (its own Han run — counting sequences like 一、二、三)",
+      "pairs": [["<START>", "<END>"]],
+      "carrierByPair": { "<START>|<END>": "一、二、三。" }
+    },
+    {
+      "id": "ma-question-final",
+      "char": "嗎",
+      "base": "ma5",
+      "role": "sentence-final yes/no question particle (strictly run-final)",
+      "prev": ["是", "有", "在", "去", "來", "看", "說", "吃", "買", "要", "學", "做", "想", "喝", "喜歡", "知道", "可以", "好", "大", "小", "多", "茶", "水", "飯", "書", "家", "狗", "老師", "學生", "朋友", "爸爸", "媽媽", "今天", "明天", "他", "了", "一"],
+      "next": ["<END>"],
+      "carrier": "{prev}嗎？",
+      "carrierByPrev": {
+        "了": "你吃了嗎？",
+        "一": "今天星期一嗎？",
+        "他": "是他嗎？",
+        "大": "書大嗎？",
+        "多": "人多嗎？",
+        "今天": "是今天嗎？"
+      },
+      "carrierNote": "prev=了/一 realize the closure contexts ((了,嗎,<END>) and (一,嗎,<END>)) that the 了/一 templates with next=嗎 imply — the enumeration is closed under single-adjacency. 你好 is deliberately NOT a prev: its closed-world cover is ambiguous (你好 vs 你|好 — golden fixture 10), so 你好嗎 regenerates at the cover leg before the head-set leg ever consults the table; enumerating it would be dead weight the carrier check cannot even verify. The 他/大/多/今天 carriers carry a topic/copula (是他嗎？ 書大嗎？ — jury finding, 2026-07 run: the bare one-word forms are unnatural as standalone questions; the CONTEXT is unchanged, only the carrier realizes it more naturally)"
+    },
+    {
+      "id": "ne-topic-final",
+      "char": "呢",
+      "base": "ne5",
+      "role": "sentence-final topic-shift particle after a nominal (X呢? — and X?)",
+      "prev": ["你", "我", "他", "我們", "老師", "學生", "朋友", "爸爸", "媽媽", "茶", "水", "飯", "書", "家", "狗", "今天", "明天"],
+      "next": ["<END>"],
+      "carrier": "{prev}呢？"
+    }
+  ]
+}

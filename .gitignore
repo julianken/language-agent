@@ -16,6 +16,12 @@ __pycache__/
 .pytest_cache/
 .schemathesis/
 
+# g2pw (issue #20 curation toolchain) auto-downloads its ONNX model into
+# the process's CWD on first run — when run from repo root (e.g. via the
+# curation container's documented `docker run -v "$PWD":/repo -w /repo`
+# invocation) that lands a ~600 MB model dir at the repo root. Never commit.
+/G2PWModel/
+
 # Misc
 .DS_Store
 *.log
