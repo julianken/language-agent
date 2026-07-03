@@ -5,12 +5,14 @@
 # language in means adding a matrix entry, never editing this script.
 #
 # A leg whose pack (or conformance instantiation) does not exist yet fails
-# LOUDLY with the issue that completes it — that red is the designed state
-# of the `ar` leg (completes with #7/#9) and the `zh` leg (completes with
-# #19/#21) until those children land. ci.yml runs those legs with
-# `continue-on-error: true`, and only the `fake` leg is a required check,
-# so an incomplete leg can never red the merge queue (#17's
-# non-blocking-legs AC; #9/#21 flip ar/zh to required).
+# LOUDLY with the issue that completes it. This is the safety net for
+# ci.yml's live-set mechanism: not-yet-live legs (`ar` → #7/#9, `zh` →
+# #19/#21) are ABSENT from the conformance matrix, so CI only invokes this
+# runner for live legs. If a leg is ever added to that live-set before its
+# pack exists, this fail-loud guarantees a green check can never be a
+# fake-green — it errors instead of silently passing. Only the `fake` leg
+# is live and required today; #9/#21 add `ar`/`zh` to the live-set (and the
+# matching required checks / Mergify queue conditions).
 #
 # Run from the repo root, after `pnpm install` and `pnpm run build`
 # (cross-package @la/* imports resolve through exports maps to dist/).

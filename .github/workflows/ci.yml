@@ -207,25 +207,36 @@ jobs:
           docker exec sidecar-zh-offline python scripts/offline_smoke.py
 
   # The TCK drop-in matrix (ADR §4.3; issue #17): the same workflow
-  # definition and the same conformance suite per language leg —
-  # `matrix.lang = [fake, ar, zh]`, all three slots from the walking
-  # skeleton (dual-instance amendment, Decision 3). Runs on every PR,
-  # never a one-time certification.
+  # definition and the same conformance suite per language leg. The ADR's
+  # conceptual matrix is `[fake, ar, zh]` (all three ride the one shared
+  # contract); this job realizes it as a SINGLE-SOURCED LIVE-SET so a
+  # not-yet-live leg is NEUTRAL BY ABSENCE, never a neutralized-but-red X.
+  # Runs on every PR, never a one-time certification.
   #
-  # NON-BLOCKING-LEGS MECHANISM (#17's AC, pinned not implied):
-  #   - `conformance (fake)` is the ONLY leg eligible to be a REQUIRED
-  #     status check — it is fully deterministic, dependency-free, and
-  #     green from this PR onward (#17's own done-criterion).
-  #   - `ar` and `zh` run with `continue-on-error: true` and are NOT
-  #     required checks: they are EXPECTED red until their packs land
-  #     (ar completes with #7/#9; zh with #19/#21 — the zh leg then runs
-  #     the real deterministic-legs v0 image directly, exactly like ar,
-  #     with NO `SIDECAR_MODEL_MODE=fixture` env var: that flag stays
-  #     dormant for zh v0 and activates only with #22/N4's neural legs).
-  #     #9 (ar) and #21 (zh) own the flip to required — drop the leg's
-  #     continue-on-error exemption and add it to the required checks /
-  #     Mergify queue conditions in those PRs.
-  #   An incomplete leg therefore can never red the merge queue.
+  # LIVE-SET MECHANISM (supersedes the earlier continue-on-error scheme):
+  #   - The matrix `lang:` array below IS the live-set — the single source
+  #     of which legs run. Only a leg listed there exists as a check; a
+  #     not-yet-live leg produces NO `conformance (<lang>)` check at all,
+  #     so it can neither red the commit nor deadlock the merge queue.
+  #     (The old `continue-on-error: ${{ matrix.lang != 'fake' }}` left
+  #     `ar`/`zh` RUNNING and FAILING — a red X on every merge commit that
+  #     trained everyone to ignore red. Absent is unambiguous; it's gone.)
+  #   - `conformance (fake)` is live today and is the ONLY leg currently
+  #     eligible to be a REQUIRED status check — fully deterministic,
+  #     dependency-free, green (#17's done-criterion). No live leg carries
+  #     `continue-on-error`: a live leg that goes red MUST block, not
+  #     neutralize.
+  #   - NOT-YET-LIVE legs, absent from the live-set until their pack lands:
+  #       ar → flip in #9  (completes with #7/#9)
+  #       zh → flip in #21 (completes with #19/#21; the zh leg then runs
+  #            the real deterministic-legs v0 image directly, like ar, with
+  #            NO `SIDECAR_MODEL_MODE=fixture` — that flag stays dormant for
+  #            zh v0 and activates only with #22/N4's neural legs).
+  #   - TO FLIP A LEG LIVE (one-line edit + two registrations, all in the
+  #     flipping PR): (1) add the lang to the `lang:` live-set below, so its
+  #     leg RUNS and must be green — there is no continue-on-error to drop;
+  #     (2) add `conformance (<lang>)` to the branch-ruleset required checks;
+  #     (3) uncomment its `check-success` line in .mergify.yml.
   #
   # Each leg later grows the compose-boot + E2E turn script (#9) and the
   # Schemathesis + probeSidecar golden HTTP probes against `docker run` of
@@ -233,11 +244,13 @@ jobs:
   # today a leg runs the TCK instantiation via scripts/conformance-leg.sh.
   conformance:
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.lang != 'fake' }}
     strategy:
       fail-fast: false
       matrix:
-        lang: [fake, ar, zh]
+        # THE LIVE-SET (single source): only legs listed here run as checks.
+        # Not-yet-live legs are absent by design — ar flips live in #9, zh in
+        # #21. Flip = add the lang here (+ ruleset required check + .mergify.yml).
+        lang: [fake]
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
