@@ -153,6 +153,11 @@ Motion was deferred in v1 and specified in v2; the binding token set lives in `�
 ### Tools & forms
 **`word-list-row`** (Arabic word + `status-pill`) · **`compose-bar`** (RTL input, `surface-card`, `radius/lg`) · **`persona-header`** · **`button-primary`** / **`button-secondary`** / **`button-text`** · **`text-input`** · **`badge-pill`** / **`status-pill`**.
 
+### Router / language gateway (`src/apps/router` — `lexercon.com` apex)
+**`router-page`** — the quiet, self-contained gateway shown before a learner picks a language: `canvas` floor, centered column, no chrome. A single self-contained HTML document (inlined token CSS + subset-embedded data-URI fonts, zero external requests) — the deployed Cloudflare Worker embeds it verbatim, so this page has no separate deploy step or CDN dependency of its own. **`router-wordmark`** — "lexercon" in Inter 600, `ink`, with a small `accent-gold` flourish glyph; the one branded element on the page. Below it, `tagline` — "a quiet way to read a new language" in `latin-body`, `muted`.
+
+**`language-card`** — one of two script-hero cards (`.cards`, side-by-side ≥560px, stacked below), each a plain `href` to `/ar/` or `/zh/`: `surface-card`, `hairline` border, `radius/xl`. The card's dominant content is the language's own endonym rendered large in its native script and typeface — `العربية` in Amiri (bidi-isolated, `dir="rtl"`, `lang="ar"`) or `中文` in Noto Serif TC (`lang="zh-Hant"`) — never a generated or sample sentence (the gateway's **never-show-wrong** scope: only fixed endonyms, no live/sample target text, no gate). Hover/focus: `primary`-tinted wash + a small lift (`duration/fast`, `ease/standard`); `focus-visible` gets the standard `primary` ring. `prefers-reduced-motion: reduce` drops the lift transform but keeps the wash (opacity-only, per the global motion law). No return-visit memory in v1 — the gateway always shows both cards equally; it does not remember a prior choice.
+
 ## Accessibility
 
 - **Contrast: WCAG AA** (4.5:1 text, 3:1 large/UI). Status is conveyed by **wash + ink**, never tint-only, so meaning never rides on color alone — the new/learning/known distinction is *also* encoded in ḥarakāt density (full / minimal / bare), a second non-color channel.
