@@ -1,0 +1,534 @@
+{
+  "type": "tutor-message",
+  "schemaVersion": "1.0",
+  "messageId": "m_fake_0001",
+  "role": "assistant",
+  "lang": "fake",
+  "blend": {
+    "ratio": 0.85,
+    "ceiling": 0.9,
+    "advancedBy": "mastery",
+    "guard": "clause-coherent",
+    "unknownTokenShare": 0.16
+  },
+  "tokens": [
+    {
+      "id": "f0",
+      "text": "wug",
+      "lang": "fake",
+      "kind": "word",
+      "status": "known",
+      "band": "GREEN",
+      "annotations": {
+        "lexemeId": "wug",
+        "gloss": "gloss-of-wug",
+        "glyphs": [
+          {
+            "glyph": "w",
+            "hint": "W"
+          },
+          {
+            "glyph": "u",
+            "hint": "U"
+          },
+          {
+            "glyph": "g",
+            "hint": "G"
+          }
+        ]
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "meaning",
+            "unit": {
+              "kind": "word",
+              "id": "wug"
+            },
+            "level": "faded"
+          },
+          {
+            "dim": "stressMark",
+            "unit": {
+              "kind": "word",
+              "id": "wug"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "w"
+            },
+            "level": "faded"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "u"
+            },
+            "level": "faded"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "g"
+            },
+            "level": "faded"
+          }
+        ],
+        "blend": {
+          "anglicize": false
+        },
+        "dueness": {
+          "dueNow": false
+        }
+      }
+    },
+    {
+      "id": "f1",
+      "text": "blick",
+      "lang": "fake",
+      "kind": "word",
+      "status": "learning",
+      "band": "GREEN",
+      "annotations": {
+        "lexemeId": "blick",
+        "gloss": "gloss-of-blick",
+        "glyphs": [
+          {
+            "glyph": "b",
+            "hint": "B"
+          },
+          {
+            "glyph": "l",
+            "hint": "L"
+          },
+          {
+            "glyph": "i",
+            "hint": "I"
+          },
+          {
+            "glyph": "c",
+            "hint": "C"
+          },
+          {
+            "glyph": "k",
+            "hint": "K"
+          }
+        ]
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "meaning",
+            "unit": {
+              "kind": "word",
+              "id": "blick"
+            },
+            "level": "partial"
+          },
+          {
+            "dim": "stressMark",
+            "unit": {
+              "kind": "word",
+              "id": "blick"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "b"
+            },
+            "level": "faded"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "l"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "i"
+            },
+            "level": "partial"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "c"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "k"
+            },
+            "level": "faded"
+          }
+        ],
+        "blend": {
+          "anglicize": false
+        },
+        "dueness": {
+          "dueNow": true
+        }
+      }
+    },
+    {
+      "id": "f2",
+      "text": "mip",
+      "lang": "fake",
+      "kind": "word",
+      "status": "new",
+      "band": "GREEN",
+      "annotations": {
+        "lexemeId": "miptok",
+        "gloss": "gloss-of-miptok",
+        "glyphs": [
+          {
+            "glyph": "m",
+            "hint": "M"
+          },
+          {
+            "glyph": "i",
+            "hint": "I"
+          },
+          {
+            "glyph": "p",
+            "hint": "P"
+          }
+        ]
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "meaning",
+            "unit": {
+              "kind": "word",
+              "id": "miptok"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "stressMark",
+            "unit": {
+              "kind": "word",
+              "id": "miptok"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "m"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "i"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "p"
+            },
+            "level": "full"
+          }
+        ],
+        "blend": {
+          "anglicize": true
+        },
+        "dueness": {
+          "dueNow": true
+        }
+      },
+      "spanGroup": "sg:miptok:0"
+    },
+    {
+      "id": "f3",
+      "text": "zorp",
+      "lang": "fake",
+      "kind": "word",
+      "status": "learning",
+      "band": "YELLOW",
+      "annotations": {
+        "lexemeId": "zorp",
+        "gloss": "gloss-of-zorp",
+        "glyphs": [
+          {
+            "glyph": "z",
+            "hint": "Z"
+          },
+          {
+            "glyph": "o",
+            "hint": "O"
+          },
+          {
+            "glyph": "r",
+            "hint": "R"
+          },
+          {
+            "glyph": "p",
+            "hint": "P"
+          }
+        ]
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "meaning",
+            "unit": {
+              "kind": "word",
+              "id": "zorp"
+            },
+            "level": "partial"
+          },
+          {
+            "dim": "stressMark",
+            "unit": {
+              "kind": "word",
+              "id": "zorp"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "z"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "o"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "r"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "p"
+            },
+            "level": "full"
+          }
+        ],
+        "blend": {
+          "anglicize": false
+        },
+        "dueness": {
+          "dueNow": true
+        }
+      }
+    },
+    {
+      "id": "f4",
+      "text": "tok",
+      "lang": "fake",
+      "kind": "word",
+      "status": "new",
+      "band": "GREEN",
+      "annotations": {
+        "lexemeId": "miptok",
+        "gloss": "gloss-of-miptok",
+        "glyphs": [
+          {
+            "glyph": "t",
+            "hint": "T"
+          },
+          {
+            "glyph": "o",
+            "hint": "O"
+          },
+          {
+            "glyph": "k",
+            "hint": "K"
+          }
+        ]
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "meaning",
+            "unit": {
+              "kind": "word",
+              "id": "miptok"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "stressMark",
+            "unit": {
+              "kind": "word",
+              "id": "miptok"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "t"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "o"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "k"
+            },
+            "level": "full"
+          }
+        ],
+        "blend": {
+          "anglicize": true
+        },
+        "dueness": {
+          "dueNow": true
+        }
+      },
+      "spanGroup": "sg:miptok:0"
+    },
+    {
+      "id": "f5",
+      "text": "gronk",
+      "lang": "fake",
+      "kind": "word",
+      "status": "new",
+      "band": "RED",
+      "annotations": {
+        "lexemeId": "unknown:gronk",
+        "gloss": "gloss-of-unknown:gronk",
+        "glyphs": [
+          {
+            "glyph": "g",
+            "hint": "G"
+          },
+          {
+            "glyph": "r",
+            "hint": "R"
+          },
+          {
+            "glyph": "o",
+            "hint": "O"
+          },
+          {
+            "glyph": "n",
+            "hint": "N"
+          },
+          {
+            "glyph": "k",
+            "hint": "K"
+          }
+        ]
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "meaning",
+            "unit": {
+              "kind": "word",
+              "id": "unknown:gronk"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "stressMark",
+            "unit": {
+              "kind": "word",
+              "id": "unknown:gronk"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "g"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "r"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "o"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "n"
+            },
+            "level": "full"
+          },
+          {
+            "dim": "glyphHint",
+            "unit": {
+              "kind": "glyph",
+              "id": "k"
+            },
+            "level": "full"
+          }
+        ],
+        "blend": {
+          "anglicize": true
+        },
+        "dueness": {
+          "dueNow": true
+        }
+      }
+    }
+  ]
+}

@@ -60,6 +60,9 @@ jobs:
       - name: Boundary gate — no lang===/language=== conditionals (ADR §2.4 mechanism 4)
         run: pnpm run boundary:lang-conditional
 
+      - name: Boundary gate — renderer neutrality (issue #10 ACs; fail-loud greps: no direction/ruby in shell+engine, no engine-side fade interpretation)
+        run: pnpm run boundary:renderer-neutrality
+
       - name: Test
         run: pnpm run test
 
@@ -256,3 +259,38 @@ jobs:
 
       - name: TCK leg — @la/lang-${{ matrix.lang }}
         run: bash scripts/conformance-leg.sh "${{ matrix.lang }}"
+
+  # Real-browser e2e for the walking-skeleton renderer (issue #10): SSE
+  # streams progressively, tokens clickable, learning-event echo verified,
+  # RTL sanity + the ḥarakāt clipping probe against the pinned Amiri build.
+  # Separate job so a browser-install hiccup never masks a build/gate
+  # failure (and vice versa).
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build packages (tsc dists — the exports maps resolve @la/* to dist/*)
+        run: pnpm run build
+
+      - name: Build the site (vite)
+        run: pnpm --filter @la/web run build:site
+
+      - name: Install Playwright Chromium
+        run: pnpm --filter @la/web exec playwright install --with-deps chromium
+
+      - name: Playwright e2e
+        run: pnpm --filter @la/web run test:e2e

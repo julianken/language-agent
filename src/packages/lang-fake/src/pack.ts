@@ -44,7 +44,8 @@ export const pack: LanguagePack<FakeAnn> = {
   curriculumPolicy: fakeCurriculumPolicy, // seam 5
   rendererManifest: {
     // seam 6 — LTR with per-glyph hint scaffolds (the structural-swap
-    // second registry entrant; components land with #10).
+    // second registry entrant; the components these keys resolve to live
+    // under ./react (issue #10) — keep src/react/entry.ts in lockstep).
     direction: "ltr",
     tokenRenderers: { word: "fake-word-token" },
     breakdownPanel: "fake-breakdown-panel",

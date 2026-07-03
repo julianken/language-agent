@@ -14,6 +14,7 @@
     "build": "pnpm -r --if-present run build",
     "boundary:deps": "depcruise --config .dependency-cruiser.cjs src/packages src/apps",
     "boundary:lang-conditional": "eslint --config eslint.config.mjs src/packages/engine src/apps/server/src src/apps/web/src/shell && bash scripts/check-no-lang-conditional.sh",
+    "boundary:renderer-neutrality": "bash scripts/check-shell-direction-free.sh && bash scripts/check-no-engine-fade.sh",
     "spec:generate:node": "pnpm --filter @la/contract run generate:sidecar-client && pnpm --filter @la/lang-ar run generate:annotation-schema",
     "spec:generate:python": "bash scripts/generate-sidecar-models.sh",
     "spec:generate": "pnpm run spec:generate:node && pnpm run spec:generate:python",

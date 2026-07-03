@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "The permanent MAX-topology drop-in fixture pack (ADR §4.3): re-segmenting text-in/tokens-out gate, 2 unit kinds + 1 gating edge + 1 declared credit-leak edge + 3 fade dimensions with per-unit fades within a token, a discontinuous span group, and deterministic YELLOW/RED cases. Deterministic and dependency-free (no sidecar).",
+  "description": "The permanent MAX-topology drop-in fixture pack (ADR §4.3): re-segmenting text-in/tokens-out gate, 2 unit kinds + 1 gating edge + 1 declared credit-leak edge + 3 fade dimensions with per-unit fades within a token, a discontinuous span group, and deterministic YELLOW/RED cases. Deterministic and dependency-free (no sidecar). The `/react` subpath (issue #10) is the second, real renderer registry entrant proving the structural swap: LTR container, per-glyph hint scaffolds (per-unit split fade), discontinuous-span linking, and YELLOW/RED presentations.",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
     }
   },
   "main": "./dist/index.js",
@@ -24,9 +28,11 @@
   },
   "dependencies": {
     "@la/contract": "workspace:*",
+    "react": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@la/lang-conformance": "workspace:*"
+    "@la/lang-conformance": "workspace:*",
+    "@types/react": "catalog:"
   }
 }

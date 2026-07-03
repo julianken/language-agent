@@ -40,3 +40,10 @@ tmp/
 
 # per-instance fill input (values are public, but keep the build input out of git)
 .seed/answers.json
+
+# Vite site build + Playwright artifacts (issue #10 e2e; screenshots are
+# NEVER committed — PR images go through the user-attachments paste flow)
+dist-site/
+test-results/
+playwright-report/
+.vite/
