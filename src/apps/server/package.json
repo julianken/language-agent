@@ -34,6 +34,7 @@
     "@la/engine": "workspace:*",
     "@la/lang-ar": "workspace:*",
     "@la/lang-fake": "workspace:*",
+    "@la/lang-zh": "workspace:*",
     "zod": "catalog:"
   }
 }

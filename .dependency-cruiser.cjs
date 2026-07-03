@@ -18,6 +18,7 @@ const PACKAGE_ROOTS = [
   "src/packages/engine",
   "src/packages/lang-fake",
   "src/packages/lang-ar",
+  "src/packages/lang-zh",
   "src/packages/lang-conformance",
   "src/apps/server",
   "src/apps/web",

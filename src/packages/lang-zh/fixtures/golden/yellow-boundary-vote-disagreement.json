@@ -1,0 +1,42 @@
+{
+  "name": "YELLOW: 好喝 (good to drink) — post-normalization segmenter-boundary disagreement (jieba merges 好喝 as one lexicalized adjective; no normalization mapping exists for it, and it does not intersect any sandhi span) — the segmenter-boundary-disagreement probe (Decision 3's other zh-specific golden category). Mirrors src/sidecars/zh/tests/fixtures/golden/09-yellow-vote-disagreement.json.",
+  "targetText": "好喝",
+  "intents": [
+    { "id": "good", "description": "it tastes good" },
+    { "id": "drink", "description": "something you drink" }
+  ],
+  "expected": {
+    "tokens": [
+      { "surface": "好", "band": "YELLOW" },
+      { "surface": "喝", "band": "YELLOW" }
+    ],
+    "annotations": [
+      {
+        "readingId": "好:hao3",
+        "perCharacter": [{ "char": "好", "citationPinyinChar": "hǎo", "compositionalBoundFlag": false }],
+        "citationPinyin": ["hǎo"],
+        "surfacePinyin": ["hǎo"],
+        "toneTrack": [3],
+        "neutralToneSlots": [],
+        "erhuaSlots": [],
+        "pos": "adjective",
+        "senseId": "good",
+        "gloss": "good",
+        "boundMorpheme": false
+      },
+      {
+        "readingId": "喝:he1",
+        "perCharacter": [{ "char": "喝", "citationPinyinChar": "hē", "compositionalBoundFlag": false }],
+        "citationPinyin": ["hē"],
+        "surfacePinyin": ["hē"],
+        "toneTrack": [1],
+        "neutralToneSlots": [],
+        "erhuaSlots": [],
+        "pos": "verb",
+        "senseId": "drink",
+        "gloss": "to drink",
+        "boundMorpheme": false
+      }
+    ]
+  }
+}

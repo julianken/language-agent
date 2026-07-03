@@ -1,0 +1,45 @@
+{
+  "name": "@la/lang-zh",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The Chinese (Traditional-script, Putonghua pronunciation) language pack v0 (issue #21 — the third drop-in pack riding @la/contract): seam 1 gate wired through @la/contract's GENERATED sidecar client only, mapping the real src/sidecars/zh deterministic-legs-v0 verify response into VerifiedToken<ZhAnnotations>; seam 2 steering (zh-specific generation constraints + subtraction-safe anglicizeDown over #20's 58-word known-set); seam 3's canonical zh-annotations/v1 zod schema (per-character ruby units, two pinyin layers, tone track, neutral-tone/erhua structured slots, bound-morpheme suppression, a forward-declared-but-v0-unused spanGroup slot) + the GENERATED zh-annotations.schema.json artifact; seam 4 the FixedRatioScaffold walking-skeleton stand-in (declares the two-latent Word+Character unit-kind shape and the three fade dimensions per docs/plans/chinese-instance-design.md §3.1, but — mirroring ar's zero-edge precedent and the ADR's dual-instance amendment Decision 3 — declares NO gating/credit-leak edges in v0; mastery-graph TCK law coverage stays on lang-fake until Phase 3 wires real mastery); seam 5 the SeedVocabBypassCurriculum stand-in over #20's seed-tuples.json (NO floors override — the real §7.3 dual coverage floor is deferred to Phase 3, v0 declares only the structural DEFAULT_FLOORS, same as ar); seam 6 the `/react` renderer entrant — LTR pack container (Noto Serif TC), mono-ruby PER CHARACTER (not per token), erhua fusion, base-text-swap blend (via the shared anglicizeDown + EnglishScaffoldToken path), the character-borne tone cue; seam 7 a canned TTS stub; seam 8 the zh sidecar descriptor; seam 9 the `/assets` subpath wrapping #20's committed (read-only) seed-tuples.json / c9-context-table.json / segmenter-normalization.json. `pack` (the complete LanguagePack) is the composition root's registry entry.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    },
+    "./assets": {
+      "types": "./dist/assets/index.d.ts",
+      "default": "./dist/assets/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "assets"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run --exclude src/__tests__/conformance.test.ts",
+    "test:conformance": "vitest run src/__tests__/conformance.test.ts",
+    "generate:annotation-schema": "node scripts/generate-annotation-schema.mjs"
+  },
+  "dependencies": {
+    "@fontsource/noto-serif-tc": "5.2.10",
+    "@la/contract": "workspace:*",
+    "@la/engine": "workspace:*",
+    "react": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@la/lang-conformance": "workspace:*",
+    "@types/react": "catalog:"
+  }
+}

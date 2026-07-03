@@ -1,0 +1,5 @@
+{
+  "source": "authored",
+  "learnerMessage": "Ask the learner if they want tea.",
+  "attempts": [[{ "text": "你想喝茶嗎？" }]]
+}

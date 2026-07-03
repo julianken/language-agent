@@ -26,6 +26,7 @@
     "@la/contract": "workspace:*",
     "@la/lang-ar": "workspace:*",
     "@la/lang-fake": "workspace:*",
+    "@la/lang-zh": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",
     "zod": "catalog:"

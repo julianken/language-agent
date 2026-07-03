@@ -1,0 +1,32 @@
+{
+  "name": "RED: 你喝咖啡嗎？ — 咖啡 is a real word but outside the closed-world sliver, so the whole Han run has no closed-world cover and bands RED as one unanalyzable 'unverified' span (never a silent pass); the trailing full-width '？' is punctuation and stays GREEN. Mirrors src/sidecars/zh/tests/fixtures/golden/16-red-out-of-world.json.",
+  "targetText": "你喝咖啡嗎？",
+  "intents": [{ "id": "drink", "description": "asks about drinking" }],
+  "expected": {
+    "tokens": [
+      { "surface": "你喝咖啡嗎", "band": "RED" },
+      { "surface": "？", "band": "GREEN" }
+    ],
+    "annotations": [
+      {
+        "perCharacter": [],
+        "citationPinyin": [],
+        "surfacePinyin": [],
+        "toneTrack": [],
+        "neutralToneSlots": [],
+        "erhuaSlots": [],
+        "boundMorpheme": false,
+        "redReason": "out-of-world"
+      },
+      {
+        "perCharacter": [],
+        "citationPinyin": [],
+        "surfacePinyin": [],
+        "toneTrack": [],
+        "neutralToneSlots": [],
+        "erhuaSlots": [],
+        "boundMorpheme": false
+      }
+    ]
+  }
+}
