@@ -28,6 +28,7 @@ module "cloud_run_service" {
   readyz_period_seconds    = each.value.readyz_period_seconds
   readyz_failure_threshold = each.value.readyz_failure_threshold
   shared_secret_id         = module.access_gate[each.key].shared_secret_id
+  anthropic_secret_id      = google_secret_manager_secret.anthropic_api_key.secret_id
 
   depends_on = [google_artifact_registry_repository.images]
 }

@@ -29,3 +29,5 @@ export { ReplayCandidateGenerator } from "./llm/replay-client.js";
 export type { ReplayCandidateGeneratorOptions } from "./llm/replay-client.js";
 export { HAIKU_MODEL, modelParamsFor, SONNET_MODEL } from "./llm/model-params.js";
 export type { ModelBranchedParams } from "./llm/model-params.js";
+export { selectCandidateGenerator } from "./llm/select-generator.js";
+export type { SelectCandidateGeneratorOptions } from "./llm/select-generator.js";

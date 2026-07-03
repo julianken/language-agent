@@ -56,6 +56,11 @@ variable "shared_secret_id" {
   description = "Secret Manager secret_id (short id, not full resource name) holding this instance's server-side shared secret for the access gate. Distinct per instance — never reused across ar/zh."
 }
 
+variable "anthropic_secret_id" {
+  type        = string
+  description = "Secret Manager secret_id (short id, not full resource name) holding the live Anthropic API key that drives the server's live-generation boot mode (ANTHROPIC_API_KEY — src/apps/server/src/llm/select-generator.ts). SHARED across both instances (same key, same secret_id) — unlike shared_secret_id above, this is deliberately NOT per-instance. Its VERSION/value is added out-of-band via `gcloud secrets versions add` at apply time; no google_secret_manager_secret_version with a real value exists anywhere in this tree."
+}
+
 variable "min_instance_count" {
   type        = number
   description = "Cloud Run min instance count. 0 per the hosting ADR (scale-to-zero is a hard constraint)."

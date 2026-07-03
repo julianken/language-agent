@@ -25,6 +25,17 @@ resource "google_secret_manager_secret_iam_member" "shared_secret_accessor" {
   member    = "serviceAccount:${google_service_account.runtime.email}"
 }
 
+# Unlike shared_secret_accessor above, the SAME anthropic_secret_id is
+# granted to both instances' runtime SAs — this is the one deliberately
+# shared credential (issue #11 PR2): one live Anthropic account, not a
+# per-instance secret.
+resource "google_secret_manager_secret_iam_member" "anthropic_secret_accessor" {
+  project   = var.gcp_project_id
+  secret_id = var.anthropic_secret_id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = "serviceAccount:${google_service_account.runtime.email}"
+}
+
 resource "google_cloud_run_v2_service" "this" {
   name     = "la-${var.instance_key}"
   location = var.location
@@ -48,6 +59,17 @@ resource "google_cloud_run_v2_service" "this" {
         container_port = var.server_port
       }
 
+      # Cloud Run injects PORT automatically (matching container_port
+      # above); it does NOT set HOST, and http/main.ts's own default
+      # (127.0.0.1, the local dev/e2e bind) is unreachable from outside the
+      # container — this env var closes that gap for the deploy target
+      # (see http/main.ts's file header: "the platform injects PORT and
+      # the bind is 0.0.0.0").
+      env {
+        name  = "HOST"
+        value = "0.0.0.0"
+      }
+
       env {
         name  = "LANGUAGE"
         value = var.instance_key
@@ -58,6 +80,21 @@ resource "google_cloud_run_v2_service" "this" {
         value_source {
           secret_key_ref {
             secret  = var.shared_secret_id
+            version = "latest"
+          }
+        }
+      }
+
+      # Live-generation boot mode (issue #11 PR2,
+      # src/apps/server/src/llm/select-generator.ts): when present, the
+      # server wires the REAL AnthropicCandidateGenerator instead of the
+      # replay/fixture generator. SHARED across both instances — same
+      # secret_id, same key, unlike SHARED_SECRET above.
+      env {
+        name = "ANTHROPIC_API_KEY"
+        value_source {
+          secret_key_ref {
+            secret  = var.anthropic_secret_id
             version = "latest"
           }
         }
@@ -130,6 +167,7 @@ resource "google_cloud_run_v2_service" "this" {
 
   depends_on = [
     google_secret_manager_secret_iam_member.shared_secret_accessor,
+    google_secret_manager_secret_iam_member.anthropic_secret_accessor,
   ]
 }
 
