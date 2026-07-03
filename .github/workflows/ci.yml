@@ -257,7 +257,7 @@ jobs:
   #     `continue-on-error`: a live leg that goes red MUST block, not
   #     neutralize.
   #   - NOT-YET-LIVE legs, absent from the live-set until their pack lands:
-  #       ar → flip in #9  (completes with #7/#9)
+  #       ar → LIVE as of issue #9 (completes #7/#9)
   #       zh → flip in #21 (completes with #19/#21; the zh leg then runs
   #            the real deterministic-legs v0 image directly, like ar, with
   #            NO `SIDECAR_MODEL_MODE=fixture` — that flag stays dormant for
@@ -266,21 +266,27 @@ jobs:
   #     flipping PR): (1) add the lang to the `lang:` live-set below, so its
   #     leg RUNS and must be green — there is no continue-on-error to drop;
   #     (2) add `conformance (<lang>)` to the branch-ruleset required checks;
-  #     (3) uncomment its `check-success` line in .mergify.yml.
+  #     (3) uncomment its `check-success` line in .mergify.yml. Issue #9 did
+  #     (1) and (3) here; (2) — the branch-ruleset required-check edit — is a
+  #     repo-settings change the orchestrator does at merge (see the PR body).
   #
-  # Each leg later grows the compose-boot + E2E turn script (#9) and the
-  # Schemathesis + probeSidecar golden HTTP probes against `docker run` of
-  # the leg's built image (#7 owns the OpenAPI doc those run against);
-  # today a leg runs the TCK instantiation via scripts/conformance-leg.sh.
+  # Each live leg also runs the shared E2E turn script (issue #9: learner
+  # message → generate → gate → anglicize → tutor-message, zero live LLM
+  # calls — @la/server's ReplayCandidateGenerator) alongside the TCK; the
+  # `ar` leg additionally boots the REAL src/sidecars/ar image first (never
+  # mocked — the same real, deterministic, non-neural service #7 ships) so
+  # both the TCK's gate calls and the E2E script's gate calls hit it for
+  # real. Schemathesis + probeSidecar golden HTTP probes (ADR §4.3 item 3)
+  # remain a follow-up — not part of this issue's scope.
   conformance:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         # THE LIVE-SET (single source): only legs listed here run as checks.
-        # Not-yet-live legs are absent by design — ar flips live in #9, zh in
-        # #21. Flip = add the lang here (+ ruleset required check + .mergify.yml).
-        lang: [fake]
+        # zh flips live in #21. Flip = add the lang here (+ ruleset required
+        # check + .mergify.yml).
+        lang: [fake, ar]
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -300,8 +306,40 @@ jobs:
       - name: Build (exports maps resolve @la/* to dist/ — see the build job)
         run: pnpm run build
 
+      # ar leg only: boot the REAL sidecar (never mocked — issue #8's
+      # mock-exclusion precedent extended to the TCK + E2E turn script).
+      # Needed before BOTH the TCK leg and the E2E turn script below, since
+      # `@la/lang-ar`'s gate is wired through the generated sidecar client
+      # only (no bespoke fetch, no Prism substitute at this point).
+      - name: Boot the ar sidecar (ar leg only)
+        if: matrix.lang == 'ar'
+        run: |
+          docker build --target runtime -t language-agent/sidecar-ar:conformance-ci src/sidecars/ar
+          docker run -d --name sidecar-ar-conformance -p 8081:8000 language-agent/sidecar-ar:conformance-ci
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:8081/readyz >/dev/null 2>&1; then exit 0; fi
+            sleep 2
+          done
+          echo "sidecar never became ready"; docker logs sidecar-ar-conformance; exit 1
+
       - name: TCK leg — @la/lang-${{ matrix.lang }}
         run: bash scripts/conformance-leg.sh "${{ matrix.lang }}"
+        env:
+          # Harmless on the fake leg (never read there); real value on ar.
+          SIDECAR_AR_BASE_URL: ${{ matrix.lang == 'ar' && 'http://127.0.0.1:8081' || '' }}
+
+      # The shared E2E turn script (issue #9, step 8): same test body, same
+      # file, every leg — the fake assertions always run; the ar-only
+      # assertions self-skip unless SIDECAR_AR_BASE_URL is set (this step
+      # sets it only on the ar leg, matching this job's live-set).
+      - name: E2E turn script — @la/server (zero live LLM calls; ar leg's gate is the real sidecar booted above)
+        run: pnpm --filter @la/server run test:e2e-turn
+        env:
+          SIDECAR_AR_BASE_URL: ${{ matrix.lang == 'ar' && 'http://127.0.0.1:8081' || '' }}
+
+      - name: Stop the ar sidecar (ar leg only)
+        if: always() && matrix.lang == 'ar'
+        run: docker rm -f sidecar-ar-conformance || true
 
   # Real-browser e2e for the walking-skeleton renderer (issue #10): SSE
   # streams progressively, tokens clickable, learning-event echo verified,

@@ -39,8 +39,10 @@ queue_rules:
       # - "check-success = test"
       # - "check-success = e2e"
       # TCK drop-in matrix (issue #17): only legs in ci.yml's conformance
-      # live-set exist as checks. `fake` is live today and is the only leg
-      # eligible to be a required queue condition; `ar`/`zh` are ABSENT from
-      # the matrix (no check to gate on) until #9 (ar) / #21 (zh) add them to
-      # the live-set — the same PR uncomments the matching line here:
+      # live-set exist as checks. `fake` is live today and is the only OTHER
+      # leg eligible to be a required queue condition; `zh` is ABSENT from
+      # the matrix (no check to gate on) until #21 adds it to the live-set —
+      # that PR uncomments the matching line here:
       # - "check-success = conformance (fake)"
+      # `ar` joined the live-set in issue #9 — required as of this PR:
+      - "check-success = conformance (ar)"
