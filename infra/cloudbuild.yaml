@@ -1,0 +1,40 @@
+# Cloud Build config for the server image. AUTHORED ONLY — never submitted by
+# this PR (`gcloud builds submit`/`docker push` are real-registry mutations,
+# forbidden under issue #11 PR1's zero-cloud-mutation constraint). The real
+# submission happens from CI (GitHub Actions, via the WIF deploy SA in
+# infra/wif.tf) at the keys checkpoint, or manually via:
+#
+#   gcloud builds submit --config infra/cloudbuild.yaml \
+#     --project="$GCP_PROJECT_ID" \
+#     --substitutions=_REGION=us-central1,_REPO=language-agent .
+#
+# The two sidecar images (src/sidecars/ar/Dockerfile, src/sidecars/zh/Dockerfile)
+# are NOT built here — they're built by their own issues' (#7, #19) existing
+# per-sidecar build process and pushed to the same Artifact Registry repo
+# (infra/registry.tf) under the sidecar-ar / sidecar-zh image names this
+# tree's locals.tf already references. This file builds the ONE shared server
+# image only — there is no per-language server image to build twice.
+
+steps:
+  - id: build-server-image
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -f
+      - infra/docker/server.Dockerfile
+      - -t
+      - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/server:$SHORT_SHA"
+      - -t
+      - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/server:latest"
+      - .
+
+images:
+  - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/server:$SHORT_SHA"
+  - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/server:latest"
+
+substitutions:
+  _REGION: us-central1
+  _REPO: language-agent
+
+options:
+  logging: CLOUD_LOGGING_ONLY

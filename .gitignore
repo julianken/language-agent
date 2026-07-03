@@ -53,3 +53,17 @@ dist-site/
 test-results/
 playwright-report/
 .vite/
+
+# Terraform (issue #11's infra/ tree) — local state/plugin cache, real
+# tfvars (which would carry a live Cloudflare API token), and the
+# validate-only local-backend override documented in infra/README.md.
+# Committed tree always shows the real GCS backend, never a local one.
+infra/**/.terraform/
+infra/**/.terraform.lock.hcl.bak
+infra/**/*.tfstate
+infra/**/*.tfstate.*
+infra/**/*.tfplan
+infra/**/*.auto.tfvars
+infra/**/terraform.tfvars
+infra/override.tf
+infra/crash.log
