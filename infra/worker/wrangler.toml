@@ -1,0 +1,51 @@
+# Cloudflare Worker config for the lexercon.com apex router
+# (language-router-gateway plan, Task 7). Authored only — never deployed
+# by this worktree (HARD CONSTRAINT: zero live-infra mutation, no Worker
+# deploy, no Cloudflare API writes). Terraforming this (a
+# cloudflare_workers_script + cloudflare_workers_route resource set) is
+# Task 8 / Group D, handled separately — this file is what that Terraform
+# would point `content` at, and what `wrangler dev`/`wrangler deploy` read
+# directly for manual verification in the meantime.
+
+name = "lexercon-router"
+main = "router-worker.js"
+compatibility_date = "2026-07-01"
+
+# Non-secret backend hostnames (Cloud Run's own run.app hostnames aren't
+# sensitive — they're only reachable at all via the shared-secret header
+# below). PLACEHOLDERS — the real values are
+# trimprefix(module.cloud_run_service["ar"|"zh"].service_uri, "https://")
+# (R-D: `service_uri` is a full "https://…" URL; the Worker assigns this
+# straight to `target.hostname`, which must be a bare host).
+[vars]
+LA_AR_HOST = "REPLACE_WITH_LA_AR_RUN_APP_HOST"
+LA_ZH_HOST = "REPLACE_WITH_LA_ZH_RUN_APP_HOST"
+
+# SHARED_SECRET is deliberately NOT a plaintext [vars] entry — it's the
+# access-gate credential the server enforces (Task 6b). Set it as a
+# Worker secret instead, out of band, once this Worker is actually
+# deployed (Task 8):
+#
+#   wrangler secret put SHARED_SECRET
+#
+# NOTE (flagged for whoever picks up Task 8 / Group D): today
+# infra/modules/access-gate provisions a DISTINCT shared_secret PER
+# INSTANCE (ar and zh each get their own Secret Manager secret — see
+# access-gate/main.tf's "distinct-secret, no-cross-instance-access" note
+# and cloud-run-service/main.tf's per-instance `var.shared_secret_id`).
+# This Worker (per this plan's Task 7 spec, literally: "inject
+# x-access-secret: env.SHARED_SECRET") sends the SAME header value to
+# BOTH backends. Task 8 needs to resolve that mismatch one of two ways
+# before wiring real values in:
+#   (a) simplify access-gate to a single secret shared by both instances
+#       (mirroring anthropic-secret.tf's already-shared pattern), or
+#   (b) give the Worker two secrets (LA_AR_SECRET / LA_ZH_SECRET) and
+#       change router-worker.js's route() to send the per-segment one.
+# This file and router-worker.js implement (the simpler) option (a)'s
+# shape; not decided here since Task 8 (Terraform + DNS/Pages teardown)
+# is out of this task's scope.
+
+# The route this Worker binds to zone-side (Task 8's
+# cloudflare_workers_route, not authored here):
+#   pattern = "lexercon.com/*"
+#   zone_name = "lexercon.com"
