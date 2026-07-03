@@ -8,6 +8,7 @@
 
 import { describe, expect, it } from "vitest";
 import {
+  arLemmaUnitRef,
   classifyMarks,
   renderVowels,
   renderedScaffoldEcho,
@@ -92,6 +93,42 @@ describe("directive plumbing", () => {
   it("reads the two dimensions as independent per-unit levels", () => {
     expect(vowelLevelsFrom(directive)).toEqual({ lexical: "faded", caseEnding: "full" });
     expect(vowelLevelsFrom(undefined)).toEqual({ lexical: "full", caseEnding: "full" });
+  });
+
+  it("scopes the read to the token's OWN unit — a directive entry for a DIFFERENT unit id has no effect", () => {
+    const otherUnit = { kind: "lemma", id: "مَكْتَبَة#library" };
+    // Per-(dimension × unit) directive (the #9 shape): entries for BOTH
+    // units ride the same token envelope, at opposite levels.
+    const multiUnit = {
+      fadeLevels: [
+        { dim: "vowelFadeLexical", unit: otherUnit, level: "faded" as const },
+        { dim: "vowelFadeCaseEnding", unit: otherUnit, level: "faded" as const },
+        { dim: "vowelFadeLexical", unit, level: "full" as const },
+        { dim: "vowelFadeCaseEnding", unit, level: "partial" as const },
+      ],
+      blend: { anglicize: false },
+      dueness: { dueNow: true },
+    };
+    // Scoped to OUR unit: the foreign unit's `faded` entries (listed
+    // FIRST, so a dimension-only find() would wrongly pick them) never
+    // bleed through.
+    expect(vowelLevelsFrom(multiUnit, unit)).toEqual({
+      lexical: "full",
+      caseEnding: "partial",
+    });
+    // And scoped to the other unit, its own levels come back.
+    expect(vowelLevelsFrom(multiUnit, otherUnit)).toEqual({
+      lexical: "faded",
+      caseEnding: "faded",
+    });
+    // A unit with NO entries at all falls back to full/full (fail-safe).
+    expect(
+      vowelLevelsFrom(multiUnit, { kind: "lemma", id: "غَيْر#absent" }),
+    ).toEqual({ lexical: "full", caseEnding: "full" });
+  });
+
+  it("derives the pack-canonical lemma unit from annotations (lemma#gloss)", () => {
+    expect(arLemmaUnitRef({ lemma: "كَبِير", gloss: "big" })).toEqual(unit);
   });
 
   it("echoes what the learner actually saw, per dimension", () => {

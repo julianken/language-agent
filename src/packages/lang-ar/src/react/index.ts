@@ -11,7 +11,9 @@ export { ArBreakdownPanel } from "./ArBreakdownPanel.js";
 export type { ArBreakdownPanelProps } from "./ArBreakdownPanel.js";
 export { arRendererEntry, arRendererManifest } from "./entry.js";
 export {
+  AR_LEMMA_UNIT_KIND,
   AR_VOWEL_DIMS,
+  arLemmaUnitRef,
   classifyMarks,
   renderVowels,
   renderedScaffoldEcho,

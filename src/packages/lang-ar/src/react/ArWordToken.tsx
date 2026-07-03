@@ -22,6 +22,7 @@ import type { CSSProperties } from "react";
 import { ArAnnotationsSchema, type ArAnnotations } from "../annotations.js";
 import { ArBreakdownPanel } from "./ArBreakdownPanel.js";
 import {
+  arLemmaUnitRef,
   renderVowels,
   renderedScaffoldEcho,
   unitRefsFrom,
@@ -73,7 +74,14 @@ export function ArWordToken({ token, emitLearningEvent }: TokenRendererProps) {
 
   const parsed = ArAnnotationsSchema.safeParse(token.annotations);
   const ann: ArAnnotations | undefined = parsed.success ? parsed.data : undefined;
-  const levels = vowelLevelsFrom(token.directive);
+  // Unit-aware read: scope the two vowel dimensions to THIS token's
+  // lemma-sense unit (per-(dimension × unit) directives may carry entries
+  // for other units); falls back to the directive's own lemma unit when
+  // annotations are absent — see vowelLevelsFrom's contract.
+  const levels = vowelLevelsFrom(
+    token.directive,
+    ann ? arLemmaUnitRef(ann.morphology) : undefined,
+  );
 
   // RED = refused by the gate — the content is withheld, never displayed
   // (ADR §1.5's scoped RED law); the token stays addressable.

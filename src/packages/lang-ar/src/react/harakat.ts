@@ -121,15 +121,52 @@ export const AR_VOWEL_DIMS = {
   caseEnding: "vowelFadeCaseEnding",
 } as const;
 
+/** The unit kind the ar pack declares for its lemma-sense units. */
+export const AR_LEMMA_UNIT_KIND = "lemma";
+
+/**
+ * The pack-canonical `UnitRef` for a token's lemma-sense unit, derived
+ * from its annotations: `lemma#gloss` (the intended-sense tuple — the same
+ * pair the analyzer-membership leg keys on). Fixtures and #9's turn loop
+ * follow THIS convention; it is owned here, not by any fixture.
+ */
+export function arLemmaUnitRef(morphology: {
+  lemma: string;
+  gloss: string;
+}): UnitRef {
+  return {
+    kind: AR_LEMMA_UNIT_KIND,
+    id: `${morphology.lemma}#${morphology.gloss}`,
+  };
+}
+
 /**
  * Read the two vowel dimensions out of the stamped directive as two
- * INDEPENDENT per-unit levels (never one per-token level — ADR §1.4). A
- * missing entry defaults to `full`: absent scaffold guidance shows the
- * scaffold (fail-safe for the learner, fail-closed for mastery credit).
+ * INDEPENDENT per-(dimension × unit) levels (never one per-token level —
+ * ADR §1.4), scoped to ONE unit: an entry only counts when its `dim` AND
+ * its `unit.id` match (the same discipline as the fake pack's per-glyph
+ * lookup). #9 stamps per-(dimension × unit) directives, so a token's
+ * directive may carry entries for units that are not this token's
+ * lemma-sense unit (e.g. a span-group compound) — a dimension-only read
+ * would silently pick a foreign unit's level.
+ *
+ * `unit` defaults to the FIRST lemma-kind unit in the directive (exactly
+ * the ar v0 single-lemma-per-token shape); pass the token's own
+ * `arLemmaUnitRef(...)` whenever annotations are available. A missing
+ * entry defaults to `full`: absent scaffold guidance shows the scaffold
+ * (fail-safe for the learner, fail-closed for mastery credit).
  */
-export function vowelLevelsFrom(directive: ScaffoldDirective | undefined): VowelLevels {
+export function vowelLevelsFrom(
+  directive: ScaffoldDirective | undefined,
+  unit?: UnitRef,
+): VowelLevels {
+  const target =
+    unit ??
+    directive?.fadeLevels.find((f) => f.unit.kind === AR_LEMMA_UNIT_KIND)?.unit;
   const pick = (dim: string): FadeLevel =>
-    directive?.fadeLevels.find((f) => f.dim === dim)?.level ?? "full";
+    directive?.fadeLevels.find(
+      (f) => f.dim === dim && (target === undefined || f.unit.id === target.id),
+    )?.level ?? "full";
   return {
     lexical: pick(AR_VOWEL_DIMS.lexical),
     caseEnding: pick(AR_VOWEL_DIMS.caseEnding),
