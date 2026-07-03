@@ -35,14 +35,21 @@ const emitLearningEvent = makeLearningEventSink(apiUrl("learning-events"));
 export function App() {
   const params = new URLSearchParams(window.location.search);
   const turn = params.get("turn");
-  const fixture = turn ? null : (params.get("fixture") ?? "ar-mixed-line");
+  // The instance's language comes from its served base path (the server injects
+  // `<base href="/ar/">` or `/zh/` per instance) — so the demo default fixture
+  // is language-appropriate: the zh instance NEVER falls back to the Arabic
+  // sample. An explicit `?fixture=` still overrides.
+  const defaultFixture = document.baseURI.includes("/zh/")
+    ? "zh-mixed-line"
+    : "ar-mixed-line";
+  const fixture = turn ? null : (params.get("fixture") ?? defaultFixture);
   const delayMs = params.get("delayMs") ?? "60";
   const streamUrl = useMemo(() => {
     const suffix = `&delayMs=${encodeURIComponent(delayMs)}`;
     return turn
       ? apiUrl(`stream?turn=${encodeURIComponent(turn)}${suffix}`)
-      : apiUrl(`stream?fixture=${encodeURIComponent(fixture ?? "ar-mixed-line")}${suffix}`);
-  }, [turn, fixture, delayMs]);
+      : apiUrl(`stream?fixture=${encodeURIComponent(fixture ?? defaultFixture)}${suffix}`);
+  }, [turn, fixture, delayMs, defaultFixture]);
 
   const stream = useTokenStream(streamUrl);
 
