@@ -22,6 +22,7 @@
 
 import { useMemo } from "react";
 import {
+  apiUrl,
   TokenStream,
   makeLearningEventSink,
   useTokenStream,
@@ -29,7 +30,7 @@ import {
 import { buildRegistry } from "../packs/register.js";
 
 const registry = buildRegistry();
-const emitLearningEvent = makeLearningEventSink();
+const emitLearningEvent = makeLearningEventSink(apiUrl("learning-events"));
 
 export function App() {
   const params = new URLSearchParams(window.location.search);
@@ -39,8 +40,8 @@ export function App() {
   const streamUrl = useMemo(() => {
     const suffix = `&delayMs=${encodeURIComponent(delayMs)}`;
     return turn
-      ? `/api/stream?turn=${encodeURIComponent(turn)}${suffix}`
-      : `/api/stream?fixture=${encodeURIComponent(fixture ?? "ar-mixed-line")}${suffix}`;
+      ? apiUrl(`stream?turn=${encodeURIComponent(turn)}${suffix}`)
+      : apiUrl(`stream?fixture=${encodeURIComponent(fixture ?? "ar-mixed-line")}${suffix}`);
   }, [turn, fixture, delayMs]);
 
   const stream = useTokenStream(streamUrl);
