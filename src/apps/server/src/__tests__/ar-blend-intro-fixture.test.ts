@@ -1,12 +1,15 @@
 /**
  * Guards the `ar-blend-intro` gentle-blend fixture (the `/ar` demo default,
- * mirroring canonical Figma frame `77:2`): mostly-English scaffold with a
- * few Arabic words eased in inline, each new/learning word scaffolded with
- * its romanized reading. A malformed annotation here would crash the
- * `ArWordToken` renderer at stream time (`ArAnnotationsSchema.safeParse`
- * would fail and the token would silently lose its ḥarakāt fade + breakdown
- * panel), so every Arabic word's annotations are validated against the
- * pack's canonical schema — the same schema the renderer decodes with.
+ * mirroring canonical Figma frame `77:2`): mostly-English, pure-context prose
+ * with a few Arabic words eased in inline — the reading line never translates
+ * them (reading-pedagogy binding law, DESIGN.md §Components). Each
+ * new/learning word still carries a `translit` annotation, but it now feeds
+ * the click breakdown panel, not an inline sub-label. A malformed annotation
+ * here would crash the `ArWordToken` renderer at stream time
+ * (`ArAnnotationsSchema.safeParse` would fail and the token would silently
+ * lose its ḥarakāt fade + breakdown panel), so every Arabic word's
+ * annotations are validated against the pack's canonical schema — the same
+ * schema the renderer decodes with.
  */
 
 import { readFileSync } from "node:fs";
@@ -59,14 +62,14 @@ describe("ar-blend-intro fixture — gentle blend + valid romanized annotations"
     }
   });
 
-  it("scaffolds new/learning words with a romanization; a known word is bare", () => {
+  it("new/learning words carry a translit annotation (feeds the click card); a known word omits it", () => {
     for (const t of arWords) {
       const ann = ArAnnotationsSchema.parse(t.annotations);
       if (t.status === "new" || t.status === "learning") {
         expect(ann.translit, `${t.id} (${t.status}) should carry a translit`).toBeTruthy();
       }
       if (t.status === "known") {
-        expect(ann.translit, `${t.id} (known) renders bare — no translit`).toBeUndefined();
+        expect(ann.translit, `${t.id} (known) omits translit`).toBeUndefined();
       }
     }
   });
