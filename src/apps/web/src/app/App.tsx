@@ -108,6 +108,7 @@ export function App() {
             tokens={stream.tokens}
             registry={registry}
             emitLearningEvent={emitLearningEvent}
+            blend={stream.meta?.blend}
           />
         </article>
 

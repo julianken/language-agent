@@ -24,6 +24,11 @@ export interface TokenStreamProps {
   tokens: WireToken[];
   registry: RendererRegistry;
   emitLearningEvent: LearningEventSink;
+  /** The message's OPAQUE blend envelope from `message-start` (the same
+   * `WireMessageMeta.blend`), forwarded to the pack container untouched. The
+   * shell never inspects it and never names a script-structural concept — a
+   * pack may derive one (e.g. base direction following blend maturity). */
+  blend?: unknown;
 }
 
 export function TokenStream({
@@ -31,10 +36,11 @@ export function TokenStream({
   tokens,
   registry,
   emitLearningEvent,
+  blend,
 }: TokenStreamProps) {
   const Container = registry.containerFor(messageLang);
   return (
-    <Container>
+    <Container blend={blend}>
       {tokens.map((token, i) => {
         const Token = registry.tokenComponentFor(token.lang, token.kind);
         return (
