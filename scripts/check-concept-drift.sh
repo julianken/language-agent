@@ -115,19 +115,30 @@ allow_dirs=(
   'src/app:\.(tsx|jsx|ts|js)$'  # user-facing copy (incl. top-level page/layout)
   'src/pipeline:\.(ts|js)$'     # LLM-facing stage prompts (if present)
 )
-# allow_files: exact tracked paths — the public/SoT product descriptors.
+# allow_files: exact tracked paths — the public/SoT product descriptors AND the
+# LIVE roadmap/design plans a reader treats as present-tense product claims
+# (NOT the point-in-time history in docs/research, the decision LOG, or
+# superseded v1/v2 specs — those stay skipped below).
 allow_files=(
   'INSTANCE.md'  # the instance source of truth (incl. the concept block)
   'AGENTS.md'    # process SoT (product-noun prose lives here too)
   'README.md'    # public product descriptor
   'DESIGN.md'    # design SoT
+  'docs/plans/architecture.md'        # the LIVE phased build order (the roadmap)
+  'docs/plans/product-brief.md'       # the live product brief
+  'docs/plans/chinese-instance-design.md'  # the live zh instance design
 )
 
 # --- SKIPLIST — fenced out even when an allow rule matches --------------------
-# Historical trees (never retro-edited) and test files (assert the dormant
-# shape, not user copy). A product extends this for its own retained-machinery
-# files (or tags those lines DORMANT:/RETAINED: at the source instead).
-skip_regex='^docs/decisions/|^docs/research/|^docs/plans/|\.test\.(ts|tsx|js|jsx)$|\.spec\.(ts|tsx|js|jsx)$'
+# Point-in-time history (never retro-edited: research, the decision LOG, the ADRs,
+# superseded v1/v2 specs, dated superpowers plans) and test files (assert the
+# dormant shape, not user copy). NOTE: this deliberately does NOT blanket-skip
+# `docs/plans/` — the LIVE roadmap/design docs (architecture.md, product-brief.md,
+# chinese-instance-design.md, allow-listed above) are present-tense product claims
+# and MUST be scanned; only the historical plans (v1-/v2-/motion-spec/vocabulary-
+# system/user-stories/README) are skipped. A product extends this for its own
+# retained-machinery files (or tags those lines DORMANT:/RETAINED: at the source).
+skip_regex='^docs/decisions/|^docs/research/|^docs/superpowers/|docs/plans/(v1-|v2-|motion-spec|vocabulary-system|user-stories|README\.md)|\.test\.(ts|tsx|js|jsx)$|\.spec\.(ts|tsx|js|jsx)$'
 
 # Resolve the allowlist to a deduped, skiplist-filtered set of tracked files.
 files="$(
