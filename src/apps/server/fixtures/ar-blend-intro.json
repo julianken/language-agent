@@ -13,36 +13,22 @@
   },
   "tokens": [
     {
-      "id": "t0",
-      "text": "Let's",
+      "id": "e0",
+      "text": "Let's ease in.",
       "lang": "en",
       "kind": "text",
       "status": "scaffold"
     },
     {
-      "id": "t1",
-      "text": "ease in",
+      "id": "e1",
+      "text": "Picture a slow morning —",
       "lang": "en",
       "kind": "text",
       "status": "scaffold"
     },
     {
-      "id": "t2",
-      "text": "—",
-      "lang": "en",
-      "kind": "punct",
-      "status": "scaffold"
-    },
-    {
-      "id": "t3",
-      "text": "picture a slow morning:",
-      "lang": "en",
-      "kind": "text",
-      "status": "scaffold"
-    },
-    {
-      "id": "t4",
-      "text": "you step into the",
+      "id": "e2",
+      "text": "you slip into the",
       "lang": "en",
       "kind": "text",
       "status": "scaffold"
@@ -85,29 +71,15 @@
       }
     },
     {
-      "id": "t6",
-      "text": ",",
-      "lang": "en",
-      "kind": "punct",
-      "status": "scaffold"
-    },
-    {
-      "id": "t7",
-      "text": "the neighborhood market,",
+      "id": "e3",
+      "text": "before the stalls fill up,",
       "lang": "en",
       "kind": "text",
       "status": "scaffold"
     },
     {
-      "id": "t8",
-      "text": "and buy a small",
-      "lang": "en",
-      "kind": "text",
-      "status": "scaffold"
-    },
-    {
-      "id": "t9",
-      "text": "cup of",
+      "id": "e4",
+      "text": "order a small",
       "lang": "en",
       "kind": "text",
       "status": "scaffold"
@@ -150,8 +122,22 @@
       }
     },
     {
-      "id": "t11",
-      "text": "sipped slowly before the",
+      "id": "e5",
+      "text": "from the first vendor who's awake,",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "e6",
+      "text": "and sip it on a step",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "e7",
+      "text": "while the rest of the",
       "lang": "en",
       "kind": "text",
       "status": "scaffold"
@@ -193,15 +179,8 @@
       }
     },
     {
-      "id": "t13",
-      "text": "fully",
-      "lang": "en",
-      "kind": "text",
-      "status": "scaffold"
-    },
-    {
-      "id": "t14",
-      "text": "wakes up.",
+      "id": "e8",
+      "text": "stirs.",
       "lang": "en",
       "kind": "text",
       "status": "scaffold"

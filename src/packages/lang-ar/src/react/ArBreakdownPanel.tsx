@@ -47,13 +47,31 @@ const arabicValueStyle: CSSProperties = {
   color: "var(--la-color-ink)",
 };
 
+/**
+ * The romanized pronunciation value (DESIGN.md §0 `transliteration` type:
+ * mono, annotation size, the fading `muted-soft` ink). Per the
+ * reading-pedagogy binding law, a word's romanization surfaces ONLY here in
+ * the click card — never inline in the reading line — so this panel is the
+ * single place the pronunciation appears. Its own `dir="ltr"` / `ar-Latn`
+ * box keeps the Latin reading correctly directional inside the LTR card.
+ */
+const pronunciationValueStyle: CSSProperties = {
+  fontFamily: "var(--la-font-mono)",
+  fontSize: "var(--la-type-annotation-size)",
+  color: "var(--la-color-muted-soft)",
+  direction: "ltr",
+};
+
 export interface ArBreakdownPanelProps {
   morphology: ArMorphology | undefined;
   surface: string;
+  /** Romanized pronunciation (`annotations.translit`) — revealed on click,
+   * the only place it appears (reading-pedagogy law). Omitted when absent. */
+  translit?: string;
   onClose: () => void;
 }
 
-export function ArBreakdownPanel({ morphology, surface, onClose }: ArBreakdownPanelProps) {
+export function ArBreakdownPanel({ morphology, surface, translit, onClose }: ArBreakdownPanelProps) {
   return (
     <span role="dialog" aria-label="word breakdown" data-breakdown-panel="ar" dir="ltr" style={panelStyle}>
       <span style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
@@ -88,6 +106,14 @@ export function ArBreakdownPanel({ morphology, surface, onClose }: ArBreakdownPa
             <span style={labelStyle}>pattern</span>
             <bdi dir="auto" style={arabicValueStyle}>{morphology.pattern}</bdi>
           </span>
+          {translit ? (
+            <span style={{ display: "block" }} data-breakdown-pronunciation>
+              <span style={labelStyle}>pronunciation</span>
+              <span dir="ltr" lang="ar-Latn" style={pronunciationValueStyle}>
+                {translit}
+              </span>
+            </span>
+          ) : null}
           <span style={{ display: "block" }} data-breakdown-gloss>
             <span style={labelStyle}>gloss</span>
             <span style={{ color: "var(--la-color-body)" }}>{morphology.gloss}</span>

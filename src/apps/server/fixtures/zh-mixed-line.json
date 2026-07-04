@@ -14,7 +14,7 @@
  "tokens": [
   {
    "id": "t0",
-   "text": "yes, you",
+   "text": "Sure — you",
    "lang": "en",
    "kind": "text",
    "status": "scaffold"
@@ -71,7 +71,7 @@
   },
   {
    "id": "t2",
-   "text": "— that means: can.",
+   "text": "take the window seat if you'd like.",
    "lang": "en",
    "kind": "text",
    "status": "scaffold"
