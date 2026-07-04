@@ -43,11 +43,15 @@ const arWords = doc.tokens.filter((t) => t.kind === "word");
 describe("ar-blend-intro fixture — gentle blend + valid romanized annotations", () => {
   it("is a LOW-ratio Arabic tutor-message (mostly-English scaffold, frame 77:2)", () => {
     expect(doc.lang).toBe("ar");
-    expect(arWords.length).toBeGreaterThanOrEqual(3);
+    // At least one target word (the blend can be as sparse as the zh demo's
+    // single 可以 — density is not the point; a natural, non-leaking sentence
+    // is). The reading-pedagogy law forbids the prose from glossing the word,
+    // so a demo that eases in ONE Arabic word incidentally is fully valid.
+    expect(arWords.length).toBeGreaterThanOrEqual(1);
     for (const t of arWords) expect(t.lang).toBe("ar");
     // The gentle blend is English-dominant: only a small share of tokens are
-    // the target script (frame 77:2 eases a few Arabic words into English
-    // prose) — a deliberate contrast with the Arabic-heavy ar-mixed-line.
+    // the target script — a deliberate contrast with the Arabic-heavy
+    // ar-mixed-line.
     const ratio = arWords.length / doc.tokens.length;
     expect(ratio).toBeLessThanOrEqual(0.34);
   });

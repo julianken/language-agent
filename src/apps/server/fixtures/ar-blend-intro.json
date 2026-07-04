@@ -14,24 +14,24 @@
   "tokens": [
     {
       "id": "e0",
-      "text": "Let's ease in.",
       "lang": "en",
       "kind": "text",
-      "status": "scaffold"
+      "status": "scaffold",
+      "text": "Sure —"
     },
     {
       "id": "e1",
-      "text": "Picture a slow morning —",
       "lang": "en",
       "kind": "text",
-      "status": "scaffold"
+      "status": "scaffold",
+      "text": "you can wait for me"
     },
     {
       "id": "e2",
-      "text": "you slip into the",
       "lang": "en",
       "kind": "text",
-      "status": "scaffold"
+      "status": "scaffold",
+      "text": "at the"
     },
     {
       "id": "t5",
@@ -57,133 +57,35 @@
         "fadeLevels": [
           {
             "dim": "vowelFadeLexical",
-            "unit": { "kind": "lemma", "id": "سُوق#market" },
+            "unit": {
+              "kind": "lemma",
+              "id": "سُوق#market"
+            },
             "level": "full"
           },
           {
             "dim": "vowelFadeCaseEnding",
-            "unit": { "kind": "lemma", "id": "سُوق#market" },
+            "unit": {
+              "kind": "lemma",
+              "id": "سُوق#market"
+            },
             "level": "full"
           }
         ],
-        "blend": { "anglicize": false },
-        "dueness": { "dueNow": true }
+        "blend": {
+          "anglicize": false
+        },
+        "dueness": {
+          "dueNow": true
+        }
       }
     },
     {
       "id": "e3",
-      "text": "before the stalls fill up,",
       "lang": "en",
       "kind": "text",
-      "status": "scaffold"
-    },
-    {
-      "id": "e4",
-      "text": "order a small",
-      "lang": "en",
-      "kind": "text",
-      "status": "scaffold"
-    },
-    {
-      "id": "t10",
-      "text": "قَهْوَة",
-      "lang": "ar",
-      "kind": "word",
-      "status": "learning",
-      "band": "GREEN",
-      "annotations": {
-        "diac": "قَهْوَة",
-        "skeleton": "قهوة",
-        "vowelState": "full",
-        "morphology": {
-          "lemma": "قَهْوَة",
-          "root": "ق ه و",
-          "pattern": "فَعْلَة",
-          "pos": "NOUN",
-          "gloss": "coffee"
-        },
-        "translit": "qahwa"
-      },
-      "directive": {
-        "fadeLevels": [
-          {
-            "dim": "vowelFadeLexical",
-            "unit": { "kind": "lemma", "id": "قَهْوَة#coffee" },
-            "level": "partial"
-          },
-          {
-            "dim": "vowelFadeCaseEnding",
-            "unit": { "kind": "lemma", "id": "قَهْوَة#coffee" },
-            "level": "faded"
-          }
-        ],
-        "blend": { "anglicize": false },
-        "dueness": { "dueNow": true }
-      }
-    },
-    {
-      "id": "e5",
-      "text": "from the first vendor who's awake,",
-      "lang": "en",
-      "kind": "text",
-      "status": "scaffold"
-    },
-    {
-      "id": "e6",
-      "text": "and sip it on a step",
-      "lang": "en",
-      "kind": "text",
-      "status": "scaffold"
-    },
-    {
-      "id": "e7",
-      "text": "while the rest of the",
-      "lang": "en",
-      "kind": "text",
-      "status": "scaffold"
-    },
-    {
-      "id": "t12",
-      "text": "مَدِينَة",
-      "lang": "ar",
-      "kind": "word",
-      "status": "known",
-      "band": "GREEN",
-      "annotations": {
-        "diac": "مَدِينَة",
-        "skeleton": "مدينة",
-        "vowelState": "full",
-        "morphology": {
-          "lemma": "مَدِينَة",
-          "root": "م د ن",
-          "pattern": "فَعِيلَة",
-          "pos": "NOUN",
-          "gloss": "city"
-        }
-      },
-      "directive": {
-        "fadeLevels": [
-          {
-            "dim": "vowelFadeLexical",
-            "unit": { "kind": "lemma", "id": "مَدِينَة#city" },
-            "level": "faded"
-          },
-          {
-            "dim": "vowelFadeCaseEnding",
-            "unit": { "kind": "lemma", "id": "مَدِينَة#city" },
-            "level": "faded"
-          }
-        ],
-        "blend": { "anglicize": false },
-        "dueness": { "dueNow": true }
-      }
-    },
-    {
-      "id": "e8",
-      "text": "stirs.",
-      "lang": "en",
-      "kind": "text",
-      "status": "scaffold"
+      "status": "scaffold",
+      "text": "until I get back."
     }
   ]
 }
