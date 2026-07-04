@@ -78,5 +78,14 @@ export const ArAnnotationsSchema = z.strictObject({
   vowelState: ArVowelStateSchema,
   /** Root-and-pattern morphology (breakdown panel + gate leg 2). */
   morphology: ArMorphologySchema,
+  /**
+   * Learner-facing romanized reading (transliteration) — the fading
+   * training-wheel scaffold rendered UNDER a new/learning Arabic word
+   * (DESIGN.md §0 `transliteration` type: 13px / 500, mono; DESIGN.md
+   * §Components → Tokens: recedes as the word is mastered, so a `known`
+   * token renders bare and needs none). Optional at v1: not every token
+   * carries a romanization, and a mastered token deliberately omits it.
+   */
+  translit: z.string().min(1).optional(),
 });
 export type ArAnnotations = z.infer<typeof ArAnnotationsSchema>;

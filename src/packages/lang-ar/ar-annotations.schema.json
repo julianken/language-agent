@@ -55,6 +55,10 @@
         "gloss"
       ],
       "additionalProperties": false
+    },
+    "translit": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "required": [

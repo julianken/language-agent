@@ -34,6 +34,9 @@ export interface RendererPackEntry {
   lang: string;
   manifest: RendererManifest;
   components: Record<string, ComponentType<TokenRendererProps>>;
-  Container: ComponentType<{ children?: ReactNode }>;
+  /** The pack container. The optional `blend` mirrors the shell's opaque
+   * `WireMessageMeta.blend`; the fake container ignores it (structural pack,
+   * always LTR). */
+  Container: ComponentType<{ children?: ReactNode; blend?: unknown }>;
   FallbackToken?: ComponentType<TokenRendererProps>;
 }

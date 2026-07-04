@@ -20,8 +20,12 @@ export interface RendererRegistryEntry {
   /** ComponentKey → component, for every key in `manifest.tokenRenderers`. */
   components: Record<string, ComponentType<TokenRendererProps>>;
   /** The pack container — every script-structural concern (including text
-   * direction) is decided INSIDE it, never by the shell. */
-  Container: ComponentType<{ children?: ReactNode }>;
+   * direction) is decided INSIDE it, never by the shell. The optional
+   * `blend` is the message's OPAQUE blend envelope, forwarded verbatim from
+   * `message-start`: the shell never inspects it, but a pack may derive a
+   * script-structural decision (e.g. base direction following blend
+   * maturity) from it. */
+  Container: ComponentType<{ children?: ReactNode; blend?: unknown }>;
   FallbackToken?: ComponentType<TokenRendererProps>;
 }
 
@@ -30,8 +34,10 @@ function NeutralToken({ token }: TokenRendererProps) {
   return <span data-token-id={token.id}>{token.text}</span>;
 }
 
-/** Neutral passthrough container for an unregistered message language. */
-function NeutralContainer({ children }: { children?: ReactNode }) {
+/** Neutral passthrough container for an unregistered message language. It
+ * accepts (and ignores) the opaque `blend` prop the shell forwards to every
+ * container. */
+function NeutralContainer({ children }: { children?: ReactNode; blend?: unknown }) {
   return <div data-pack-container="none">{children}</div>;
 }
 
@@ -53,7 +59,7 @@ export class RendererRegistry {
     return [...this.entries.keys()];
   }
 
-  containerFor(lang: string): ComponentType<{ children?: ReactNode }> {
+  containerFor(lang: string): ComponentType<{ children?: ReactNode; blend?: unknown }> {
     return this.entries.get(lang)?.Container ?? NeutralContainer;
   }
 

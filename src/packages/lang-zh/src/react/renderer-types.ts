@@ -46,8 +46,10 @@ export interface RendererPackEntry {
   components: Record<string, ComponentType<TokenRendererProps>>;
   /** The pack container — direction (and any other script-structural
    * concern) is decided HERE, never by the shared shell (dual-instance
-   * amendment: the shell sets no global `dir`). */
-  Container: ComponentType<{ children?: ReactNode }>;
+   * amendment: the shell sets no global `dir`). The optional `blend` mirrors
+   * the shell's opaque `WireMessageMeta.blend`; the zh container ignores it
+   * (zh is LTR always — design §8.1). */
+  Container: ComponentType<{ children?: ReactNode; blend?: unknown }>;
   /** Fallback for a `kind` with no manifest entry (still pack-rendered). */
   FallbackToken?: ComponentType<TokenRendererProps>;
 }

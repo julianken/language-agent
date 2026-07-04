@@ -1,0 +1,210 @@
+{
+  "type": "tutor-message",
+  "schemaVersion": "1.0",
+  "messageId": "m_ar_blend_0001",
+  "role": "assistant",
+  "lang": "ar",
+  "blend": {
+    "ratio": 0.2,
+    "ceiling": 0.7,
+    "advancedBy": "mastery",
+    "guard": "clause-coherent",
+    "unknownTokenShare": 0.0
+  },
+  "tokens": [
+    {
+      "id": "t0",
+      "text": "Let's",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "t1",
+      "text": "ease in",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "t2",
+      "text": "—",
+      "lang": "en",
+      "kind": "punct",
+      "status": "scaffold"
+    },
+    {
+      "id": "t3",
+      "text": "picture a slow morning:",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "t4",
+      "text": "you step into the",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "t5",
+      "text": "سُوق",
+      "lang": "ar",
+      "kind": "word",
+      "status": "new",
+      "band": "GREEN",
+      "annotations": {
+        "diac": "سُوق",
+        "skeleton": "سوق",
+        "vowelState": "full",
+        "morphology": {
+          "lemma": "سُوق",
+          "root": "س و ق",
+          "pattern": "فُعْل",
+          "pos": "NOUN",
+          "gloss": "market"
+        },
+        "translit": "sūq"
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "vowelFadeLexical",
+            "unit": { "kind": "lemma", "id": "سُوق#market" },
+            "level": "full"
+          },
+          {
+            "dim": "vowelFadeCaseEnding",
+            "unit": { "kind": "lemma", "id": "سُوق#market" },
+            "level": "full"
+          }
+        ],
+        "blend": { "anglicize": false },
+        "dueness": { "dueNow": true }
+      }
+    },
+    {
+      "id": "t6",
+      "text": ",",
+      "lang": "en",
+      "kind": "punct",
+      "status": "scaffold"
+    },
+    {
+      "id": "t7",
+      "text": "the neighborhood market,",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "t8",
+      "text": "and buy a small",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "t9",
+      "text": "cup of",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "t10",
+      "text": "قَهْوَة",
+      "lang": "ar",
+      "kind": "word",
+      "status": "learning",
+      "band": "GREEN",
+      "annotations": {
+        "diac": "قَهْوَة",
+        "skeleton": "قهوة",
+        "vowelState": "full",
+        "morphology": {
+          "lemma": "قَهْوَة",
+          "root": "ق ه و",
+          "pattern": "فَعْلَة",
+          "pos": "NOUN",
+          "gloss": "coffee"
+        },
+        "translit": "qahwa"
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "vowelFadeLexical",
+            "unit": { "kind": "lemma", "id": "قَهْوَة#coffee" },
+            "level": "partial"
+          },
+          {
+            "dim": "vowelFadeCaseEnding",
+            "unit": { "kind": "lemma", "id": "قَهْوَة#coffee" },
+            "level": "faded"
+          }
+        ],
+        "blend": { "anglicize": false },
+        "dueness": { "dueNow": true }
+      }
+    },
+    {
+      "id": "t11",
+      "text": "sipped slowly before the",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "t12",
+      "text": "مَدِينَة",
+      "lang": "ar",
+      "kind": "word",
+      "status": "known",
+      "band": "GREEN",
+      "annotations": {
+        "diac": "مَدِينَة",
+        "skeleton": "مدينة",
+        "vowelState": "full",
+        "morphology": {
+          "lemma": "مَدِينَة",
+          "root": "م د ن",
+          "pattern": "فَعِيلَة",
+          "pos": "NOUN",
+          "gloss": "city"
+        }
+      },
+      "directive": {
+        "fadeLevels": [
+          {
+            "dim": "vowelFadeLexical",
+            "unit": { "kind": "lemma", "id": "مَدِينَة#city" },
+            "level": "faded"
+          },
+          {
+            "dim": "vowelFadeCaseEnding",
+            "unit": { "kind": "lemma", "id": "مَدِينَة#city" },
+            "level": "faded"
+          }
+        ],
+        "blend": { "anglicize": false },
+        "dueness": { "dueNow": true }
+      }
+    },
+    {
+      "id": "t13",
+      "text": "fully",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    },
+    {
+      "id": "t14",
+      "text": "wakes up.",
+      "lang": "en",
+      "kind": "text",
+      "status": "scaffold"
+    }
+  ]
+}
