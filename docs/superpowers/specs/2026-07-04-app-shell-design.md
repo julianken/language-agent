@@ -20,9 +20,9 @@
 
 | # | Question | Decision |
 |---|----------|----------|
-| 1 | Who is the first milestone for? | **Dogfood-first** — the thinnest real thing the operator can sign into and use daily on live infra. Public-signup hardening + full onboarding/settings polish are deferred fast-follows. **(Working assumption — subject to operator confirmation; see §2.)** |
-| 2 | Auth mechanism | **Firebase Auth / Identity Platform (GCP-native).** Google OAuth for MVP (magic-link a fast-follow — both are Firebase). ID token (JWT) verified server-side with the Firebase Admin SDK; the **Firebase UID** is the stable per-user key. |
-| 3 | Auth topology | **Two independent layers.** The existing per-instance `x-access-secret` stays as the **service-to-service** lock on the raw `run.app`; the Firebase **ID token** is the new **user-identity** layer. For dogfood privacy, a server-side **allowlist** of emails/UIDs gates sign-in. |
+| 1 | Scope | **The complete App shell as epic #53 defines it** — both auth methods, the full 3-step onboarding, the full persistent shell + Settings (incl. Privacy & data export/delete), threads, persistence, both instances. Nothing is deferred; the only OUT items are the neighbouring epics' own boundaries (§2). |
+| 2 | Auth mechanism | **Firebase Auth / Identity Platform (GCP-native).** Google OAuth **and** email magic-link (both Firebase providers). ID token (JWT) verified server-side with the Firebase Admin SDK; the **Firebase UID** is the stable per-user key. |
+| 3 | Auth topology | **Two independent layers.** The existing per-instance `x-access-secret` stays as the **service-to-service** lock on the raw `run.app`; the Firebase **ID token** is the new **user-identity** layer. An **optional** server-side access gate (allowlist / invite) is available as an operator launch control — off ⇒ open create-account; it is a config, not a scope cut. |
 | 4 | Datastore | **Cloud SQL (Postgres), GCP-native.** Relational — natural for threads/messages/events/settings and the eventual `word_state` + mastery graph. Terraform-managed; password via GCP Secret Manager as a Cloud Run env var, never in TF code/state. (Firestore + Neon rejected — see §10.) |
 | 5 | Composer | The `compose-bar` posts to the **existing** `POST /api/turns`, then streams the reply via the **existing** `GET /api/stream?turn=<id>` SSE path. Reuse the existing `<TokenStream>` renderer and the blend-dependent base direction. Reply-content quality is **out of scope** (that is `generation-quality`). |
 | 6 | Persistence posture | Persist the learner message and the verified `tutor-message` to Postgres, keyed to thread+user — **superseding `TurnStore`** as the durable record for signed-in learners. `TurnStore` remains only the transient in-request replay buffer. |
@@ -48,8 +48,9 @@ Three parts, exactly as architecture.md §8 Phase A frames them:
    settings, and the Phase-3 `word_state` **table shape**.
 
 This is foundational, not cosmetic, and it **interleaves** with the pedagogy phases
-rather than following them. The design deliberately structures the schema and the
-surfaces so the deferred fast-follows (§2) slot in without a migration or a re-layout.
+rather than following them. It ships the app shell **complete** — every surface epic
+#53 scopes (both auth methods, the full onboarding, the full tool-rail + Settings incl.
+export/delete). The only things left to other epics are their own boundaries (§2 OUT).
 
 Proven on **both** instances (ar + zh) — the shell chrome is language-neutral; the
 only per-language behavior is the blend-dependent conversation base direction, which
@@ -59,59 +60,44 @@ is pack-computed, never shell-set (DESIGN.md `app-shell`).
 
 ## 2. Scope
 
-### Audience assumption (flag)
+The **complete App shell** as epic #53 defines it. Everything in the epic's **In** list
+is IN here — none of it deferred. The only items left out are the neighbouring epics'
+own boundaries (the epic's own **Out**).
 
-> **WORKING ASSUMPTION — operator confirmation required.** The first milestone is
-> **dogfood-first**: the thinnest real thing the operator can sign into and use daily
-> on live infra. Public-signup hardening (rate limits, abuse, email verification
-> flows, open registration) and full onboarding/settings polish are deferred
-> fast-follows. Everything in the IN list below is sized to that audience. If the
-> operator wants an open public beta as the first milestone instead, several DEFERRED
-> items (export/delete, the full onboarding, magic-link) move back into scope — see
-> the DEFERRED notes.
+### IN — the full App shell
 
-### IN (the MVP thin slice)
-
-- **Google sign-in (allowlisted) + sign-out.** The `A1-sign-in` surface, Google as the
-  primary action; a server-side allowlist gates who may sign in. Account menu exposes
-  sign-out.
+- **Accounts / auth — both methods.** Google OAuth **and** email magic-link (v2-app-flow
+  `A1`/`A2`): sign-in + create-account + sign-out + Account/Profile. Real accounts,
+  public-capable. An operator-controlled access gate (allowlist / invite) exists as
+  **configuration** — a launch control the operator sets, *not* a scope cut; the auth
+  itself ships complete.
 - **The composer → turn-loop → SSE round-trip on BOTH instances.** `compose-bar` posts
   `{ learnerMessage, threadId, lang }` to the existing `POST /api/turns`; the reply
   streams via the existing `GET /api/stream?turn=<id>` with anti-buffering headers and
   tokens-first ordering intact, rendered by the existing `<TokenStream>` and the
   blend-dependent base direction.
-- **Cloud SQL provisioned via Terraform** + the core tables (§5).
-- **Threads + messages + learning events persist** across sign-out/sign-in **and** a
-  server restart — datastore-backed, not process memory.
-- **A MINIMAL shell:** conversation column + composer + a basic thread list + New chat
-  + account menu (`C1-chat-first-run` reduced to its load-bearing bones).
-- **Schema discipline:** `schemaVersion` + tolerant reader on persisted payloads;
+- **Cloud SQL provisioned via Terraform** + all core tables (§5).
+- **Threads** — multi-turn conversations + a sidebar thread list + New chat; durable
+  learning-event ingestion behind the existing shared route.
+- **The full 3-step onboarding O1–O3** — `O1` goal/language confirm → `O2` no-quiz word
+  seeding (tap recognized words; seeds the confirmed set + the opening vocab dial) →
+  `O3` pace defaults with a **live first-blend preview**; plus the first-run chat home
+  (greeting, suggested prompts, empty state). A returning user skips onboarding.
+- **The persistent shell** — the collapsible left tool-rail / sidebar (threads, word
+  list, persona, progress, settings — the 240px canonical rail, v2-app-flow §1.2),
+  `persona-header` (surface built; the persona *character/content* is the epic's own
+  open product question — §12, space reserved, neutral until decided), and **Settings
+  incl. Privacy & data (working export / type-to-confirm delete against the real
+  datastore) + Account/Profile**.
+- **Persistence** — threads, messages, and learning events survive sign-out/sign-in
+  **and** a server restart; datastore-backed, not process memory.
+- **Schema discipline** — `schemaVersion` + tolerant reader on persisted payloads;
   stand-off annotations keyed to stable token IDs, never character offsets (§5).
-- **The blend-direction reuse** (DESIGN.md `app-shell` rule; reuse the existing token
-  renderer, do not rebuild).
-
-### DEFERRED (fast-follows — design the schema/space so they slot in)
-
-- **Magic-link auth** — `A1`'s named email fallback. Same Firebase surface, low
-  marginal cost; deferred behind Google-only for MVP. *(Returns to IN if the first
-  milestone is public.)*
-- **Full 3-step onboarding O1–O3** — MVP goes sign-in → **straight to chat**
-  (`onboarding_completed` defaults such that a returning user and a first-run user both
-  land in `C1`). The word-seeding write target (`word_state` / the confirmed set) is
-  reserved in the schema so O2 slots in without a migration.
-- **The rich tool-rail** — persona-header content, word-list (`P1`), progress
-  (`P1` two-axis tracks). MVP ships a basic thread list + account menu only; the 240px
-  canonical sidebar (v2-app-flow §1.2) is the target the minimal rail grows into.
-- **Full Settings + export/delete** (`S1` incl. §4 Privacy & data) — structure the DB
-  to support export/delete (every user-owned row is FK-keyed to `users`, so a cascade
-  delete and a per-user dump are straightforward), but the Settings UI + the working
-  export/delete operations are a fast-follow. **Deferring export/delete is acceptable
-  at dogfood scale but MUST return before any non-allowlisted user reaches the app.**
-- **Persona content (TBD)** — `persona-header` reserves space; the character/content is
-  an open product-brief question (product-brief open question 6). MVP renders a neutral
-  placeholder header.
-- **The Attach / Web-search / Keyboard control-cluster** — placeholders only, per the
-  epic (their pipelines are later epics: `interactive-lookup-audio`, `writing-correction`).
+- **The blend-direction rule** (DESIGN.md `app-shell`; reuse the existing token
+  renderer, do not rebuild) — proven on **both** instances (ar + zh).
+- **Control-cluster placeholders** — the composer's Attach · Web-search · Keyboard
+  cluster renders as placeholders (per the epic); their *pipelines* are later epics
+  (`interactive-lookup-audio`, `writing-correction`), but the surface ships here.
 
 ### OUT (owned by neighbouring epics)
 
@@ -263,20 +249,20 @@ Each unit: what it does · its interface · its dependencies.
 ## 5. Data model (Postgres)
 
 Relational, GCP-native Cloud SQL. All user-owned rows FK to `users` (so a per-user export
-and a cascade delete are straightforward — the reserved shape behind the deferred
-export/delete).
+and a cascade delete are straightforward — the shape behind Settings' working
+export / delete, §2 IN).
 
 | Table | Key | Columns (shape) | Notes |
 |---|---|---|---|
-| `users` | `firebase_uid` (PK) | `email`, `display_name`, `target_lang`, `onboarding_completed`, `created_at` | The Firebase UID is the stable per-user key. `settings` live as columns here (MVP) or a small `settings` table (see below). |
+| `users` | `firebase_uid` (PK) | `email`, `display_name`, `target_lang`, `onboarding_completed`, `created_at` | The Firebase UID is the stable per-user key. `settings` live as columns here or a small `settings` table (see below). |
 | `threads` | `id` (PK) | `user_id` (FK), `lang`, `title`, `created_at`, `updated_at` | One conversation. `lang` is `ar` / `zh`. |
 | `messages` | `id` (PK) | `thread_id` (FK), `role` (`learner` \| `tutor`), `payload` (JSONB), `created_at` | `payload` = the `schemaVersion`'d `tutor-message` (architecture.md §3) for tutor rows, or the learner text envelope for learner rows. |
 | `learning_events` | `id` (PK) | `user_id` (FK), `thread_id` (FK), `payload` (JSONB), `created_at` | `payload` = the contract `LearningEvent` the shared route accepts, unchanged. |
 | `word_state` | `(user_id, lemma, sense_id)` (composite PK) | mastery-latent columns — **SHAPE ONLY, no consumer** | FSRS `stability` / `difficulty` / `due` / `last_review`; derived `status` enum; signal counters (`seen_count`, `clicked_count`, `correct_uses`, `source`) per architecture.md §4. The consumer is `learner-model-blend` (#57). |
 
-`settings`: MVP keeps them as columns on `users` (`target_lang`, `onboarding_completed`,
-plus the pace/vowel defaults the deferred O3/S1 will write). A dedicated `settings`
-table is a trivial later split if the column set grows — noted, not built now.
+`settings`: kept as columns on `users` (`target_lang`, `onboarding_completed`, plus the
+pace/vowel defaults O3 and S1 write). A dedicated `settings` table is a trivial split if
+the column set grows — an internal shape choice, not a scope question.
 
 ### Schema discipline (architecture.md §3 + risk 8) — binding
 
@@ -294,7 +280,7 @@ table is a trivial later split if the column set grows — noted, not built now.
   the wire schema is shaped; persistence must not flatten it to offsets.
 - **A test asserts BOTH:** (a) a reader tolerates an unknown field on a persisted payload
   (round-trips without loss or error), and (b) a persisted stand-off annotation resolves
-  to a token by ID (never by offset). These are named MVP done-criteria (§8).
+  to a token by ID (never by offset). These are named done-criteria (§8).
 
 ---
 
@@ -358,6 +344,16 @@ table is a trivial later split if the column set grows — noted, not built now.
 - **Unit — schema-version tolerant reader.** Assert (a) a persisted payload with an
   unknown extra field round-trips without loss or error, and (b) a persisted stand-off
   annotation resolves to a token by ID, never by offset (§5).
+- **Onboarding flow (O1–O3).** An e2e proof: a first-run user completes goal/language
+  confirm → no-quiz word seeding (the tapped set is written) → pace defaults with the
+  live first-blend preview, lands in chat, and a returning user skips straight to chat
+  (`onboarding_completed`). Assert the seeded set persists.
+- **Settings — Privacy & data (export / delete).** Integration tests against the real
+  datastore: **export** returns the signed-in user's full data (threads, messages,
+  learning events, settings); **delete-account** (type-to-confirm) cascades every
+  user-owned row and the account, verified gone. These are done-criteria, not stubs.
+- **Both auth providers.** The token-verification and sign-in paths are proven for
+  **both** Google OAuth and email magic-link (Firebase Auth emulator).
 
 ---
 
@@ -402,27 +398,25 @@ stable UID for `word_state` to key off.
 ## 11. zh coordination (restate the epic guard)
 
 Learner-typed **zh** text must not silently reach gate paths — learner writing is a named
-**#22 wake trigger** on zh (GAPS.md "zh neural gate legs hot" row). The MVP composer
-sends to the **existing** turn loop, which already routes through the pack's gate, so no
-new gate path is opened by this epic. **But** a typed-zh path that broadens what the gate
-must verify needs **`content-verification-depth` sign-off before opening beyond
-dogfood** — the composer must not silently open the token universe. For the allowlisted
-dogfood milestone this is contained (the operator is the only writer); it is a hard gate
-before any non-allowlisted user can type zh.
+**#22 wake trigger** on zh (GAPS.md "zh neural gate legs hot" row). The composer sends to
+the **existing** turn loop, which already routes through the pack's gate, so wiring the
+composer opens no *new* gate path. **But** accepting arbitrary learner-typed zh that the
+gate must verify broadens the token universe, which needs **`content-verification-depth`
+(#56) sign-off** — a hard coordination gate before free-form zh writing is accepted (it
+also overlaps `writing-correction` #55's zh-input decision). The composer must be
+coordinated with #56, never silently open the token universe.
 
 ---
 
 ## 12. Open questions
 
-1. **Persona content (TBD).** `persona-header` reserves space; the tutor persona
-   (neutral tool vs. named character) is product-brief open question 6. MVP renders a
-   neutral placeholder — confirm direction before the persona surface is built.
-2. **Magic-link timing.** Deferred behind Google-only for MVP (both are Firebase, low
-   marginal cost). When does the email fallback land — same milestone, or a later
-   fast-follow? (It returns to IN if the first milestone is public rather than dogfood.)
-3. **Operator-audience confirmation.** The dogfood-first assumption (§2) is the load-
-   bearing scoping call. Confirm it, or the IN/DEFERRED split shifts (export/delete, full
-   onboarding, and magic-link move earlier for a public first milestone).
+1. **Persona content.** The `persona-header` surface is IN and built; the tutor persona's
+   *character/content* (neutral tool vs. a named character) is the epic's own open
+   product-brief question (open question 6). The surface renders neutral until that
+   direction is decided — a product call, not a scope one, and not blocking the build.
+2. **Access-gate default.** The optional operator access gate (§3.1) — open create-account
+   vs. an invite/allowlist at launch — is an operator launch call, not a build decision:
+   the capability ships either way; the operator flips it.
 
 ---
 
@@ -434,12 +428,11 @@ before any non-allowlisted user can type zh.
   instance is Terraform-managed, but the **password bytes** are added out-of-band via
   `gcloud secrets versions add` (mirroring `anthropic-secret.tf`), never in TF
   code/state.
-- **The allowlist contents** — the set of permitted emails/UIDs for dogfood. Sourced
-  from env / Secret Manager so it is not committed; the operator supplies and maintains
-  it. It is the gate that keeps the live URL from being open-signup until public
-  hardening lands.
-- **Firebase Auth / Identity Platform** enabled on the project (Google provider now;
-  email/magic-link when that fast-follow lands).
+- **The access-gate contents** *(only if the operator enables the optional invite/allowlist
+  gate, §3.1)* — the permitted emails/UIDs, sourced from env / Secret Manager so they are
+  not committed; the operator supplies and maintains them. Off ⇒ open create-account.
+- **Firebase Auth / Identity Platform** enabled on the project, with **both** the Google
+  and Email (magic-link) providers configured.
 
 ---
 
